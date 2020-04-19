@@ -9,7 +9,6 @@
 
   #Se obtiene el valor del input del usuario
   $pnombre = $_POST["pnombre"];
-  $pnombre = intval($pnombre);
 
   #Se construye la consulta como un string
   $query = "SELECT cnombre FROM Paises, Ciudades WHERE Paises.pnombre = $pnombre AND Paises.pid = Cidades.pid;";
