@@ -1,6 +1,18 @@
 <?php include('templates/header.html');   ?>
 
 <body>
+
+  <h1 align="center">Entrega 2 BDD </h1>
+
+  <h3 align="center"> ¿Mostrar Usuarios y Correos?</h3>
+
+  <form align="center" action="consultas/consulta_1.php" method="post">
+    <input type="submit" value="Ejecutar">
+  </form>
+
+
+
+
   <h1 align="center">Biblioteca Pokemón </h1>
   <p style="text-align:center;">Aquí podrás encontrar información sobre pokemones.</p>
 
