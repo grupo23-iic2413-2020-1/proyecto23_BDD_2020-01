@@ -10,6 +10,15 @@
     <input type="submit" value="Ejecutar">
   </form>
 
+  <h3 align="center"> ¿Buscar ciudades de un país?</h3>
+
+  <form align="center" action="consultas/consulta_2.php" method="post">
+    Pais:
+    <input type="text" name="nombre_pais">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+
 
 
 
