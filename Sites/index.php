@@ -18,7 +18,7 @@
 
   <form align="center" action="consultas/consulta_2.php" method="post">
     Pais:
-    <input type="text" name="nombre_pais">
+    <input type="text" name="pnombre">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
@@ -29,9 +29,9 @@
 
   <h3 align="center"> ¿Buscar Paises donde ha alojado un usuario?</h3>
 
-  <form align="center" action="consultas/consulta_2.php" method="post">
+  <form align="center" action="consultas/consulta_3.php" method="post">
     Username:
-    <input type="text" name="nombre_pais">
+    <input type="text" name="username">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
