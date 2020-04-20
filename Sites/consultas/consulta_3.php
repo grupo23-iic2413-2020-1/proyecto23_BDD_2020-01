@@ -11,7 +11,7 @@
   $username = $_POST["username"];
 
   #Se construye la consulta como un string
-  $query = "SELECT pnombre FROM Usuarios, Reservas, Hoteles, Ciudades, Paises
+  $query = "SELECT DISTINCT pnombre FROM Usuarios, Reservas, Hoteles, Ciudades, Paises
   WHERE Usuarios.username = '$username'
   AND Usuarios.uid = Reservas.uid
   AND Reservas.hid = Hoteles.hid
