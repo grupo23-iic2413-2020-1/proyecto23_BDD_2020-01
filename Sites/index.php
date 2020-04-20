@@ -42,7 +42,7 @@
 
   <h3 align="center"> ¿Buscar dinero gastado en tickets por un id de usuario?</h3>
 
-  <form align="center" action="consultas/consulta_3.php" method="post">
+  <form align="center" action="consultas/consulta_4.php" method="post">
     Id:
     <input type="text" name="uid">
     <br/><br/>
