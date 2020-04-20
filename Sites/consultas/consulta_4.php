@@ -34,7 +34,7 @@
   
       <?php
         
-        echo "<tr><td>$dinero</td></tr>";
+        echo "<tr><td>$dinero[0]</td></tr>";
       ?>
       
   </table>
