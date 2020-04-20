@@ -11,10 +11,11 @@
   $pnombre = $_POST["pnombre"];
 
   #Se construye la consulta como un string
-  $query = "SELECT cnombre FROM Paises, Ciudades WHERE Paises.pnombre = '$pnombre' AND Paises.pid = Ciudades.pid;";
+  $query = "SELECT cnombre FROM Paises, Ciudades WHERE Paises.pnombre = ? AND Paises.pid = Ciudades.pid;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
+  $result -> bindParam(1, $pnombre);
   $result -> execute();
   $ciudades = $result -> fetchAll();
   
