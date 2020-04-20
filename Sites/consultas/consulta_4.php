@@ -33,9 +33,8 @@
     </tr>
   
       <?php
-        foreach ($dinero as $d) {
-          echo "<tr><td>$d[0]</td></tr>";
-      }
+        
+        echo "<tr><td>$dinero</td></tr>";
       ?>
       
   </table>
