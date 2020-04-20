@@ -14,7 +14,7 @@
   $query = "SELECT SUM(Destinos.precio) FROM Usuarios, Tickets, Destinos
   WHERE Usuarios.uid = ?
   AND Usuarios.uid = Tickets.uid
-  AND Tickets.fechac >= current_timestamp
+  AND Tickets.fechac <= current_timestamp
   AND Tickets.did = Destinos.did
   
   ;";
