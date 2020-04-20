@@ -22,7 +22,7 @@
 
   <table>
     <tr>
-      <th>Ciudades de <?php echo '$pnombre' ?> </th>
+      <th>Ciudades de <?php echo $pnombre ?> </th>
     </tr>
   
       <?php
