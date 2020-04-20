@@ -36,5 +36,18 @@
     <input type="submit" value="Buscar">
   </form>
 
+  <br>
+  <br>
+  <br>
+
+  <h3 align="center"> ¿Buscar dinero gastado en tickets por un id de usuario?</h3>
+
+  <form align="center" action="consultas/consulta_3.php" method="post">
+    Id:
+    <input type="text" name="uid">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+
 </body>
 </html>
