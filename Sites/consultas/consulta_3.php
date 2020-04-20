@@ -12,7 +12,7 @@
 
   #Se construye la consulta como un string
   $query = "SELECT DISTINCT pnombre FROM Usuarios, Reservas, Hoteles, Ciudades, Paises
-  WHERE Usuarios.username = '$username'
+  WHERE Usuarios.username = ?
   AND Usuarios.uid = Reservas.uid
   AND Reservas.hid = Hoteles.hid
   AND Hoteles.cid = Ciudades.cid
@@ -22,6 +22,7 @@
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
+  $result -> bindParam(1, $username);
   $result -> execute();
   $paises = $result -> fetchAll();
 
