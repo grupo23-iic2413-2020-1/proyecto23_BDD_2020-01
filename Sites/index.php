@@ -14,7 +14,7 @@
         </button>
 
         <div class="collapse" id="collapseC1">
-          <div class="card card-body">
+          <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Mostrar Usuarios y Correos?</h3>
 
             <form align="center" action="consultas/consulta_1.php" method="post">
