@@ -36,7 +36,7 @@
 
             <form align="center" action="consultas/consulta_2.php" method="post">
               Pais:
-              <input class="w-50" type="text" name="pnombre">
+              <input class="w-25" type="text" name="pnombre">
               <br/><br/>
               <input type="submit" value="Buscar">
             </form>
@@ -61,7 +61,7 @@
 
             <form align="center" action="consultas/consulta_3.php" method="post">
               Username:
-              <input type="text" name="username">
+              <input class="w-25" type="text" name="username">
               <br/><br/>
               <input type="submit" value="Buscar">
             </form>
@@ -82,7 +82,7 @@
 
           <form align="center" action="consultas/consulta_4.php" method="post">
             Id:
-            <input type="text" name="uid">
+            <input class="w-25" type="text" name="uid">
             <br/><br/>
             <input type="submit" value="Buscar">
           </form>
@@ -128,10 +128,10 @@
 
             <form align="center" action="consultas/consulta_6.php" method="post">
               Fecha inicio:
-              <input type="text" name="fecha1">
+              <input class="w-25" type="text" name="fecha1">
               <br/>
               Fecha fin:
-              <input type="text" name="fecha2">
+              <input class="w-25" type="text" name="fecha2">
               <br/><br/>
               <input type="submit" value="Buscar">
             </form>            
