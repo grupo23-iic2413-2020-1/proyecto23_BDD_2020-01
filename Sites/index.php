@@ -71,11 +71,11 @@
 
       <div class="col">
 
-        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
-        Consulta X
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC4" aria-expanded="false" aria-controls="collapseC4">
+        Consulta 4
         </button>
 
-        <div class="collapse" id="collapseC">
+        <div class="collapse" id="collapseC4">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Buscar dinero gastado en tickets por un id de usuario?</h3>
 
@@ -100,11 +100,11 @@
     <div class="row">
       <div class="col">
 
-        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
-        Consulta X
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC5" aria-expanded="false" aria-controls="collapseC5">
+        Consulta 5
         </button>
 
-        <div class="collapse" id="collapseC">
+        <div class="collapse" id="collapseC5">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Mostrar Reservas entre 2020-01-01 y 2020-03-31?</h3>
 
@@ -114,17 +114,14 @@
           </div>            
         </div>
       </div>
-
-
-
       
       <div class="col">
 
-        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
-        Consulta X
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC6" aria-expanded="false" aria-controls="collapseC6">
+        Consulta 6
         </button>
 
-        <div class="collapse" id="collapseC">
+        <div class="collapse" id="collapseC6">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Buscar dinero gastado en tickets en un rango de fechas (YYYY-MM-DD)?</h3>
 
