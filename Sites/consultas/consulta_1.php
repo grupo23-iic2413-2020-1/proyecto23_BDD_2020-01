@@ -16,7 +16,7 @@
   $usuarios = $result -> fetchAll();
   ?>
   
-  <div class="container">
+  <div class="container bg-white">
 
   <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 1</h1>
 
