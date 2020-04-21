@@ -18,7 +18,7 @@ input[type=submit] {
 
 button {
     background-color: green;
-    color: white;
+    color: rgba(71, 71, 71, 0);
     border: none;
     border-radius: 5px;
     font-size: 25px;
@@ -27,7 +27,7 @@ button {
 }
 
 h1 {
-    color: green;
+    color: white;
 }
 
 h1,

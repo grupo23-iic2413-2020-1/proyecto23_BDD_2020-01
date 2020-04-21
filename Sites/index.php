@@ -3,7 +3,7 @@
 <body class= "bg-secondary text-white">
   <div class="container">
     <br>
-    <h1 align="center" class="text-primary">Entrega 2 BDD </h1>
+    <h1 align="center">Entrega 2 BDD </h1>
 
     
 
@@ -26,7 +26,6 @@
 
       </div>
       <div class="col">
-
 
         <h3 align="center"> ¿Buscar ciudades de un país?</h3>
 
