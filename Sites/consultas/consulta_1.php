@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body class= "bg-secondary text-white">
+<body class= "bg-dark text-white">
 <?php
 
   #Muestre todos los username junto a su correo.
