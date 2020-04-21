@@ -16,6 +16,7 @@
     AND Reservas.fechai >= date '2020-01-01'
     AND Reservas.fechat <= date '2020-03-31'
     AND Reservas.hid = Hoteles.hid
+    ORDER BY Usuarios.uid
     ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados

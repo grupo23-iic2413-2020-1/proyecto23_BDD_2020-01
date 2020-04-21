@@ -14,10 +14,10 @@
   $query = "SELECT SUM(Destinos.precio) FROM Usuarios, Tickets, Destinos
   WHERE Usuarios.uid = ?
   AND Usuarios.uid = Tickets.uid
+  AND Tickets.fechac <= CURRENT_TIMESTAMP
   AND Tickets.did = Destinos.did
   
   ;";
-  #AND Tickets.fechac <= current_timestamp
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);

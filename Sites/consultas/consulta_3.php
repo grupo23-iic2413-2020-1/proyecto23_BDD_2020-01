@@ -14,11 +14,11 @@
   $query = "SELECT DISTINCT pnombre FROM Usuarios, Reservas, Hoteles, Ciudades, Paises
   WHERE Usuarios.username = ?
   AND Usuarios.uid = Reservas.uid
+  AND Reservas.fechai <= CURRENT_DATE
   AND Reservas.hid = Hoteles.hid
   AND Hoteles.cid = Ciudades.cid
   AND Ciudades.pid = Paises.pid
   ;";
-  #AND Reserva.fechai <= CURRENT_DATE #<---------------------------------------------
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
