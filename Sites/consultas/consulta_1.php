@@ -20,21 +20,21 @@
 
   <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 1</h1>
 
-  <table style="align-self:center;width:90%;margin: 0 auto;">
+  <table class="table table-bordered table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
     <thead class="thead-dark">
 
-    <tr style="text-align:center">
-      <th>Username</th>
-      <th>Correo</th>
-    </tr>
+      <tr style="text-align:center">
+        <th>Username</th>
+        <th>Correo</th>
+      </tr>
 
     <tbody>
-      <?php
-        foreach ($usuarios as $u) {
-        echo "<tr><td>$u[0]</td><td>$u[1]</td></tr>";
-      }
-      ?>
+        <?php
+          foreach ($usuarios as $u) {
+          echo "<tr><td>$u[0]</td><td>$u[1]</td></tr>";
+        }
+        ?>
     </tbody>
     
   </table>
