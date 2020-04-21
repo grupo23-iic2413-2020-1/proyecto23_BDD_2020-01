@@ -20,7 +20,7 @@
 
   <h1 style="text-align: center; margin-top: 1rem">Consulta 1</h1>
 
-  <table class="table table-hover">
+  <table class="table table-bordered table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
     <thead class="thead-dark">
 
