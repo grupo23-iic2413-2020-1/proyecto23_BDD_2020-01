@@ -8,9 +8,8 @@
     <h3 class= "text-white" align="center">Splinter S.A.</h3>
     <br>
     <p class= "text-white" align="left">En esta página podrás realizar múltiples consultas a la bases de datos de Splinter S.A.</p>
-    <br>
     <p class= "text-white" align="left">Estas corresponden a:</p>
-    <br>
+    
     <p class= "text-white" align="left">  Consulta 1: Muestra todos los username junto a su correo.</p>
     <p class= "text-white" align="left">  Consulta_2: Ingrese el nombre de un país y se mostraráne todos los nombres de las ciudades de ese país.</p>
     <p class= "text-white" align="left">  Consulta 3: Ingrese un username y se mostrarán todos los nombres distintos de países en los que ha
@@ -24,10 +23,9 @@
     <p class= "text-white" align="left">  Consulta 6: Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin y se mostrarán el id,
       nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
       inclusive.</p>
-    <br>
+    
     <p class= "text-white" align="left">A continuación deberás presionar el botón correspondiente a la consulta que quieres realizar.</p>
 
-    <br>
     <br>
     
 
@@ -42,7 +40,7 @@
             <h3 align="center"> ¿Mostrar Usuarios y Correos?</h3>
 
             <form align="center" action="consultas/consulta_1.php" method="post">
-              <input type="submit" value="Ejecutar">
+              <input class="btn btn-primary" type="submit" value="Ejecutar">
             </form>
           </div>
         </div>
@@ -61,7 +59,7 @@
               Pais:
               <input class="w-25" type="text" name="pnombre">
               <br/><br/>
-              <input type="submit" value="Buscar">
+              <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
         </div>
@@ -85,7 +83,7 @@
               Username:
               <input class="w-25" type="text" name="username">
               <br/><br/>
-              <input type="submit" value="Buscar">
+              <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
         </div>
@@ -106,7 +104,7 @@
             Id:
             <input class="w-25" type="text" name="uid">
             <br/><br/>
-            <input type="submit" value="Buscar">
+            <input class="btn btn-primary" type="submit" value="Buscar">
           </form>
           </div>
         </div>
@@ -131,7 +129,7 @@
             <h3 align="center"> ¿Mostrar Reservas entre 2020-01-01 y 2020-03-31?</h3>
 
             <form align="center" action="consultas/consulta_5.php" method="post">
-              <input type="submit" value="Ejecutar">
+              <input class="btn btn-primary" type="submit" value="Ejecutar">
             </form>
           </div>            
         </div>
@@ -154,7 +152,7 @@
               Fecha fin:
               <input class="w-25" type="text" name="fecha2">
               <br/><br/>
-              <input type="submit" value="Buscar">
+              <input class="btn btn-primary" type="submit" value="Buscar">
             </form>            
           </div>
         </div>
