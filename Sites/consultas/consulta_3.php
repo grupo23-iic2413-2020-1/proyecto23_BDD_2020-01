@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body>
+<body class= "bg-secondary text-white">
 <?php #Ingrese un username. Muestre todos los nombres distintos de pa´ıses en los que ha
 #hospedado el usuario con ese username mediante hoteles de la agencia.
 
@@ -28,8 +28,11 @@
 
 ?>
 
-<table>
-    <tr>
+<table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+
+  <thead class="thead-dark">
+
+    <tr style="text-align:center">
       <th>Paises para <?php echo $username ?></th>
     </tr>
   

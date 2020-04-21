@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body>
+<body class= "bg-secondary text-white">
 <?php #Ingrese el identificador de un usuario. Muestre la cantidad de dinero que ha gastado el
 #usuario con ese identificador en todos los tickets que ha comprado
 
@@ -27,8 +27,11 @@
 
 ?>
 
-<table>
-    <tr>
+<table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+
+  <thead class="thead-dark">
+
+    <tr style="text-align:center">
       <th>Dinero Gastado por ID: <?php echo $uid ?></th>
     </tr>
   

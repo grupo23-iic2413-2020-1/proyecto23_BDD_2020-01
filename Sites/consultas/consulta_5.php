@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body>
+<body class= "bg-secondary text-white">
 <?php
 #Entregue el identificador y nombre de usuario junto a la fecha de inicio en formato
 #YYYY-MM-DD, la fecha de t´ermino y el nombre del hotel de las reservas que parten desde
@@ -26,8 +26,11 @@
 
     ?>
 
-<table>
-    <tr>
+<table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+
+    <thead class="thead-dark">
+
+    <tr style="text-align:center">
       <th>ID</th>
       <th>Username</th>
       <th>Fecha de inicio</th>

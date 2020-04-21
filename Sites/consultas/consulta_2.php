@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body>
+<body class= "bg-secondary text-white">
 <?php #Ingrese el nombre de un pa´ıs. Muestre todos los nombres de las ciudades del pa´ıs con
 # ese nombre en su base de datos.
 
@@ -21,8 +21,11 @@
   
   ?>
 
-  <table>
-    <tr>
+  <table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+
+    <thead class="thead-dark">
+
+    <tr style="text-align:center">
       <th>Ciudades de <?php echo $pnombre ?> </th>
     </tr>
   

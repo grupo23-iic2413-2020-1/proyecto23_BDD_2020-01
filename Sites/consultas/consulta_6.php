@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body>
+<body class= "bg-secondary text-white">
 <?php 
 #Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin. Muestre el id, 
 #nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
@@ -33,8 +33,11 @@
   
   ?>
 
-  <table>
-    <tr>
+  <table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+
+    <thead class="thead-dark">
+
+    <tr style="text-align:center">
       <th>ID</th>
       <th>Username</th>
       <th>Dinero Gastado</th>
