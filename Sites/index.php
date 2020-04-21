@@ -4,15 +4,13 @@
   <div class="container">
     <br>
     <h1 class= "text-white" align="center">Entrega 2 BDD </h1>
-
-    <br>
     <br>
     <br>
     
 
     <div class="row">
       <div class="col">
-        <button class="btn lg btn-success" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
         Consulta 1
         </button>
 
@@ -28,7 +26,7 @@
       </div>
       <div class="col">
 
-      <button class="btn lg btn-success" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC2">
+      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC2">
         Consulta 2
         </button>
 
@@ -38,7 +36,7 @@
 
             <form align="center" action="consultas/consulta_2.php" method="post">
               Pais:
-              <input type="text" name="pnombre">
+              <input class="w-50" type="text" name="pnombre">
               <br/><br/>
               <input type="submit" value="Buscar">
             </form>
@@ -53,7 +51,7 @@
 
     <div class="row">
       <div class="col">
-        <button class="btn lg btn-success" type="button" data-toggle="collapse" data-target="#collapseC3" aria-expanded="false" aria-controls="collapseC3">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC3" aria-expanded="false" aria-controls="collapseC3">
         Consulta 3
         </button>
 
@@ -74,7 +72,7 @@
 
       <div class="col">
 
-        <button class="btn lg btn-success" type="button" data-toggle="collapse" data-target="#collapseC4" aria-expanded="false" aria-controls="collapseC4">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC4" aria-expanded="false" aria-controls="collapseC4">
         Consulta 4
         </button>
 
@@ -103,7 +101,7 @@
     <div class="row">
       <div class="col">
 
-        <button class="btn lg btn-success" type="button" data-toggle="collapse" data-target="#collapseC5" aria-expanded="false" aria-controls="collapseC5">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC5" aria-expanded="false" aria-controls="collapseC5">
         Consulta 5
         </button>
 
@@ -120,7 +118,7 @@
       
       <div class="col">
 
-        <button class="btn lg btn-success" type="button" data-toggle="collapse" data-target="#collapseC6" aria-expanded="false" aria-controls="collapseC6">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC6" aria-expanded="false" aria-controls="collapseC6">
         Consulta 6
         </button>
 
