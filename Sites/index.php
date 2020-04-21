@@ -1,17 +1,28 @@
 <?php include('templates/header.html');   ?>
 
 <body>
-  <div class="container">
-    <h1 align="center">Entrega 2 BDD </h1>
+  <div class="container bg-secondary text-white"">
+    <br>
+    <h1 align="center" class="text-primary">Entrega 2 BDD </h1>
+
+    
 
     <div class="row">
       <div class="col">
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+        Consulta 1
+        </button>
 
-        <h3 align="center"> ¿Mostrar Usuarios y Correos?</h3>
+        <div class="collapse" id="collapseC1">
+          <div class="card card-body">
+            <h3 align="center"> ¿Mostrar Usuarios y Correos?</h3>
 
-        <form align="center" action="consultas/consulta_1.php" method="post">
-          <input type="submit" value="Ejecutar">
-        </form>
+            <form align="center" action="consultas/consulta_1.php" method="post">
+              <input type="submit" value="Ejecutar">
+            </form>
+          </div>
+        </div>
+        
 
       </div>
       <div class="col">
