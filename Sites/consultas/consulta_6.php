@@ -35,7 +35,9 @@
 
   <table>
     <tr>
-      <th>Ciudades de <?php echo $pnombre ?> </th>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Dinero Gastado</th>
     </tr>
   
       <?php
