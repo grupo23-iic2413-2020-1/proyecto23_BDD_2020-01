@@ -15,9 +15,12 @@
   $result -> execute();
   $usuarios = $result -> fetchAll();
   ?>
+  
+  <div class="container">
 
-  <table>
-    <tr>
+  <table class="table table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+
+    <tr class="table-secondary" style="text-align:center">
       <th>Username</th>
       <th>Correo</th>
     </tr>
@@ -29,5 +32,6 @@
       ?>
     
   </table>
+  </div>
 
 <?php include('../templates/footer.html'); ?>
