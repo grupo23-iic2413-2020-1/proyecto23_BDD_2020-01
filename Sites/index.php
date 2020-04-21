@@ -5,11 +5,14 @@
     <br>
     <h1 class= "text-white" align="center">Entrega 2 BDD </h1>
 
+    <br>
+    <br>
+    <br>
     
 
     <div class="row">
       <div class="col">
-        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
         Consulta 1
         </button>
 
