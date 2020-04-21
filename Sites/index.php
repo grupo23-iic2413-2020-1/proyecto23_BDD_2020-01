@@ -7,24 +7,10 @@
     <br>
     <h3 class= "text-white" align="center">Splinter S.A.</h3>
     <br>
-    <p class= "text-white" align="left">En esta página podrás realizar múltiples consultas a la bases de datos de Splinter S.A.</p>
-    <p class= "text-white" align="left">Estas corresponden a:</p>
-    
-    <p class= "text-white" align="left">  Consulta 1: Muestra todos los username junto a su correo.</p>
-    <p class= "text-white" align="left">  Consulta_2: Ingrese el nombre de un país y se mostraráne todos los nombres de las ciudades de ese país.</p>
-    <p class= "text-white" align="left">  Consulta 3: Ingrese un username y se mostrarán todos los nombres distintos de países en los que ha
-      hospedado el usuario con ese username mediante hoteles de la agencia.</p>
-    <p class= "text-white" align="left">  Consulta 4: Ingrese el identificador de un usuario y se mostrará la cantidad de dinero que ha gastado el
-      usuario con ese identificador en todos los tickets que ha comprado.</p>
-      <p class= "text-white" align="left">  Consulta 5: Se muestra el identificador y nombre de usuario junto a la fecha de inicio en formato
-      YYYY-MM-DD, la fecha de término y el nombre del hotel de las reservas que parten desde
-      el 01 de enero del 2020 y terminan antes del 31 de marzo del 2020, ambas fechas
-      inclusive.</p>
-    <p class= "text-white" align="left">  Consulta 6: Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin y se mostrarán el id,
-      nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
-      inclusive.</p>
-    
+    <p class= "text-white" align="left">En esta página podrás realizar múltiples consultas a la bases de datos de Splinter S.A., las cuales se encontrarán epxplicadas al final de esta página</p>
     <p class= "text-white" align="left">A continuación deberás presionar el botón correspondiente a la consulta que quieres realizar.</p>
+    
+    
 
     <br>
     
@@ -158,6 +144,24 @@
         </div>
       </div>
     </div>
+
+    <br>
+
+    <p class= "text-white" align="left">Las consultas consisten en:</p>
+    
+    <p class= "text-white" align="left">  Consulta 1: Muestra todos los username junto a su correo.</p>
+    <p class= "text-white" align="left">  Consulta_2: Ingrese el nombre de un país y se mostraráne todos los nombres de las ciudades de ese país.</p>
+    <p class= "text-white" align="left">  Consulta 3: Ingrese un username y se mostrarán todos los nombres distintos de países en los que ha
+      hospedado el usuario con ese username mediante hoteles de la agencia.</p>
+    <p class= "text-white" align="left">  Consulta 4: Ingrese el identificador de un usuario y se mostrará la cantidad de dinero que ha gastado el
+      usuario con ese identificador en todos los tickets que ha comprado.</p>
+      <p class= "text-white" align="left">  Consulta 5: Se muestra el identificador y nombre de usuario junto a la fecha de inicio en formato
+      YYYY-MM-DD, la fecha de término y el nombre del hotel de las reservas que parten desde
+      el 01 de enero del 2020 y terminan antes del 31 de marzo del 2020, ambas fechas
+      inclusive.</p>
+    <p class= "text-white" align="left">  Consulta 6: Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin y se mostrarán el id,
+      nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
+      inclusive.</p>
   </div>
   <br>
   <br>
