@@ -35,7 +35,7 @@
     </tr>
 
       <?php
-        foreach ($filass as $f) {
+        foreach ($filas as $f) {
         echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$f[4]</td></tr>";
       }
       ?>
