@@ -1,7 +1,7 @@
 <?php include('templates/header.html');   ?>
 
-<body>
-  <div class="container bg-secondary text-white"">
+<body class= "bg-secondary text-white">
+  <div class="container">
     <br>
     <h1 align="center" class="text-primary">Entrega 2 BDD </h1>
 
