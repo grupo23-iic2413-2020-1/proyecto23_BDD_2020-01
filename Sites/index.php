@@ -59,5 +59,21 @@
     <input type="submit" value="Ejecutar">
   </form>
 
+  <br>
+  <br>
+  <br>
+
+  <h3 align="center"> ¿Buscar dinero gastado en tickets en un rango de fechas (YYYY-MM-DD)?</h3>
+
+  <form align="center" action="consultas/consulta_6.php" method="post">
+    Fecha inicio:
+    <input type="text" name="fecha1">
+    <br/>
+    Fecha fin:
+    <input type="text" name="fecha2">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+
 </body>
 </html>
