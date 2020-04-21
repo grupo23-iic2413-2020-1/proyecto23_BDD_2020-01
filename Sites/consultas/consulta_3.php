@@ -17,7 +17,7 @@
   AND Reservas.hid = Hoteles.hid
   AND Hoteles.cid = Ciudades.cid
   AND Ciudades.pid = Paises.pid
-  AND Reserva.fechai <= CURRENT_DATE
+  #AND Reserva.fechai <= CURRENT_DATE #<---------------------------------------------
   
   ;";
 
