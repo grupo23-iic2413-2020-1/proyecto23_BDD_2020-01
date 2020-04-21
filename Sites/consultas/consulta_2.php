@@ -20,8 +20,11 @@
   $ciudades = $result -> fetchAll();
   
   ?>
+  <div class="container">
 
-  <table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+  <h1 style="text-align: center; margin-top: 1rem">Consulta 2</h1>
+
+  <table class="table table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
     <thead class="thead-dark">
 
@@ -36,5 +39,6 @@
       ?>
       
   </table>
+  </div>
 
 <?php include('../templates/footer.html'); ?>

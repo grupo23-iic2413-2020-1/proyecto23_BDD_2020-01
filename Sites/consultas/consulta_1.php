@@ -18,9 +18,9 @@
   
   <div class="container">
 
-  <h1 style="text-align: center; margin-top: 1rem">Consulta 1: Usernames y Correos</h1>
+  <h1 style="text-align: center; margin-top: 1rem">Consulta 1</h1>
 
-  <table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+  <table class="table table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
     <thead class="thead-dark">
 
