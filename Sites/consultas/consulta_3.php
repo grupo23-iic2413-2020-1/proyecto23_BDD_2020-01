@@ -17,9 +17,8 @@
   AND Reservas.hid = Hoteles.hid
   AND Hoteles.cid = Ciudades.cid
   AND Ciudades.pid = Paises.pid
-  #AND Reserva.fechai <= CURRENT_DATE #<---------------------------------------------
-  
   ;";
+  #AND Reserva.fechai <= CURRENT_DATE #<---------------------------------------------
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
