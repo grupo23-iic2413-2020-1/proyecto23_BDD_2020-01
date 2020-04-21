@@ -29,11 +29,13 @@
       <th>Correo</th>
     </tr>
 
+    <tbody>
       <?php
         foreach ($usuarios as $u) {
         echo "<tr><td>$u[0]</td><td>$u[1]</td></tr>";
       }
       ?>
+    </tbody>
     
   </table>
   </div>
