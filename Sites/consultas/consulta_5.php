@@ -10,7 +10,6 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     require("../config/conexion.php");
 
-    #Se construye la consulta como un string
     $query = "SELECT Usuarios.uid, Usuarios.username, Reservas.fechai, Reservas.fechat, Hoteles.hnombre 
     FROM Usuarios, Reservas, Hoteles 
     WHERE Usuarios.uid = Reservas.uid
@@ -37,7 +36,7 @@
 
       <?php
         foreach ($filass as $f) {
-        echo "<tr><td>$u[0]</td><td>$u[1]</td><td>$u[2]</td><td>$u[3]</td><td>$u[4]</td></tr>";
+        echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$f[4]</td></tr>";
       }
       ?>
     
