@@ -3,7 +3,29 @@
 <body class= "bg-secondary text-white">
   <div class="container">
     <br>
-    <h1 class= "text-white" align="center">Entrega 2 BDD </h1>
+    <h1 class= "text-white" align="center">Entrega 2 BDD Grupo 32 </h1>
+    <br>
+    <h3 class= "text-white" align="center">Splinter S.A.</h3>
+    <br>
+    <h3 class= "text-white" align="center">En esta página podrás realizar múltiples consultas a la bases de datos de Splinter S.A.
+      Estas corresponden a:
+      Consulta 1: Muestra todos los username junto a su correo.
+      Consulta_2: Ingrese el nombre de un país y se mostraráne todos los nombres de las ciudades de ese país.
+      Consulta 3: Ingrese un username y se mostrarán todos los nombres distintos de países en los que ha
+      hospedado el usuario con ese username mediante hoteles de la agencia.
+      Consulta 4: Ingrese el identificador de un usuario y se mostrará la cantidad de dinero que ha gastado el
+      usuario con ese identificador en todos los tickets que ha comprado.
+      Consulta 5: Se muestra el identificador y nombre de usuario junto a la fecha de inicio en formato
+      YYYY-MM-DD, la fecha de término y el nombre del hotel de las reservas que parten desde
+      el 01 de enero del 2020 y terminan antes del 31 de marzo del 2020, ambas fechas
+      inclusive.
+      Consulta 6: Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin y se mostrarán el id,
+      nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
+      inclusive.
+
+      A continuación deberás presionar el botón correspondiente a la consulta que quieres realizar.
+    </h3>
+
     <br>
     <br>
     
@@ -45,7 +67,6 @@
       </div>
     </div>
 
-    <br>
     <br>
     <br>
 
@@ -96,7 +117,6 @@
 
     <br>
     <br>
-    <br>
 
     <div class="row">
       <div class="col">
@@ -140,7 +160,6 @@
       </div>
     </div>
   </div>
-  <br>
   <br>
   <br>
 </body>
