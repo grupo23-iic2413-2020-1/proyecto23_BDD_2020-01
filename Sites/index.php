@@ -150,7 +150,7 @@
     <p class= "text-white" align="left">Las consultas consisten en:</p>
     
     <p class= "text-white" align="left">  Consulta 1: Muestra todos los username junto a su correo.</p>
-    <p class= "text-white" align="left">  Consulta_2: Ingrese el nombre de un país y se mostraráne todos los nombres de las ciudades de ese país.</p>
+    <p class= "text-white" align="left">  Consulta 2: Ingrese el nombre de un país y se mostrarán todos los nombres de las ciudades de ese país.</p>
     <p class= "text-white" align="left">  Consulta 3: Ingrese un username y se mostrarán todos los nombres distintos de países en los que ha
       hospedado el usuario con ese username mediante hoteles de la agencia.</p>
     <p class= "text-white" align="left">  Consulta 4: Ingrese el identificador de un usuario y se mostrará la cantidad de dinero que ha gastado el
