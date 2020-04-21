@@ -3,13 +3,13 @@
 <body class= "bg-secondary text-white">
   <div class="container">
     <br>
-    <h1 align="center">Entrega 2 BDD </h1>
+    <h1 class= "text-white" align="center">Entrega 2 BDD </h1>
 
     
 
     <div class="row">
       <div class="col">
-        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
         Consulta 1
         </button>
 
@@ -27,14 +27,24 @@
       </div>
       <div class="col">
 
-        <h3 align="center"> ¿Buscar ciudades de un país?</h3>
+      <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC2">
+        Consulta 2
+        </button>
 
-        <form align="center" action="consultas/consulta_2.php" method="post">
-          Pais:
-          <input type="text" name="pnombre">
-          <br/><br/>
-          <input type="submit" value="Buscar">
-        </form>
+        <div class="collapse" id="collapseC2">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Buscar ciudades de un país?</h3>
+
+            <form align="center" action="consultas/consulta_2.php" method="post">
+              Pais:
+              <input type="text" name="pnombre">
+              <br/><br/>
+              <input type="submit" value="Buscar">
+            </form>
+          </div>
+        </div>
+
+        
       </div>
     </div>
 
