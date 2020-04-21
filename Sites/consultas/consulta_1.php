@@ -1,6 +1,6 @@
 <?php include('../templates/header.html');   ?>
 
-<body class= "bg-dark text-white">
+<body class= "bg-secondary text-white">
 <?php
 
   #Muestre todos los username junto a su correo.
@@ -20,7 +20,7 @@
 
   <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 1</h1>
 
-  <table class="table table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+  <table class="table" style="align-self:center;width:90%;margin: 0 auto;">
 
     <thead class="thead-dark">
 
