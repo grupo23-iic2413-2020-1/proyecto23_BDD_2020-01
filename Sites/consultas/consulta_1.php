@@ -20,9 +20,11 @@
 
   <h1 style="text-align: center; margin-top: 1rem">Consulta 1: Usernames y Correos</h1>
 
-  <table class="table table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+  <table class="table table-striped table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
-    <tr class="table-secondary" style="text-align:center">
+    <thead class="thead-dark">
+
+    <tr style="text-align:center">
       <th>Username</th>
       <th>Correo</th>
     </tr>
