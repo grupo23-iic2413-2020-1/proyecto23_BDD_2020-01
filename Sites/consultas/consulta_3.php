@@ -30,7 +30,7 @@
 
 <div class="container">
 
-<h1 style="text-align: center; margin-top: 1rem">Consulta 3</h1>
+<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 3</h1>
 <table class="table table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
   <thead class="thead-dark">

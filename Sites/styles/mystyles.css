@@ -51,16 +51,3 @@ table.center {
     text-align: center;
     font-size: 20px
 }
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
