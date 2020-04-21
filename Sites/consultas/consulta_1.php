@@ -28,7 +28,7 @@
         <th>Username</th>
         <th>Correo</th>
       </tr>
-
+    </thead>
     <tbody>
         <?php
           foreach ($usuarios as $u) {
