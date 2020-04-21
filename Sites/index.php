@@ -49,5 +49,15 @@
     <input type="submit" value="Buscar">
   </form>
 
+  <br>
+  <br>
+  <br>
+
+  <h3 align="center"> ¿Mostrar Reservas entre 2020-01-01 y 2020-03-31?</h3>
+
+  <form align="center" action="consultas/consulta_5.php" method="post">
+    <input type="submit" value="Ejecutar">
+  </form>
+
 </body>
 </html>
