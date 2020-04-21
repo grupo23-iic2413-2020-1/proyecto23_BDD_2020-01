@@ -35,7 +35,7 @@
 
 <div class="container">
 
-<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 6</h1>
+  <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 6</h1>
 
   <table class="table table-bordered table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
@@ -46,14 +46,18 @@
       <th>Username</th>
       <th>Dinero Gastado</th>
     </tr>
+
+    </thead>
+    <tbody>
   
       <?php
         foreach ($filas as $f) {
           echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td></tr>";
       }
       ?>
+    </tbody>
       
   </table>
-  </div>
+</div>
 
 <?php include('../templates/footer.html'); ?>

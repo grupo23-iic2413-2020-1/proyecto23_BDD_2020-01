@@ -29,23 +29,26 @@
 
 <div class="container">
 
-<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 4</h1>
+  <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 4</h1>
 
-<table class="table table-bordered table-hover" style="align-self:center;width:90%;margin: 0 auto;">
+  <table class="table table-bordered table-hover" style="align-self:center;width:90%;margin: 0 auto;">
 
-  <thead class="thead-dark">
+    <thead class="thead-dark">
 
-    <tr style="text-align:center">
-      <th>Dinero Gastado por ID: <?php echo $uid ?></th>
-    </tr>
-  
-      <?php
-        foreach ($dinero as $d) {
-          echo "<tr><td>$d[0]</td></tr>";
-      }
-      ?>
+      <tr style="text-align:center">
+        <th>Dinero Gastado por ID: <?php echo $uid ?></th>
+      </tr>
+    </thead>
+    <tbody>
+    
+        <?php
+          foreach ($dinero as $d) {
+            echo "<tr><td>$d[0]</td></tr>";
+        }
+        ?>
+    </tbody>
       
   </table>
-  </div>
+</div>
 
 <?php include('../templates/footer.html'); ?>

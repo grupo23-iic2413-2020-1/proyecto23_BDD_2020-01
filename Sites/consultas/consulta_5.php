@@ -26,7 +26,7 @@
 
     ?>
 
-  <div class="container">
+<div class="container">
 
   <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 5</h1>
 
@@ -34,21 +34,24 @@
 
     <thead class="thead-dark">
 
-    <tr style="text-align:center">
-      <th>ID</th>
-      <th>Username</th>
-      <th>Fecha de inicio</th>
-      <th>Fecha de término</th>
-      <th>Nombre Hotel</th>
-    </tr>
+      <tr style="text-align:center">
+        <th>ID</th>
+        <th>Username</th>
+        <th>Fecha de inicio</th>
+        <th>Fecha de término</th>
+        <th>Nombre Hotel</th>
+      </tr>
+    </thead>
+    <tbody>
 
       <?php
         foreach ($filas as $f) {
         echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$f[4]</td></tr>";
       }
       ?>
+    </tbody>
     
   </table>
-  </div>
+</div>
 
 <?php include('../templates/footer.html'); ?>
