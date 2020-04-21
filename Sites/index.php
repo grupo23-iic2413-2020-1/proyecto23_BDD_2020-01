@@ -22,8 +22,6 @@
             </form>
           </div>
         </div>
-        
-
       </div>
       <div class="col">
 
@@ -43,37 +41,54 @@
             </form>
           </div>
         </div>
+      </div>
+    </div>
 
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC3" aria-expanded="false" aria-controls="collapseC3">
+        Consulta 3
+        </button>
+
+        <div class="collapse" id="collapseC3">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Buscar Paises donde ha alojado un usuario?</h3>
+
+            <form align="center" action="consultas/consulta_3.php" method="post">
+              Username:
+              <input type="text" name="username">
+              <br/><br/>
+              <input type="submit" value="Buscar">
+            </form>
+          </div>
+        </div>
         
       </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="row">
-      <div class="col">
-        <h3 align="center"> ¿Buscar Paises donde ha alojado un usuario?</h3>
-
-        <form align="center" action="consultas/consulta_3.php" method="post">
-          Username:
-          <input type="text" name="username">
-          <br/><br/>
-          <input type="submit" value="Buscar">
-        </form>
-      </div>
 
       <div class="col">
 
-        <h3 align="center"> ¿Buscar dinero gastado en tickets por un id de usuario?</h3>
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+        Consulta X
+        </button>
 
-        <form align="center" action="consultas/consulta_4.php" method="post">
-          Id:
-          <input type="text" name="uid">
-          <br/><br/>
-          <input type="submit" value="Buscar">
-        </form>
+        <div class="collapse" id="collapseC">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Buscar dinero gastado en tickets por un id de usuario?</h3>
+
+          <form align="center" action="consultas/consulta_4.php" method="post">
+            Id:
+            <input type="text" name="uid">
+            <br/><br/>
+            <input type="submit" value="Buscar">
+          </form>
+          </div>
+        </div>
+
+
 
       </div>
     </div>
@@ -84,28 +99,46 @@
 
     <div class="row">
       <div class="col">
-        <h3 align="center"> ¿Mostrar Reservas entre 2020-01-01 y 2020-03-31?</h3>
 
-        <form align="center" action="consultas/consulta_5.php" method="post">
-          <input type="submit" value="Ejecutar">
-        </form>
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+        Consulta X
+        </button>
+
+        <div class="collapse" id="collapseC">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Mostrar Reservas entre 2020-01-01 y 2020-03-31?</h3>
+
+            <form align="center" action="consultas/consulta_5.php" method="post">
+              <input type="submit" value="Ejecutar">
+            </form>
+          </div>            
+        </div>
       </div>
+
+
 
       
       <div class="col">
 
-        <h3 align="center"> ¿Buscar dinero gastado en tickets en un rango de fechas (YYYY-MM-DD)?</h3>
+        <button class="btn btn-success btn lg" type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+        Consulta X
+        </button>
 
-        <form align="center" action="consultas/consulta_6.php" method="post">
-          Fecha inicio:
-          <input type="text" name="fecha1">
-          <br/>
-          Fecha fin:
-          <input type="text" name="fecha2">
-          <br/><br/>
-          <input type="submit" value="Buscar">
-        </form>
+        <div class="collapse" id="collapseC">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Buscar dinero gastado en tickets en un rango de fechas (YYYY-MM-DD)?</h3>
 
+            <form align="center" action="consultas/consulta_6.php" method="post">
+              Fecha inicio:
+              <input type="text" name="fecha1">
+              <br/>
+              Fecha fin:
+              <input type="text" name="fecha2">
+              <br/><br/>
+              <input type="submit" value="Buscar">
+            </form>            
+          </div>
+        </div>
       </div>
     </div>
 
