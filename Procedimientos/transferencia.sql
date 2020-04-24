@@ -1,5 +1,3 @@
-%%sql
-
 CREATE OR REPLACE FUNCTION transferencia()
 RETURNS void AS $$
 DECLARE
