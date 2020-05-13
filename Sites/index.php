@@ -150,11 +150,11 @@
 
     <div class="row">
       <div class="col">
-        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC7" aria-expanded="false" aria-controls="collapseC7">
         Consulta 7
         </button>
 
-        <div class="collapse" id="collapseC1">
+        <div class="collapse" id="collapseC7">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Mostrar Artistas existentes?</h3>
 
@@ -166,11 +166,11 @@
       </div>
       <div class="col">
 
-      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC2">
+      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC8" aria-expanded="false" aria-controls="collapseC8">
         Consulta 8
         </button>
 
-        <div class="collapse" id="collapseC2">
+        <div class="collapse" id="collapseC8">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
 

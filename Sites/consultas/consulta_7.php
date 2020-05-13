@@ -17,29 +17,27 @@
   
   ?>
 
-<div class="container">
+  <div class="container">
 
-  <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 7</h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 7</h1>
 
-  <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-    <thead class="thead-dark">
-
-    <tr style="text-align:center">
-      <th>Artista</th>
-    </tr>
-
-    </thead>
-    <tbody>
-  
-      <?php
-        foreach ($artistas as $artista) {
-          echo "<p><b><a href='../artistas/$artista[0].php'>$artista[0]</a></b></p>";
-      }
-      ?>
-    </tbody>
-      
-  </table>
-</div>
+      <thead class="thead-dark">
+        <tr style="text-align:center">
+          <th>Artista</th>
+        </tr>
+      </thead>
+      <tbody>
+    
+        <?php
+          foreach ($artistas as $artista) {
+            echo "<tr><td><a href='../artistas/$artista[0].php'>$artista[0]</a></td></tr>";
+        }
+        ?>
+      </tbody>
+        
+    </table>
+  </div>
 
 <?php include('../templates/footer.html'); ?>
