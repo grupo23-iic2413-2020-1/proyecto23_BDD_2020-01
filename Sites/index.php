@@ -146,6 +146,46 @@
     </div>
 
     <br>
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+        Consulta 7
+        </button>
+
+        <div class="collapse" id="collapseC1">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Mostrar Artistas existentes?</h3>
+
+            <form align="center" action="consultas/consulta_7.php" method="post">
+              <input class="btn btn-primary" type="submit" value="Ejecutar">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+
+      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC2">
+        Consulta 8
+        </button>
+
+        <div class="collapse" id="collapseC2">
+          <div class="card card-body bg-secondary text-white">
+            <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
+
+            <form align="center" action="consultas/consulta_8.php" method="post">
+              Pais:
+              <input class="w-25" type="text" name="pnombre">
+              <br/><br/>
+              <input class="btn btn-primary" type="submit" value="Buscar">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
 
     <p class= "text-white" align="left">Las consultas consisten en:</p>
     
@@ -162,6 +202,8 @@
     <p class= "text-white" align="left">  Consulta 6: Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin y se mostrarán el id,
       nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
       inclusive.</p>
+    <p class= "text-white" align="left">  Consulta 7: Muestra todos los artistas de la base de datos</p>
+    <p class= "text-white" align="left">  Consulta 8: Ingrese un país y se presentarán todos los museos del país que contengan obras del renacimiento</p>
   </div>
   <br>
   <br>
