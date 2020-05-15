@@ -7,7 +7,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  #Se obtiene el valor del input del usuario
+  #Se obtiene el valor del input del pais
   $pnombre = $_POST["pnombre"];
 
   #Se construye la consulta como un string

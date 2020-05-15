@@ -8,7 +8,7 @@
   require("../config/conexion.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT anombre FROM Artista;";
+  $query = "SELECT anombre, aid FROM Artista;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db_2 -> prepare($query);
@@ -29,10 +29,12 @@
         </tr>
       </thead>
       <tbody>
-    
+
         <?php
           foreach ($artistas as $artista) {
-            echo "<tr><td><a href='../artistas/$artista[0].php'>$artista[0]</a></td></tr>";
+            echo "<form action='artista_info?aid=$artista[1].php' method='post'>
+            <tr><td><a href='artista_info.php'>$artista[0]</a></td></tr>
+            </form>";
         }
         ?>
       </tbody>

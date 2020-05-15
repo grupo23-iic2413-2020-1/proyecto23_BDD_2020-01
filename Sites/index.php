@@ -151,7 +151,7 @@
     <div class="row">
       <div class="col">
         <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC7" aria-expanded="false" aria-controls="collapseC7">
-        Consulta 7
+        Artistas
         </button>
 
         <div class="collapse" id="collapseC7">
