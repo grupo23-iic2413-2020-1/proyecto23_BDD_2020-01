@@ -19,7 +19,7 @@
 
   <div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 7</h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Artistas</h1>
 
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
@@ -32,7 +32,7 @@
 
         <?php
           foreach ($artistas as $artista) {
-            echo "<form action='artista_info?aid=$artista[1].php' method='post'>
+            echo "<form action='artista_info.php?aid=$artista[1]' method='post'>
             <tr><td><a href='artista_info.php'>$artista[0]</a></td></tr>
             </form>";
         }
