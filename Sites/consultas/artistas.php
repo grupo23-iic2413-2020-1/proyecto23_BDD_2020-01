@@ -32,7 +32,7 @@
 
         <?php
           foreach ($artistas as $artista) {
-            echo "<form action='artista_info.php?aid=$artista[1]' method='post'>
+            echo "<form action='artista_info.php'?aid=$artista[1] method='post'>
             <tr><td><a href='artista_info.php'>$artista[0]</a></td></tr>
             </form>";
         }

@@ -7,7 +7,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $aid = $_GET["aid"];
+  $aid = $_GET['aid'];
 
   #Se construye la consulta como un string
   $query = "SELECT * FROM (SELECT Artista.aid, Artista.anombre, Artista.fecha_nacimiento,
