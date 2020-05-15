@@ -158,7 +158,7 @@
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Mostrar Artistas existentes?</h3>
 
-            <form align="center" action="consultas/consulta_7.php" method="post">
+            <form align="center" action="consultas/artistas.php" method="post">
               <input class="btn btn-primary" type="submit" value="Ejecutar">
             </form>
           </div>
