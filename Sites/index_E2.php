@@ -179,7 +179,7 @@
             <h3 align="center">Ingresa un artista y conoce las plazas donde tiene esculturas propias</h3>
 
             <form align="center" action="consultas/consulta_8.php" method="post">
-              Artista:
+              Nombre artista:
               <input class="w-25" type="text" name="nombre_artista">
               <br/><br/>
               <input class="btn btn-primary" type="submit" value="Buscar">
@@ -194,15 +194,18 @@
 
     <div class="row">
       <div class="col">
-        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC7" aria-expanded="false" aria-controls="collapseC7">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC9" aria-expanded="false" aria-controls="collapseC7">
         Consulta 9
         </button>
 
         <div class="collapse" id="collapseC9">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Quieres saber todos los nombres distintos de las obras de arte?</h3>
+            <h3 align="center"> Ingresa un pais y conoce los museos con obras de renacimiento</h3>
 
-            <form align="center" action="consultas/consulta_7.php" method="post">
+            <form align="center" action="consultas/consulta_9.php" method="post">
+              Nombre Pais:
+              <input class="w-25" type="text" name="pnombre">
+              <br/><br/>
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
@@ -210,7 +213,7 @@
       </div>
       <div class="col">
 
-      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC8" aria-expanded="false" aria-controls="collapseC8">
+      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC10" aria-expanded="false" aria-controls="collapseC8">
         Consulta 10
         </button>
 
@@ -234,7 +237,7 @@
 
     <div class="row">
       <div class="col">
-        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC7" aria-expanded="false" aria-controls="collapseC7">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC11" aria-expanded="false" aria-controls="collapseC7">
         Consulta 11
         </button>
 
@@ -250,7 +253,7 @@
       </div>
       <div class="col">
 
-      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC8" aria-expanded="false" aria-controls="collapseC8">
+      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC12" aria-expanded="false" aria-controls="collapseC8">
         Consulta 12
         </button>
 

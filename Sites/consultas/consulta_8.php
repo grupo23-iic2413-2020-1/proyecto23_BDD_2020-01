@@ -18,7 +18,7 @@
 	$plazas_artista = $result -> fetchAll();
   ?>
   
-  ?>
+  
   <div class="container">
 
     <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 8</h1>
