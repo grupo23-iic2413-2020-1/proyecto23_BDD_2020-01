@@ -11,13 +11,13 @@
   
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $query = "SELECT DISTINCT UPPER(onombre) FROM Obra;";
-    $result = $db -> prepare($query);
+    $result = $db_2 -> prepare($query);
     $result -> execute();
 	$obras = $result -> fetchAll();
   ?>
   <div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 8</h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 7</h1>
 
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
