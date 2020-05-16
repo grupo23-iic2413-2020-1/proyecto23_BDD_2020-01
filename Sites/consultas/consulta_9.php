@@ -12,7 +12,7 @@
   $nombre_pais = $_POST["nombre_pais"];
 
   #Se construye la consulta como un string
-  $query = "SELECT DISTINCT Lugar.lnombre FROM Museo, Lugar, Obra, 
+  $query = "SELECT DISTINCT Lugar.lnombre, Ciudad.pnombre FROM Museo, Lugar, Obra, 
             (SELECT * FROM Ciudad WHERE UPPER(Ciudad.pnombre) LIKE UPPER('%$nombre_pais%')) AS cd 
             WHERE Lugar.lid = Obra.lid AND Obra.lid = Museo.lid AND 
             Lugar.cid = cd.cid AND Obra.periodo = 'Renacimiento';";
@@ -32,14 +32,16 @@
       <thead class="thead-dark">
 
         <tr style="text-align:center">
-          <th>Museos del país: <?php echo $pnombre ?> </th>
+          <th>Museos del país: <?php echo $nombre_pais ?> </th>
+          <th>País </th>
+
         </tr>
       </thead>
       <tbody>
     
         <?php
           foreach ($museos_renac as $museo) {
-            echo "<tr><td>$museo[0]</td></tr>";
+            echo "<tr><td>$museo[0]</td> <td>$museo[1]</td></tr>";
         }
         ?>
       </tbody>
