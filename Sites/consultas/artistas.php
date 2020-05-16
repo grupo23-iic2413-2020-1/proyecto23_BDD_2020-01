@@ -9,7 +9,7 @@
   require("../config/conexion.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT anombre FROM Artista;";
+  $query = "SELECT anombre, aid FROM Artista;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db_2 -> prepare($query);
@@ -20,7 +20,7 @@
 
   <div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Consulta 7</h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Artistas</h1>
 
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
@@ -30,10 +30,10 @@
         </tr>
       </thead>
       <tbody>
-    
+
         <?php
           foreach ($artistas as $artista) {
-            echo "<tr><td><a href='../artistas/$artista[0].php'>$artista[0]</a></td></tr>";
+            echo "<tr><td><a href='artista_info.php?aid=$artista[1]&anombre=$artista[0]'>$artista[0]</a></td></tr>";
         }
         ?>
       </tbody>

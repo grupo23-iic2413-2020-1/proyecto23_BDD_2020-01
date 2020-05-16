@@ -13,25 +13,21 @@
         <a class="nav-link" href="..\index_E2.php">Consultas E2</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="..\index_E2.php">Artistas</a>
+        <a class="nav-link" href="..\artistas.php">Artistas</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="..\index_E2.php">Consultas E2</a>
+        <a class="nav-link" href="..\index_E2.php">Obras</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="..\index_E2.php">Consultas E2</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="..\index_E2.php">Consultas E2</a>
+        <a class="nav-link" href="#">Hoteles</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Acciones
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-menu active" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item active" href="#">Realizar Reserva</a>
+          <a class="dropdown-item active" href="#">Crear Itinerario</a>
         </div>
       </li>
     </ul>
