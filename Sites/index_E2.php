@@ -204,7 +204,7 @@
 
             <form align="center" action="consultas/consulta_9.php" method="post">
               Nombre Pais:
-              <input class="w-25" type="text" name="pnombre">
+              <input class="w-25" type="text" name="nombre_pais">
               <br/><br/>
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>

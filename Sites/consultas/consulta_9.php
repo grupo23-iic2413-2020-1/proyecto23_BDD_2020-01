@@ -9,7 +9,7 @@
   require("../config/conexion.php");
 
   #Se obtiene el valor del input del paisgit add *
-  $pnombre = $_POST["pnombre"];
+  $nombre_pais = $_POST["nombre_pais"];
 
   #Se construye la consulta como un string
   $query = "SELECT DISTINCT Lugar.lnombre FROM Museo, Lugar, Obra, 
@@ -32,7 +32,7 @@
       <thead class="thead-dark">
 
         <tr style="text-align:center">
-          <th>Museos de <?php echo $pnombre ?> </th>
+          <th>Museos del país: <?php echo $pnombre ?> </th>
         </tr>
       </thead>
       <tbody>
