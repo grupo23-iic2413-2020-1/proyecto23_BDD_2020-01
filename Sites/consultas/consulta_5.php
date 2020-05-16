@@ -1,4 +1,5 @@
 <?php include('../templates/header.html');   ?>
+<?php include('../templates/navbar.php');   ?> 
 
 <body class= "bg-secondary text-white">
 <?php

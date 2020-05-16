@@ -1,4 +1,5 @@
 <?php include('../templates/header.html');   ?>
+<?php include('../templates/navbar.php');   ?> 
 
 <body class= "bg-secondary text-white">
 <?php #Ingrese un username. Muestre todos los nombres distintos de pa´ıses en los que ha
