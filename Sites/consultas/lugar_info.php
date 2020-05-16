@@ -38,7 +38,7 @@
 
   <div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información sobre <?php echo $onombre ?></h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información sobre <?php echo $lnombre ?></h1>
 
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
