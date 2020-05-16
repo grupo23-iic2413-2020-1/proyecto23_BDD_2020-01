@@ -73,8 +73,8 @@
 
       <thead class="thead-dark">
         <tr style="text-align:center">
-          <th>id</th>
-          <th>id_lugar</th>
+          <th>id obra</th>
+          <th>id lugar</th>
           <th>Nombre</th>
           <th>Periodo</th>
           <th>Fecha Inicio</th>
@@ -84,7 +84,7 @@
       <tbody>
         <?php
         foreach ($obras as $obra) {
-                echo "<tr> <td>$obra[0]</td> <td>$obra[1]</td> <td><p><b><a href='../obras/$obra[0].php'>$obra[2]</a></b></p>
+                echo "<tr> <td>$obra[0]</td> <td>$obra[1]</td> <td><p><b><a href='obra_info.php?oid=$obra[0]&onombre=$obra[2]'>$obra[2]</a></b></p>
                 </td> <td>$obra[3]</td> <td>$obra[4]</td> <td>$obra[5]</td></tr>";
         }
         ?>
