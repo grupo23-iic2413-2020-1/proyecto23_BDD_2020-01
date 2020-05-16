@@ -9,9 +9,9 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner" role="listbox" style=" width:100%; height: 764px !important;">
+  <div class="carousel-inner" role="listbox" style=" width:100%; height: 600px !important;">
     <div class="carousel-item active">
-      <img src="img/carousel/slide_welcome.jpg" style=" width:100%; height: 764px">
+      <img src="img/carousel/slide_welcome.jpg" style=" width:100%; height: 600px">
       <div class="carousel-caption d-none d-md-block " >
         <div class="card bg-secondary">
           <h1>Bienvenido a Splinter S.A</h1>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/carousel/slide_itinerario.jpg" style=" width:100%; height: 764px">
+      <img src="img/carousel/slide_itinerario.jpg" style=" width:100%; height: 600px">
       <div class="carousel-caption d-none d-md-block">
         <div class="card bg-secondary">
           <h1>¡Crea un itinerario!</h1>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/carousel/slide_artistas.jpg" style=" width:100%; height: 764px">
+      <img src="img/carousel/slide_artistas.jpg" style=" width:100%; height: 600px">
       <div class="carousel-caption d-none d-md-block">
         <div class="card bg-secondary">
           <h1>Conoce a nuestros artistas</h1>
