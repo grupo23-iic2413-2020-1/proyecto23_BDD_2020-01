@@ -110,7 +110,7 @@
         <?php
         foreach ($datos as $dat) {
           echo "<tr> <td><p><b><a href='artista_info.php?aid=$dat[5]&anombre=$dat[0]'>$dat[0]</a></b></p></td>
-           <td><p><b><a href='lugar_info.php?lid=$dat[4]&lnombre=$dat[1]></a></b></p></td> 
+           <td><p><b><a href='lugar_info.php?lid=$dat[4]&lnombre=$dat[1]>$dat[1]</a></b></p></td> 
            <td>$dat[2]</td> <td>$dat[3]</td></tr>";
         }
         ?>
