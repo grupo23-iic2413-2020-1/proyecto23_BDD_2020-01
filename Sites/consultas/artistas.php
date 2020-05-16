@@ -32,7 +32,7 @@
 
         <?php
           foreach ($artistas as $artista) {
-            echo "<tr><td><a href='artista_info.php'>$artista[0]</a></td></tr>";
+            echo "<tr><td><a href='artista_info.php?aid=$artista[1]'>$artista[0]</a></td></tr>";
         }
         ?>
       </tbody>
