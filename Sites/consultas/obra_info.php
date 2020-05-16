@@ -35,7 +35,7 @@
   $result_3 -> execute();
   $frescos = $result_3 -> fetchAll();
 
-  $query_4 = "SELECT Artista.anombre, Lugar.lnombre, Ciudad.cnombre, Ciudad.pnombre, Lugar.lid
+  $query_4 = "SELECT Artista.anombre, Lugar.lnombre, Ciudad.cnombre, Ciudad.pnombre, Lugar.lid, Artista.aid
               FROM Obra, Crea, Artista, Lugar, Ciudad
               WHERE Obra.oid = Crea.oid AND Crea.aid = Artista.aid AND Lugar.lid = Obra.lid 
               AND Lugar.cid = Ciudad.cid AND Obra.oid = $oid";
@@ -109,8 +109,8 @@
       <tbody>
         <?php
         foreach ($datos as $dat) {
-          echo "<tr> <td><p><b><a href='../artistas/$dat[0].php'>$dat[0]</a></b></p></td>
-           <td><p><b><a href='../lugares/$dat[4].php'>$dat[1]</a></b></p></td> 
+          echo "<tr> <td><p><b><a href='artista_info.php?aid=$dat[5]&anombre=$dat[0]'>$dat[0]</a></b></p></td>
+           <td><p><b><a href='lugar_info.php?lid=$dat[4]&lnombre=$dat[1]></a></b></p></td> 
            <td>$dat[2]</td> <td>$dat[3]</td></tr>";
         }
         ?>
