@@ -24,7 +24,7 @@
       <thead class="thead-dark">
 
         <tr style="text-align:center">
-          <th>Nombre obra> </th>
+          <th>Nombre obra </th>
         </tr>
       </thead>
       <tbody>
