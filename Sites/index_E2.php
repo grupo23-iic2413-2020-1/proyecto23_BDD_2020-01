@@ -176,11 +176,11 @@
 
         <div class="collapse" id="collapseC8">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
+            <h3 align="center">Ingresa un artista y conoce las plazas donde tiene esculturas propias</h3>
 
             <form align="center" action="consultas/consulta_8.php" method="post">
-              Pais:
-              <input class="w-25" type="text" name="pnombre">
+              Artista:
+              <input class="w-25" type="text" name="anombre">
               <br/><br/>
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
@@ -189,13 +189,16 @@
       </div>
     </div>
 
+    <br>
+    <br>
+
     <div class="row">
       <div class="col">
         <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC7" aria-expanded="false" aria-controls="collapseC7">
         Consulta 9
         </button>
 
-        <div class="collapse" id="collapseC7">
+        <div class="collapse" id="collapseC9">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Quieres saber todos los nombres distintos de las obras de arte?</h3>
 
@@ -211,7 +214,7 @@
         Consulta 10
         </button>
 
-        <div class="collapse" id="collapseC8">
+        <div class="collapse" id="collapseC10">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
 
@@ -226,13 +229,16 @@
       </div>
     </div>
 
+    <br>
+    <br>
+
     <div class="row">
       <div class="col">
         <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC7" aria-expanded="false" aria-controls="collapseC7">
         Consulta 11
         </button>
 
-        <div class="collapse" id="collapseC7">
+        <div class="collapse" id="collapseC11">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Quieres saber todos los nombres distintos de las obras de arte?</h3>
 
@@ -248,7 +254,7 @@
         Consulta 12
         </button>
 
-        <div class="collapse" id="collapseC8">
+        <div class="collapse" id="collapseC12">
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
 

@@ -8,19 +8,15 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  #Se obtiene el valor del input del paisgit add *
-  $pnombre = $_POST["pnombre"];
+  $nombre_artista = $_POST["nombre_artista"];
 
-  #Se construye la consulta como un string
-  $query = "SELECT DISTINCT Lugar.lnombre FROM Museo, Lugar, Obra, 
-            (SELECT * FROM Ciudad WHERE UPPER(Ciudad.pnombre) LIKE UPPER('%$nombre_pais%')) AS cd 
-            WHERE Lugar.lid = Obra.lid AND Obra.lid = Museo.lid AND 
-            Lugar.cid = cd.cid AND Obra.periodo = 'Renacimiento';";
-
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db_2 -> prepare($query);
-  $result -> execute();
-  $museos_renac = $result -> fetchAll();
+ 	$query = "SELECT Artista.anombre, Lugar.lnombre FROM Artista, Crea, Escultura, Obra, Lugar, Plaza WHERE Artista.aid=Crea.aid AND 
+   Crea.oid=Escultura.oid AND Escultura.oid=Obra.oid AND 
+   Obra.lid=Lugar.lid AND Lugar.lid=Plaza.lid AND UPPER(Artista.anombre) LIKE UPPER('%$nombre_artista%');";
+	$result = $db_2 -> prepare($query);
+	$result -> execute();
+	$plazas_artista = $result -> fetchAll();
+  ?>
   
   ?>
   <div class="container">
@@ -32,14 +28,15 @@
       <thead class="thead-dark">
 
         <tr style="text-align:center">
-          <th>Museos de <?php echo $pnombre ?> </th>
+          <th>Nombre Artista</th>
+          <th>Nombre Plaza</th>
         </tr>
       </thead>
       <tbody>
     
         <?php
-          foreach ($museos_renac as $museo) {
-            echo "<tr><td>$museo[0]</td></tr>";
+          foreach ($plazas_artista as $plaza) {
+            echo "<tr><td>$plaza[0]</td> <td>$plaza[1]</td> </tr>";
         }
         ?>
       </tbody>
