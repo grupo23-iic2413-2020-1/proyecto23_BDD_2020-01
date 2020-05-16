@@ -30,7 +30,7 @@
       <tbody>
     
         <?php
-          fforeach ($obras as $obra) {
+          foreach ($obras as $obra) {
             echo "<tr> <td>$obra[0]</td> </tr>";
         }
         ?>
