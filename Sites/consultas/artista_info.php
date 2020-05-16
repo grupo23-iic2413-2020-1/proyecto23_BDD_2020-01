@@ -8,6 +8,7 @@
   require("../config/conexion.php");
 
   $aid = $_GET['aid'];
+  $anombre = $_GET['anombre']
 
   #Se construye la consulta como un string
   $query = "SELECT * FROM (SELECT Artista.aid, Artista.anombre, Artista.fecha_nacimiento,
@@ -34,7 +35,7 @@
 
   <div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información sobre <?php echo $artistas[1] ?></h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información sobre <?php echo $anombre ?></h1>
 
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
@@ -66,7 +67,7 @@
   <br>
 	<div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Obras de <?php echo $artistas[1] ?></h1>
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Obras de <?php echo $anombre ?></h1>
 
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
