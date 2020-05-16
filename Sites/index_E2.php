@@ -160,10 +160,10 @@
 
         <div class="collapse" id="collapseC7">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Mostrar Artistas existentes?</h3>
+            <h3 align="center"> ¿Quieres saber todos los nombres distintos de las obras de arte?</h3>
 
             <form align="center" action="consultas/consulta_7.php" method="post">
-              <input class="btn btn-primary" type="submit" value="Ejecutar">
+              <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
         </div>
