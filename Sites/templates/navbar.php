@@ -30,8 +30,7 @@
           <a class="dropdown-item" href="#">Crear Itinerario</a>
         </div>
       </li>
-    </ul>
-    <ul class="navbar-nav my-2 my-lg-0">
+      <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item active">
         <a class="nav-link btn-outline-success" href="#">Registrarse</a>
       </li>
@@ -39,6 +38,8 @@
         <a class="nav-link btn-outline-secondary" href="#">Iniciar Sesion</a>
       </li>
     </ul>
+    </ul>
+    
   </div>
 </nav>
 <br>
