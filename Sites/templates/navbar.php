@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Splinter S.A.</a>
+  <a class="navbar-brand" href="~grupo23/">Splinter S.A.</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="~grupo23/">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/index_E2.php">Consultas E2</a>
+        <a class="nav-link" href="~grupo23/index_E2.php">Consultas E2</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/consultas/artistas.php">Artistas</a>
+        <a class="nav-link" href="~grupo23/consultas/artistas.php">Artistas</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Obras</a>
