@@ -180,7 +180,7 @@
 
             <form align="center" action="consultas/consulta_8.php" method="post">
               Artista:
-              <input class="w-25" type="text" name="anombre">
+              <input class="w-25" type="text" name="nombre_artista">
               <br/><br/>
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
