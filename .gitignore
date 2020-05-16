@@ -5,3 +5,4 @@
 .gitignore
 .profile
 .ssh/
+.psql_history

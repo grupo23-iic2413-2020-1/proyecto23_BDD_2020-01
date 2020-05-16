@@ -1,4 +1,5 @@
 <?php include('../templates/header.html');   ?>
+<?php include('../templates/navbar.php');   ?> 
 
 <body class= "bg-secondary text-white">
 <?php #Ingrese el identificador de un usuario. Muestre la cantidad de dinero que ha gastado el

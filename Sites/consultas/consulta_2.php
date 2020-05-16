@@ -1,4 +1,5 @@
 <?php include('../templates/header.html');   ?>
+<?php include('../templates/navbar.php');   ?> 
 
 <body class= "bg-secondary text-white">
 <?php #Ingrese el nombre de un pa´ıs. Muestre todos los nombres de las ciudades del pa´ıs con
