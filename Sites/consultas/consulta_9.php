@@ -12,7 +12,7 @@
   $nombre_pais = $_POST["nombre_pais"];
 
   #Se construye la consulta como un string
-  $query = "SELECT DISTINCT Lugar.lnombre, Ciudad.pnombre FROM Museo, Lugar, Obra, 
+  $query = "SELECT DISTINCT Lugar.lnombre, cd.pnombre FROM Museo, Lugar, Obra, 
             (SELECT * FROM Ciudad WHERE UPPER(Ciudad.pnombre) LIKE UPPER('%$nombre_pais%')) AS cd 
             WHERE Lugar.lid = Obra.lid AND Obra.lid = Museo.lid AND 
             Lugar.cid = cd.cid AND Obra.periodo = 'Renacimiento';";

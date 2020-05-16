@@ -213,7 +213,7 @@
       </div>
       <div class="col">
 
-      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC10" aria-expanded="false" aria-controls="collapseC8">
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC10" aria-expanded="false" aria-controls="collapseC8">
         Consulta 10
         </button>
 
