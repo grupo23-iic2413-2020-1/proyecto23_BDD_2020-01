@@ -219,12 +219,9 @@
 
         <div class="collapse" id="collapseC10">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
+            <h3 align="center"> Conocer cantidad de obras realizadas por artista</h3>
 
-            <form align="center" action="consultas/consulta_8.php" method="post">
-              Pais:
-              <input class="w-25" type="text" name="pnombre">
-              <br/><br/>
+            <form align="center" action="consultas/consulta_10.php" method="post">
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
@@ -243,9 +240,19 @@
 
         <div class="collapse" id="collapseC11">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Quieres saber todos los nombres distintos de las obras de arte?</h3>
+            <h3 align="center"> Ingresa hora llegada, hora salida y ciudad</h3>
 
-            <form align="center" action="consultas/consulta_7.php" method="post">
+            <form align="center" action="consultas/consulta_11.php" method="post">
+            Hora llegada:
+            <input class="w-25" type="text" name="hora_llegada">
+            <br/><br/>
+            Hora salida:
+            <input class="w-25" type="text" name="hora_salida">
+            <br/><br/>
+            Nombre ciudad:
+            <input class="w-25" type="text" name="nombre_ciudad">
+            <br/><br/>
+    <input type="submit" value="Buscar">
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
@@ -259,12 +266,9 @@
 
         <div class="collapse" id="collapseC12">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Buscar museos con obras del renacimiento de algún país?</h3>
+            <h3 align="center"> Conocer los lugares que contengan obras de todos los periodos</h3>
 
-            <form align="center" action="consultas/consulta_8.php" method="post">
-              Pais:
-              <input class="w-25" type="text" name="pnombre">
-              <br/><br/>
+            <form align="center" action="consultas/consulta_12.php" method="post">
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
           </div>
@@ -288,10 +292,19 @@
     <p class= "text-white" align="left">  Consulta 6: Ingrese dos fechas en formato YYYY-MM-DD: una de inicio y una de fin y se mostrarán el id,
       nombre de usuario y el total de dinero gastado en tickets entre esas dos fechas, ambas
       inclusive.</p>
-    <p class= "text-white" align="left">  Consulta 7: Muestra todos los artistas de la base de datos</p>
-    <p class= "text-white" align="left">  Consulta 8: Ingrese un país y se presentarán todos los museos del país que contengan obras del renacimiento</p>
+    <p class= "text-white" align="left">  Consulta 7: Muestra el nombre de todas las obras</p>
+    <p class= "text-white" align="left">  Consulta 8: Muestre todos los museos que tengan obras del renacimiento</p>
+    <p class= "text-white" align="left">  Consulta 9: Ingrese el nombre de un pas. Muestre el nombre de todos los museos de ese país que tengan obras del renacimiento</p>
+    <p class= "text-white" align="left">  Consulta 10: Para cada artista, entregue su nombre y el numero de obras en las que ha participado</p>
+    <p class= "text-white" align="left">  Consulta 11: Ingrese una hora de apertura en formato hh:mm:ss, una hora de cierre y una ciudad.
+Muestre los nombres de las iglesias ubicadas en esa ciudad, abiertas entre esas horas
+(inclusive) junto a todos los nombres de los frescos que encuentra en cada una de ellas.
+Una la por cada tupla.</p>
+    <p class= "text-white" align="left">  Consulta 12: Encuentre el nombre de cada museo, plaza o iglesia que tenga obras de todos los
+periodos del arte que existan en la base de datos.</p>
   </div>
   <br>
   <br>
 </body>
 </html>
+

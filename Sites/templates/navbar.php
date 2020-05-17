@@ -10,7 +10,7 @@
         <a class="nav-link" href="/~grupo23/index.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/~grupo23/index_E2.php">Consultas E2</a>
+        <a class="nav-link" href="/~grupo23/index_E2.php">Preguntas Frecuentes</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="/~grupo23/consultas/artistas.php">Artistas</a>
