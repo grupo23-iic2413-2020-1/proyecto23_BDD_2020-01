@@ -11,8 +11,8 @@
   $nombre_artista = $_POST["nombre_artista"];
 
  	$query = "SELECT Artista.anombre, Lugar.lnombre FROM Artista, Crea, Escultura, Obra, Lugar, Plaza WHERE Artista.aid=Crea.aid AND 
-   Crea.oid=Escultura.oid AND Escultura.oid=Obra.oid AND 
-   Obra.lid=Lugar.lid AND Lugar.lid=Plaza.lid AND UPPER(Artista.anombre) LIKE UPPER('%$nombre_artista%');";
+            Crea.oid=Escultura.oid AND Escultura.oid=Obra.oid AND 
+            Obra.lid=Lugar.lid AND Lugar.lid=Plaza.lid AND UPPER(Artista.anombre) LIKE UPPER('%$nombre_artista%');";
 	$result = $db_2 -> prepare($query);
 	$result -> execute();
 	$plazas_artista = $result -> fetchAll();
