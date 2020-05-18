@@ -24,7 +24,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Realizar Reserva</a>
-          <a class="dropdown-item" href="../navegacion/itinerario.php">Crear Itinerario</a>
+          <a class="dropdown-item" href="/~grupo23/navegacion/itinerario.php">Crear Itinerario</a>
         </div>
       </li>
       
