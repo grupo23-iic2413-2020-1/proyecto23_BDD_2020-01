@@ -13,10 +13,7 @@
         <a class="nav-link" href="/~grupo23/index_E2.php">Preguntas Frecuentes</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/~grupo23/consultas/artistas.php">Artistas</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Obras</a>
+        <a class="nav-link" href="/~grupo23/navegacion/artistas.php">Artistas</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Hoteles</a>

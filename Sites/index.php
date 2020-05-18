@@ -37,7 +37,7 @@
         <div class="card bg-secondary">
           <h1>Conoce a nuestros artistas</h1>
           <p>Aquí, puedes explorar a todos los artistas disponibles para crear tu viaje, conocer sus obras, donde se presentan estas y mucho más.</p>
-          <a role="button" href="/~grupo23/consultas/artistas.php" class="btn btn-success">Ir</a>
+          <a role="button" href="/~grupo23/navegacion/artistas.php" class="btn btn-success">Ir</a>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
           <div class="card card-body bg-secondary text-white">
             <h3 align="center"> ¿Mostrar Artistas existentes?</h3>
 
-            <form align="center" action="consultas/artistas.php" method="post">
+            <form align="center" action="navegacion/artistas.php" method="post">
               <input class="btn btn-primary" type="submit" value="Ejecutar">
             </form>
           </div>
