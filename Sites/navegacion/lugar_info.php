@@ -28,7 +28,7 @@
   $result_2 -> execute();
   $iglesias = $result_2 -> fetchAll();
 
-  $query_3 = "SELECT Lugar.lid, Lugar.lnombre, Ciudad.cnombre, Ciudad.pnombre, 
+  $query_3 = "SELECT Lugar.lid, Lugar.lnombre, Ciudad.cnombre, Ciudad.pnombre 
               FROM Lugar, Ciudad, Plaza WHERE Lugar.cid = Ciudad.cid 
               AND Lugar.lid = Plaza.lid AND Lugar.lid = $lid";
   $result_3 = $db_2 -> prepare($query_3);
