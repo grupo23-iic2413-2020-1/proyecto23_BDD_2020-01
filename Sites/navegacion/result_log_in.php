@@ -28,7 +28,7 @@
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];    
-      echo 'Ingreso exitoso';
+    echo 'Ingreso exitoso', $_SESSION["loggedin"], $_SESSION["current_uid"], $_SESSION["current_username"];
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
   }
