@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-success" href="/~grupo23/index.php"><b>Splinter S.A.</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +31,7 @@
       </li>
       
     </ul>
-    <?php if($current_user[0] == NULL) { ?>
+    <?php if(isset($_SESSION["loggedin"]) == False or $_SESSION["loggedin"] == False) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
           <a class="nav-link btn-outline-success" href="/~grupo23/navegacion/registration.php">Registrarse</a>
@@ -37,14 +39,11 @@
         <li class="nav-item active">
           <a class="nav-link btn-outline-secondary" href="/~grupo23/navegacion/log_in.php">Iniciar Sesion</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link btn-outline-secondary" href="#"><?php echo $current_user[1]; ?></a>
-        </li>
       </ul> 
     <?php } else { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#"><?php echo $current_user[1]; ?></a>
+          <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
         </li>
       </ul>
     <?php } ?>

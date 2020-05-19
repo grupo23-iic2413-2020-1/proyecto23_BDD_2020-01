@@ -25,7 +25,9 @@
   $user = $result -> fetchAll();
 
   if ($user[0][0] != Null) {
-      $current_user = $user[0];
+    $_SESSION["loggedin"] = True;
+    $_SESSION["current_uid"] = $user[0][0];
+    $_SESSION["current_username"] = $user[0][1];    
       echo 'Ingreso exitoso';
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
