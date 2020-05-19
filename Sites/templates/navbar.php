@@ -31,7 +31,7 @@
       </li>
       
     </ul>
-    <?php if ($_SESSION["loggedin"] == True) { ?>
+    <?php if ($_SESSION["loggedin"] == 1) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
           <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
