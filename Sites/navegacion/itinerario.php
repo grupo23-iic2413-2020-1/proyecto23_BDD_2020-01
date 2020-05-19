@@ -57,7 +57,7 @@
   
   <br>
 
-  <input class="btn btn-primary" type="submit" value="Crear Itinerario">
+  <input class="btn btn-primary" align="center" type="submit" value="Crear Itinerario">
   </form>
 
   <br>
