@@ -26,7 +26,8 @@
 
   if ($user[0][0] != Null) {
       $current_user = $user[0];
-
+      header("Location: http://codd.ing.puc.cl/~grupo23/index.php");
+      exit();
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
   }
