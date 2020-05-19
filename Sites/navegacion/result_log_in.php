@@ -25,9 +25,9 @@
   $user = $result -> fetchAll();
 
   if ($user[0][0] != Null) {
-      $current_user = $user[0];
-      header("Location: http://codd.ing.puc.cl/~grupo23/index.php");
-      exit();
+      $current_user = $user[0];?>
+      <meta http-equiv="Refresh" content="7"; href="/~grupo23/index.php" />
+<?php
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
   }
