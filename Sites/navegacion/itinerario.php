@@ -11,21 +11,27 @@
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db_2 -> prepare($query);
 	$result -> execute();
-	$artistas = $result -> fetchAll();
+  $artistas = $result -> fetchAll();
+  
+  $query_2 = "SELECT cnombre, cid FROM Ciudad;";
+
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result_2 = $db_2 -> prepare($query);
+	$result_2 -> execute();
+	$ciudades = $result_2 -> fetchAll();
 
 ?>
 
 
-<button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC11" aria-expanded="false" aria-controls="collapseC7">
+<button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC7">
   Elige tu fecha
   </button>
 
-  <div class="collapse" id="collapseC11">
+  <div class="collapse" id="collapseC1">
     <div class="card card-body bg-secondary text-white">
-      <form action="/action_page.php">
+      <form align="center" action="#" method="post">
         <label for="birthdaytime">Fecha: </label>
-        <input type="date" id="birthdaytime" name="birthdaytime">
-        <input class="btn btn-primary" type="submit" value="Buscar">
+        <input style="font-size: 3rem" type="date" id="birthdaytime" name="birthdaytime">
       </form>
       <br/><br/>
       </div>
@@ -35,63 +41,49 @@
 
 <div class="row">
       <div class="col">
-        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
-        Artistas
+        <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC1">
+        Elige a tus artistas
         </button>
 
-        <div class="collapse" id="collapseC1">
+        <div class="collapse" id="collapseC2">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Mostrar Usuarios y Correos?</h3>
-
-            <form align="center" action="consultas/consulta_1.php" method="post">
-              <input class="btn btn-primary" type="submit" value="Ejecutar">
+            <form align="center" action="#" method="post">
+              <p>
+              Artistas:<br>
+              <?php
+                foreach ($artistas as $artista) {
+                echo "<label><input type='checkbox' name=$artista[1] value='gusta'> $artista[0]</label><br>";
+              }
+              ?>
             </form>
           </div>
         </div>
       </div>
       <div class="col">
 
-      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC2" aria-expanded="false" aria-controls="collapseC2">
-        Consulta 2
+      <button class="btn btn-success btn-lg" type="button" data-toggle="collapse" data-target="#collapseC3" aria-expanded="false" aria-controls="collapseC2">
+        Ciudades
         </button>
 
-        <div class="collapse" id="collapseC2">
+        <div class="collapse" id="collapseC3">
           <div class="card card-body bg-secondary text-white">
-            <h3 align="center"> ¿Buscar ciudades de un país?</h3>
-
-            <form align="center" action="consultas/consulta_2.php" method="post">
-              Pais:
-              <input class="w-25" type="text" name="pnombre">
-              <br/><br/>
-              <input class="btn btn-primary" type="submit" value="Buscar">
-            </form>
+            <div class="container">
+              <!--<h3 align="center"> Elige una ciudad</h3>-->
+                <div class="form-group">
+                  <label for="sel1">Elige una ciudad</label>
+                  <select class="form-control" id="sel1">
+                    <?php
+                      foreach ($ciudades as $ciudad) {
+                      echo "<option name=$ciudad[1]>$ciudad[0]</option>";
+                      }
+                    ?>
+                  </select>
+                </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="container">
-
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Artistas</h1>
-
-    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
-
-      <thead class="thead-dark">
-        <tr style="text-align:center">
-          <th>Artista</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <?php
-          foreach ($artistas as $artista) {
-            echo "<tr><td><a href='artista_info.php?aid=$artista[1]&anombre=$artista[0]'>$artista[0]</a></td></tr>";
-        }
-        ?>
-      </tbody>
-        
-    </table>
   </div>
 
 <?php include('../templates/footer.html'); ?>
