@@ -28,11 +28,9 @@ include('../templates/navbar.php');   ?>
   if ($user[0][0] != Null) {
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
-    $_SESSION["current_username"] = $user[0][1];    
-    echo 'Ingreso exitoso ', $_SESSION["loggedin"], $_SESSION["current_uid"], $_SESSION["current_username"];
-    ?>
-    <meta http-equiv="refresh" content="0;url=http://codd.ing.puc.cl/~grupo23/index.php">
-    <?php
+    $_SESSION["current_username"] = $user[0][1];
+    header("location: /~grupo23/index.php");
+    exit;
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
   }

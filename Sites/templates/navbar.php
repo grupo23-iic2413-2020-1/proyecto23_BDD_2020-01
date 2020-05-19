@@ -34,7 +34,7 @@
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <strong><?php echo $_SESSION['current_username'] ?></strong>
+            <?php echo $_SESSION['current_username'] ?>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href='/~grupo23/navegacion/perfil.php'> Perfil </a>
