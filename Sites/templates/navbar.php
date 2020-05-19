@@ -31,7 +31,7 @@
       </li>
       
     </ul>
-    <?php if (isset($_SESSION["loggedin"])) { ?>
+    <?php if ($_SESSION["loggedin"] == True) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
           <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
@@ -44,6 +44,9 @@
         </li>
         <li class="nav-item active">
           <a class="nav-link btn-outline-secondary" href="/~grupo23/navegacion/log_in.php">Iniciar Sesion</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
         </li>
       </ul> 
       
