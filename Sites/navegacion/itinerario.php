@@ -29,9 +29,9 @@
 
   <div class="collapse" id="collapseC1">
     <div class="card card-body bg-secondary text-white">
-      <form align="center" action="#" method="post">
+      <form align="left" action="#" method="post">
         <label for="birthdaytime">Fecha: </label>
-        <input style="width: 10em; height: 1em; font-size: 20px" type="date" id="birthdaytime" name="birthdaytime">
+        <input style="width: 10em; height: 1em; font-size: 25px color: black" type="date" id="birthdaytime" name="birthdaytime">
       </form>
       <br/><br/>
       </div>
@@ -47,7 +47,7 @@
 
         <div class="collapse" id="collapseC2">
           <div class="card card-body bg-secondary text-white">
-            <form align="center" action="#" method="post">
+            <form align="left" action="#" method="post">
               <p>
               Artistas:<br>
               <?php
@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-    </div>
+ 
   </div>
 
 <?php include('../templates/footer.html'); ?>
