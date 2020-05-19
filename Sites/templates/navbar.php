@@ -32,8 +32,15 @@
     </ul>
     <?php if ($_SESSION["loggedin"] == 1) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <strong><?php echo $_SESSION['current_username'] ?></strong>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href='/navegacion/perfil.php'> > Perfil </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href='#'> Cerrar sesión </a>
+          </div>
         </li>
       </ul>
     <?php } else { ?>
