@@ -3,7 +3,7 @@
 <body class= "bg-secondary text-white">
     <div class="container">
         <div class="row justify-content-md-center">
-            <h2> La contraseña es incorrecta </h2>
+            <h2> No existe ese nombre de usuario </h2>
         </div>
     </div>
 </body>

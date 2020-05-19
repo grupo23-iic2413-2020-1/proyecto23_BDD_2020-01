@@ -1,4 +1,5 @@
 <?php session_start();
+ob_start();
 ?> 
 
 <?php
@@ -53,4 +54,6 @@
     header("location: /~grupo23/index.php");
     exit;
   }
+
+ob_end_flush();
 ?>
