@@ -1,6 +1,5 @@
 <?php session_start();
-include('../templates/header.html');   
-include('../templates/navbar.php');   ?> 
+?> 
 
 <?php
 
@@ -29,11 +28,12 @@ include('../templates/navbar.php');   ?>
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];
-    ?>
-    <meta http-equiv="refresh" content="0;url=http://codd.ing.puc.cl/~grupo23/index.php">
-    <?php
+    header("location: /~grupo23/index.php");
+    exit;
   } else { 
-      echo 'La combinación de usuario y contraseña no son correctos';
+    include('../templates/header.html');   
+    include('../templates/navbar.php');   
+    echo 'La combinación de usuario y contraseña no son correctos';
+    include('../templates/footer.html');
   }
 ?>
-<?php include('../templates/footer.html'); ?>
