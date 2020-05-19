@@ -10,15 +10,15 @@
 
   $fecha = $_POST["fecha"];
   $artistas = $_POST['artistas'];
-  $ciudad = $_POST["ciudad.$value"];
+  $ciudad = $_POST["ciudad"];
 
-  echo "<p>$fecha</p><br><p>$ciudad</p><br>'";
+  echo "<p>$fecha</p><br><p>$ciudad.value</p><br>'";
 
   if(isset($_POST['artistas'])){
 
     if(!empty($_POST['artistas'])) {    
         foreach($_POST['artistas'] as $value){
-            echo "value : ".$value.'<br/>';
+            echo "Id artista : ".$value.'<br/>';
         }
     }
 
