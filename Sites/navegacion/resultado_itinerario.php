@@ -18,7 +18,7 @@
 
     if(!empty($_POST['artistas'])) {    
         foreach($_POST['artistas'] as $value){
-            echo Id artista : ".$value.'<br/>';
+            echo "Id artista : ".$value.'<br/>';
         }
     }
 
