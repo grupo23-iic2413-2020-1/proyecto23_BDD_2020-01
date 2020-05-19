@@ -20,7 +20,7 @@
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
   $result -> bindParam(1, $username);
-  $result -> bindParam(1, $password);
+  $result -> bindParam(2, $password);
   $result -> execute();
   $user = $result -> fetchAll();
 
