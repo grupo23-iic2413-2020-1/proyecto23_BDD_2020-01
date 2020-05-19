@@ -24,10 +24,11 @@
   $result -> execute();
   $user = $result -> fetchAll();
 
-  if ($user != Null) {
-      $current_user = $user;
+  if ($user[0] != Null) {
+      $current_user = $user[0];
       echo $username;
   } else { 
+      echo $username;
       echo 'La combinación de usuario y contraseña no son correctos';
   }
 ?>
