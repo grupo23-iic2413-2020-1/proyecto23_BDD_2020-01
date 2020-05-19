@@ -55,7 +55,7 @@ include('templates/header.html');   ?>
 <!-- End Carousel -->
 <body class= "bg-secondary text-white">
   <div class="container">
-    
+    <p class= "text-white" align="center">Usuario? <?php echo $_SESSION['logged_in'];?></p>
     <br>
     <br>
 
