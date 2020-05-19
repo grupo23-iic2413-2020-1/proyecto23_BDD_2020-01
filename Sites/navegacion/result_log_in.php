@@ -28,8 +28,9 @@
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];
-    header("location: /~grupo23/index.php");
-    exit;
+    ?>
+    <meta http-equiv="refresh" content="0;url=http://codd.ing.puc.cl/~grupo23/index.php">
+    <?php
   } else { 
     include('../templates/header.html');   
     include('../templates/navbar.php');   
