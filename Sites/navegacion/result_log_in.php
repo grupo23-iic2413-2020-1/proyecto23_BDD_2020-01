@@ -28,13 +28,24 @@
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];
-    ?>
-    <meta http-equiv="refresh" content="0;url=http://codd.ing.puc.cl/~grupo23/index.php">
-    <?php
-  } else { 
-    include('../templates/header.html');   
-    include('../templates/navbar.php');   
-    echo 'La combinación de usuario y contraseña no son correctos';
-    include('../templates/footer.html');
+    header("location: /~grupo23/index.php");
+      exit;
+  } 
+  else { 
+    $query = "SELECT Usuarios.username FROM Usuarios WHERE Usuarios.username = ?";
+
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result = $db -> prepare($query);
+    $result -> bindParam(1, $username);
+    $result -> execute();
+    $user = $result -> fetchAll();
+    if ($user[0] != Null) {
+      header("location: /~grupo23/errores/log_in1.php");
+      exit;
+    }
+    else {
+      header("location: /~grupo23/errores/log_in2.php");
+      exit;
+    }
   }
 ?>

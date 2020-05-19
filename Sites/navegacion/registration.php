@@ -11,22 +11,32 @@
             <form class="form-signin" action="result_registration.php" method="post">
               <div class="form-label-group">
                 <label for="inputUserame">Username</label>
-                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>  
+                <input type="text" name='username' id="inputUserame" class="form-control" placeholder="Username" required autofocus>  
               </div>
 
               <div class="form-label-group">
                 <label for="inputEmail">Correo electónico</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Correo electónico" required>
+                <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Correo electónico" required>
+              </div>
+
+              <div class="form-label-group">
+                <label for="inputEmail">Nombre y Apellido</label>
+                <input type="text" name='unombre' id="inputEmail" class="form-control" placeholder="Correo electónico" required>
+              </div>
+
+              <div class="form-label-group">
+                <label for="inputEmail">Dirección</label>
+                <input type="text" name='udir' id="inputEmail" class="form-control" placeholder="Correo electónico" required>
               </div>
 
               <div class="form-label-group">
                 <label for="inputPassword">Contraseña</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Contraseña" required>
               </div>
               
               <div class="form-label-group">
                 <label for="inputConfirmPassword">Confirmar contraseña</label>
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirmar contraseña" required>
+                <input type="password" name='password_confirm' id="inputConfirmPassword" class="form-control" placeholder="Confirmar contraseña" required>
               </div>
 
               <br>
