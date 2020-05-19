@@ -26,7 +26,8 @@
 
   if ($user[0] != Null) {
       $current_user = $user[0];
-      echo $username;
+      echo 'Usuario Actual: ';
+      echo $current_user; 
   } else { 
       echo $username;
       echo 'La combinación de usuario y contraseña no son correctos';
