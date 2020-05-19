@@ -29,7 +29,7 @@
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];
     header("location: /~grupo23/index.php");
-      exit;
+      die;
   } 
   else { 
     $query = "SELECT Usuarios.username FROM Usuarios WHERE Usuarios.username = ?";
@@ -41,11 +41,11 @@
     $user = $result -> fetchAll();
     if ($user[0] != Null) {
       header("location: /~grupo23/errores/log_in1.php");
-      exit;
+      die;
     }
     else {
       header("location: /~grupo23/errores/log_in2.php");
-      exit;
+      die;
     }
   }
 ?>
