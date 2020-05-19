@@ -37,9 +37,9 @@
             <strong><?php echo $_SESSION['current_username'] ?></strong>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href='/navegacion/perfil.php'> > Perfil </a>
+            <a class="dropdown-item" href='/~grupo23/navegacion/perfil.php'> Perfil </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href='#'> Cerrar sesión </a>
+            <a class="dropdown-item" href='/~grupo23/navegacion/log_out.php'> Cerrar sesión </a>
           </div>
         </li>
       </ul>

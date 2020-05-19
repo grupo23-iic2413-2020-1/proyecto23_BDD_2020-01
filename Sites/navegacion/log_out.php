@@ -7,6 +7,6 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to login page
-header("location: index.php");
+header("location: /~grupo23/index.php");
 exit;
 ?>
