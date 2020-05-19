@@ -29,7 +29,7 @@
       </li>
       
     </ul>
-    <?php if($current_user == NULL) { ?>
+    <?php if($current_user[0] == NULL) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
           <a class="nav-link btn-outline-success" href="/~grupo23/navegacion/registration.php">Registrarse</a>
@@ -41,7 +41,7 @@
     <?php } else { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">My Profile</a>
+          <a class="nav-link" href="#"><?php echo $current_user[1]; ?></a>
         </li>
       </ul>
     <?php } ?>

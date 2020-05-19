@@ -15,7 +15,7 @@
 
 
   #Se construye la consulta como un string
-  $query = "SELECT Usuarios.uid FROM Usuarios WHERE Usuarios.username = ? and Usuarios.password = ?";
+  $query = "SELECT Usuarios.uid, Usuarios.username FROM Usuarios WHERE Usuarios.username = ? and Usuarios.password = ?";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
@@ -25,11 +25,9 @@
   $user = $result -> fetchAll();
 
   if ($user[0][0] != Null) {
-      $current_user = $user[0][0];
-      echo 'Usuario Actual: ';
-      echo $current_user; 
+      $current_user = $user[0];
+
   } else { 
-      echo $username;
       echo 'La combinación de usuario y contraseña no son correctos';
   }
 ?>
