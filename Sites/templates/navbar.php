@@ -37,6 +37,9 @@
         <li class="nav-item active">
           <a class="nav-link btn-outline-secondary" href="/~grupo23/navegacion/log_in.php">Iniciar Sesion</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link btn-outline-secondary" href="#"><?php echo $current_user[1]; ?></a>
+        </li>
       </ul> 
     <?php } else { ?>
       <ul class="navbar-nav my-2 my-lg-0">
