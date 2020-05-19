@@ -54,7 +54,6 @@ include('templates/navbar.php');   ?>
 <!-- End Carousel -->
 <body class= "bg-secondary text-white">
   <div class="container">
-    <p class= "text-white" align="center"><?php echo htmlspecialchars($_SESSION["loggedin"]);?></p>
     <br>
     <br>
 
