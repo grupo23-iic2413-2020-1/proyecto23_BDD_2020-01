@@ -26,7 +26,7 @@ $user = $result -> fetchAll();
                     <h5><b>Nombre: </b> <?php echo $user[0][1] ?> </h5>
                 </div>
                 <div>
-                    h5><b>Mail: </b> <?php echo $user[0][2] ?> </h5>
+                    <h5><b>Mail: </b> <?php echo $user[0][2] ?> </h5>
                 </div>
                 <div>
                     <h5><b>Dirección: </b> <?php echo $user[0][3] ?> </h5>
