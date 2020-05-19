@@ -29,8 +29,9 @@
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];    
     echo 'Ingreso exitoso', $_SESSION["loggedin"], $_SESSION["current_uid"], $_SESSION["current_username"];
-    header("location: index.php");
-    exit;
+    ?>
+    <meta http-equiv="refresh" content="0;url=finalpage.html">
+    <?php
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
   }
