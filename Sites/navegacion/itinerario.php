@@ -22,36 +22,33 @@
 
 ?>
 
-  <form align="left" action="#" method="post">
-    <label for="birthdaytime">   Fecha: </label>
-    <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" id="birthdaytime" name="birthdaytime">
-  </form>
+<form align="center" action="resultado_itinerario.php" method="post">
+<div class="card card-body bg-secondary text-white">
+    <label for="birthdaytime"> Elegir fecha: </label>
+    <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'>
+</div>
 
-  <br>
   <br>
 
   <div class="card card-body bg-secondary text-white">
-    <form align="left" action="#" method="post">
       <p>
-       Artistas:<br>
+       Elegir artistas:<br>
       <?php
         foreach ($artistas as $artista) {
-          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name=$artista[1] value='yes'> $artista[0]</label><br>";
+          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name='artistas[]' value='$artista[1]'> $artista[0]</label><br>";
         }
       ?>
-    </form>
   </div>
   
-  <br>
   <br>
 
   <div class="card card-body bg-secondary text-white">
     <div class="form-group">
-      <label for="sel1"> Elige una ciudad</label>
+      <label for="sel1"> Elegir ciudad de origen</label>
       <select class="form-control" id="sel1">
       <?php
         foreach ($ciudades as $ciudad) {
-          echo "<option name=$ciudad[1] value='ok'>$ciudad[0]</option>";
+          echo "<option name='ciudad' value='$ciudad[1]'>$ciudad[0]</option>";
         }
       ?>
       </select>
@@ -59,6 +56,10 @@
   </div>
   
   <br>
+
+  <input class="btn btn-primary" type="submit" value="Crear Itinerario">
+  </form>
+
   <br>
 
 <?php include('../templates/footer.html'); ?>
