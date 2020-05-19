@@ -1,5 +1,6 @@
 <?php session_start();
-?> 
+ob_start();
+?>
 
 <?php
 
@@ -48,4 +49,6 @@
       die;
     }
   }
+
+ob_end_flush();
 ?>
