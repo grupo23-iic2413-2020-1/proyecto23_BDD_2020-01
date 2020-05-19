@@ -23,8 +23,8 @@
 ?>
 
   <form align="left" action="#" method="post">
-    <label for="birthdaytime">Fecha: </label>
-    <input style="width: 10em; height: 1em; font-size: 25px color: black" type="date" id="birthdaytime" name="birthdaytime">
+    <label for="birthdaytime">   Fecha: </label>
+    <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" id="birthdaytime" name="birthdaytime">
   </form>
 
   <br>
@@ -33,10 +33,10 @@
   <div class="card card-body bg-secondary text-white">
     <form align="left" action="#" method="post">
       <p>
-      Artistas:<br>
+       Artistas:<br>
       <?php
         foreach ($artistas as $artista) {
-          echo "<label><input type='checkbox' name=$artista[1] value='yes'> $artista[0]</label><br>";
+          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name=$artista[1] value='yes'> $artista[0]</label><br>";
         }
       ?>
     </form>
@@ -47,7 +47,7 @@
 
   <div class="card card-body bg-secondary text-white">
     <div class="form-group">
-      <label for="sel1">Elige una ciudad</label>
+      <label for="sel1"> Elige una ciudad</label>
       <select class="form-control" id="sel1">
       <?php
         foreach ($ciudades as $ciudad) {
