@@ -15,18 +15,20 @@
 
 
   #Se construye la consulta como un string
-  $query = "SELECT Usuarios.uid FROM Usuarios WHERE Usuarios.username = ?";
+  $query = "SELECT Usuarios.uid FROM Usuarios WHERE Usuarios.username = ? and Usuarios.password = ?";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
-  $result -> bindParam(1, $uid);
+  $result -> bindParam(1, $username);
+  $result -> bindParam(1, $password);
   $result -> execute();
   $user = $result -> fetchAll();
 
   if ($user != Null) {
       $current_user = $user;
+      echo $username;
   } else { 
-      echo 'no existe ese usuario';
+      echo 'La combinación de usuario y contraseña no son correctos';
   }
 ?>
 <?php include('../templates/footer.html'); ?>
