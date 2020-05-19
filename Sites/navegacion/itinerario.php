@@ -16,7 +16,7 @@
   $query_2 = "SELECT cnombre, cid FROM Ciudad;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result_2 = $db_2 -> prepare($query);
+  $result_2 = $db_2 -> prepare($query_2);
 	$result_2 -> execute();
 	$ciudades = $result_2 -> fetchAll();
 
@@ -31,7 +31,7 @@
     <div class="card card-body bg-secondary text-white">
       <form align="center" action="#" method="post">
         <label for="birthdaytime">Fecha: </label>
-        <input style="font-size: 3rem" type="date" id="birthdaytime" name="birthdaytime">
+        <input style="width: 10em; height: 1em; font-size: 20px" type="date" id="birthdaytime" name="birthdaytime">
       </form>
       <br/><br/>
       </div>
@@ -52,7 +52,7 @@
               Artistas:<br>
               <?php
                 foreach ($artistas as $artista) {
-                echo "<label><input type='checkbox' name=$artista[1] value='gusta'> $artista[0]</label><br>";
+                echo "<label><input type='checkbox' name=$artista[1] value='yes'> $artista[0]</label><br>";
               }
               ?>
             </form>
@@ -74,7 +74,7 @@
                   <select class="form-control" id="sel1">
                     <?php
                       foreach ($ciudades as $ciudad) {
-                      echo "<option name=$ciudad[1]>$ciudad[0]</option>";
+                      echo "<option name=$ciudad[1] value='ok'>$ciudad[0]</option>";
                       }
                     ?>
                   </select>
