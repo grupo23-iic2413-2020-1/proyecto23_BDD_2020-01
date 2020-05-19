@@ -24,8 +24,8 @@
   $result -> execute();
   $user = $result -> fetchAll();
 
-  if ($user[0] != Null) {
-      $current_user = $user[0];
+  if ($user[0][0] != Null) {
+      $current_user = $user[0][0];
       echo 'Usuario Actual: ';
       echo $current_user; 
   } else { 
