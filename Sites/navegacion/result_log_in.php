@@ -1,5 +1,6 @@
-<?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php');   ?> 
+<?php session_start();
+include('templates/header.html');   
+include('templates/navbar.php');   ?> 
 
 <?php
 
@@ -25,13 +26,12 @@
   $user = $result -> fetchAll();
 
   if ($user[0][0] != Null) {
-    session_start();
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];    
     echo 'Ingreso exitoso ', $_SESSION["loggedin"], $_SESSION["current_uid"], $_SESSION["current_username"];
     ?>
-    <meta http-equiv="refresh" content="0;url=http://codd.ing.puc.cl/~grupo23/index.php">
+    <!-- <meta http-equiv="refresh" content="0;url=http://codd.ing.puc.cl/~grupo23/index.php"> -->
     <?php
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
