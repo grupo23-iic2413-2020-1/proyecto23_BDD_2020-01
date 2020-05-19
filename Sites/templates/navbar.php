@@ -32,10 +32,10 @@
     <?php if($current_user == NULL) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
-          <a class="nav-link btn-outline-success" href="~grupo23/navegacion/registration.php">Registrarse</a>
+          <a class="nav-link btn-outline-success" href="/~grupo23/navegacion/registration.php">Registrarse</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link btn-outline-secondary" href="~grupo23/navegacion/log_in.php">Iniciar Sesion</a>
+          <a class="nav-link btn-outline-secondary" href="/~grupo23/navegacion/log_in.php">Iniciar Sesion</a>
         </li>
       </ul> 
     <?php } else { ?>
