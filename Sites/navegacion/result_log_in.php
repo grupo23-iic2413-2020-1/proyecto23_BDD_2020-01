@@ -25,7 +25,6 @@
   $user = $result -> fetchAll();
 
   if ($user[0][0] != Null) {
-    session_start();
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];    
