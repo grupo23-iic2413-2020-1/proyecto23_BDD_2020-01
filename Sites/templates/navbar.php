@@ -31,7 +31,13 @@
       </li>
       
     </ul>
-    <?php if(isset($_SESSION["loggedin"]) == False or $_SESSION["loggedin"] == False) { ?>
+    <?php if (isset($_SESSION["loggedin"])) { ?>
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
+        </li>
+      </ul>
+    <?php } else { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
           <a class="nav-link btn-outline-success" href="/~grupo23/navegacion/registration.php">Registrarse</a>
@@ -40,12 +46,7 @@
           <a class="nav-link btn-outline-secondary" href="/~grupo23/navegacion/log_in.php">Iniciar Sesion</a>
         </li>
       </ul> 
-    <?php } else { ?>
-      <ul class="navbar-nav my-2 my-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>
-        </li>
-      </ul>
+      
     <?php } ?>
   </div>
 </nav>
