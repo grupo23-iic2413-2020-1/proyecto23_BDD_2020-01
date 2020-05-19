@@ -25,9 +25,8 @@
   $user = $result -> fetchAll();
 
   if ($user[0][0] != Null) {
-      $current_user = $user[0];?>
-      <meta http-equiv="Refresh" content="7"; href="/~grupo23/index.php" />
-<?php
+      $current_user = $user[0];
+      echo 'Ingreso exitoso';
   } else { 
       echo 'La combinación de usuario y contraseña no son correctos';
   }
