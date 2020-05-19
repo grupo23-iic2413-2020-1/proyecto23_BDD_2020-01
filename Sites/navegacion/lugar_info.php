@@ -31,9 +31,9 @@
   $query_3 = "SELECT Lugar.lid, Lugar.lnombre, Ciudad.cnombre, Ciudad.pnombre, 
               FROM Lugar, Ciudad, Plaza WHERE Lugar.cid = Ciudad.cid 
               AND Lugar.lid = Plaza.lid AND Lugar.lid = $lid";
-  $result_3 = $db_2 -> prepare($query_2);
+  $result_3 = $db_2 -> prepare($query_3);
   $result_3 -> execute();
-  $plazas = $result_2 -> fetchAll();
+  $plazas = $result_3 -> fetchAll();
 ?>
 
   <div class="container">
