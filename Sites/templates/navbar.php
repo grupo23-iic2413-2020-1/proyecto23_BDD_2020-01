@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-success" href="/~grupo23/index.php"><b>Splinter S.A.</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

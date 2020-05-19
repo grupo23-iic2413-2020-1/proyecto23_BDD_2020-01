@@ -1,7 +1,6 @@
 <?php session_start();
-include('templates/header.html');   ?>
-
-<?php include('templates/navbar.php');   ?> 
+include('templates/header.html');   
+include('templates/navbar.php');   ?> 
 
 <!-- Carousel -->
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
