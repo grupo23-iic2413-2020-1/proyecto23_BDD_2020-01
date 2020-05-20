@@ -39,7 +39,7 @@ ob_start();
     $result = $db -> prepare($query2);
     $result -> execute();
     $max_id = $result -> fetchAll();
-    $uid = $max_id;
+    $uid = $max_id[0];
 
 
     $query3 = "INSERT INTO Usuarios (uid, username, unombre, correo, udir, password) VALUES (?, ?, ?, ?, ?, ?)";
