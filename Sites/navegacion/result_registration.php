@@ -44,11 +44,11 @@ ob_start();
     $query3 = "INSERT INTO Usuarios (uid, username, unombre, correo, udir, password) VALUES (?, ?, ?, ?, ?, ?)";
     $result = $db -> prepare($query);
     $result -> bindParam(1, $uid);
-    $result -> bindParam(1, $username);
-    $result -> bindParam(1, $unombre);
-    $result -> bindParam(1, $correo);
-    $result -> bindParam(1, $udir);
-    $result -> bindParam(1, $password);
+    $result -> bindParam(2, $username);
+    $result -> bindParam(3, $unombre);
+    $result -> bindParam(4, $correo);
+    $result -> bindParam(5, $udir);
+    $result -> bindParam(6, $password);
     $result -> execute();
 
     header("location: /~grupo23/index.php");
