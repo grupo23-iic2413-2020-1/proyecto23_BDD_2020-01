@@ -25,7 +25,7 @@ ob_start();
   $query1 = "SELECT Usuarios.uid FROM Usuarios WHERE Usuarios.username = ?";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db -> prepare($query);
+  $result = $db -> prepare($query1);
   $result -> bindParam(1, $username);
   $result -> execute();
   $user = $result -> fetchAll();
@@ -36,13 +36,13 @@ ob_start();
   } 
   else {
     $query2 = "SELECT MAX(Usuarios.uid) FROM Usuarios";
-    $result = $db -> prepare($query);
+    $result = $db -> prepare($query2);
     $result -> execute();
     $max_id = $result -> fetchAll();
     $uid = $max_id[0] + 1;
 
     $query3 = "INSERT INTO Usuarios (uid, username, unombre, correo, udir, password) VALUES (?, ?, ?, ?, ?, ?)";
-    $result = $db -> prepare($query);
+    $result = $db -> prepare($query3);
     $result -> bindParam(1, $uid);
     $result -> bindParam(2, $username);
     $result -> bindParam(3, $unombre);
@@ -50,6 +50,10 @@ ob_start();
     $result -> bindParam(5, $udir);
     $result -> bindParam(6, $password);
     $result -> execute();
+
+    $_SESSION["loggedin"] = True;
+    $_SESSION["current_uid"] = $uid;
+    $_SESSION["current_username"] = $username;
 
     header("location: /~grupo23/index.php");
     exit;
