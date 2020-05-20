@@ -62,7 +62,7 @@ $udir = $user[0][4];
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a role="button" href="#" class="btn btn-primary" href='/~grupo23/navegacion/delete_user.php'>>Eliminar</a>
+                            <a role="button" href="#" class="btn btn-primary" href='/~grupo23/navegacion/delete_user.php'>Eliminar</a>
                         </div>
                         </div>
                     </div>
