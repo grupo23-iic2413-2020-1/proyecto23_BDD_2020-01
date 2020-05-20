@@ -23,7 +23,7 @@ $udir = $user[0][4];
 <body class= "bg-secondary text-white">
     <div class="container">
         <div class="row justify-content-md-center">
-            <h2> Perfil de <?php echo $uid;?> <?php echo $username;?> </h2>
+            <h2> Perfil de <?php echo $username;?> </h2>
         </div>
 
         <br>
@@ -52,17 +52,17 @@ $udir = $user[0][4];
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="deleteModalLabel">¿Estas seguro de eliminar este usuario?</h5>
+                            <h5 class="modal-title text-black" id="deleteModalLabel">¿Estas seguro de eliminar este usuario?</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body text-black">
                             <p>Una vez que elimines a este usuario no podrás volver a ingresar a esta cuenta.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary" href='/~grupo23/navegacion/delete_user.php'>Eliminar</button>
+                            <a role="button" href="#" class="btn btn-primary" href='/~grupo23/navegacion/delete_user.php'>>Eliminar</a>
                         </div>
                         </div>
                     </div>
