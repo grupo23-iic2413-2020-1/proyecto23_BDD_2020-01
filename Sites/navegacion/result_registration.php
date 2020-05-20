@@ -41,6 +41,8 @@ ob_start();
     $max_id = $result -> fetchAll();
     $uid = (var_dump($max_id[0]) + 1);
 
+    echo $uid;
+
     $query3 = "INSERT INTO Usuarios (uid, username, unombre, correo, udir, password) VALUES (?, ?, ?, ?, ?, ?)";
     $result = $db -> prepare($query3);
     $result -> bindParam(1, $uid);
