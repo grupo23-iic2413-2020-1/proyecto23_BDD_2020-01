@@ -52,17 +52,17 @@ $udir = $user[0][4];
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title text-black" id="deleteModalLabel">¿Estas seguro de eliminar este usuario?</h5>
+                            <h5 class="modal-title text-darh" id="deleteModalLabel">¿Estas seguro de eliminar este usuario?</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body text-black">
+                        <div class="modal-body text-dark">
                             <p>Una vez que elimines a este usuario no podrás volver a ingresar a esta cuenta.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a role="button" href="#" class="btn btn-primary" href='/~grupo23/navegacion/delete_user.php'>Eliminar</a>
+                            <a role="button" href='/~grupo23/navegacion/delete_user.php' class="btn btn-primary" >Eliminar</a>
                         </div>
                         </div>
                     </div>
