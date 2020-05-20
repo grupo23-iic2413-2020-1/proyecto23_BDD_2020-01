@@ -23,7 +23,7 @@ $udir = $user[0][4];
 <body class= "bg-secondary text-white">
     <div class="container">
         <div class="row justify-content-md-center">
-            <h2> Perfil de <?php echo $username?> </h2>
+            <h2> Perfil de <?php echo $uid;?> <?php echo $username;?> </h2>
         </div>
 
         <br>
