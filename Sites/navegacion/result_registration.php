@@ -35,11 +35,11 @@ ob_start();
 
   } 
   else {
-    $query2 = "SELECT MAX(uid) FROM Usuarios";
+    $query2 = "SELECT MAX(uid) + 1 FROM Usuarios";
     $result = $db -> prepare($query2);
     $result -> execute();
     $max_id = $result -> fetchAll();
-    $uid = var_dump($max_id) + 1 ;
+    $uid = $max_id;
 
 
     $query3 = "INSERT INTO Usuarios (uid, username, unombre, correo, udir, password) VALUES (?, ?, ?, ?, ?, ?)";
