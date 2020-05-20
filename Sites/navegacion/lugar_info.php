@@ -62,7 +62,7 @@
           foreach ($museos as $mus) {
             echo "<tr> <td>$mus[0]</td> <td>$mus[1]</td> <td>$mus[2]
             </td> <td>$mus[3]</td> <td>$mus[4]</td> <td>$mus[5]</td>
-             <td>$mus[6]</td></tr><br><br>"
+             <td>$mus[6]</td></tr><br><br>";
           }
           ?>
           <?php if ($_SESSION['loggedin'] == 1) { ?>
