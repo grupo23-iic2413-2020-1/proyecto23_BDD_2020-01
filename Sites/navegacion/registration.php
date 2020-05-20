@@ -16,17 +16,17 @@
 
               <div class="form-label-group">
                 <label for="inputEmail">Correo electónico</label>
-                <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Correo electónico" required>
+                <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
               </div>
 
               <div class="form-label-group">
-                <label for="inputEmail">Nombre y Apellido</label>
-                <input type="text" name='unombre' id="inputEmail" class="form-control" placeholder="Correo electónico" required>
+                <label for="inputName">Nombre Completo</label>
+                <input type="text" name='unombre' id="inputName" class="form-control" placeholder="Nombre Completo" required>
               </div>
 
               <div class="form-label-group">
-                <label for="inputEmail">Dirección</label>
-                <input type="text" name='udir' id="inputEmail" class="form-control" placeholder="Correo electónico" required>
+                <label for="inputDir">Dirección</label>
+                <input type="text" name='udir' id="inputDir" class="form-control" placeholder="Dirección" required>
               </div>
 
               <div class="form-label-group">
