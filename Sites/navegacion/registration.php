@@ -12,31 +12,37 @@
               <div class="form-label-group">
                 <label for="inputUserame">Username</label>
                 <input type="text" name='username' id="inputUserame" class="form-control" placeholder="Username" required autofocus>  
+                <br>
               </div>
 
               <div class="form-label-group">
                 <label for="inputEmail">Correo electónico</label>
                 <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
+                <br>
               </div>
 
               <div class="form-label-group">
                 <label for="inputName">Nombre Completo</label>
                 <input type="text" name='unombre' id="inputName" class="form-control" placeholder="Nombre Completo" required>
+                <br>
               </div>
 
               <div class="form-label-group">
                 <label for="inputDir">Dirección</label>
                 <input type="text" name='udir' id="inputDir" class="form-control" placeholder="Dirección" required>
+                <br>
               </div>
 
               <div class="form-label-group">
                 <label for="inputPassword">Contraseña</label>
                 <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <br>
               </div>
               
               <div class="form-label-group">
                 <label for="inputConfirmPassword">Confirmar contraseña</label>
                 <input type="password" name='password_confirm' id="inputConfirmPassword" class="form-control" placeholder="Confirmar contraseña" required>
+                <br>
               </div>
 
               <br>

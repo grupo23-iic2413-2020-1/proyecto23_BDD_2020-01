@@ -1,3 +1,4 @@
+<?php session_start();?> 
 <?php include('../templates/header.html');   ?>
 <?php include('../templates/navbar.php');   ?> 
 <body class= "bg-secondary text-white">
@@ -54,18 +55,38 @@
         </tr>
       </thead>
       <tbody>
-    
+  
+
+      <?php if ($museos != NULL) { ?>
         <?php
           foreach ($museos as $mus) {
             echo "<tr> <td>$mus[0]</td> <td>$mus[1]</td> <td>$mus[2]
             </td> <td>$mus[3]</td> <td>$mus[4]</td> <td>$mus[5]</td>
-             <td>$mus[6]</td></tr>";
+             <td>$mus[6]</td></tr><br><br>"
           }
+          ?>
+          <?php if ($_SESSION['loggedin'] == 1) { ?>
+            <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>' method='post'>
+                <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
+             </form>";
+
+          <?php } else { ?>
+             <form align='center' action='registration.php' method='post'>
+                <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
+             </form>";
+             <?php } ?>
+
+      <?php } elseif ($iglesias != NULL) { ?>
+        <?php
           foreach ($iglesias as $ig) {
             echo "<tr> <td>$ig[0]</td> <td>$ig[1]</td> <td>$ig[2]
             </td> <td>$ig[3]</td> <td>$ig[4]</td> <td>$ig[5]</td>
              <td>Gratis</td> </tr>";
           }
+        ?>
+
+      <?php } elseif ($plazas != NULL) { ?>
+        <?php
           foreach ($plazas as $pl) {
            echo "<tr> <td>$pl[0]</td> <td>$pl[1]</td> <td>$pl[2]
             </td> <td>$pl[3]</td>  <td>Libre</td>
