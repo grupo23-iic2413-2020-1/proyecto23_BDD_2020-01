@@ -95,7 +95,7 @@ include('../templates/navbar.php');
       </form>
 
     <?php } else { ?>
-      <form align='center' action='registration.php' method='post'>
+      <form align='center' action='log_in.php' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
       </form>
     <?php } ?>
