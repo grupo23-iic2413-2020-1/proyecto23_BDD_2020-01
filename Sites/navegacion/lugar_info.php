@@ -92,12 +92,16 @@ include('../templates/navbar.php');
     <?php if ($_SESSION['loggedin'] == 1) { ?>
       <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
-      </form>";
+      </form>
 
     <?php } else { ?>
       <form align='center' action='registration.php' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
-      </form>";
+      </form>
     <?php } ?>
   <?php } ?>
 </body>
+
+<br>
+
+<?php include('../templates/footer.html'); ?>
