@@ -86,6 +86,8 @@ include('../templates/navbar.php');
     </table>
   </div>
 
+<br>
+
   <?php if ($museos != NULL) { ?>
     <?php if ($_SESSION['loggedin'] == 1) { ?>
       <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>' method='post'>

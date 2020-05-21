@@ -32,13 +32,10 @@ $udir = $user[0][4];
         <div class="row justify-content-md-center">
             <div class='col-md-auto'>
                 <div>
-                    <h5><b>Id lugar: </b> <?php echo $unombre ?> </h5>
+                    <h5><b>Id lugar: </b> <?php echo $lid ?> </h5>
                 </div>
                 <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                </div>
-                <div>
-                    <h5><b>Dirección: </b> <?php echo $udir ?> </h5>
+                    <h5><b>Tu mail: </b> <?php echo $correo ?> </h5>
                 </div>
             </div>
             </div>
