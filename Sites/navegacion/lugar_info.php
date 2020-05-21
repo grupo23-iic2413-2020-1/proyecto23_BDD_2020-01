@@ -79,6 +79,7 @@ include('../templates/navbar.php');
             </td> <td>$pl[3]</td>  <td>Libre</td>
              <td>Libre</td> <td>Gratis</td> </tr>";  
           }
+        }
         ?>
       </tbody>
         
