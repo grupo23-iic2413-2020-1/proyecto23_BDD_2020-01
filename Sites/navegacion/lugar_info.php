@@ -101,8 +101,3 @@ include('../templates/navbar.php');
     <?php } ?>
   <?php } ?>
 </body>
-
-
-<br>
-
-<?php include('../templates/footer.html'); ?>
