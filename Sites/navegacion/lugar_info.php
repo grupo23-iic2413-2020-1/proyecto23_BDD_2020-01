@@ -57,8 +57,7 @@ include('../templates/navbar.php');
       <tbody>
   
 
-      <?php if ($museos != NULL) { ?>
-        <?php
+      <?php if ($museos != NULL) {
           foreach ($museos as $mus) {
             echo "<tr> <td>$mus[0]</td> <td>$mus[1]</td> <td>$mus[2]
             </td> <td>$mus[3]</td> <td>$mus[4]</td> <td>$mus[5]</td>
@@ -66,8 +65,7 @@ include('../templates/navbar.php');
           }
           ?>
 
-      <?php } elseif ($iglesias != NULL) { ?>
-        <?php
+      <?php } elseif ($iglesias != NULL) {
           foreach ($iglesias as $ig) {
             echo "<tr> <td>$ig[0]</td> <td>$ig[1]</td> <td>$ig[2]
             </td> <td>$ig[3]</td> <td>$ig[4]</td> <td>$ig[5]</td>
@@ -75,8 +73,7 @@ include('../templates/navbar.php');
           }
         ?>
 
-      <?php } elseif ($plazas != NULL) { ?>
-        <?php
+      <?php } elseif ($plazas != NULL) {
           foreach ($plazas as $pl) {
            echo "<tr> <td>$pl[0]</td> <td>$pl[1]</td> <td>$pl[2]
             </td> <td>$pl[3]</td>  <td>Libre</td>
