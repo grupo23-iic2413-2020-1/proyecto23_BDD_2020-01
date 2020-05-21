@@ -1,8 +1,7 @@
-<?php session_start();?> 
-<?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php');   ?> 
-<body class= "bg-secondary text-white">
-<?php 
+<?php session_start();
+include('../templates/header.html');
+include('../templates/navbar.php');  
+
 # Muestra una tabla con todos los artistas
 
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -37,6 +36,7 @@
   $plazas = $result_3 -> fetchAll();
 ?>
 
+<body class= "bg-secondary text-white">
   <div class="container">
 
     <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información sobre <?php echo $lnombre ?></h1>
@@ -100,6 +100,7 @@
       </form>";
     <?php } ?>
   <?php } ?>
+</body>
 
 
 <br>
