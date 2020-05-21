@@ -65,16 +65,6 @@
              <td>$mus[6]</td></tr><br><br>";
           }
           ?>
-          <?php if ($_SESSION['loggedin'] == 1) { ?>
-            <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>' method='post'>
-                <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
-             </form>";
-
-          <?php } else { ?>
-             <form align='center' action='registration.php' method='post'>
-                <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
-             </form>";
-             <?php } ?>
 
       <?php } elseif ($iglesias != NULL) { ?>
         <?php
@@ -98,6 +88,18 @@
     </table>
   </div>
 
+  <?php if ($museos != NULL) { ?>
+    <?php if ($_SESSION['loggedin'] == 1) { ?>
+      <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>' method='post'>
+        <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
+      </form>";
+
+    <?php } else { ?>
+      <form align='center' action='registration.php' method='post'>
+        <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
+      </form>";
+    <?php } ?>
+  <?php } ?>
 
 
 <br>
