@@ -100,7 +100,6 @@ include('../templates/navbar.php');
       </form>
     <?php } ?>
   <?php } ?>
-</body>
 
 <br>
 
