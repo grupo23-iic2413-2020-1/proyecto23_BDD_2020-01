@@ -52,8 +52,6 @@ $result_3 -> execute();
     <div class="container">
         <div class="row justify-content-md-center">
             <h2> Tu Compra ha sido realizada con éxito </h2>
-            <br>
-            <h2> Detalles compra: </h2>
         </div>
         <br>
         <div class="row justify-content-md-center">
@@ -64,7 +62,7 @@ $result_3 -> execute();
         <div class="row justify-content-md-center">
             <div class='col-md-auto'>
                 <div>
-                    <h5><b>Nombre lugar: </b> <?php echo $lnombre ?> </h5>
+                    <h5><b>Nombre Lugar: </b> <?php echo $lnombre ?> </h5>
                     <br>
                 </div>
                 <div>
@@ -81,6 +79,10 @@ $result_3 -> execute();
                 </div>
                 <div>
                     <h5><b>Precio: </b> <?php echo $precio ?> </h5>
+                    <br>
+                </div>
+                <div>
+                    <h5><b>Fecha de Compra: </b> <?php echo $fecha_compra ?> </h5>
                     <br>
                 </div>
 

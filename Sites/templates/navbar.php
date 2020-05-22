@@ -13,8 +13,16 @@
       <li class="nav-item active">
         <a class="nav-link" href="/~grupo23/index_E2.php">Preguntas Frecuentes</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/~grupo23/navegacion/artistas.php">Artistas</a>
+    
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Que ver
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/~grupo23/navegacion/artistas.php">Artistas</a>
+          <a class="dropdown-item" href="/~grupo23/navegacion/obras.php">Obras</a>
+          <a class="dropdown-item" href="/~grupo23/navegacion/lugares.php">Lugares</a>
+        </div>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Hoteles</a>
@@ -28,6 +36,7 @@
           <a class="dropdown-item" href="/~grupo23/navegacion/itinerario.php">Crear Itinerario</a>
         </div>
       </li>
+
       
     </ul>
     <?php if ($_SESSION["loggedin"] == 1) { ?>
