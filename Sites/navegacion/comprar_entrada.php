@@ -61,21 +61,25 @@ function GuardarEntrada($eid, $uid, $lid) {
             <div class='col-md-auto'>
                 <div>
                     <h5><b>Nombre lugar: </b> <?php echo $lnombre ?> </h5>
+                    <br>
                 </div>
                 <div>
                     <h5><b>Usuario: </b> <?php echo $username ?> </h5>
+                    <br>
                 </div>
                 <div>
                     <h5><b>Mail: </b> <?php echo $correo ?> </h5>
+                    <br>
                 </div>
                 <div>
                     <h5><b>Número de Ticket: </b> <?php echo $eid ?> </h5>
+                    <br>
                 </div>
 
             </div>
             </div>
     </div>
-    <form align='center' action="GuardarEntrada($eid, $uid, $lid)"  method='post'>
+    <form align='center' action=<?php GuardarEntrada($eid, $uid, $lid) ?>  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>
       </form>
 </body>
