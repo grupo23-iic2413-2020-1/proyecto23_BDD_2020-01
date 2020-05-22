@@ -18,7 +18,7 @@ $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
 
-$query_2 = "SELECT * dblink('dbname=$databaseName_2 options=-csearch_path=',
+$query_2 = "SELECT * FROM dblink('dbname=$databaseName_2 options=-csearch_path=',
             'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid ')
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME)";
 
