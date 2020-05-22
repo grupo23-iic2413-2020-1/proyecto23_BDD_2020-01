@@ -29,15 +29,15 @@ $result_2 -> execute();
 $max_eid = $result_2 -> fetchAll();
 
 if ($max_eid == NULL) {
-        $max_eid = 1;
+        $eid = 1;
     } 
-else {$max_eid = $max_eid + 1;
+else {$eid = $max_eid + 1;
     }
 
-function GuardarEntrada($max_eid, $uid, $lid) {
+function GuardarEntrada($eid, $uid, $lid) {
     $fecha_compra = date('Y-m-d');
     $query3 = "INSERT INTO Entradas(eid, uid, lid, fecha_compra) 
-    VALUES ($max_eid, $uid, $lid, $fecha_compra)";
+    VALUES ($eid, $uid, $lid, $fecha_compra)";
     $result_3 = $db -> prepare($query3);
     $result_3 -> execute();
     echo '<br>Tu compra ha sido realizada con éxito <br>
@@ -69,13 +69,13 @@ function GuardarEntrada($max_eid, $uid, $lid) {
                     <h5><b>Mail: </b> <?php echo $correo ?> </h5>
                 </div>
                 <div>
-                    <h5><b>Número de Ticket: </b> <?php echo $max_eid ?> </h5>
+                    <h5><b>Número de Ticket: </b> <?php echo $eid ?> </h5>
                 </div>
 
             </div>
             </div>
     </div>
-    <form align='center' action="GuardarEntrada($max_eid, $uid, $lid)"  method='post'>
+    <form align='center' action="GuardarEntrada($eid, $uid, $lid)"  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>
       </form>
 </body>
