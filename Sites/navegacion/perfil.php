@@ -17,7 +17,7 @@ $username = $user[0][1];
 $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
-echo $databaseName_2;
+
 $query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM dblink('dbname=$databaseName_2',
             'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid')
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME), Entradas AS t2
@@ -30,8 +30,8 @@ $result_2 -> execute();
 $entradas = $result_2 -> fetchAll();
 
 $query_3 = "SELECT * FROM dblink('dbname=$databaseName_2',
-            'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid')
-            AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME)";
+            'SELECT Museo.lid, Lugar.lnombre, Museo.hora_apertura, Museo.hora_cierre FROM Museo, Lugar WHERE Museo.lid = Lugar.lid')
+            AS t1(1lid INT, 1lnombre VARCHAR(255), 1hora_apertura TIME, 1hora_cierre TIME)";
 
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
