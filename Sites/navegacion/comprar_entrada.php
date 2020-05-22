@@ -31,7 +31,7 @@ $max_eid = $result_2 -> fetchAll();
 if ($max_eid == NULL) {
         $eid = 1;
     } 
-else {$eid = $max_eid + 1;
+else {$eid = $max_eid[0][0] + 1;
     }
 
 function GuardarEntrada($eid, $uid, $lid) {
