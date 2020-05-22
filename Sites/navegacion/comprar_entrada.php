@@ -35,7 +35,7 @@ else {$max_eid = $max_eid + 1;
     }
 
 function GuardarEntrada($max_eid, $uid, $lid) {
-    $fecha_compra = date('Y-m-d')
+    $fecha_compra = date('Y-m-d');
     $query3 = "INSERT INTO Entradas(eid, uid, lid, fecha_compra) 
     VALUES ($max_eid, $uid, $lid, $fecha_compra)";
     $result_3 = $db -> prepare($query3);
