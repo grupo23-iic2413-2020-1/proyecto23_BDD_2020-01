@@ -13,7 +13,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="/~grupo23/index_E2.php">Preguntas Frecuentes</a>
       </li>
-    
+
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Hoteles</a>
+      </li>
+      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Que ver
@@ -24,9 +28,7 @@
           <a class="dropdown-item" href="/~grupo23/navegacion/lugares.php">Lugares</a>
         </div>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Hoteles</a>
-      </li>
+      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Acciones

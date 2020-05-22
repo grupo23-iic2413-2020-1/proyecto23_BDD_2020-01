@@ -18,6 +18,18 @@ $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
 
+$query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM dblink('dbname=db_2 options=-csearch_path=',
+            'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid ')
+            AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME), Entradas AS t2
+            WHERE t1.lid = t2.lid";
+
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_2 = $db -> prepare($query_2);
+$result_2 -> execute();
+$entradas = $result_2 -> fetchAll();
+
+
 ?> 
 
 <body class= "bg-secondary text-white">
@@ -41,6 +53,48 @@ $udir = $user[0][4];
                 <br>
                 <br>
                 <br>
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entradas">
+                    Ver Entradas
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="entradas" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark" id="entradas">Estas son tus entradas:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-dark">
+                        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+                            <thead class="thead-dark">
+                            <tr style="text-align:center">
+                                <th>Fecha Compra</th>
+                                <th>Nombre Museo</th>
+                                <th>Hora Apertura</th>
+                                <th>Hora Cierre</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+                                foreach ($entradas as $entr) {
+                                echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td></tr>";
+                            }
+                            ?>
+                            </tbody>
+                            
+                        </table>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">
