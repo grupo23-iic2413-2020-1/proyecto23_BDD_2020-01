@@ -34,24 +34,7 @@ if ($max_eid == NULL) {
 else {$eid = $max_eid[0][0] + 1;
     }
 
-function GuardarEntrada($eid, $uid, $lid) {
-    $fecha_compra = date('Y-m-d');
-    $lid_int = (int)$lid;
-    $query3 = "INSERT INTO Entradas(eid, uid, lid, fecha_compra) 
-    VALUES (?, ?, ?, ?)";
-    $result_3 = $db -> prepare($query3);
-    $result_3 -> bindParam(1, $eid);
-    $result_3 -> bindParam(2, $uid);
-    $result_3 -> bindParam(3, $lid_int);
-    $result_3 -> bindParam(4, $fecha_compra);
-    $result_3 -> execute();
-    echo '<br>Tu compra ha sido realizada con éxito <br>
-    Fecha de Compra: <?php echo $fecha_compra ?> ';
-    echo "<form align='center' action='perfil.php' method='post'>
-        <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
-      </form>";
-    
-      }      
+
 
 ?> 
 
@@ -87,7 +70,26 @@ function GuardarEntrada($eid, $uid, $lid) {
     <form align='center' action=<?php GuardarEntrada($eid, $uid, $lid) ?>  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>
       </form>
+<?php
+    function GuardarEntrada($eid, $uid, $lid) {
+    $fecha_compra = date('Y-m-d');
+    $lid_int = (int)$lid;
+    $query3 = "INSERT INTO Entradas(eid, uid, lid, fecha_compra) 
+    VALUES (?, ?, ?, ?)";
+    $result_3 = $db -> prepare($query3);
+    $result_3 -> bindParam(1, $eid);
+    $result_3 -> bindParam(2, $uid);
+    $result_3 -> bindParam(3, $lid_int);
+    $result_3 -> bindParam(4, $fecha_compra);
+    $result_3 -> execute();
+    echo '<br>Tu compra ha sido realizada con éxito <br>
+    Fecha de Compra: <?php echo $fecha_compra ?> ';
+    echo "<form align='center' action='perfil.php' method='post'>
+        <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
+      </form>";
+    
+      }      
+?>
 </body>
 
 
-    
