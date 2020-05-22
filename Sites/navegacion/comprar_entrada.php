@@ -36,8 +36,9 @@ else {$eid = $max_eid[0][0] + 1;
 
 function GuardarEntrada($eid, $uid, $lid) {
     $fecha_compra = date('Y-m-d');
+    $lid_int = (int)$lid
     $query3 = "INSERT INTO Entradas(eid, uid, lid, fecha_compra) 
-    VALUES ($eid, $uid, $lid, $fecha_compra)";
+    VALUES ($eid, $uid, $lid_int, $fecha_compra)";
     $result_3 = $db -> prepare($query3);
     $result_3 -> execute();
     echo '<br>Tu compra ha sido realizada con éxito <br>
