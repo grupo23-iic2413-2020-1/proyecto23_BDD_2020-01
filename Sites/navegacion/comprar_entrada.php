@@ -57,9 +57,14 @@ $udir = $user[0][4];
             </div>
             </div>
     </div>
-    <form align='center' action='validacion_entrada.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>
+    <form align='center' action='validacion_compra.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>
       &precio=<?php echo $precio ?>' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>
+      </form>
+
+    <br>
+    <form align='center' action='lugar_info.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>' method='post'>
+        <input class='btn btn-primary' align='center' type='submit' value='Cancelar Compra'>
       </form>
 
 </body>
