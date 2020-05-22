@@ -53,7 +53,11 @@ $result_3 -> execute();
         <div class="row justify-content-md-center">
             <h2> Tu Compra ha sido realizada con éxito </h2>
             <br>
-            <h2> Detalles compra </h2>
+            <h2> Detalles compra: </h2>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <h2> Detalles compra: </h2>
         </div>
 
         <br>
