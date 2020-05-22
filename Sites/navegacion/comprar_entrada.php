@@ -38,8 +38,12 @@ function GuardarEntrada($eid, $uid, $lid) {
     $fecha_compra = date('Y-m-d');
     $lid_int = (int)$lid;
     $query3 = "INSERT INTO Entradas(eid, uid, lid, fecha_compra) 
-    VALUES ($eid, $uid, $lid_int, $fecha_compra)";
+    VALUES (?, ?, ?, ?)";
     $result_3 = $db -> prepare($query3);
+    $result_3 -> bindParam(1, $eid);
+    $result_3 -> bindParam(2, $uid);
+    $result_3 -> bindParam(3, $lid_int);
+    $result_3 -> bindParam(4, $fecha_compra);
     $result_3 -> execute();
     echo '<br>Tu compra ha sido realizada con éxito <br>
     Fecha de Compra: <?php echo $fecha_compra ?> ';
