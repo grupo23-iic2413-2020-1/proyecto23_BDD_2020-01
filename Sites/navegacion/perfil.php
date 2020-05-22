@@ -29,6 +29,16 @@ $result_2 = $db -> prepare($query_2);
 $result_2 -> execute();
 $entradas = $result_2 -> fetchAll();
 
+$query_3 = "SELECT * FROM dblink('dbname=$databaseName_2',
+            'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid')
+            AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME)";
+
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_3 = $db -> prepare($query_3);
+$result_3 -> execute();
+$entradas = $result_3 -> fetchAll();
+
 
 ?> 
 
