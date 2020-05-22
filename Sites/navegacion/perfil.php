@@ -18,7 +18,7 @@ $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
 
-$query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM dblink('dbname=db_2 options=-csearch_path=',
+$query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM dblink('dbname=$db_2 options=-csearch_path=',
             'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid ')
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME), Entradas AS t2
             WHERE t1.lid = t2.lid";
@@ -95,6 +95,9 @@ $entradas = $result_2 -> fetchAll();
                     </div>
                     </div>
                 </div>
+                <br>
+                <br>
+
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">
