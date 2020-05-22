@@ -18,9 +18,10 @@ $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
 
-$query_2 = "SELECT * FROM dblink('dbname=$databaseName_2 options=-csearch_path=',
+$query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM dblink('dbname=$databaseName_2 options=-csearch_path=',
             'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid ')
-            AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME)";
+            AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME), Entradas AS t2
+            WHERE t1.lid = t2.lid";
 
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -34,6 +35,7 @@ $entradas = $result_2 -> fetchAll();
 <body class= "bg-secondary text-white">
     <div class="container">
         <div class="row justify-content-md-center">
+            <h2> <?php type($entradas) ?> </h2>
             <h2> Perfil de <?php echo $username;?> </h2>
         </div>
 
@@ -77,6 +79,7 @@ $entradas = $result_2 -> fetchAll();
                                 <th>Nombre Museo</th>
                                 <th>Hora Apertura</th>
                                 <th>Hora Cierre</th>
+
                             </tr>
                             </thead>
                             <tbody>
