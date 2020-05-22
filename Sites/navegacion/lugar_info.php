@@ -62,6 +62,7 @@ include('../templates/navbar.php');
             echo "<tr> <td>$mus[0]</td> <td>$mus[1]</td> <td>$mus[2]
             </td> <td>$mus[3]</td> <td>$mus[4]</td> <td>$mus[5]</td>
              <td>$mus[6]</td></tr><br><br>";
+             $precio = $mus[6];
           }
           ?>
 
@@ -90,7 +91,8 @@ include('../templates/navbar.php');
 
   <?php if ($museos != NULL) { ?>
     <?php if ($_SESSION['loggedin'] == 1) { ?>
-      <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>' method='post'>
+      <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>
+      &precio=<?php echo $precio ?>' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
       </form>
 
