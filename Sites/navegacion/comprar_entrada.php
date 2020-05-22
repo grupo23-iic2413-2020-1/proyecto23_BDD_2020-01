@@ -41,10 +41,10 @@ function GuardarEntrada($max_eid, $uid, $lid) {
     $result_3 = $db -> prepare($query3);
     $result_3 -> execute();
     echo '<br>Tu compra ha sido realizada con éxito <br>
-    Fecha de Compra: '$fecha_compra;
+    Fecha de Compra: '$fecha_compra
     echo "<form align='center' action='perfil.php' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
-      </form>";
+      </form>"
     
       }      
 
