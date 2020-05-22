@@ -90,7 +90,7 @@ include('../templates/navbar.php');
 
   <?php if ($museos != NULL) { ?>
     <?php if ($_SESSION['loggedin'] == 1) { ?>
-      <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>' method='post'>
+      <form align='center' action='comprar_entrada.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>' method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Comprar Entrada'>
       </form>
 
