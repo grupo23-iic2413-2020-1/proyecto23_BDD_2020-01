@@ -23,17 +23,17 @@ $query_2 = "SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre
 
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-$result_2 = $db -> prepare($query_2);
+$result_2 = $db_2 -> prepare($query_2);
 $result_2 -> execute();
 $fase_1 = $result_2 -> fetchAll();
 
 $query_3 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre 
-            FROM $query_2 as t1, Entradas AS t2
+            FROM $fase_1 as t1, Entradas AS t2
             WHERE t1.lid = t2.lid";
 
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-$result_3 = $db -> prepare($query_2);
+$result_3 = $db -> prepare($query_3);
 $result_3 -> execute();
 $entradas = $result_3 -> fetchAll();
 
