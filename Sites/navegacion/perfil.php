@@ -71,6 +71,9 @@ $reservas = $result_4 -> fetchAll();
                 <div>
                     <h5><b>Dirección: </b> <?php echo $udir ?> </h5>
                 </div>
+                <div>
+                    <h5><b>Reservas: </b> <?php echo $reservas ?> </h5>
+                </div>
                 <br>
                 <br>
                 <br>
