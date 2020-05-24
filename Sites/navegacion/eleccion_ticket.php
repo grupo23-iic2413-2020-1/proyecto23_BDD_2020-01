@@ -30,11 +30,13 @@ include('../templates/navbar.php');   ?>
   <h2> Pasajes disponibles </h2>
 </div>
 
-  <?php if(empty($destinos)) {
-    echo "No existe destino para los datos solicitados";
+  <?php if(empty($destinos)) { ?>
+    <div class="row justify-content-md-center">
+      <h2> No existe destino para los datos solicitados </h2>
+    </div>
   
-  } else {  ?>
-
+  <?php } else {  ?>
+    <form align="center" action="validacion_ticket.php" method="post">
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
@@ -53,7 +55,7 @@ include('../templates/navbar.php');   ?>
       <tbody>
       
       <?php foreach ($destinos as $destino) {
-                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='artistas[]' value='$artista[1]'></label>
+                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$artista[1]'></label>
                 </td><td>$destino[0]</td> <td>$destino[1]</td> 
                 <td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
                 <td>$destino[5]</td> <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
@@ -63,11 +65,14 @@ include('../templates/navbar.php');   ?>
       </tbody>
         
     </table>
+    <br>
 
+      <input class="btn btn-primary" align="center" type="submit" value="Comprar pasaje">
+    </form>
   <?php } ?>
 
 
-<br>
+
 <br>
 
 <form action="comprar_ticket.php" method="get">
