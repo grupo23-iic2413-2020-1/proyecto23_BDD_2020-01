@@ -22,7 +22,7 @@ $query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre
             dblink('dbname=grupo50e3 host=localhost port=5432 user=grupo50 password=grupo2350',
             'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid')
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME), Entradas AS t2
-            WHERE t2.uid = 54";
+            WHERE t2.uid = $uid AND t1.lid = t2.lid";
 
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
