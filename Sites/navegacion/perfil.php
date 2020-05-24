@@ -106,7 +106,7 @@ $reservas = $result_4 -> fetchAll();
 
                             <?php
                                 foreach ($entradas as $entr) {
-                                echo "<tr> <td>$entr[3]</td> <td>$entr[4]</td> <td>$entr[2]</td></tr>";
+                                echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td></tr>";
                             }
                             ?>
                             </tbody>
@@ -152,7 +152,7 @@ $reservas = $result_4 -> fetchAll();
 
                             <?php
                                 foreach ($reservas as $res) {
-                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td></tr>";
+                                echo "<tr> <td>$res[3]</td> <td>$res[4]</td>  <td>$res[2]</td></tr>";
                             }
                             ?>
                             </tbody>
@@ -163,7 +163,8 @@ $reservas = $result_4 -> fetchAll();
                     </div>
                     </div>
                 </div>
-                    
+                <br>
+                
 
 
                 <div>
