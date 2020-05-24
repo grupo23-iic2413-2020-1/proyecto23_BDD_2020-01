@@ -29,7 +29,7 @@ $result_2 = $db -> prepare($query_2);
 $result_2 -> execute();
 $entradas = $result_2 -> fetchAll();
 
-$query_3 = "SELECT * FROM dblink('dbname=$databaseName_2' ,
+$query_3 = "SELECT * FROM dblink('dbname=$databaseName_2 options=-csearch_path=' ,
             'SELECT Museo.lid, Lugar.lnombre, Museo.hora_apertura, Museo.hora_cierre FROM Museo, Lugar WHERE Museo.lid = Lugar.lid')
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME)";
 
@@ -38,16 +38,6 @@ $query_3 = "SELECT * FROM dblink('dbname=$databaseName_2' ,
 $result_3 = $db -> prepare($query_3);
 $result_3 -> execute();
 $entradas = $result_3 -> fetchAll();
-
-
-$query_4 = "SELECT * FROM Lugar, Museo WHERE Lugar.lid = Museo.lid";
-
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-$result_4 = $db_2 -> prepare($query_4);
-$result_4 -> execute();
-$entradas = $result_4 -> fetchAll();
-
 
 ?> 
 
