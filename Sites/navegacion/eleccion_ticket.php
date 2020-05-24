@@ -39,7 +39,7 @@ include('../templates/navbar.php');   ?>
   
   <?php } else {  ?>
     <form align="center" action="validacion_ticket.php?<?php 
-      echo fecha=$fecha&ciudad_origen=$ciudad_origen&ciudad_destino=$ciudad_destino ?>" method="post">
+      echo 'fecha='.$fecha.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino ?>" method="post">
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
