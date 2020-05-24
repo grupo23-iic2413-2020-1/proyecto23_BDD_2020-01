@@ -5,9 +5,19 @@ include('../templates/navbar.php');
 require("../config/conexion.php");
 
 
-$lid = $_GET['lid'];
-$lnombre = $_GET['lnombre'];
-$precio = $_GET['precio'];
+$fecha_pasaje = $_GET['fecha'];
+$datos = $_POST['pasajes'];
+$ciudad_origen = $_GET["ciudad_origen"];
+$ciudad_destino = $_GET["ciudad_destino"];
+if(isset($datos)){
+
+    if(!empty($datos)) {    
+        foreach($datos as $dato){
+        echo $dato.'<br>';
+        }
+    }
+
+  }
 
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
@@ -47,50 +57,3 @@ $result_3 -> bindParam(4, $fecha_compra);
 $result_3 -> execute();
 
 ?> 
-
-<body class= "bg-secondary text-white">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <h2> Tu Compra ha sido realizada con éxito </h2>
-        </div>
-        <br>
-        <div class="row justify-content-md-center">
-            <h2> Detalles compra: </h2>
-        </div>
-
-        <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Nombre Lugar: </b> <?php echo $lnombre ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Usuario: </b> <?php echo $username ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Número de Ticket: </b> <?php echo $eid ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Precio: </b> <?php echo $precio ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Fecha de Compra: </b> <?php echo $fecha_compra ?> </h5>
-                    <br>
-                </div>
-
-            </div>
-            </div>
-    </div>
-    <form align='center' action='perfil.php'  method='post'>
-        <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
-      </form>
-
-</body>

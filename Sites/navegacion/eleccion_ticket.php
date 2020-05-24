@@ -18,19 +18,13 @@ include('../templates/navbar.php');   ?>
             FROM (SELECT * FROM Destinos, Ciudades WHERE Ciudades.cnombre='$ciudad_origen' AND Ciudades.cid=Destinos.cid1) AS Origen, 
             (SELECT * FROM Destinos, Ciudades WHERE Ciudades.cnombre='$ciudad_destino' AND Ciudades.cid=Destinos.cid2) AS Destino,
             (SELECT did, COUNT(did) AS total FROM Tickets Group by(did)) AS Comprados WHERE 
-            Origen.did = Destino.did AND Origen.did = Comprados.did";
+            Origen.did = Destino.did AND Origen.did = Comprados.did AND (Origen.max - Comprados.total) > 0 ";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
 	$result -> execute();
   $destinos = $result -> fetchAll();
 
-  $query_2 = "SELECT did, COUNT(did) FROM Tickets Group by(did);";
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result_2 = $db -> prepare($query_2);
-  $result_2 -> execute();
-  $comprados = $result_2 -> fetchAll();
 
   ?>
 
@@ -44,7 +38,8 @@ include('../templates/navbar.php');   ?>
     </div>
   
   <?php } else {  ?>
-    <form align="center" action="validacion_ticket.php" method="post">
+    <form align="center" action="validacion_ticket.php?<?php 
+      echo fecha=$fecha&ciudad_origen=$ciudad_origen&ciudad_destino=$ciudad_destino ?>" method="post">
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
@@ -56,14 +51,14 @@ include('../templates/navbar.php');   ?>
           <th>Hora Salida</th>
           <th>Duración (hr)</th>
           <th>Medio transporte</th>
-          <th>Cupos disponibles ARREGLAR</th> 
+          <th>Cupos disponibles</th> 
           <th>Precio (€)</th>
         </tr>
       </thead>
       <tbody>
       
       <?php foreach ($destinos as $destino) {
-                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$artista[1]'></label>
+                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$destinos'></label>
                 </td><td>$destino[0]</td> <td>$destino[1]</td> 
                 <td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
                 <td>$destino[5]</td> <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
