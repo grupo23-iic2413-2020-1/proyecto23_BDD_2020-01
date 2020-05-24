@@ -39,7 +39,8 @@ include('../templates/navbar.php');   ?>
 
       <thead class="thead-dark">
         <tr style="text-align:center">
-          <th>Opción id</th>
+          <th>Opción</th>
+          <th>id Destino</th>
           <th>Ciudad Origen</th>
           <th>Ciudad destino</th>
           <th>Hora Salida</th>
@@ -52,8 +53,9 @@ include('../templates/navbar.php');   ?>
       <tbody>
       
       <?php foreach ($destinos as $destino) {
-                echo "<tr> <td><label class='container'>$destino[0]<input type='radio' name=$destino[0]><span class='checkmark'></span></label>
-                </td> <td>$destino[1]</td><td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
+                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='artistas[]' value='$artista[1]'></label>
+                </td><td>$destino[0]</td> <td>$destino[1]</td> 
+                <td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
                 <td>$destino[5]</td> <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
           }
           ?>
