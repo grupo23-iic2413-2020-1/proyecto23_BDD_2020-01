@@ -27,7 +27,7 @@ include('templates/navbar.php');   ?>
           <h1>¡Crea un itinerario!</h1>
           <p>Con nuestra ayuda puedes crear un itinerario de viajes para visitar todas las obras 
             de tus artistas favoritos de manera rápida y sencilla</p>
-          <a role="button" href="#" class="btn btn-success">Ir</a>
+          <a role="button" href="/~grupo23/navegacion/itinerario.php" class="btn btn-success">Ir</a>
         </div>
       </div>
     </div>

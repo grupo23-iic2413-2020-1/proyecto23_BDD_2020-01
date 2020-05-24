@@ -30,6 +30,7 @@ $result_2 = $db -> prepare($query_2);
 $result_2 -> execute();
 $entradas = $result_2 -> fetchAll();
 
+<<<<<<< HEAD
 $query_3 = "SELECT * FROM dblink('dbname=$databaseName_2' ,
             'SELECT Museo.lid, Lugar.lnombre, Museo.hora_apertura, Museo.hora_cierre FROM Museo, Lugar WHERE Museo.lid = Lugar.lid')
             AS t1(1lid INT, 1lnombre VARCHAR(255), 1hora_apertura TIME, 1hora_cierre TIME)";
@@ -51,6 +52,8 @@ $result_4 -> execute();
 $reservas = $result_4 -> fetchAll();
 
 
+=======
+>>>>>>> refs/remotes/origin/master
 ?> 
 
 <body class= "bg-secondary text-white">
