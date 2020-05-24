@@ -172,7 +172,7 @@ $tickets = $result_5 -> fetchAll();
                 <div>
                 <p>
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
-                    Ver tickets
+                    Ver reservas
                 </button>
                 </p>
                 <div class="collapse" id="tickets">
@@ -198,8 +198,6 @@ $tickets = $result_5 -> fetchAll();
                             </tbody>
                             
                         </table>
-                        </div>
-                        </div>
                     </div>
                     </div>
                 </div>
