@@ -5,7 +5,7 @@ include('../templates/navbar.php');
 require("../config/conexion.php");
 
 
-$fecha_pasaje_str = $_GET['fecha'];
+$fecha_pasaje = $_GET['fecha'];
 $did_int = $_GET['did'];
 $ciudad_origen = $_GET["ciudad_origen"];
 $ciudad_destino = $_GET["ciudad_destino"];
@@ -46,7 +46,7 @@ else {$tid = $max_data[0][0] + 1;
     }
 
 $fecha_compra = date('Y-m-d');
-$fecha_pasaje = date('Y-m-d', $fecha_pasaje_str);
+
 
 
 $query4 = "INSERT INTO Tickets(tid, did, uid, asiento, fechac, fechav) 
