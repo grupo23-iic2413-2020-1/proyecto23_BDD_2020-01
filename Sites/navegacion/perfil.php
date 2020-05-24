@@ -171,11 +171,11 @@ $tickets = $result_5 -> fetchAll();
                 <div>     
                 <div>
                 <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#reservas" aria-expanded="false" aria-controls="collapseExample">
                     Ver reservas
                 </button>
                 </p>
-                <div class="collapse" id="tickets">
+                <div class="collapse" id="reservas">
                 <div class="card card-body">
                         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
