@@ -1,5 +1,6 @@
-<?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php');   ?> 
+<?php session_start();
+include('../templates/header.html');  
+include('../templates/navbar.php');   ?> 
 
 <body class= "bg-secondary text-white">
 <?php 

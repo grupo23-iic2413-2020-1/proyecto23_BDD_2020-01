@@ -1,5 +1,6 @@
-<?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php');   ?> 
+<?php session_start();
+include('../templates/header.html');  
+include('../templates/navbar.php');   ?> 
 
 <body class= "bg-secondary text-white">
 <?php #Ingrese el nombre de un pa´ıs. Muestre todos los nombres de las ciudades del pa´ıs con
@@ -25,6 +26,10 @@
 
   ?>
 
+<div class="row justify-content-md-center">
+  <h2> Pasajes disponibles </h2>
+</div>
+
   <?php if(empty($destinos)) {
     echo "No existe destino para los datos solicitados";
   
@@ -34,6 +39,7 @@
 
       <thead class="thead-dark">
         <tr style="text-align:center">
+          <th>Opción</th>
           <th>id Destino</th>
           <th>Ciudad Origen</th>
           <th>Ciudad destino</th>
@@ -45,12 +51,12 @@
         </tr>
       </thead>
       <tbody>
-  
-
+      
+    <select class="form-control input-lg" id="sel2" name='ciudad'>
       <?php foreach ($destinos as $destino) {
-                echo "<tr> <td>$destino[0]</td> <td>$destino[1]</td> <td>$destino[2]
-                </td> <td>$destino[3]</td> <td>$destino[4]</td> <td>$destino[5]</td>
-                <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
+                echo "<tr> <td><input type='radio' name=$destino[0]></td><td>$destino[0]</td> <td>$destino[1]</td> 
+                <td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
+                <td>$destino[5]</td> <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
           }
           ?>
 
