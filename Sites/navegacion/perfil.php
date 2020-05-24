@@ -45,7 +45,7 @@ $entradas = $result_3 -> fetchAll();
 
 $query_4 = "Select Reservas.fechai, Reservas.fechat, Hoteles.hnombre, Hoteles.hdir
             from Hoteles, Reservas
-            where reservas.uid = ? 
+            where reservas.uid = $uid 
             and reservas.hid = hoteles.hid;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -55,7 +55,7 @@ $reservas = $result_4 -> fetchAll();
 
 $query_5 = "select asiento, fechac, fechav, c1.cnombre, c2.cnombre
             from tickets, destinos, ciudades as c1, ciudades as c2
-            where uid = ?
+            where uid = $uid
             and tickets.did = destinos.did 
             and destinos.cid1 = c1.cid 
             and destinos.cid2 = c2.cid;";
