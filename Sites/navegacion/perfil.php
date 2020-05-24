@@ -43,7 +43,7 @@ $entradas = $result_3 -> fetchAll();
 
 
 
-$query_4 = "Select * FROM Reservas WHERE Reservas.uid = ?";
+$query_4 = "Select Reservas.fechai, Reservas.fechat, Reservas.hid FROM Reservas WHERE Reservas.uid = $uid";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result_4 = $db -> prepare($query_4);
@@ -74,6 +74,7 @@ $reservas = $result_4 -> fetchAll();
                 <div>
                 <h5><b>Reservas: </h5>
                 <?php
+                    echo $reservas;
                     foreach ($reservas as $res) {
                         echo $res;
                         echo "<tr> <td>$res[3]</td> <td>$res[4]</td>  <td>$res[2]</td></tr>";
