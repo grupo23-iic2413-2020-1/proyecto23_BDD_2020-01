@@ -38,7 +38,7 @@ include('../templates/navbar.php');   ?>
     </div>
   
   <?php } else {  ?>
-    <form align="center" action="validacion_ticket.php?<?php 
+    <form align="center" action="confirmacion_ticket.php?<?php 
       echo 'fecha='.$fecha.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino ?>" method="post">
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
@@ -58,7 +58,7 @@ include('../templates/navbar.php');   ?>
       <tbody>
       
       <?php foreach ($destinos as $destino) {
-                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$destinos'></label>
+                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$destino[0]'></label>
                 </td><td>$destino[0]</td> <td>$destino[1]</td> 
                 <td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
                 <td>$destino[5]</td> <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
