@@ -43,12 +43,16 @@ $entradas = $result_3 -> fetchAll();
 
 
 
-$query_4 = "Select Reservas.fechai, Reservas.fechat, Reservas.hid FROM Reservas WHERE Reservas.uid = $uid";
+$query_4 = "Select Reservas.fechai, Reservas.fechat, Hoteles.hnombre, Hoteles.hdir
+            from Hoteles, Reservas
+            where reservas.uid = 32 and reservas.hid = hoteles.hid;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result_4 = $db -> prepare($query_4);
 $result_4 -> execute();
 $reservas = $result_4 -> fetchAll();
+
+
 
 
 ?> 
@@ -70,15 +74,6 @@ $reservas = $result_4 -> fetchAll();
                 </div>
                 <div>
                     <h5><b>Dirección: </b> <?php echo $udir ?> </h5>
-                </div>
-                <div>
-                <h5><b>Reservas: </h5>
-                <?php
-                    foreach ($reservas as $res) {
-                        echo "$res[0] $res[1] $res[2] \n";
-                        
-                    }
-                ?>
                 </div>
                 <br>
                 <br>
@@ -161,7 +156,7 @@ $reservas = $result_4 -> fetchAll();
 
                             <?php
                                 foreach ($reservas as $res) {
-                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td>  <td>$res[2]</td></tr>";
+                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td></tr>";
                             }
                             ?>
                             </tbody>
