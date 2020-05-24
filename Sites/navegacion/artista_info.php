@@ -33,6 +33,7 @@
   $result_2 -> execute();
   $obras = $result_2 -> fetchAll();
   
+  
   ?>
 
   <div class="container">
