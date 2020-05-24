@@ -12,8 +12,10 @@ $ciudad_destino = $_GET["ciudad_destino"];
 if(isset($datos)){
 
     if(!empty($datos)) {    
-        foreach($datos as $dato){
-        echo $dato.'<br>';
+        foreach($datos as $pasaje){
+            foreach($pasaje as $dato){
+            echo $dato.'<br>';
+            }
         }
     }
 
