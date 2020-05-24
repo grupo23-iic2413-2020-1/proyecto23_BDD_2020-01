@@ -148,7 +148,8 @@ $reservas = $result_4 -> fetchAll();
                             <tr style="text-align:center">
                                 <th>Fecha Inicio</th>
                                 <th>Fecha Termino</th>
-                                <th>Direccion Hotel</th>
+                                <th>Nombre Hotel</th>
+                                <th>Dirección Hotel</th>
 
                             </tr>
                             </thead>
