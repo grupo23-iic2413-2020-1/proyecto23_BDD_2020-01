@@ -91,6 +91,38 @@ $tickets = $result_5 -> fetchAll();
                 <br>
                 <br>
                 <br>
+                <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
+                    Ver tickets
+                </button>
+                </p>
+                <div class="collapse" id="tickets">
+                <div class="card card-body">
+                    Lo que quiera poner de los tickets:
+                    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+                        <thead class="thead-dark">
+                        <tr style="text-align:center">
+                            <th>Asiento</th>
+                            <th>Fecha compra</th>
+                            <th>Fecha viaje</th>
+                            <th>Ciudad origen</th>
+                            <th>Ciudad destino</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php
+                            foreach ($tickets as $tik) {
+                            echo "<tr> <td>$tik[0]</td> <td>$tik[1]</td> <td>$tik[2]</td> <td>$tik[3]</td> <td>$tik[4]</td></tr>";
+                        }
+                        ?>
+                        </tbody>
+
+                        </table>
+                </div>
+                </div>
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entradas">
