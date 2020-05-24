@@ -72,7 +72,11 @@ $reservas = $result_4 -> fetchAll();
                     <h5><b>Dirección: </b> <?php echo $udir ?> </h5>
                 </div>
                 <div>
-                    <h5><b>Reservas: </b> <?php echo "$reservas[0] $reservas[1] $reservas[2] $reservas[3] $reservas[4]" ?> </h5>
+                <?php
+                    foreach ($reservas as $res) {
+                        echo "<tr> <td>$res[3]</td> <td>$res[4]</td>  <td>$res[2]</td></tr>";
+                    }
+                ?>
                 </div>
                 <br>
                 <br>
