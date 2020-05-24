@@ -30,8 +30,9 @@ $result_2 -> execute();
 $entradas = $result_2 -> fetchAll();
 
 
-$consulta = dblink('dbname=$databaseName_2 options=-csearch_path=' ,
-            'SELECT Museo.lid, Lugar.lnombre, Museo.hora_apertura, Museo.hora_cierre FROM Museo, Lugar WHERE Museo.lid = Lugar.lid')
+$consulta = dblink('dbname="grupo50e3" options=-csearch_path=' ,
+            'SELECT Museo.lid, Lugar.lnombre, Museo.hora_apertura, Museo.hora_cierre FROM Museo, Lugar WHERE Museo.lid = Lugar.lid');
+            
 $query_3 = "SELECT * FROM $consulta
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME)";
 
