@@ -14,12 +14,14 @@
 
 ?>
 
-<p> Compra Pasajes </p>
+<div class="row justify-content-md-center">
+  <h2> Comprar Pasaje </h2>
+</div>
 
 <form align="center" action="eleccion_ticket.php" method="post">
 <div class="card card-body bg-secondary text-white">
     <label for="birthdaytime"> Elegir fecha: </label>
-    <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'>
+    <input align="center" style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'>
 </div>
 
 <br>

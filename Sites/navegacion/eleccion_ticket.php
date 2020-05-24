@@ -23,6 +23,8 @@
 	$result -> execute();
   $destinos = $result -> fetchAll();
 
+
+  echo "<p>$fecha</p><br><p>$ciudad_origen</p><br><p>$ciudad_destino</p><br>";
   ?>
 
   <?php if($destinos == NULL) {

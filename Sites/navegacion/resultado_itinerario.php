@@ -12,7 +12,7 @@
   $artistas = $_POST['artistas'];
   $ciudad = $_POST["ciudad"];
 
-  echo "<p>$fecha</p><br><p>$ciudad</p><br>'";
+  echo "<p>$fecha</p><br><p>$ciudad</p><br>";
 
   if(isset($_POST['artistas'])){
 
