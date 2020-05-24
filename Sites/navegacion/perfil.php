@@ -76,8 +76,8 @@ $reservas = $result_4 -> fetchAll();
                 <?php
                     echo $reservas;
                     foreach ($reservas as $res) {
-                        echo $res;
-                        echo "<tr> <td>$res[3]</td> <td>$res[4]</td>  <td>$res[2]</td></tr>";
+                        echo "$res[0] $res[1] $res[2]";
+                        
                     }
                 ?>
                 </div>
