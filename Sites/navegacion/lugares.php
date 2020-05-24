@@ -10,7 +10,7 @@
   require("../config/conexion.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT Lugar.lnombre, Lugar.lid, 
+  $query = "SELECT Lugar.lnombre, Lugar.lid 
             FROM Lugar, Museo WHERE Lugar.lid = Museo.lid";
   $result = $db_2 -> prepare($query);
   $result -> execute();
