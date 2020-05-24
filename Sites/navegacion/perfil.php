@@ -40,6 +40,19 @@ $result_3 -> execute();
 $entradas = $result_3 -> fetchAll();
 
 
+$query_4 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM 
+            (SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM $databaseName_2.dbo.Muedo AS m, 
+            $databaseName_2.dbo.Lugar AS l WHERE m.lid = l.lid
+            AS t1), Entradas AS t2
+            WHERE t2.uid = $uid";
+
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_4 = $db -> prepare($query_4);
+$result_4 -> execute();
+$entradas = $result_4 -> fetchAll();
+
+
 ?> 
 
 <body class= "bg-secondary text-white">
