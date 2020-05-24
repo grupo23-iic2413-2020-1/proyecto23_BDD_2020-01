@@ -74,9 +74,8 @@ $reservas = $result_4 -> fetchAll();
                 <div>
                 <h5><b>Reservas: </h5>
                 <?php
-                    echo $reservas;
                     foreach ($reservas as $res) {
-                        echo "$res[0] $res[1] $res[2]";
+                        echo "$res[0] $res[1] $res[2] \n";
                         
                     }
                 ?>
