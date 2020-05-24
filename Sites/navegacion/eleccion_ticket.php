@@ -25,8 +25,8 @@
 
   ?>
 
-  <?php if($destinos == NULL){
-    echo "No existe destino para los datos solicitados"
+  <?php if($destinos == NULL) {
+    echo "No existe destino para los datos solicitados";
   
   } else {  ?>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
