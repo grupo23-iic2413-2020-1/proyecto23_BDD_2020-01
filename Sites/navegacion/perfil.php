@@ -34,10 +34,20 @@ $query_3 = "SELECT * FROM dblink('dbname=$databaseName_2' ,
             AS t1(1lid INT, 1lnombre VARCHAR(255), 1hora_apertura TIME, 1hora_cierre TIME)";
 
 
+
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result_3 = $db -> prepare($query_3);
 $result_3 -> execute();
 $entradas = $result_3 -> fetchAll();
+
+
+
+$query_4 = "Select * FROM Reservas WHERE Reservas.uid = ?";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_4 = $db -> prepare($query_4);
+$result_4 -> execute();
+$reservas = $result_4 -> fetchAll();
 
 
 ?> 
@@ -108,6 +118,53 @@ $entradas = $result_3 -> fetchAll();
                 </div>
                 <br>
                 
+
+                <div>     
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reservas">
+                    Ver Reservas
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="entradas" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark" id="entradas">Estas son tus reservas:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-dark">
+                        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+                            <thead class="thead-dark">
+                            <tr style="text-align:center">
+                                <th>Fecha Inicio</th>
+                                <th>Fecha Termino</th>
+                                <th>Direccion Hotel</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+                                foreach ($reservas as $res) {
+                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td></tr>";
+                            }
+                            ?>
+                            </tbody>
+                            
+                        </table>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                    
+
+
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">
@@ -138,4 +195,5 @@ $entradas = $result_3 -> fetchAll();
             </div>
             </div>
     </div>
+
 </body>
