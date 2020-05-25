@@ -57,13 +57,15 @@ $hotel = $result -> fetchAll();
         <div class="center">
             <label for="birthdaytime"> Elegir fecha inicio: </label>
             <div class='center'>
-            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'>
+            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'
+             value=<?php echo date('Y-m-d') ?> min=<?php echo date('Y-m-d') ?>>
             </div>
         </div>
         <div class="center">
             <label for="birthdaytime"> Elegir fecha termino: </label>
             <div class='center'>
-            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
+            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'
+             value=<?php echo date('Y-m-d') ?> min=<?php echo date('Y-m-d') ?>>
             </div>
         </div>
         

@@ -23,7 +23,8 @@ include('../templates/navbar.php');   ?>
 <div class="card card-body bg-secondary text-white">
     <label for="birthdaytime"> Elegir fecha: </label>
     <div class='center'>
-    <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fecha'>
+    <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fecha'
+             value=<?php echo date('Y-m-d') ?> min=<?php echo date('Y-m-d') ?>>
     </div>
 </div>
 
