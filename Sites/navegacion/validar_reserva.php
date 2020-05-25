@@ -13,11 +13,18 @@ if ($_SESSION['loggedin'] == False) {
     header("location: ../errores/perfil1.php");
     exit;} 
 
-
-
+$fecha_compra = date('Y-m-d');
 $hid = $_GET['hid'];
 $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
+
+if ($fechat < $fechai) {
+    header("location: ../errores/fechas_incorrectas.php");
+    exit;} 
+
+if ($fechai < $fecha_compra) {
+    header("location: ../errores/fechas_incorrectas.php");
+    exit;} 
 
 $query = "SELECT max(rid) FROM reservas";
 
@@ -33,7 +40,6 @@ else {
     $rid = $max_rid[0][0] + 1;
 }
 
-$fecha_compra = date('Y-m-d');
 
 $query_2 = "SELECT hid, hnombre, precio from hoteles where hid = $hid";
 $result = $db -> prepare($query_2);
