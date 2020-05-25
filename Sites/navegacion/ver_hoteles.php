@@ -10,7 +10,7 @@
 require("../config/conexion.php");
 
 #Se construye la consulta como un string
-$query = "SELECT hnombre, cnombre FROM ciudades, hoteles where hoteles.cid = ciudades.cid order by cnombre;";
+$query = "SELECT hid, hnombre, cnombre FROM ciudades, hoteles where hoteles.cid = ciudades.cid order by cnombre;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db_2 -> prepare($query);
@@ -35,7 +35,7 @@ $hoteles = $result -> fetchAll();
 
         <?php
             foreach ($hoteles as $htl) {
-            echo "<tr><td><a href='obra_info.php?oid=$obra[1]&onombre=$obra[0]'>$obra[0]</a></td></tr>";
+            echo "<tr><td><a href='hotel_info.php?hid=$htl[0]&hnombre=$htl[1]&hnombre=$htl[2]'>$htl[1] $htl[2]</a></td></tr>";
             }
         ?>
         </tbody>
