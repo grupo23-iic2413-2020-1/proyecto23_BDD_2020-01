@@ -55,11 +55,11 @@ $hotel = $result -> fetchAll();
 <div class="card card-body">
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha inicio: </label>
-            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fecha'>
+            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'>
         </div>
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha termino: </label>
-            <input style="width: 5em; height: 1em; font-size: 15px; color: black; align: center" type="date" name='fecha'>
+            <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
         </div>
     </div>
     </div>
