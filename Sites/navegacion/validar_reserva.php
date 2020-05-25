@@ -23,7 +23,7 @@ $result = $db -> prepare($query);
 $result -> execute();
 $max_rid = $result -> fetchAll();
 
-if ($max_data == NULL) {
+if ($max_rid == NULL) {
 $rid = 1;
 } 
 else {
@@ -49,6 +49,7 @@ $result_4 -> bindParam(4, $fechai);
 $result_4 -> bindParam(5, $fechat);
 $result_4 -> execute();
 
+
 $query_4 = "SELECT * FROM Usuarios WHERE Usuarios.uid = $uid";
 
 
@@ -58,7 +59,7 @@ $result -> bindParam(1, $_SESSION['current_uid']);
 $result -> execute();
 $user = $result -> fetchAll();
 
-$uid = $user[0][0];
+$uid2 = $user[0][0];
 $username = $user[0][1];
 $unombre = $user[0][2];
 $correo = $user[0][3];
