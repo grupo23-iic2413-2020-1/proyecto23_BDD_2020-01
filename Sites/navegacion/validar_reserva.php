@@ -13,6 +13,8 @@ $hid = $_POST['hid'];
 $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
 
+echo $hid;
+
 
 $query = "SELECT max(rid) FROM reservas";
 
