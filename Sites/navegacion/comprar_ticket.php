@@ -22,7 +22,9 @@ include('../templates/navbar.php');   ?>
 <form align="center" action="eleccion_ticket.php" method="post">
 <div class="card card-body bg-secondary text-white">
     <label for="birthdaytime"> Elegir fecha: </label>
+    <div class='center'>
     <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fecha'>
+    </div>
 </div>
 
 <br>
