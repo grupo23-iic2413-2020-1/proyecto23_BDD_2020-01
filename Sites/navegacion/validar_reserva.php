@@ -48,7 +48,7 @@ $result_4 -> bindParam(5, $fechat);
 $result_4 -> execute();
 
 
-$query_4 = "SELECT * FROM Usuarios WHERE Usuarios.uid = $uid";
+$query_4 = "SELECT * FROM Usuarios WHERE Usuarios.uid = ? ";
 
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
