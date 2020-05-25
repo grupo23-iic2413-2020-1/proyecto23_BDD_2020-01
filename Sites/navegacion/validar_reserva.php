@@ -19,7 +19,7 @@ $hid = $_GET['hid'];
 $fechai = $_GET["fechai"];
 $fechat = $_GET["fechat"];
 
-$query = "SELECT max(rid) FROM reservas";
+$query = "SELECT max(rid) FROM reservas;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
