@@ -20,14 +20,14 @@ $result -> execute();
 $hotel = $result -> fetchAll();
 ?>
 <div class="row justify-content-md-center">
-            <h2> Informacion de <?php echo $hnombre;?> </h2>
+            <h2> Informacion de <?php echo $hotel[0][1];?> </h2>
         </div>
 
         <br>
 <div class="row justify-content-md-center">
     <div class='col-md-auto'>
         <div>
-            <h5><b>Nombre: </b> <?php echo $hnombre ?> </h5>
+            <h5><b>Nombre: </b> <?php echo $hotel[0][1] ?> </h5>
         </div>
         <div>
             <h5><b>Ciudad: </b> <?php echo $cnombre ?> </h5>
