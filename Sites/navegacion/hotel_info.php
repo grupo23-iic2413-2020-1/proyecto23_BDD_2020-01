@@ -5,19 +5,19 @@
 <?php 
 # Muestra una tabla con todos los artistas
 
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+#Llama a conexión, crea el objeto PDO y obtiene la variable $db
+require("../config/conexion.php");
 
-  $hid = $_GET['hid'];
-  $hnombre = $_GET['hnombre'];
-  $cnombre = $_GET['cnombre'];
+$hid = $_GET['hid'];
+$hnombre = $_GET['hnombre'];
+$cnombre = $_GET['cnombre'];
 
-  #Se construye la consulta como un string
-  $query = "select * from hoteles
-            where $hid = hid;";
-	$result = $db -> prepare($query);
-	$result -> execute();
-  $hotel = $result -> fetchAll();
+#Se construye la consulta como un string
+$query = "select * from hoteles
+        where hoteles.hid = $hid;";
+$result = $db -> prepare($query);
+$result -> execute();
+$hotel = $result -> fetchAll();
 
 ?>
 <div class="row justify-content-md-center">
