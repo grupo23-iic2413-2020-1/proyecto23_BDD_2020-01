@@ -63,9 +63,10 @@ $hotel = $result -> fetchAll();
             <label for="birthdaytime"> Elegir fecha termino: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
         </div>
-        <?php
-            echo "<a href='validar_reserva.php?hid=$htl[0]'> Confirmar Reserva </a>";
-        ?>
+        <form align='center' action='validar_reserva.php?<?php 
+            echo 'fechai='.$fechai.'&fechat='.$fechat.'&hid='.$hid ?>'  method='post'>
+        <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
+      </form>
     </div>
     </div>
 
