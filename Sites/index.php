@@ -1,6 +1,8 @@
 <?php session_start();
 include('templates/header.html');   
-include('templates/navbar.php');   ?> 
+include('templates/navbar.php');   
+$_SESSION["base_url"] = trim($_SERVER['PHP_SELF'], '/index.php');
+?> 
 
 <!-- Carousel -->
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -61,10 +63,11 @@ include('templates/navbar.php');   ?>
     <br>
     <p class= "text-white" align="center">Sección en desarrollo</p>
 
+    <p class= "text-white" align="center">base_url:<?php echo $_SESSION['base_url']?></p>
     <p class= "text-white" align="center">PHP_SELF:<?php echo $_SERVER['PHP_SELF']?></p>
     <p class= "text-white" align="center">REQUEST_SCHEME:<?php echo $_SERVER['REQUEST_SCHEME']?></p>
     <p class= "text-white" align="center">APP_URL:<?php echo $_SERVER['APP_URL']?></p>
-    <p class= "text-white" align="center">GATEWAY_INTERFACE:<?php echo $_SERVER['GATEWAY_INTERFACE']?></p>
+    <p class= "text-white" align="center">DOCUMENT_ROOT:<?php echo $_SERVER['DOCUMENT_ROOT']?></p>
     <p class= "text-white" align="center">SERVER_PORT:<?php echo $_SERVER['SERVER_PORT']?></p>
     <p class= "text-white" align="center">SERVER_NAME:<?php echo $_SERVER['SERVER_NAME']?></p>
     <p class= "text-white" align="center">HTTP_HOST:<?php echo $_SERVER['HTTP_HOST']?></p>
