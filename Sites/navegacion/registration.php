@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xl-6 mx-auto">
-        <div class="card my-5">
+        <div class="card my-3">
             <br>
             <h3 class="card-title text-center">Registrarse</h3>
           <div class="card-body">
@@ -45,11 +45,9 @@
                 <input type="password" name='password_confirm' id="inputConfirmPassword" class="form-control" placeholder="Confirmar contraseña" required>
                 <br>
               </div>
-
-              <br>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarse</button>
               <a class="d-block text-center mt-2 small" href="../navegacion/log_in.php">Iniciar Sesión</a>
-              <hr class="my-4">
+              
             </form>
           </div>
         </div>

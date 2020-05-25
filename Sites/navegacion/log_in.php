@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xl-6 mx-auto">
-        <div class="card my-5">
+        <div class="card my-3">
             <br>
             <h3 class="card-title text-center">Iniciar Sesión</h3>
           <div class="card-body">
@@ -14,6 +14,7 @@
                 <label for="inputUserame">Username</label>
                 <input type="text" name='username' id="inputUserame" class="form-control" placeholder="Username"  required autofocus>  
               </div>
+              <br>
               <div class="form-label-group">
                 <label for="inputPassword">Contraseña</label>
                 <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Contraseña" required>
@@ -21,7 +22,6 @@
               <br>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ingresar</button>
               <a class="d-block text-center mt-2 small" href="../navegacion/registration.php">Registrarse</a>
-              <hr class="my-4">
             </form>
           </div>
         </div>
