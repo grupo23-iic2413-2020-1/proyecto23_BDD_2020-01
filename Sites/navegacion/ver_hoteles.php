@@ -4,7 +4,6 @@
 
 <body class= "bg-secondary text-white">
 <?php 
-# Muestra una tabla con todos los artistas
 
 #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 require("../config/conexion.php");
@@ -13,10 +12,9 @@ require("../config/conexion.php");
 $query = "SELECT hid, hnombre, cnombre FROM ciudades, hoteles where hoteles.cid = ciudades.cid order by cnombre;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-$result = $db_2 -> prepare($query);
+$result = $db -> prepare($query);
 $result -> execute();
 $hoteles = $result -> fetchAll();
-echo "$hoteles[0]";
 ?>
 
     <div class="container">
@@ -35,7 +33,7 @@ echo "$hoteles[0]";
 
         <?php
             foreach ($hoteles as $htl) {
-            echo "<tr><td><a href='hotel_info.php?hid=$htl[0]&hnombre=$htl[1]&cnombre=$htl[2]'>$htl[1]</a></td></tr>";
+            echo "<tr><td><a href='hotel_info.php?hid=$htl[0]&hnombre=$htl[1]&cnombre=$htl[2]'>$htl[1] $htl[2]</a></td></tr>";
             }
         ?>
         </tbody>
