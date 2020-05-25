@@ -16,7 +16,7 @@ $base_url = $_SESSION["base_url"];?>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="#">Hoteles</a>
+        <a class="nav-link" href="<?php echo $base_url ?>/navegacion/ver_hoteles.php">Hoteles</a>
       </li>
       
       <li class="nav-item dropdown">
