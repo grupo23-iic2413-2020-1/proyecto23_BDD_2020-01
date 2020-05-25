@@ -16,7 +16,7 @@ ob_start();
   $password_confirm = $_POST["password_confirm"];
 
   if ($password != $password_confirm) {
-    header("location: /~grupo23/errores/registration1.php");
+    header("location: ../errores/registration1.php");
     exit;
 
   } 
@@ -30,7 +30,7 @@ ob_start();
   $result -> execute();
   $user = $result -> fetchAll();
   if ($user[0] != NULL) {
-    header("location: /~grupo23/errores/registration2.php");
+    header("location: ../errores/registration2.php");
     exit;
 
   } 
@@ -56,7 +56,7 @@ ob_start();
     $_SESSION["current_uid"] = $uid;
     $_SESSION["current_username"] = $username;
 
-    header("location: /~grupo23/index.php");
+    header("location: ../index.php");
     exit;
   }
 
