@@ -53,7 +53,7 @@ $hotel = $result -> fetchAll();
 </p>
 <div class="collapse" id="reserva">
 <div class="card card-body">
-        <form align="center" action="validar_reserva.php" method="post">
+        <form align='center' action='validar_reserva.php?>
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha inicio: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'>
@@ -62,12 +62,12 @@ $hotel = $result -> fetchAll();
             <label for="birthdaytime"> Elegir fecha termino: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
         </div>
-        <?php
+        <?php 
             echo 'fechai='.$fechai.'&fechat='.$fechat.'&hid='.$hid ?>'  method='post'>
-      
+            
+        <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
+      </form>
     </div>
-    <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
-    </form>
     </div>
 
 <?php include('../templates/footer.html'); ?>
