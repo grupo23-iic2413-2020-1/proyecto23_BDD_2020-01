@@ -17,6 +17,7 @@ $uid = $_SESSION ['current_uid'];
 echo $fechai;
 echo $fechat;
 echo $uid;
+echo $hid;
 
 $query = "SELECT max(rid) FROM reservas";
 
