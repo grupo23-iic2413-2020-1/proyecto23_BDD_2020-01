@@ -20,7 +20,7 @@
               </div>
               <br>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ingresar</button>
-              <a class="d-block text-center mt-2 small" href="/~grupo23/navegacion/registration.php">Registrarse</a>
+              <a class="d-block text-center mt-2 small" href="<?php echo $_SESSION["base_url"]?>/navegacion/registration.php">Registrarse</a>
               <hr class="my-4">
             </form>
           </div>

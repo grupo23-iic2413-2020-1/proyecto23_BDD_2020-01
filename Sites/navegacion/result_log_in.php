@@ -29,7 +29,7 @@ ob_start();
     $_SESSION["loggedin"] = True;
     $_SESSION["current_uid"] = $user[0][0];
     $_SESSION["current_username"] = $user[0][1];
-    header("location: $base_url/index.php");
+    header("location: ../index.php");
       exit;
   } 
   else { 
@@ -41,11 +41,11 @@ ob_start();
     $result -> execute();
     $user = $result -> fetchAll();
     if ($user[0] != Null) {
-      header("location: $base_url/errores/log_in1.php");
+      header("location: ../errores/log_in1.php");
       exit;
     }
     else {
-      header("location: $base_url/errores/log_in2.php");
+      header("location: ../errores/log_in2.php");
       exit;
     }
   }
