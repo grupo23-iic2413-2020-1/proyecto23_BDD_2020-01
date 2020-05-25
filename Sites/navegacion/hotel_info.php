@@ -44,3 +44,5 @@ $hotel = $result -> fetchAll();
         </div>
     </div>
 </div>
+
+<?php include('../templates/footer.html'); ?>
