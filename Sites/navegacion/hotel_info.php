@@ -47,20 +47,25 @@ $hotel = $result -> fetchAll();
 <br>
 
 <p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#reservas" aria-expanded="false" aria-controls="collapseExample">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#reserva" aria-expanded="false" aria-controls="collapseExample">
     Hacer Reserva
 </button>
 </p>
-<div class="collapse" id="reservas">
+<div class="collapse" id="reserva">
 <div class="card card-body">
+        <form align="center" action="validar_reserva.php" method="post">
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha inicio: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'>
         </div>
+        <form align="center" action="validar_reserva.php" method="post">
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha termino: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
         </div>
+        <?php
+            echo "<a href='validar_reserva.php?hid=$htl[0]'> Confirmar Reserva </a>";
+        ?>
     </div>
     </div>
 
