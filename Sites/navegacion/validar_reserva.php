@@ -6,40 +6,39 @@ include('../templates/navbar.php');   ?>
 <?php #Ingrese el nombre de un pa´ıs. Muestre todos los nombres de las ciudades del pa´ıs con
 # ese nombre en su base de datos.
 
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+#Llama a conexión, crea el objeto PDO y obtiene la variable $db
+require("../config/conexion.php");
 
-  $hid = $_GET['hid'];
-  $fechai = $_POST["fechai"];
-  $fechat = $_POST["fechat"];
-  $uid = $_SESSION ['current_uid'];
-
-
-
-  $query = "SELECT max(rid) FROM reservas";
-
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db -> prepare($query);
-  $result -> execute();
-  $max_rid = $result -> fetchAll();
-
-  if ($max_data == NULL) {
-    $rid = 1;
-    } 
-  else {
-        $rid = $max_rid + 1;
-    }
-
-    $fecha_compra = date('Y-m-d');
-
-  $query_2 = "SELECT hnombre, precio from hoteles where hid = $hid;";
-  $result = $db -> prepare($query_2);
-  $result -> execute();
-  $hotel = $result -> fetchAll();
+$hid = $_GET['hid'];
+$fechai = $_POST["fechai"];
+$fechat = $_POST["fechat"];
+$uid = $_SESSION ['current_uid'];
 
 
 
+$query = "SELECT max(rid) FROM reservas";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result = $db -> prepare($query);
+$result -> execute();
 $max_rid = $result -> fetchAll();
+
+if ($max_data == NULL) {
+$rid = 1;
+} 
+else {
+    $rid = $max_rid[0][0] + 1;
+}
+
+$fecha_compra = date('Y-m-d');
+
+$query_2 = "SELECT hnombre, precio from hoteles where hid = $hid;";
+$result = $db -> prepare($query_2);
+$result -> execute();
+$hotel = $result -> fetchAll();
+
+
+
 $query_3 = "INSERT INTO Reservas(rid, uid, hid, fechai, fechat) 
            VALUES (?, ?, ?, ?, ?)";
 $result_4 = $db -> prepare($query_3);
@@ -121,7 +120,7 @@ $udir = $user[0][4];
 
             
             </div>
-    </div>
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
       </form>
+    </div>
