@@ -16,7 +16,7 @@ $query = "SELECT hid, hnombre, cnombre FROM ciudades, hoteles where hoteles.cid 
 $result = $db_2 -> prepare($query);
 $result -> execute();
 $hoteles = $result -> fetchAll();
-
+echo "$hoteles[0][0]";
 ?>
 
     <div class="container">
