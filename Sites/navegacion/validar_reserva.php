@@ -1,4 +1,5 @@
 <?php session_start();
+ob_start();
 include('../templates/header.html');  
 include('../templates/navbar.php');   ?> 
 
@@ -129,3 +130,5 @@ $result_4 -> execute();
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
       </form>
     </div>
+
+<?php ob_end_flush(); ?>
