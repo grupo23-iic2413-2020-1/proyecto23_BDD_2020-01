@@ -105,7 +105,7 @@ $result_4 -> execute();
                     <br>
                 </div>
                 <div>
-                    <h5><b>Precio: € </b> <?php echo $hotel[0][2] ?> </h5>
+                    <h5><b>id: € </b> <?php echo $hotel[0][0] ?> </h5>
                     <br>
                 </div>
                 <div>
