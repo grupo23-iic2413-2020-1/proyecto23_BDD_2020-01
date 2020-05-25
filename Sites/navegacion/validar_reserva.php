@@ -19,7 +19,7 @@ $hid = $_GET['hid'];
 $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
 
-$query = "SELECT max(rid) FROM reservas;";
+$query = "SELECT max(rid) FROM reservas";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
@@ -35,7 +35,7 @@ else {
 
 $fecha_compra = date('Y-m-d');
 
-$query_2 = "SELECT hid, hnombre, precio from hoteles where hid = $hid;";
+$query_2 = "SELECT hid, hnombre, precio from hoteles where hid = $hid";
 $result = $db -> prepare($query_2);
 $result -> execute();
 $hotel = $result -> fetchAll();
@@ -63,7 +63,7 @@ $query_4 = "INSERT INTO Reservas(rid, uid, hid, fechai, fechat)
 $result_4 = $db -> prepare($query_4);
 $result_4 -> bindParam(1, $rid);
 $result_4 -> bindParam(2, $uid);
-$result_4 -> bindParam(3, $hotel[0][1]);
+$result_4 -> bindParam(3, $hid);
 $result_4 -> bindParam(4, $fechai);
 $result_4 -> bindParam(5, $fechat);
 $result_4 -> execute();
