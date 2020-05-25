@@ -62,6 +62,8 @@ include('templates/navbar.php');   ?>
     <p class= "text-white" align="center">Sección en desarrollo</p>
 
     <p class= "text-white" align="center">PHP_SELF:<?php echo $_SERVER['PHP_SELF']?></p>
+    <p class= "text-white" align="center">REQUEST_SCHEME:<?php echo $_SERVER['REQUEST_SCHEME']?></p>
+    <p class= "text-white" align="center">APP_URL:<?php echo $_SERVER['APP_URL']?></p>
     <p class= "text-white" align="center">GATEWAY_INTERFACE:<?php echo $_SERVER['GATEWAY_INTERFACE']?></p>
     <p class= "text-white" align="center">SERVER_PORT:<?php echo $_SERVER['SERVER_PORT']?></p>
     <p class= "text-white" align="center">SERVER_NAME:<?php echo $_SERVER['SERVER_NAME']?></p>
