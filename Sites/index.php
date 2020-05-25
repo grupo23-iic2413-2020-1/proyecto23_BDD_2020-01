@@ -29,7 +29,7 @@ $_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/
           <h1>¡Crea un itinerario!</h1>
           <p>Con nuestra ayuda puedes crear un itinerario de viajes para visitar todas las obras 
             de tus artistas favoritos de manera rápida y sencilla</p>
-          <a role="button" href="../navegacion/itinerario.php" class="btn btn-success">Ir</a>
+          <a role="button" href="navegacion/itinerario.php" class="btn btn-success">Ir</a>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ $_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/
         <div class="card bg-secondary">
           <h1>Conoce a nuestros artistas</h1>
           <p>Aquí, puedes explorar a todos los artistas disponibles para crear tu viaje, conocer sus obras, donde se presentan estas y mucho más.</p>
-          <a role="button" href="../navegacion/artistas.php" class="btn btn-success">Ir</a>
+          <a role="button" href="navegacion/artistas.php" class="btn btn-success">Ir</a>
         </div>
       </div>
     </div>
