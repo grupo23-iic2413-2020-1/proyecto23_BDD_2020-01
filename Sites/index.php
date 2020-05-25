@@ -2,7 +2,6 @@
 $_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/index.php'); 
 include('templates/header.html');   
 include('templates/navbar.php'); 
- 
 ?> 
 
 <!-- Carousel -->
