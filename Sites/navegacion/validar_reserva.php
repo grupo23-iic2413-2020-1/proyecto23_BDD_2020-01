@@ -12,12 +12,7 @@ require("../config/conexion.php");
 $hid = $_GET['hid'];
 $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
-$uid = $_SESSION ['current_uid'];
 
-echo $fechai;
-echo $fechat;
-echo $uid;
-echo $hid;
 
 $query = "SELECT max(rid) FROM reservas";
 
@@ -67,6 +62,8 @@ $username = $user[0][1];
 $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
+
+echo $uid;
 
   ?>
 
