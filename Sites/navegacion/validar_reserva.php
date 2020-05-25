@@ -1,4 +1,5 @@
 <?php session_start();
+ob_start();
 include('../templates/header.html');  
 include('../templates/navbar.php');   ?> 
 
@@ -15,8 +16,8 @@ if ($_SESSION['loggedin'] == False) {
 
 
 $hid = $_GET['hid'];
-$fechai = $_GET["fechai"];
-$fechat = $_GET["fechat"];
+$fechai = $_POST["fechai"];
+$fechat = $_POST["fechat"];
 
 $query = "SELECT max(rid) FROM reservas;";
 
@@ -119,8 +120,11 @@ $result_4 -> execute();
                     <h5><b>Mail: </b> <?php echo $correo ?> </h5>
                     <br>
                 </div>
+
             </div>
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
       </form>
     </div>
+
+<?php ob_end_flush(); ?>
