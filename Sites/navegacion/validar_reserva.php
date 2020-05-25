@@ -40,10 +40,26 @@ $result -> execute();
 $hotel = $result -> fetchAll();
 
 
+$query_3 = "SELECT * FROM Usuarios WHERE Usuarios.uid = ? ";
 
-$query_3 = "INSERT INTO Reservas(rid, uid, hid, fechai, fechat) 
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result = $db -> prepare($query_3);
+$result -> bindParam(1, $_SESSION['current_uid']);
+$result -> execute();
+$user = $result -> fetchAll();
+
+$uid = $user[0][0];
+$username = $user[0][1];
+$unombre = $user[0][2];
+$correo = $user[0][3];
+$udir = $user[0][4];
+
+
+
+$query_4 = "INSERT INTO Reservas(rid, uid, hid, fechai, fechat) 
            VALUES (?, ?, ?, ?, ?)";
-$result_4 = $db -> prepare($query_3);
+$result_4 = $db -> prepare($query_4);
 $result_4 -> bindParam(1, $rid);
 $result_4 -> bindParam(2, $uid);
 $result_4 -> bindParam(3, $hid);
@@ -52,22 +68,6 @@ $result_4 -> bindParam(5, $fechat);
 $result_4 -> execute();
 
 
-$query_4 = "SELECT * FROM Usuarios WHERE Usuarios.uid = ? ";
-
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-$result = $db -> prepare($query_4);
-$result -> bindParam(1, $_SESSION['current_uid']);
-$result -> execute();
-$user = $result -> fetchAll();
-
-$uid2 = $user[0][0];
-$username = $user[0][1];
-$unombre = $user[0][2];
-$correo = $user[0][3];
-$udir = $user[0][4];
-
-echo $uid;
 
   ?>
 
