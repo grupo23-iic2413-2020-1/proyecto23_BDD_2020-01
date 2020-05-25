@@ -65,20 +65,12 @@ include('templates/navbar.php');   ?>
     <p class= "text-white" align="center">GATEWAY_INTERFACE:<?php echo $_SERVER['GATEWAY_INTERFACE']?></p>
     <p class= "text-white" align="center">SERVER_ADDR:<?php echo $_SERVER['SERVER_ADDR']?></p>
     <p class= "text-white" align="center">SERVER_NAME:<?php echo $_SERVER['SERVER_NAME']?></p>
-    <p class= "text-white" align="center">QUERY_STRING:<?php echo $_SERVER['QUERY_STRING']?></p>
-    <p class= "text-white" align="center">HTTP_ACCEPT:<?php echo $_SERVER['HTTP_ACCEPT']?></p>
     <p class= "text-white" align="center">HTTP_HOST:<?php echo $_SERVER['HTTP_HOST']?></p>
     <p class= "text-white" align="center">HTTP_REFERER:<?php echo $_SERVER['HTTP_REFERER']?></p>
     <p class= "text-white" align="center">HTTPS:<?php echo $_SERVER['HTTPS']?></p>
     <p class= "text-white" align="center">REMOTE_HOST:<?php echo $_SERVER['REMOTE_HOST']?></p>
-    <p class= "text-white" align="center">SERVER_ADMIN:<?php echo $_SERVER['SERVER_ADMIN']?></p>
-    <p class= "text-white" align="center">SERVER_SIGNATURE:<?php echo $_SERVER['SERVER_SIGNATURE']?></p>
     <p class= "text-white" align="center">PATH_TRANSLATED:<?php echo $_SERVER['PATH_TRANSLATED']?></p>
-    <p class= "text-white" align="center">SERVER_SOFTWARE:<?php echo $_SERVER['SERVER_SOFTWARE']?></p>
-    <p class= "text-white" align="center">SERVER_PROTOCOL:<?php echo $_SERVER['SERVER_PROTOCOL']?></p>
-    <p class= "text-white" align="center">HTTP_USER_AGENT:<?php echo $_SERVER['HTTP_USER_AGENT']?></p>
     <p class= "text-white" align="center">REMOTE_ADDR:<?php echo $_SERVER['REMOTE_ADDR']?></p>
-    <p class= "text-white" align="center">SCRIPT_FILENAME:<?php echo $_SERVER['SCRIPT_FILENAME']?></p>
     <p class= "text-white" align="center">REQUEST_URI:<?php echo $_SERVER['REQUEST_URI']?></p>
     <p class= "text-white" align="center">PATH_INFO:<?php echo $_SERVER['PATH_INFO']?></p>
     <p class= "text-white" align="center">ORIG_PATH_INFO:<?php echo $_SERVER['ORIG_PATH_INFO']?></p>
