@@ -18,7 +18,7 @@ $query = "select * from hoteles
 $result = $db -> prepare($query);
 $result -> execute();
 $hotel = $result -> fetchAll();
-
+echo "$hotel $hotel[1]";
 ?>
 <div class="row justify-content-md-center">
             <h2> Informacion de <?php echo $hnombre;?> </h2>
