@@ -1,8 +1,13 @@
 <?php session_start();
+ob_start();
 include('../templates/header.html');   
 include('../templates/navbar.php');  
 
 require("../config/conexion.php");
+
+if ($_SESSION['current_uid'] == False) {
+    header("location: ../errores/perfil1.php");
+    exit;} 
 
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
@@ -227,3 +232,5 @@ $tickets = $result_5 -> fetchAll();
     </div>
 
 </body>
+
+<?php ob_end_flush(); ?>
