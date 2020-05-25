@@ -1,5 +1,4 @@
 <?php session_start();
-ob_start();
 include('../templates/header.html');  
 include('../templates/navbar.php');   ?> 
 
@@ -105,7 +104,7 @@ $result_4 -> execute();
                     <br>
                 </div>
                 <div>
-                    <h5><b>id: € </b> <?php echo $hotel[0][0] ?> </h5>
+                    <h5><b>Precio: € </b> <?php echo $hotel[0][2] ?> </h5>
                     <br>
                 </div>
                 <div>
@@ -120,15 +119,8 @@ $result_4 -> execute();
                     <h5><b>Mail: </b> <?php echo $correo ?> </h5>
                     <br>
                 </div>
-                
-
-               
-
-            
             </div>
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
       </form>
     </div>
-
-<?php ob_end_flush(); ?>
