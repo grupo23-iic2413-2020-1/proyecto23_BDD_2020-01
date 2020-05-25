@@ -13,8 +13,8 @@ $hnombre = $_GET['hnombre'];
 $cnombre = $_GET['cnombre'];
 
 #Se construye la consulta como un string
-$query = "select * from hoteles
-        where hoteles.hid = $hid";
+$query = "SELECT * FROM hoteles
+        WHERE hoteles.hid = $hid";
 $result = $db -> prepare($query);
 $result -> execute();
 $hotel = $result -> fetchAll();
