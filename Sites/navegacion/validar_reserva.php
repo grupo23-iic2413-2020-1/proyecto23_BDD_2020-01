@@ -15,9 +15,9 @@ if ($_SESSION['loggedin'] == False) {
 
 
 
-$hid = $_POST['hid'];
-$fechai = $_POST["fechai"];
-$fechat = $_POST["fechat"];
+$hid = $_GET['hid'];
+$fechai = $_GET["fechai"];
+$fechat = $_GET["fechat"];
 
 $query = "SELECT max(rid) FROM reservas";
 
