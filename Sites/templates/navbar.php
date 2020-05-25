@@ -40,6 +40,10 @@ $base_url = $_SESSION["base_url"];?>
           <a class="dropdown-item" href="<?php echo $base_url ?>/navegacion/comprar_ticket.php">Comprar Ticket</a>
         </div>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><?php echo $base_url ?></a>
+      </li>
+      
 
       
     </ul>

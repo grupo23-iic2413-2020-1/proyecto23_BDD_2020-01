@@ -1,7 +1,7 @@
 <?php session_start();
-$_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/index.php');
 include('templates/header.html');   
-include('templates/navbar.php');   
+include('templates/navbar.php'); 
+$_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/index.php');  
 ?> 
 
 <!-- Carousel -->
