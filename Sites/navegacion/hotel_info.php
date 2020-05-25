@@ -64,9 +64,10 @@ $hotel = $result -> fetchAll();
         </div>
         <?php
             echo 'fechai='.$fechai.'&fechat='.$fechat.'&hid='.$hid ?>'  method='post'>
-        <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
-      </form>
+      
     </div>
+    <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
+    </form>
     </div>
 
 <?php include('../templates/footer.html'); ?>
