@@ -35,7 +35,7 @@ $hoteles = $result -> fetchAll();
 
         <?php
             foreach ($hoteles as $htl) {
-            echo "<tr><td><a href='hotel_info.php?hid=$htl[0]&hnombre=$htl[1]&hnombre=$htl[2]'>$htl[1] $htl[2]</a></td></tr>";
+            echo "<tr><td><a href='hotel_info.php?hid=$htl[0]&hnombre=$htl[1]&cnombre=$htl[2]'>$htl[1]</a></td></tr>";
             }
         ?>
         </tbody>
