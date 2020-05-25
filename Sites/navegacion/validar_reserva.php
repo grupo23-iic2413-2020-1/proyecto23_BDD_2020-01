@@ -14,7 +14,9 @@ $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
 $uid = $_SESSION ['current_uid'];
 
-
+echo $fechai;
+echo $fechat;
+echo $uid;
 
 $query = "SELECT max(rid) FROM reservas";
 
