@@ -13,9 +13,6 @@ $hid = $_POST['hid'];
 $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
 
-echo $hid;
-
-
 $query = "SELECT max(rid) FROM reservas";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados

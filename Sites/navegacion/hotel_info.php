@@ -64,7 +64,9 @@ $hotel = $result -> fetchAll();
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
         </div>
         <form align='center' action='validar_reserva.php?<?php 
+            echo $hid;
             echo 'fechai='.$fechai.'&fechat='.$fechat.'&hid='.$hid ?>'  method='post'>
+            
         <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
       </form>
     </div>
