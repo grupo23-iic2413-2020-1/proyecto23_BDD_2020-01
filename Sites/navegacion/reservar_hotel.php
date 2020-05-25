@@ -18,3 +18,12 @@ include('../templates/navbar.php');   ?>
 <div class="row justify-content-md-center">
   <h2> Reservar hotel </h2>
 </div>
+
+<form align="center" action="eleccion_ticket.php" method="post">
+<div class="card card-body bg-secondary text-white">
+    <label for="birthdaytime"> Elegir fecha: </label>
+    <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fecha'>
+</div>
+
+<br>
+
