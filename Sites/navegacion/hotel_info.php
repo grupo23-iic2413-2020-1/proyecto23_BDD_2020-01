@@ -54,8 +54,12 @@ $hotel = $result -> fetchAll();
 <div class="collapse" id="reservas">
 <div class="card card-body">
         <div class="card card-body bg-secondary text-white">
-            <label for="birthdaytime"> Elegir fecha: </label>
+            <label for="birthdaytime"> Elegir fecha inicio: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fecha'>
+        </div>
+        <div class="card card-body bg-secondary text-white">
+            <label for="birthdaytime"> Elegir fecha termino: </label>
+            <input style="width: 5em; height: 1em; font-size: 15px; color: black; align: center" type="date" name='fecha'>
         </div>
     </div>
     </div>
