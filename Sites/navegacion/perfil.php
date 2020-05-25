@@ -216,7 +216,7 @@ $tickets = $result_5 -> fetchAll();
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a role="button" href='/~grupo23/navegacion/delete_user.php' class="btn btn-primary" >Eliminar</a>
+                            <a role="button" href='../navegacion/delete_user.php' class="btn btn-primary" >Eliminar</a>
                         </div>
                         </div>
                     </div>
