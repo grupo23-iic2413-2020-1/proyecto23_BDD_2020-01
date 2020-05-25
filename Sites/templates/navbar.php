@@ -40,9 +40,6 @@ $base_url = $_SESSION["base_url"];?>
           <a class="dropdown-item" href="<?php echo $base_url ?>/navegacion/comprar_ticket.php">Comprar Ticket</a>
         </div>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><?php echo $base_url ?></a>
-      </li>
       
 
       
@@ -54,19 +51,19 @@ $base_url = $_SESSION["base_url"];?>
             <?php echo $_SESSION['current_username'] ?>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href='/<?php echo $base_url ?>/navegacion/perfil.php'> Perfil </a>
+            <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/perfil.php'> Perfil </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href='/<?php echo $base_url ?>/navegacion/log_out.php'> Cerrar sesión </a>
+            <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/log_out.php'> Cerrar sesión </a>
           </div>
         </li>
       </ul>
     <?php } else { ?>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
-          <a class="nav-link btn-outline-success" href="/<?php echo $base_url ?>/navegacion/registration.php">Registrarse</a>
+          <a class="nav-link btn-outline-success" href="<?php echo $base_url ?>/navegacion/registration.php">Registrarse</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link btn-outline-secondary" href="/<?php echo $base_url ?>/navegacion/log_in.php">Iniciar Sesion</a>
+          <a class="nav-link btn-outline-secondary" href="<?php echo $base_url ?>/navegacion/log_in.php">Iniciar Sesion</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#"><?php echo $_SESSION['current_username']; ?></a>

@@ -29,7 +29,7 @@ $_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/
           <h1>¡Crea un itinerario!</h1>
           <p>Con nuestra ayuda puedes crear un itinerario de viajes para visitar todas las obras 
             de tus artistas favoritos de manera rápida y sencilla</p>
-          <a role="button" href="/~grupo23/navegacion/itinerario.php" class="btn btn-success">Ir</a>
+          <a role="button" href="<?php echo $base_url ?>/navegacion/itinerario.php" class="btn btn-success">Ir</a>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ $_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/
         <div class="card bg-secondary">
           <h1>Conoce a nuestros artistas</h1>
           <p>Aquí, puedes explorar a todos los artistas disponibles para crear tu viaje, conocer sus obras, donde se presentan estas y mucho más.</p>
-          <a role="button" href="/~grupo23/navegacion/artistas.php" class="btn btn-success">Ir</a>
+          <a role="button" href="<?php echo $base_url ?>/navegacion/artistas.php" class="btn btn-success">Ir</a>
         </div>
       </div>
     </div>
@@ -62,23 +62,6 @@ $_SESSION["base_url"] = '//'.trim($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'], '/
     <h5 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h5>
     <br>
     <p class= "text-white" align="center">Sección en desarrollo</p>
-
-    <p class= "text-white" align="center">base_url:<?php echo $_SESSION['base_url']?></p>
-    <p class= "text-white" align="center">PHP_SELF:<?php echo $_SERVER['PHP_SELF']?></p>
-    <p class= "text-white" align="center">REQUEST_SCHEME:<?php echo $_SERVER['REQUEST_SCHEME']?></p>
-    <p class= "text-white" align="center">APP_URL:<?php echo $_SERVER['APP_URL']?></p>
-    <p class= "text-white" align="center">DOCUMENT_ROOT:<?php echo $_SERVER['DOCUMENT_ROOT']?></p>
-    <p class= "text-white" align="center">SERVER_PORT:<?php echo $_SERVER['SERVER_PORT']?></p>
-    <p class= "text-white" align="center">SERVER_NAME:<?php echo $_SERVER['SERVER_NAME']?></p>
-    <p class= "text-white" align="center">HTTP_HOST:<?php echo $_SERVER['HTTP_HOST']?></p>
-    <p class= "text-white" align="center">HTTP_REFERER:<?php echo $_SERVER['HTTP_REFERER']?></p>
-    <p class= "text-white" align="center">HTTPS:<?php echo $_SERVER['HTTPS']?></p>
-    <p class= "text-white" align="center">REMOTE_HOST:<?php echo $_SERVER['REMOTE_HOST']?></p>
-    <p class= "text-white" align="center">PATH_TRANSLATED:<?php echo $_SERVER['PATH_TRANSLATED']?></p>
-    <p class= "text-white" align="center">REMOTE_ADDR:<?php echo $_SERVER['REMOTE_ADDR']?></p>
-    <p class= "text-white" align="center">REQUEST_URI:<?php echo $_SERVER['REQUEST_URI']?></p>
-    <p class= "text-white" align="center">PATH_INFO:<?php echo $_SERVER['PATH_INFO']?></p>
-    <p class= "text-white" align="center">ORIG_PATH_INFO:<?php echo $_SERVER['ORIG_PATH_INFO']?></p>
   </div>
   <br>
   <br>
