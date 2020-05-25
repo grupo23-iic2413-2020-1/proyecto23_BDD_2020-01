@@ -39,7 +39,7 @@ $hotel = $result -> fetchAll();
             <h5><b>Teléfono: </b> <?php echo $hotel[0][4] ?> </h5>
         </div>
         <div>
-            <h5><b>ID: </b> € <?php echo $hotel[0][0] ?> </h5>
+            <h5><b>Precio: </b> € <?php echo $hotel[0][5] ?> </h5>
         </div>
     </div>
 </div>
@@ -53,12 +53,10 @@ $hotel = $result -> fetchAll();
 </p>
 <div class="collapse" id="reserva">
 <div class="card card-body">
-        <form align="center" action="validar_reserva.php" method="post">
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha inicio: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'>
         </div>
-        <form align="center" action="validar_reserva.php" method="post">
         <div class="card card-body bg-secondary text-white">
             <label for="birthdaytime"> Elegir fecha termino: </label>
             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechat'>
