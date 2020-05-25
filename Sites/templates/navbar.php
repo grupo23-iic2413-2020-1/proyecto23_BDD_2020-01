@@ -36,8 +36,8 @@ $base_url = $_SESSION["base_url"];?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Realizar Reserva</a>
-          <a class="dropdown-item" href="/<?php echo $base_url ?>/navegacion/itinerario.php">Crear Itinerario</a>
-          <a class="dropdown-item" href="/<?php echo $base_url ?>/navegacion/comprar_ticket.php">Comprar Ticket</a>
+          <a class="dropdown-item" href="<?php echo $base_url ?>/navegacion/itinerario.php">Crear Itinerario</a>
+          <a class="dropdown-item" href="<?php echo $base_url ?>/navegacion/comprar_ticket.php">Comprar Ticket</a>
         </div>
       </li>
 
