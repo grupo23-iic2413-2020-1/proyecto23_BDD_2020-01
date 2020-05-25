@@ -33,13 +33,13 @@ $hotel = $result -> fetchAll();
             <h5><b>Ciudad: </b> <?php echo $cnombre ?> </h5>
         </div>
         <div>
-            <h5><b>Dirección: </b> <?php echo $hotel[3] ?> </h5>
+            <h5><b>Dirección: </b> <?php echo $hotel[0][3] ?> </h5>
         </div>
         <div>
-            <h5><b>Teléfono: </b> <?php echo $hotel[4] ?> </h5>
+            <h5><b>Teléfono: </b> <?php echo $hotel[0][4] ?> </h5>
         </div>
         <div>
-            <h5><b>Precio: </b> <?php echo $hotel[5] ?> </h5>
+            <h5><b>Precio: </b> <?php echo $hotel[0][5] ?> </h5>
         </div>
     </div>
 </div>
