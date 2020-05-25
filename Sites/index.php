@@ -63,7 +63,7 @@ include('templates/navbar.php');   ?>
 
     <p class= "text-white" align="center">PHP_SELF:<?php echo $_SERVER['PHP_SELF']?></p>
     <p class= "text-white" align="center">GATEWAY_INTERFACE:<?php echo $_SERVER['GATEWAY_INTERFACE']?></p>
-    <p class= "text-white" align="center">SERVER_ADDR:<?php echo $_SERVER['SERVER_ADDR']?></p>
+    <p class= "text-white" align="center">SERVER_PORT:<?php echo $_SERVER['SERVER_PORT']?></p>
     <p class= "text-white" align="center">SERVER_NAME:<?php echo $_SERVER['SERVER_NAME']?></p>
     <p class= "text-white" align="center">HTTP_HOST:<?php echo $_SERVER['HTTP_HOST']?></p>
     <p class= "text-white" align="center">HTTP_REFERER:<?php echo $_SERVER['HTTP_REFERER']?></p>
