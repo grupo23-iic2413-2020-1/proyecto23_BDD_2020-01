@@ -32,7 +32,7 @@ include('../templates/navbar.php');   ?>
     <div class="card card-body bg-secondary text-white">
       <div class="form-group">
         <label for="sel1"> Elegir ciudad de origen</label>
-        <select class="form-control input-lg" id="sel2" name='ciudad_origen'>
+        <select class="form-control form-control-lg" id="sel2" name='ciudad_origen'>
         <?php
           foreach ($ciudades as $ciudad) {
             echo "<option>$ciudad[0]</option>";
@@ -46,7 +46,7 @@ include('../templates/navbar.php');   ?>
     <div class="card card-body bg-secondary text-white">
       <div class="form-group">
         <label for="sel1"> Elegir ciudad de destino</label>
-        <select class="form-control input-lg" id="sel2" name='ciudad_destino'>
+        <select class="form-control form-control-lg" id="sel2" name='ciudad_destino'>
         <?php
           foreach ($ciudades as $ciudad) {
             echo "<option>$ciudad[0]</option>";
