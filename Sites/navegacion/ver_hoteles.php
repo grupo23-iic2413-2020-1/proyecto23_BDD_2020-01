@@ -18,7 +18,11 @@
 	$hoteles = $result -> fetchAll();
   
   ?>
-
+    <?php
+          foreach ($hoteles as $htl) {
+            echo "$htl[0] $htl[1]";
+          }
+        ?>
   <div class="container">
 
     <h1 class= "text-white" style="text-align: center; margin-top: 1rem"></h1>
