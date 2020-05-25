@@ -14,11 +14,10 @@ $cnombre = $_GET['cnombre'];
 
 #Se construye la consulta como un string
 $query = "select * from hoteles
-        where hoteles.hid = $hid;";
+        where hoteles.hid = $hid";
 $result = $db -> prepare($query);
 $result -> execute();
 $hotel = $result -> fetchAll();
-echo "$hotel[1]";
 ?>
 <div class="row justify-content-md-center">
             <h2> Informacion de <?php echo $hnombre;?> </h2>
