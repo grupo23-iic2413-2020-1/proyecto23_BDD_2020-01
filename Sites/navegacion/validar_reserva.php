@@ -8,6 +8,11 @@ include('../templates/navbar.php');   ?>
 
 #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 require("../config/conexion.php");
+if ($_SESSION['logged_in'] == False) {
+    header("location: ../errores/perfil1.php");
+    exit;} 
+
+
 
 $hid = $_POST['hid'];
 $fechai = $_POST["fechai"];
