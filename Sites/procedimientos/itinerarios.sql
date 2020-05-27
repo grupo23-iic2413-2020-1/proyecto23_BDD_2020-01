@@ -42,15 +42,15 @@ BEGIN
     CREATE TABLE itinerarios (did1 integer, did2 integer DEFAULT NULL, did3 integer DEFAULT NULL);
 
     FOR tupla in SELECT * FROM esc0 LOOP
-        INSERT INTO TABLE itinerarios(did1, did2, did3) VALUES (tupla[0], NULL, NULL);
+        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla[0], NULL, NULL);
     END LOOP;
 
     FOR tupla in SELECT * FROM esc1 LOOP
-        INSERT INTO TABLE itinerarios(did1, did2, did3) VALUES (tupla[0], tupla[1], NULL);
+        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla[0], tupla[1], NULL);
     END LOOP;
 
     FOR tupla in SELECT * FROM esc2 LOOP
-        INSERT INTO TABLE itinerarios(did1, did2, did3) VALUES (tupla[0], tupla[1], tupla[2]);
+        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla[0], tupla[1], tupla[2]);
     END LOOP;
 
     RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, d1.fecha, d1.salida, d1.duracion, d1.precio,
