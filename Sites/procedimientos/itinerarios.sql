@@ -13,10 +13,10 @@ BEGIN
             AS Lugar(lid integer, cid integer), 
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT oid, lid FROM Obra') 
             AS Obra(oid integer, lid integer),
-    dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT aid, oid FROM Creo') 
-    AS Creo(aid integer, oid integer) 
-    WHERE Creo.aid = ANY(artistas)
-    AND Obra.oid = Creo.oid
+    dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT aid, oid FROM Crea') 
+    AS Crea(aid integer, oid integer) 
+    WHERE Crea.aid = ANY(artistas)
+    AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid;
 
     CREATE TABLE dest AS SELECT Destinos.* 
