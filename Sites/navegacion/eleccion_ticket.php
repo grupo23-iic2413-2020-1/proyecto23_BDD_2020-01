@@ -58,12 +58,13 @@ include('../templates/navbar.php');   ?>
       <tbody>
       
       <?php foreach ($destinos as $destino) {
-                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$destino[0]'></label>
+                echo "<tr> <td><label><input type='radio' style='width: 1em; height: 1em' name='pasajes[]' value='$destino[0]' required></label>
                 </td><td>$destino[0]</td> <td>$destino[1]</td> 
                 <td>$destino[2]</td> <td>$destino[3]</td> <td>$destino[4]</td> 
                 <td>$destino[5]</td> <td>$destino[6]</td><td>$destino[7]</td></tr><br><br>";
           }
           ?>
+
 
       </tbody>
         
