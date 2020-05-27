@@ -39,7 +39,9 @@ $result_2 = $db -> prepare($query2);
 $result_2 -> execute();
 $data = $result_2 -> fetchAll();
 
-$query3 = "SELECT * FROM asientos($data[0][6], $did)";
+$cap_max = $data[0][6];
+
+$query3 = "SELECT * FROM asientos($cap_max, $did)";
 $result_3 = $db -> prepare($query3);
 $result_3 -> execute();
 $asientos_disp = $result_3 -> fetchAll();
