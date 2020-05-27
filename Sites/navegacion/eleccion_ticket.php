@@ -81,7 +81,7 @@ include('../templates/navbar.php');   ?>
 
     <h2> Debes registrarte antes de comprar </h2>
     <br>
-    <form action="../log_in.php" method="get">
+    <form action="log_in.php" method="get">
       <input class="btn btn-success btn lg" type="submit" value="Registrarse">
     </form>
     
