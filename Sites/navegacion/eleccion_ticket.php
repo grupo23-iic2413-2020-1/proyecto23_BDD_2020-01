@@ -74,13 +74,13 @@ include('../templates/navbar.php');   ?>
 
       <input class="btn btn-primary" align="center" type="submit" value="Comprar pasaje">
     </form>
-  <?php } ?>
+  
   <?php } else { ?>
 
       <?php
         header('Location: ../log_in.php');
-      ?>
-
+      } ?>
+      
     <?php } ?>
 
 
