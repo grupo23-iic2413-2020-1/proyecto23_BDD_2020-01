@@ -104,7 +104,7 @@ $asientos_disp = $result_3 -> fetchAll();
       echo 'fecha='.$fecha_pasaje.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino.'&did='.$did ?>'  method='post'>
                 <div class="form-group">
                     <h5><b>Escoger asiento: </b> </h5>
-                    <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 7em  aling: center' >
+                    <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 7em; align: center' >
                     <?php
                     foreach ($asientos_disp as $asiento) {
                         echo "<option>$asiento[0]</option>";
