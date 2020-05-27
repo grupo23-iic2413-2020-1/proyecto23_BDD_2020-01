@@ -23,7 +23,6 @@ BEGIN
     CREATE TABLE dest AS SELECT Destinos.* 
     FROM Destinos, ciud
     WHERE Destinos.cid2 = ciud.cid;
-    END
 
     CREATE TABLE esc0 AS SELECT d1.did
     FROM dest as d1
