@@ -77,11 +77,15 @@ include('../templates/navbar.php');   ?>
   
   <?php } else { ?>
 
-      <?php
-        header('Location: ../log_in.php');
-      } ?>
+    <h2> Debes registrarte antes de comprar </h2>
+    <br>
+    <form action="../log_in.php" method="get">
+      <input class="btn btn-success btn lg" type="submit" value="Registrarse">
+    </form>
+    
+       
       
-    <?php } ?>
+  <?php }} ?>
 
 
 
