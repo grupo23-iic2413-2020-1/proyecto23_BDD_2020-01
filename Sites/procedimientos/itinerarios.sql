@@ -8,11 +8,13 @@ DECLARE
 BEGIN 
 
     CREATE TABLE ciud AS SELECT Lugar.cid
-    FROM dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350',
-            'SELECT * FROM Lugar')
-            AS Lugar, dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350',
-            'SELECT * FROM Obra') AS Obra, dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350',
-            'SELECT * FROM Creo') AS Creo 
+    FROM 
+    dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT lid, cid FROM Lugar')
+            AS Lugar(lid integer, cid integer), 
+    dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT oid, lid FROM Obra') 
+            AS Obra(oid integer, lid integer),
+    dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT aid, oid FROM Creo') 
+    AS Creo(aid integer, oid integer) 
     WHERE Creo.aid = ANY(artistas)
     AND Obra.oid = Creo.oid
     AND Obra.lid = Lugar.lid;
