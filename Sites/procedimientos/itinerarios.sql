@@ -66,7 +66,7 @@ BEGIN
     AND d2.cid2 = c3.cid
     AND itinerario.did3 = d3.did
     AND d3.cid1 = c3.cid
-    AND d3.cid2 = c4.cid
+    AND d3.cid2 = c4.cid;
 
     DROP TABLE ciud;
     DROP TABLE dest;
