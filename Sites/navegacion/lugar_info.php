@@ -34,6 +34,19 @@ include('../templates/navbar.php');
   $result_3 = $db_2 -> prepare($query_3);
   $result_3 -> execute();
   $plazas = $result_3 -> fetchAll();
+
+  $query_4 = "SELECT onombre, fecha_inicio, fecha_termino, oid 
+              FROM Obra WHERE Obra.lid = $lid";
+  $result_4 = $db_2 -> prepare($query_4);
+  $result_4 -> execute();
+  $obras = $result_4 -> fetchAll();
+
+  $query_5 = "SELECT Artista.anombre, Artista.aid 
+              FROM Artista, Crea, Obra WHERE Artista.aid = Crea.aid 
+              AND Crea.oid = Obra.oid AND Obra.lid = $lid";
+  $result_5 = $db_2 -> prepare($query_5);
+  $result_5 -> execute();
+  $artistas = $result_5 -> fetchAll();
 ?>
 
 <body class= "bg-secondary text-white">
@@ -103,6 +116,68 @@ include('../templates/navbar.php');
     <?php } ?>
   <?php } ?>
 
+<br>
+<br>
+<div class="row">
+  <div class="col">
+    <div class="container">
+
+      <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Obras en <?php echo $lnombre ?></h1>
+
+      <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+        <thead class="thead-dark">
+          <tr style="text-align:center">
+            <th>Nombre Obra</th>
+            <th>Año inicio</th>
+            <th>Año termino</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+
+
+        <?php 
+            foreach ($obras as $obra)  {
+              echo "<tr><td><a href='obra_info.php?oid=$obra[3]&onombre=$obra[0]'>$obra[0]</a></td>
+                    <td>$obra[1]</td>  <td>$obra[2]</td> </tr>";
+              }
+            ?>
+
+        </tbody>
+        
+      </table>
+    </div>
+  </div>
+  <div class="col">
+  <div class="container">
+
+      <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Artistas en <?php echo $lnombre ?></h1>
+
+      <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+        <thead class="thead-dark">
+          <tr style="text-align:center">
+            <th>Nombre Artista</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+
+
+        <?php 
+            foreach ($artistas as $artista)  {
+              echo "<tr><td><a href='artista_info.php?aid=$artista[1]&anombre=$artista[0]'>$artista[0]</a></td></tr>";
+          }
+            ?>
+
+        </tbody>
+        
+      </table>
+    </div>
+
+  </div>
+</div>
 <br>
 
 <?php include('../templates/footer.html'); ?>
