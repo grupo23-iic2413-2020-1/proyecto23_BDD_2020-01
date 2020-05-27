@@ -38,6 +38,7 @@ include('../templates/navbar.php');   ?>
     </div>
   
   <?php } else {  ?>
+    <?php if ($_SESSION['loggedin'] == 1) { ?>
     <form align="center" action="confirmacion_ticket.php?<?php 
       echo 'fecha='.$fecha.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino ?>" method="post">
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
@@ -74,6 +75,13 @@ include('../templates/navbar.php');   ?>
       <input class="btn btn-primary" align="center" type="submit" value="Comprar pasaje">
     </form>
   <?php } ?>
+  <?php } else { ?>
+
+      <?php
+        header('Location: ../log_in.php');
+      ?>
+
+    <?php } ?>
 
 
 
