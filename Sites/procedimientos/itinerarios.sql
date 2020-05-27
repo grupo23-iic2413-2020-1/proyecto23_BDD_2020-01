@@ -7,13 +7,6 @@ DECLARE
     tupla RECORD;
 BEGIN 
 
-    DROP TABLE ciud;
-    DROP TABLE dest;
-    DROP TABLE esc0;
-    DROP TABLE esc1;
-    DROP TABLE esc2;
-    DROP TABLE itinerario;
-
     CREATE TABLE ciud AS SELECT Lugar.cid
     FROM Lugar, Obra, Creo 
     WHERE Creo.aid = ANY(artistas)
