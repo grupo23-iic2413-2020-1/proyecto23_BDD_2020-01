@@ -1,4 +1,4 @@
-CREATE or REPLACE Function itinerario (artistas TABLE, ciudad integer, fecha date)
+CREATE or REPLACE Function itinerario (artistas INT[], ciudad integer, fecha date)
 RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 time, duracion_d1 integer, precio_d1 integer,
 cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 time, duracion_d2 integer, precio_d2 integer,
 cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 time, duracion_d3 integer, precio_d3 integer,
