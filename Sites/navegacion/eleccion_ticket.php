@@ -28,9 +28,7 @@ include('../templates/navbar.php');   ?>
 
   ?>
 
-<div class="row justify-content-md-center">
-  <h2> Pasajes disponibles </h2>
-</div>
+
 
   <?php if(empty($destinos)) { ?>
     <div class="row justify-content-md-center">
@@ -38,7 +36,11 @@ include('../templates/navbar.php');   ?>
     </div>
   
   <?php } else {  ?>
+    
     <?php if ($_SESSION['loggedin'] == 1) { ?>
+    <div class="row justify-content-md-center">
+      <h2> Pasajes disponibles </h2>
+    </div>
     <form align="center" action="confirmacion_ticket.php?<?php 
       echo 'fecha='.$fecha.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino ?>" method="post">
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
