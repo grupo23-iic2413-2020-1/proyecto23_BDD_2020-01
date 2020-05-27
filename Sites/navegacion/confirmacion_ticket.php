@@ -102,19 +102,17 @@ $asientos_disp = $result_3 -> fetchAll();
     </div>
     <form align='center' action='validacion_ticket.php?<?php 
       echo 'fecha='.$fecha_pasaje.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino.'&did='.$did ?>'  method='post'>
-                <div class="form-group">
+               
+        <h5><b>Escoger asiento: </b> </h5>
                     
-                    <h5><b>Escoger asiento: </b> </h5>
-                    <div class='center'>
-                    <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 5em' >
-                    <?php
-                    foreach ($asientos_disp as $asiento) {
-                        echo "<option>$asiento[0]</option>";
-                    }
-                    ?>
-                    </select>
-                    </div>
-                </div>
+        <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 5em' >
+        <?php
+        foreach ($asientos_disp as $asiento) {
+        echo "<option>$asiento[0]</option>";
+        }
+        ?>
+        </select>
+                 
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>
       </form>
 
