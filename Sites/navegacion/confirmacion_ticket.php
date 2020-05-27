@@ -39,6 +39,11 @@ $result_2 = $db -> prepare($query2);
 $result_2 -> execute();
 $data = $result_2 -> fetchAll();
 
+$query3 = "SELECT * FROM asientos($data[0][6], $did)";
+$result_3 = $db -> prepare($query3);
+$result_3 -> execute();
+$asientos_disp = $result_3 -> fetchAll();
+
 
 ?> 
 
@@ -87,6 +92,7 @@ $data = $result_2 -> fetchAll();
                     <h5><b>Precio: € </b> <?php echo $data[0][7] ?> </h5>
                     <br>
                 </div>
+                
                
 
             </div>
@@ -94,6 +100,16 @@ $data = $result_2 -> fetchAll();
     </div>
     <form align='center' action='validacion_ticket.php?<?php 
       echo 'fecha='.$fecha_pasaje.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino.'&did='.$did ?>'  method='post'>
+                <div class="form-group">
+                    <label for="sel1"> Escoger asiento</label>
+                    <select class="form-control form-control-lg" id="sel2" name='asiento'>
+                    <?php
+                    foreach ($asientos_disp as $asiento) {
+                        echo "<option>$asiento[0]</option>";
+                    }
+                    ?>
+                    </select>
+                </div>
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>
       </form>
 

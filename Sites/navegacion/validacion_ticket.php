@@ -9,6 +9,7 @@ $fecha_pasaje = $_GET['fecha'];
 $did_int = $_GET['did'];
 $ciudad_origen = $_GET["ciudad_origen"];
 $ciudad_destino = $_GET["ciudad_destino"];
+$asiento = $_POST["asiento"];
 
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
@@ -32,17 +33,15 @@ $result_2 = $db -> prepare($query2);
 $result_2 -> execute();
 $data = $result_2 -> fetchAll();
 
-$query3 = "SELECT MAX(tid), MAX(asiento) FROM Tickets";
+$query3 = "SELECT MAX(tid) FROM Tickets";
 $result_3 = $db -> prepare($query3);
 $result_3 -> execute();
 $max_data = $result_3 -> fetchAll();
 
 if ($max_data == NULL) {
         $tid = 1;
-        $asiento = 1;
     } 
 else {$tid = $max_data[0][0] + 1;
-    $asiento = $max_data[0][1] + 1;
     }
 
 $fecha_compra = date('Y-m-d');
