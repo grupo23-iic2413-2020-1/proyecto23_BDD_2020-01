@@ -106,7 +106,7 @@ $asientos_disp = $result_3 -> fetchAll();
                     
                     <h5><b>Escoger asiento: </b> </h5>
                     <div class='center'>
-                    <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 7em; align: center' >
+                    <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 5em' >
                     <?php
                     foreach ($asientos_disp as $asiento) {
                         echo "<option>$asiento[0]</option>";
