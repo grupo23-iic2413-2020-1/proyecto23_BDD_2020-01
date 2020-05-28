@@ -1,8 +1,8 @@
 CREATE or REPLACE Function itinerario (artistas INT[], ciudad integer, fecha date)
-RETURNS TABLE (did1 integer, did2 integer, did3 integer)/*(cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 time, duracion_d1 double precision, precio_d1 integer,
+RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 time, duracion_d1 double precision, precio_d1 integer,
 cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 time, duracion_d2 double precision, precio_d2 integer,
 cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 time, duracion_d3 double precision, precio_d3 integer,
-precio_total integer)*/ AS $$
+precio_total integer) AS $$
 DECLARE
     tupla RECORD;
 BEGIN 
@@ -56,7 +56,7 @@ BEGIN
         INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, tupla.did3);
     END LOOP;
 
-    /*RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, d1.salida, d1.duracion, d1.precio,
+    RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, d1.salida, d1.duracion, d1.precio,
     c2.cnombre, c3.cnombre, d2.medio, d2.salida, d2.duracion, d2.precio,
     c3.cnombre, c4.cnombre, d3.medio, d3.salida, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio)
@@ -69,8 +69,7 @@ BEGIN
     AND d2.cid2 = c3.cid
     AND itinerarios.did3 = d3.did
     AND d3.cid1 = c3.cid
-    AND d3.cid2 = c4.cid;*/
-    RETURN QUERY SELECT * FROM itinerarios;
+    AND d3.cid2 = c4.cid;
 
     DROP TABLE ciud;
     DROP TABLE dest;
