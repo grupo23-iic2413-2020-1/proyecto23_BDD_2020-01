@@ -19,7 +19,7 @@ BEGIN
     WHERE Crea.aid = ANY(artistas)
     AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid
-    AND Lugar.cid = Ciudades.nombre;
+    AND Lugar.cid = Ciudades.cnombre;
 
     CREATE TABLE dest AS 
     SELECT DISTINCT Destinos.did, Destinos.cid1, Destinos.cid2, c1.cnombre as cnombre1, c2.cnombre as cnombre2
