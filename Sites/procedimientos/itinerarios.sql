@@ -52,9 +52,17 @@ BEGIN
         INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, tupla.did3);
     END LOOP;
 
-    RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, d1.fecha, d1.salida, d1.duracion, d1.precio,
-    c2.cnombre, c3.cnombre, d2.medio, d2.fecha, d2.salida, d2.duracion, d2.precio,
-    c3.cnombre, c4.cnombre, d3.medio, d3.fecha, d3.salida, d3.duracion, d3.precio,
+    RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, getdate(), d1.salida, d1.duracion, d1.precio,
+    c2.cnombre, c3.cnombre, d2.medio, d2.fecha, (
+        IF d1.salida + interval '1h' * d1.duracion <= d2.salida THEN 
+        getdate() 
+        ELSE
+        getdate() + interval '1 day' * 1 END IF;), d2.duracion, d2.precio,
+    c3.cnombre, c4.cnombre, d3.medio, (
+        IF d2.salida + interval '1h' * d2.duracion <= d3.salida THEN 
+        getdate() 
+        ELSE
+        getdate() + interval '1 day' * 1 END IF;), d3.salida, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio)
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3, Ciudades as c1, Ciudades as c2, Ciudades as c3, Ciudades as c4
     WHERE itinerarios.did1 = d1.did
