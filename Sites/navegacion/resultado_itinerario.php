@@ -15,6 +15,9 @@ include('../templates/navbar.php');   ?>
   $artistas = $_POST['artistas'];
   $ciudad = $_POST["ciudad"];
 
+  $artistas_int = array_map('intval', $artistas);
+  $artistas_ids = implode(",", $artistas_int);
+
   $query2 = "SELECT cid FROM Ciudades WHERE Ciudades.nombre = ?;";
   $result = $db -> prepare($query2);
   $result -> bindParam(1, $ciudad);
@@ -23,7 +26,7 @@ include('../templates/navbar.php');   ?>
 
   $cid = $ciudades[0][0];
 
-  $query2 = "SELECT * FROM itinerario($artistas,$cid,$fecha);";
+  $query2 = "SELECT * FROM itinerario( array(".implode(",", $artistas_int)"), $cid, date $fecha);";
   $result = $db -> prepare($query2);
   $result -> execute();
   $itinerarios = $result -> fetchAll();
@@ -32,10 +35,12 @@ include('../templates/navbar.php');   ?>
 
   echo "<p>Artistas: ".gettype($artistas)." </p><br>";
 
+  echo "<p>Resultado: ".$itinerarios[0].gettype($itinerarios[0])." </p><br>";
+
   if(isset($_POST['artistas'])){
 
     if(!empty($_POST['artistas'])) {    
-        foreach($_POST['artistas'] as $value){
+        foreach($artistas_int as $value){
             echo "Id artista : ".$value." (".gettype($value).') <br/>';
         }
     }
