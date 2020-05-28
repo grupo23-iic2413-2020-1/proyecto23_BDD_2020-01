@@ -8,7 +8,7 @@ DECLARE
     tupla RECORD;
 BEGIN 
 
-    artistas := string_to_array(artistas_str, ',')::int[]
+    artistas := string_to_array(artistas_str, ',')::int[];
 
     CREATE TABLE ciud AS SELECT DISTINCT Ciudades.cid, Ciudades.cnombre
     FROM 
