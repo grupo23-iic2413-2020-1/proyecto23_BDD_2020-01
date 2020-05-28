@@ -70,7 +70,7 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[4] ?></td>
         <td><?php echo $itinerario[5] ?></td>
     </tr>
-    <?php if (itinerario[6] != NULL) { ?> 
+    <?php if ($itinerario[6] != NULL) { ?> 
       <tr>
         <td><?php echo $itinerario[6] ?></td>
         <td><?php echo $itinerario[7] ?></td>
@@ -80,7 +80,7 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[11] ?></td>
       </tr>
     <?php } ?>
-    <?php if (itinerario[12] != NULL) {?> 
+    <?php if ($itinerario[12] != NULL) {?> 
       <tr>
         <td><?php echo $itinerario[12] ?></td>
         <td><?php echo $itinerario[13] ?></td>
