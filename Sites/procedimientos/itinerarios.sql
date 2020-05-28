@@ -7,7 +7,7 @@ DECLARE
     tupla RECORD;
 BEGIN 
 
-    CREATE TABLE ciud AS SELECT Lugar.cid
+    CREATE TABLE ciud(cid integer, PRIMARY KEY(cid)) AS SELECT Lugar.cid
     FROM 
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT lid, cid FROM Lugar')
             AS Lugar(lid integer, cid integer), 
@@ -19,7 +19,7 @@ BEGIN
     AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid;
 
-    CREATE TABLE dest AS SELECT Destinos.* 
+    CREATE TABLE dest AS SELECT Destinos.cid1, Destinos.cid2 
     FROM Destinos, ciud
     WHERE Destinos.cid2 = ciud.cid;
 
