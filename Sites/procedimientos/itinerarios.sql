@@ -4,11 +4,9 @@ cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 time, durac
 cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 time, duracion_d3 double precision, precio_d3 integer,
 precio_total integer) AS $$
 DECLARE
-    artistas INT[];
+    artistas := string_to_array(artistas_str, ',')::int[];
     tupla RECORD;
 BEGIN 
-
-    artistas := string_to_array(artistas_str, ',')::int[];
 
     CREATE TABLE ciud AS SELECT DISTINCT Ciudades.cid, Ciudades.cnombre
     FROM 
