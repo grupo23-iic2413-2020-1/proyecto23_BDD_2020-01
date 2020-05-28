@@ -23,33 +23,33 @@ include('../templates/navbar.php');   ?>
 
   $cid = $ciudades[0][0];
 
+  $artistas_str = implode ( ",", $artistas );
+
+  $query2 = "SELECT * FROM itinerario('$artistas_str', $cid, '$fecha');";
+  $result = $db -> prepare($query2);
+  $result -> execute();
+  $itinerarios = $result -> fetchAll();
 
 
-  echo "<p>$fecha ".gettype($fecha)." </p><br><p> $cid ".gettype($cid)." $ciudad ".gettype($cid)."</p><br>";
+  echo "<p>$fecha  </p><br><p> $cid  $ciudad </p><br>";
 
-  echo "<p>Artistas: ".gettype($artistas)." </p><br>";
+  echo "<p>Artistas:  </p><br>";
 
-  echo "<p>Resultado: ".$itinerarios[0].gettype($itinerarios[0])." </p><br>";
+
 
   if(isset($_POST['artistas'])){
 
     if(!empty($_POST['artistas'])) {    
         foreach($artistas as $value){
-            echo "Id artista : ".$value." (".gettype($value).') <br/>';
+            echo "Id artista : ".$value." <br/>";
         }
     }
   }
-  $artistas_int = array_map('intval', $artistas);
-  $artistas_str = implode ( ",", $artistas );
-
-  $query2 = "SELECT * FROM itinerario($artistas_str, $cid, date '05-28-2020')";
-  $result = $db -> prepare($query2);
-  $result -> execute();
-  $itinerarios = $result -> fetchAll();
 
   $i = 1;
   foreach ($itinerarios as $itinerario) { ?>
-  <h5> Itinerario N° <?php echo $i ?>. Precio total = <?php echo itinerario[18] ?>
+  <br>
+  <h5> Itinerario N° <?php echo $i ?>. Precio total = <?php echo $itinerario[18] ?>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
     <thead class="thead-dark">
       <tr style="text-align:center">
@@ -71,25 +71,28 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[5] ?></td>
     </tr>
     <?php if (itinerario[6] != NULL) { ?> 
+      <tr>
         <td><?php echo $itinerario[6] ?></td>
         <td><?php echo $itinerario[7] ?></td>
         <td><?php echo $itinerario[8] ?></td>
         <td><?php echo $itinerario[9] ?></td>
         <td><?php echo $itinerario[10] ?></td>
         <td><?php echo $itinerario[11] ?></td>
+      </tr>
     <?php } ?>
     <?php if (itinerario[12] != NULL) {?> 
+      <tr>
         <td><?php echo $itinerario[12] ?></td>
         <td><?php echo $itinerario[13] ?></td>
         <td><?php echo $itinerario[14] ?></td>
         <td><?php echo $itinerario[15] ?></td>
         <td><?php echo $itinerario[16] ?></td>
         <td><?php echo $itinerario[17] ?></td>
+      </tr>
     <?php } ?>
     </tbody>
     
   </table>
-  <br>
 <?php
 $i = $i + 1;
 }
