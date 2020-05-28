@@ -14,11 +14,12 @@ BEGIN
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT oid, lid FROM Obra') 
             AS Obra(oid integer, lid integer),
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT aid, oid FROM Crea') 
-    AS Crea(aid integer, oid integer), Ciudades 
+            AS Crea(aid integer, oid integer), 
+    Ciudades 
     WHERE Crea.aid = ANY(artistas)
     AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid
-    AND Lugar.cid = ciudades.nombre;
+    AND Lugar.cid = Ciudades.nombre;
 
     CREATE TABLE dest AS 
     SELECT DISTINCT Destinos.did, Destinos.cid1, Destinos.cid2, c1.cnombre as cnombre1, c2.cnombre as cnombre2
