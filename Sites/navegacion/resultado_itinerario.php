@@ -33,7 +33,7 @@ include('../templates/navbar.php');   ?>
 
   echo "<p>$fecha ".gettype($fecha)." </p><br><p>$ciudad ".gettype($ciudad)."</p><br>";
 
-  echo "<p>Artistas: ".gettype($artistas)." </p><br>"
+  echo "<p>Artistas: ".gettype($artistas)." </p><br>";
 
   if(isset($_POST['artistas'])){
 
