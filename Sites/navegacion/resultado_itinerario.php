@@ -25,7 +25,7 @@ include('../templates/navbar.php');   ?>
 
   $query2 = "SELECT * FROM itinerario(?,?,?);";
   $result = $db -> prepare($query2);
-  $result -> bindParam(1, $artistas);
+  $result -> bindParam(1, array[$aid foreach $artistas as $aid]);
   $result -> bindParam(2, $cid);
   $result -> bindParam(3, $fecha);
   $result -> execute();
@@ -83,9 +83,10 @@ include('../templates/navbar.php');   ?>
     </tbody>
     
   </table>
+  <br>
 <?php
+$i = $i + 1
 }
-
 ?>
 
 <?php include('../templates/footer.html'); ?>
