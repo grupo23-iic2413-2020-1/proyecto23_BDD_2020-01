@@ -38,18 +38,18 @@ BEGIN
     AND d1.cid2 = d2.cid1
     AND d2.cid2 = d3.cid1;
 
-    CREATE TABLE itinerarios (did1 integer, did2 integer DEFAULT NULL, did3 integer DEFAULT NULL);
+    CREATE TABLE itinerarios (did1 integer, did2 integer, did3 integer);
 
     FOR tupla in SELECT * FROM esc0 LOOP
-        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla[0].value, NULL, NULL);
+        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, NULL, NULL);
     END LOOP;
 
     FOR tupla in SELECT * FROM esc1 LOOP
-        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla[0].value, tupla[1].value, NULL);
+        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, NULL);
     END LOOP;
 
     FOR tupla in SELECT * FROM esc2 LOOP
-        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla[0].value, tupla[1].value, tupla[2].value);
+        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, tupla.did3);
     END LOOP;
 
     RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, d1.fecha, d1.salida, d1.duracion, d1.precio,
