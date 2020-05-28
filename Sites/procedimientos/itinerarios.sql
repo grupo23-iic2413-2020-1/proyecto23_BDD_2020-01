@@ -8,6 +8,8 @@ DECLARE
     tupla RECORD;
 BEGIN 
 
+    artistas := string_to_array(artistas_str, ',')::int[]
+
     CREATE TABLE ciud AS SELECT DISTINCT Ciudades.cid, Ciudades.cnombre
     FROM 
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT lid, cid FROM Lugar')
