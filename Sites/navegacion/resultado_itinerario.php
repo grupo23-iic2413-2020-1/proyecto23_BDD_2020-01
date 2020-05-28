@@ -21,7 +21,7 @@ include('../templates/navbar.php');   ?>
   $result -> execute();
   $ciudades = $result -> fetchAll();
 
-  $cid = $ciudades[0][0]
+  $cid = $ciudades[0][0];
 
   $query2 = "SELECT * FROM itinerario(?,?,?);";
   $result = $db -> prepare($query2);
