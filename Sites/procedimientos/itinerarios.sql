@@ -76,6 +76,9 @@ BEGIN
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
     AND itinerarios.did3 = d3.did
+    AND itinerarios.cnombre11 <> itinerarios.cnombre22
+    AND itinerarios.cnombre11 <> itinerarios.cnombre32
+    AND itinerarios.cnombre21 <> itinerarios.cnombre32
     
     UNION
 
@@ -86,6 +89,7 @@ BEGIN
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
+    AND itinerarios.cnombre11 <> itinerarios.cnombre22
 
     UNION
 
