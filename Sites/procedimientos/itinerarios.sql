@@ -7,33 +7,39 @@ DECLARE
     tupla RECORD;
 BEGIN 
 
-    CREATE TABLE ciud AS SELECT DISTINCT Lugar.cid
+    CREATE TABLE ciud AS SELECT DISTINCT ciudades.cid, ciudades.cnombre
     FROM 
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT lid, cid FROM Lugar')
             AS Lugar(lid integer, cid integer), 
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT oid, lid FROM Obra') 
             AS Obra(oid integer, lid integer),
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT aid, oid FROM Crea') 
-    AS Crea(aid integer, oid integer) 
+    AS Crea(aid integer, oid integer), Ciudades 
     WHERE Crea.aid = ANY(artistas)
     AND Obra.oid = Crea.oid
-    AND Obra.lid = Lugar.lid;
+    AND Obra.lid = Lugar.lid
+    AND Lugar.cid = ciudades.nombre;
 
-    CREATE TABLE dest AS SELECT DISTINCT Destinos.did, Destinos.cid1, Destinos.cid2 
-    FROM Destinos, ciud
-    WHERE Destinos.cid2 = ciud.cid;
+    CREATE TABLE dest AS 
+    SELECT DISTINCT Destinos.did, Destinos.cid1, Destinos.cid2, c1.cnombre as cnombre1, c2.cnombre as cnombre2
+    FROM Destinos, ciud as c1, ciud as c2
+    WHERE Destinos.cid1 = c1.cid
+    AND Destinos.cid2 = c2.cid;
 
-    CREATE TABLE esc0 AS SELECT DISTINCT d1.did as did1
+    CREATE TABLE esc0 AS 
+    SELECT DISTINCT d1.did as did1, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12
     FROM dest as d1
     WHERE d1.cid1 = ciudad;
 
-    CREATE TABLE esc1 AS SELECT DISTINCT d1.did as did1, d2.did as did2
+    CREATE TABLE esc1 AS 
+    SELECT DISTINCT d1.did as did1, d2.did as did2, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12, d2.cnombre1 as cnombre21,  d2.cnombre2 as cnombre22
     FROM dest as d1, dest as d2
     WHERE d1.cid1 = ciudad
     AND d1.cid2 = d2.cid1
     AND d2.cid2 <> d1.cid1;
 
-    CREATE TABLE esc2 AS SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3
+    CREATE TABLE esc2 AS 
+    SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12, d2.cnombre1 as cnombre21,  d2.cnombre2 as cnombre22, d3.cnombre1 as cnombre31,  d1.cnombre2 as cnombre32
     FROM dest as d1, dest as d2, dest as d3
     WHERE d1.cid1 = ciudad
     AND d1.cid2 = d2.cid1
@@ -42,34 +48,31 @@ BEGIN
     AND d3.cid2 <> d2.cid1
     AND d3.cid2 <> d1.cid1;
 
-    CREATE TABLE itinerarios (did1 integer, did2 integer, did3 integer);
+    CREATE TABLE itinerarios (did1 integer, did2 integer, did3 integer, cnombre11 varchar, cnombre12 varchar, cnombre21 varchar, cnombre22 varchar, cnombre31 varchar, cnombre32 varchar);
 
     FOR tupla in SELECT * FROM esc0 LOOP
-        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, NULL, NULL);
+        INSERT INTO itinerarios(did1, did2, did3, cnombre11, cnombre12, cnombre21, cnombre22, cnombre31, cnombre32) 
+        VALUES (tupla.did1, NULL, NULL, tupla.cnombre11, tupla.cnombre12, NULL, NULL, NULL, NULL);
     END LOOP;
 
     FOR tupla in SELECT * FROM esc1 LOOP
-        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, NULL);
+        INSERT INTO itinerarios(did1, did2, did3, cnombre11, cnombre12, cnombre21, cnombre22, cnombre31, cnombre32) 
+        VALUES (tupla.did1, tupla.did2, NULL, tupla.cnombre11, tupla.cnombre12, tupla.cnombre21, tupla.cnombre22, NULL, NULL);
     END LOOP;
 
     FOR tupla in SELECT * FROM esc2 LOOP
-        INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, tupla.did3);
+        INSERT INTO itinerarios(did1, did2, did3, cnombre11, cnombre12, cnombre21, cnombre22, cnombre31, cnombre32) 
+        VALUES (tupla.did1, tupla.did2, tupla.did3, tupla.cnombre11, tupla.cnombre12, tupla.cnombre21, tupla.cnombre22, tupla.cnombre31, tupla.cnombre32);
     END LOOP;
 
-    RETURN QUERY SELECT DISTINCT c1.cnombre, c2.cnombre, d1.medio, d1.salida, d1.duracion, d1.precio,
-    c2.cnombre, c3.cnombre, d2.medio, d2.salida, d2.duracion, d2.precio,
-    c3.cnombre, c4.cnombre, d3.medio, d3.salida, d3.duracion, d3.precio,
+    RETURN QUERY SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio,
+    itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio)
-    FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3, Ciudades as c1, Ciudades as c2, Ciudades as c3, Ciudades as c4
+    FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
-    AND d1.cid1 = c1.cid
-    AND d1.cid2 = c2.cid
     AND  itinerarios.did2 = d2.did
-    AND d2.cid1 = c2.cid
-    AND d2.cid2 = c3.cid
-    AND itinerarios.did3 = d3.did
-    AND d3.cid1 = c3.cid
-    AND d3.cid2 = c4.cid;
+    AND itinerarios.did3 = d3.did;
 
     DROP TABLE ciud;
     DROP TABLE dest;
