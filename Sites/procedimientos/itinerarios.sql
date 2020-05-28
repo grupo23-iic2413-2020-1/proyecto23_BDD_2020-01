@@ -41,7 +41,7 @@ BEGIN
     AND d2.cid2 <> d1.cid1;
 
     CREATE TABLE esc2 AS 
-    SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12, d2.cnombre1 as cnombre21,  d2.cnombre2 as cnombre22, d3.cnombre1 as cnombre31,  d1.cnombre2 as cnombre32
+    SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12, d2.cnombre1 as cnombre21,  d2.cnombre2 as cnombre22, d3.cnombre1 as cnombre31,  d3.cnombre2 as cnombre32
     FROM dest as d1, dest as d2, dest as d3
     WHERE d1.cid1 = ciudad
     AND d1.cid2 = d2.cid1
@@ -76,9 +76,6 @@ BEGIN
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
     AND itinerarios.did3 = d3.did
-    AND itinerarios.cnombre11 <> itinerarios.cnombre22
-    AND itinerarios.cnombre11 <> itinerarios.cnombre32
-    AND itinerarios.cnombre21 <> itinerarios.cnombre32
     
     UNION
 
@@ -89,7 +86,6 @@ BEGIN
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
-    AND itinerarios.cnombre11 <> itinerarios.cnombre22
 
     UNION
 
