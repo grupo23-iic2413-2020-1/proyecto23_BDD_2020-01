@@ -64,14 +64,14 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[4] ?></td>
         <td><?php echo $itinerario[5] ?></td>
     </tr>
-    <?php if (itinerario[6] != NULL) {?> 
+    <?php if (itinerario[6] != NULL) { ?> 
         <td><?php echo $itinerario[6] ?></td>
         <td><?php echo $itinerario[7] ?></td>
         <td><?php echo $itinerario[8] ?></td>
         <td><?php echo $itinerario[9] ?></td>
         <td><?php echo $itinerario[10] ?></td>
         <td><?php echo $itinerario[11] ?></td>
-    <?php}?>
+    <?php } ?>
     <?php if (itinerario[12] != NULL) {?> 
         <td><?php echo $itinerario[12] ?></td>
         <td><?php echo $itinerario[13] ?></td>
@@ -79,7 +79,7 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[15] ?></td>
         <td><?php echo $itinerario[16] ?></td>
         <td><?php echo $itinerario[17] ?></td>
-    <?php}?>
+    <?php } ?>
     </tbody>
     
   </table>
