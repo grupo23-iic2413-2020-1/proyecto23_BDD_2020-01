@@ -56,7 +56,7 @@ BEGIN
         INSERT INTO itinerarios(did1, did2, did3) VALUES (tupla.did1, tupla.did2, tupla.did3);
     END LOOP;
 
-    RETURN QUERY SELECT c1.cnombre, c2.cnombre, d1.medio, d1.salida, d1.duracion, d1.precio,
+    RETURN QUERY SELECT DISTINCT c1.cnombre, c2.cnombre, d1.medio, d1.salida, d1.duracion, d1.precio,
     c2.cnombre, c3.cnombre, d2.medio, d2.salida, d2.duracion, d2.precio,
     c3.cnombre, c4.cnombre, d3.medio, d3.salida, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio)
