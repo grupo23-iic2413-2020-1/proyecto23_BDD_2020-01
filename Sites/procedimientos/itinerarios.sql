@@ -39,7 +39,8 @@ BEGIN
     AND d1.cid2 = d2.cid1
     AND d2.cid2 <> d1.cid1
     AND d2.cid2 = d3.cid1
-    AND d3.cid2 <> d2.cid1;
+    AND d3.cid2 <> d2.cid1
+    AND d3.cid2 <> d1.cid1;
 
     CREATE TABLE itinerarios (did1 integer, did2 integer, did3 integer);
 
