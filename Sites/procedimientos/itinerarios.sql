@@ -67,12 +67,17 @@ BEGIN
     END LOOP;
 
     RETURN QUERY 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    NULL as cnombre21, NULL as cnombre22, NULL as d2.medio, NULL as d2.salida, NULL as d2.duracion, NULL as d2.precio, 
+    NULL as cnombre31, NULL as cnombre32, NULL as d3.medio, NULL as d3.salida, NULL as d3.duracion, NULL as d3.precio,
+    d1.precio as precio_total
     FROM itinerarios, Destinos as d1
     WHERE itinerarios.did1 = d1.did
     UNION
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
-    itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio
+    itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
+    NULL as cnombre31, NULL as cnombre32, NULL as d3.medio, NULL as d3.salida, NULL as d3.duracion, NULL as d3.precio,
+    (d1.precio + d2.precio) as precio_total
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
@@ -80,7 +85,7 @@ BEGIN
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio,
-    (d1.precio + d2.precio + d3.precio),
+    (d1.precio + d2.precio + d3.precio) as precio_total
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
