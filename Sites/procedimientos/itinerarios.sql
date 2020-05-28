@@ -19,21 +19,21 @@ BEGIN
     AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid;
 
-    CREATE TABLE dest AS SELECT Destinos.cid1, Destinos.cid2 
+    CREATE TABLE dest AS SELECT DISTINCT Destinos.cid1, Destinos.cid2 
     FROM Destinos, ciud
     WHERE Destinos.cid2 = ciud.cid;
 
-    CREATE TABLE esc0 AS SELECT d1.did as did1
+    CREATE TABLE esc0 AS SELECT DISTINCT d1.did as did1
     FROM dest as d1
     WHERE d1.cid1 = ciudad;
 
-    CREATE TABLE esc1 AS SELECT d1.did as did1, d2.did as did2
+    CREATE TABLE esc1 AS SELECT DISTINCT d1.did as did1, d2.did as did2
     FROM dest as d1, dest as d2
     WHERE d1.cid1 = ciudad
     AND d1.cid2 = d2.cid1
     AND d2.cid2 <> d1.cid1;
 
-    CREATE TABLE esc2 AS SELECT d1.did as did1, d2.did as did2, d3.did as did3
+    CREATE TABLE esc2 AS SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3
     FROM dest as d1, dest as d2, dest as d3
     WHERE d1.cid1 = ciudad
     AND d1.cid2 = d2.cid1
