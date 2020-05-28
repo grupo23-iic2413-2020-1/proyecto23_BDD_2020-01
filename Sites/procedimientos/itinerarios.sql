@@ -72,8 +72,8 @@ BEGIN
     (d1.precio + d2.precio + d3.precio)
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
-    AND (itinerarios.did2 = d2.did OR itinerarios.did2 = NULL)
-    AND (itinerarios.did3 = d3.did OR itinerarios.did3 = NULL);
+    AND (itinerarios.did2 = d2.did OR itinerarios.did2 is NULL)
+    AND (itinerarios.did3 = d3.did OR itinerarios.did3 is NULL);
 
     DROP TABLE ciud;
     DROP TABLE dest;
