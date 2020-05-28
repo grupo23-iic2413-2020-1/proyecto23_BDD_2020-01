@@ -23,7 +23,7 @@ include('../templates/navbar.php');   ?>
 
   $cid = $ciudades[0][0];
 
-  $query2 = "SELECT * FROM itinerario(?::INT[],?,?);";
+  $query2 = "SELECT * FROM itinerario(?,?,?);";
   $result = $db -> prepare($query2);
   $result -> bindParam(1, $artistas);
   $result -> bindParam(2, $cid);
@@ -31,13 +31,15 @@ include('../templates/navbar.php');   ?>
   $result -> execute();
   $itinerarios = $result -> fetchAll();
 
-  echo "<p>$fecha</p><br><p>$ciudad</p><br>";
+  echo "<p>$fecha ".gettype($fecha)." </p><br><p>$ciudad ".gettype($ciudad)."</p><br>";
+
+  echo "<p>Artistas: ".gettype($artistas)." </p><br>"
 
   if(isset($_POST['artistas'])){
 
     if(!empty($_POST['artistas'])) {    
         foreach($_POST['artistas'] as $value){
-            echo "Id artista : ".$value.'<br/>';
+            echo "Id artista : ".$value." (".gettype($value).') <br/>';
         }
     }
   }
