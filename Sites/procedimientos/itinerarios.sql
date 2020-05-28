@@ -80,17 +80,17 @@ BEGIN
 
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
-    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL as fecha_d3, NULL as duracion_d3, NULL as duracion_d3,
+    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL as precio_d3,
     (d1.precio + d2.precio)
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
-    
+
     UNION
 
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
-    NULL as cnombre1_d2, NULL as cnombre2_d2, NULL as medio_d2, NULL as fecha_d2, NULL as duracion_d2, NULL as precio_d2, 
-    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL as fecha_d3, NULL as duracion_d3, NULL as duracion_d3,
+    NULL as cnombre1_d2, NULL as cnombre2_d2, NULL as medio_d2, NULL::time as fecha_d2, NULL::double precision as duracion_d2, NULL as precio_d2, 
+    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL as precio_d3,
     d1.precio
     FROM itinerarios, Destinos as d1
     WHERE itinerarios.did1 = d1.did
