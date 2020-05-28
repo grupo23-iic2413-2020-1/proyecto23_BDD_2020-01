@@ -56,7 +56,7 @@ BEGIN
     c2.cnombre, c3.cnombre, d2.medio, d2.fecha, d2.salida, d2.duracion, d2.precio,
     c3.cnombre, c4.cnombre, d3.medio, d3.fecha, d3.salida, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio)
-    FROM ititnerarios, Destinos as d1, Destinos as d2, Destinos as d3, Ciudades as c1, Ciudades as c2, Ciudades as c3, Ciudades as c4
+    FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3, Ciudades as c1, Ciudades as c2, Ciudades as c3, Ciudades as c4
     WHERE itinerarios.did1 = d1.did
     AND d1.cid1 = c1.cid
     AND d1.cid2 = c2.cid
