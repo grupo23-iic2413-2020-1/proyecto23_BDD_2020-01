@@ -94,6 +94,8 @@ BEGIN
     d1.precio
     FROM itinerarios, Destinos as d1
     WHERE itinerarios.did1 = d1.did
+
+    ORDER BY precio_total
     ;
 
     DROP TABLE ciud;
