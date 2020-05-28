@@ -77,7 +77,7 @@ BEGIN
     CASE d3.medio WHEN did3 is NULL THEN NULL ELSE d3.medio END,
     CASE d3.salida WHEN did3 is NULL THEN NULL ELSE d3.salida END,
     CASE d3.duracion WHEN did3 is NULL THEN NULL ELSE d3.duracion END,
-    CASE d3.precio WHEN did3 is NULL THEN NULL ELSE d3.precio END,
+    CASE d3.precio WHEN did3 is NULL THEN NULL ELSE d3.precio END
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3,
     WHERE itinerarios.did1 = d1.did
     AND (itinerarios.did2 = d2.did OR itinerarios.did2 is NULL)
