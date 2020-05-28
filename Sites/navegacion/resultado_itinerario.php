@@ -30,26 +30,16 @@ include('../templates/navbar.php');   ?>
   $result -> execute();
   $itinerarios = $result -> fetchAll();
 
-
-  echo "<p>$fecha  </p><br><p> $cid  $ciudad </p><br>";
-
-  echo "<p>Artistas:  </p><br>";
-
-
-
-  if(isset($_POST['artistas'])){
-
-    if(!empty($_POST['artistas'])) {    
-        foreach($artistas as $value){
-            echo "Id artista : ".$value." <br/>";
-        }
-    }
-  }
+  echo "<h1>Resultados Creación de Itinerarios</h1><br>
+  <p>Fecha: $fecha  </p>
+  <p> Ciudad Inicial:  $ciudad </p>
+  <p>Id de Artistas: $artistas_str</p><br>
+  <h4> Itinerarios: </h4>";
 
   $i = 1;
   foreach ($itinerarios as $itinerario) { ?>
   <br>
-  <h5> Itinerario N° <?php echo $i ?>. Precio total = <?php echo $itinerario[18] ?>
+  <h5> Itinerario N° <?php echo $i ?>. Precio total = $<?php echo $itinerario[18] ?>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
     <thead class="thead-dark">
       <tr style="text-align:center">
