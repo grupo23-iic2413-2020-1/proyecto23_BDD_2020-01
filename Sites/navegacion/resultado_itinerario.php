@@ -23,7 +23,7 @@ include('../templates/navbar.php');   ?>
 
   $cid = $ciudades[0][0];
 
-  $query2 = "SELECT * FROM itinerario(?::INT[],?::integer,?::date);";
+  $query2 = "SELECT * FROM itinerario(CONVERT(INT[], ?),CONVERT(integer, ?),CONVERT(date, ?));";
   $result = $db -> prepare($query2);
   $result -> bindParam(1, $artistas);
   $result -> bindParam(2, $cid);
