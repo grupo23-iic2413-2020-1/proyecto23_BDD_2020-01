@@ -7,7 +7,7 @@ DECLARE
     tupla RECORD;
 BEGIN 
 
-    CREATE TABLE ciud AS SELECT DISTINCT ciudades.cid, ciudades.cnombre
+    CREATE TABLE ciud AS SELECT DISTINCT Ciudades.cid, Ciudades.cnombre
     FROM 
     dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT lid, cid FROM Lugar')
             AS Lugar(lid integer, cid integer), 
@@ -19,7 +19,7 @@ BEGIN
     WHERE Crea.aid = ANY(artistas)
     AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid
-    AND Lugar.cid = Ciudades.cnombre;
+    AND Lugar.cid = Ciudades.cid;
 
     CREATE TABLE dest AS 
     SELECT DISTINCT Destinos.did, Destinos.cid1, Destinos.cid2, c1.cnombre as cnombre1, c2.cnombre as cnombre2
