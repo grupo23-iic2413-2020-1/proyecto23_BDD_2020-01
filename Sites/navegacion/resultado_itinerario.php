@@ -25,7 +25,7 @@ include('../templates/navbar.php');   ?>
 
   $query2 = "SELECT * FROM itinerario(?::INT[],?,?);";
   $result = $db -> prepare($query2);
-  $result -> bindParam(1, $artistas));
+  $result -> bindParam(1, $artistas);
   $result -> bindParam(2, $cid);
   $result -> bindParam(3, $fecha);
   $result -> execute();
