@@ -19,7 +19,7 @@ BEGIN
     AND Obra.oid = Crea.oid
     AND Obra.lid = Lugar.lid;
 
-    CREATE TABLE dest AS SELECT DISTINCT Destinos.cid1, Destinos.cid2 
+    CREATE TABLE dest AS SELECT DISTINCT Destinos.did, Destinos.cid1, Destinos.cid2 
     FROM Destinos, ciud
     WHERE Destinos.cid2 = ciud.cid;
 
