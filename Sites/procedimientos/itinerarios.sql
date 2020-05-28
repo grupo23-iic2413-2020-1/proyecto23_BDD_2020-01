@@ -66,22 +66,25 @@ BEGIN
         VALUES (tupla.did1, tupla.did2, tupla.did3, tupla.cnombre11, tupla.cnombre12, tupla.cnombre21, tupla.cnombre22, tupla.cnombre31, tupla.cnombre32);
     END LOOP;
 
-    RETURN QUERY SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    RETURN QUERY 
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio
+    FROM itinerarios, Destinos as d1
+    WHERE itinerarios.did1 = d1.did
+    UNION
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio
+    FROM itinerarios, Destinos as d1, Destinos as d2
+    WHERE itinerarios.did1 = d1.did
+    AND itinerarios.did2 = d2.did
+    UNION
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio),
-    CASE d2.medio WHEN did2 is NULL THEN NULL ELSE d2.medio END,
-    CASE d2.salida WHEN did2 is NULL THEN NULL ELSE d2.salida END,
-    CASE d2.duracion WHEN did2 is NULL THEN NULL ELSE d2.duracion END,
-    CASE d2.precio WHEN did2 is NULL THEN NULL ELSE d2.precio END,
-    CASE d3.medio WHEN did3 is NULL THEN NULL ELSE d3.medio END,
-    CASE d3.salida WHEN did3 is NULL THEN NULL ELSE d3.salida END,
-    CASE d3.duracion WHEN did3 is NULL THEN NULL ELSE d3.duracion END,
-    CASE d3.precio WHEN did3 is NULL THEN NULL ELSE d3.precio END
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
-    AND (itinerarios.did2 = d2.did OR itinerarios.did2 is NULL)
-    AND (itinerarios.did3 = d3.did OR itinerarios.did3 is NULL);
+    AND itinerarios.did2 = d2.did
+    AND itinerarios.did3 = d3.did;
 
     DROP TABLE ciud;
     DROP TABLE dest;
