@@ -41,9 +41,9 @@ include('../templates/navbar.php');   ?>
         }
     }
   }
-  i = 1;
+  $i = 1;
   foreach ($itinerarios as $itinerario) { ?>
-  <h5> Itinerario N° <?php echo i ?>. Precio total = <?php echo itinerario[18] ?>
+  <h5> Itinerario N° <?php echo $i ?>. Precio total = <?php echo itinerario[18] ?>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
     <thead class="thead-dark">
       <tr style="text-align:center">
