@@ -60,10 +60,10 @@ BEGIN
     WHERE itinerarios.did1 = d1.did
     AND d1.cid1 = c1.cid
     AND d1.cid2 = c2.cid
-    AND  itinerario.did2 = d2.did
+    AND  itinerarios.did2 = d2.did
     AND d2.cid1 = c2.cid
     AND d2.cid2 = c3.cid
-    AND itinerario.did3 = d3.did
+    AND itinerarios.did3 = d3.did
     AND d3.cid1 = c3.cid
     AND d3.cid2 = c4.cid;
 
@@ -72,7 +72,7 @@ BEGIN
     DROP TABLE esc0;
     DROP TABLE esc1;
     DROP TABLE esc2;
-    DROP TABLE itinerario;
+    DROP TABLE itinerarios;
     RETURN;
 
 
