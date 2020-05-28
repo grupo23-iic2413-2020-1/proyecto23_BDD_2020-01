@@ -85,7 +85,7 @@ include('../templates/navbar.php');   ?>
   </table>
   <br>
 <?php
-$i = $i + 1
+$i = $i + 1;
 }
 ?>
 
