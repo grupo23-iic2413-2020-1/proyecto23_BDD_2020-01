@@ -53,10 +53,10 @@ include('../templates/navbar.php');   ?>
         <th>Ciudad Origen</th>
         <th>Ciudad Destino</th>
         <th>Medio</th>
+        <th>Fecha Viaje</th>
         <th>Hora Salida</th>
         <th>Duración (hr)</th>
         <th>Precio (€)</th>
-        <th>Fecha Viaje</th>
       </tr>
     </thead>
     <tbody>
@@ -64,10 +64,11 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[0] ?></td>
         <td><?php echo $itinerario[1] ?></td>
         <td><?php echo $itinerario[2] ?></td>
+        <td><?php echo $itinerario[6] ?></td>
         <td><?php echo $itinerario[3] ?></td>
         <td><?php echo $itinerario[4] ?></td>
         <td><?php echo $itinerario[5] ?></td>
-        <td><?php echo $itinerario[6] ?></td>
+        
     </tr>
     <?php if ($itinerario[7] != NULL) { ?> 
       <tr>
@@ -75,10 +76,10 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[7] ?></td>
         <td><?php echo $itinerario[8] ?></td>
         <td><?php echo $itinerario[9] ?></td>
+        <td><?php echo $itinerario[13] ?></td>
         <td><?php echo $itinerario[10] ?></td>
         <td><?php echo $itinerario[11] ?></td>
         <td><?php echo $itinerario[12] ?></td>
-        <td><?php echo $itinerario[13] ?></td>
       </tr>
     <?php } ?>
     <?php if ($itinerario[14] != NULL) {?> 
@@ -86,10 +87,10 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[14] ?></td>
         <td><?php echo $itinerario[15] ?></td>
         <td><?php echo $itinerario[16] ?></td>
+        <td><?php echo $itinerario[20] ?></td>
         <td><?php echo $itinerario[17] ?></td>
         <td><?php echo $itinerario[18] ?></td>
         <td><?php echo $itinerario[19] ?></td>
-        <td><?php echo $itinerario[20] ?></td>
       </tr>
     <?php } ?>
     </tbody>
