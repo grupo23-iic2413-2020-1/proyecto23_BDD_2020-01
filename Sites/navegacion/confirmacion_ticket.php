@@ -59,13 +59,7 @@ $asientos_disp = $result_3 -> fetchAll();
         <br>
 
         <div class="container"> 
-            <table class="table table-dark table-borderless table-hover style='
-                    tr:hover {
-                            background-color: transparent !important;
-                            }
-                    tr:nth-child(even) {
-                            background-color: black;
-                            }'">
+            <table class="table table-bordered bg-white table-borderless ">
                 <tbody>
                 <tr>
                     <td><b>Fecha viaje: </b></td>
