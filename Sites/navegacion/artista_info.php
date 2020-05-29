@@ -66,20 +66,20 @@
 
   <br>
   <?php
-    include "simple_html_dom.php";
-    $search_query = $artista[1];
-    $search_query = urlencode( $search_query );
-    $html = file_get_html( "https://www.google.com/search?q=$search_query&tbm=isch" );
-    $image_container = $html->find('div#rcnt', 0);
-    $images = $image_container->find('img');
-    $image_count = 1; //Enter the amount of images to be shown
-    $i = 0;
-    foreach($images as $image){
-        if($i == $image_count) break;
-        $i++;
-        // DO with the image whatever you want here (the image element is '$image'):
-        echo $image;
-    }
+    $url = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=';
+    $key = 'http://codd.ing.puc.cl/~grupo23/navegacion/artista_info.php?aid='.$artista[0].
+           '&anombre='.$artista[1];
+    $url .= urlencode($artista[1]).'&key='.$key;
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $informacion = curl_exec($curl);
+    curl_close($curl);
+    $images = json_decode($informacion, true);
+
+    echo "<pre>";
+    print_r($images);
+    echo "</pre>";
   ?>
 
   <br>
