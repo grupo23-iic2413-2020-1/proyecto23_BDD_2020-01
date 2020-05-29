@@ -76,7 +76,7 @@ $result_4 -> execute();
         <br>
 
         <div class="container"> 
-            <table class="table table-bordered bg-dark table-borderless ">
+            <table class="table table-bordered bg-white table-borderless ">
                 <tbody>
                 <tr>
                     <td><b>Número de Ticket: </b></td>
