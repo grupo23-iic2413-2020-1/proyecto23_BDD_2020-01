@@ -24,7 +24,7 @@
 ?>
 
 <form action="resultado_itinerario.php" method="post">
-<div class="card card-body bg-secondary text-white">
+<div class="card card-body bg-secondary text-white"  align='center'>
     <label for="birthdaytime"> Elegir fecha: </label>
     <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'
     value=<?php echo date('Y-m-d') ?> min=<?php echo date('Y-m-d') ?>>
