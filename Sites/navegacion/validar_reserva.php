@@ -26,7 +26,7 @@ if ($fechai < $fecha_compra) {
     header("location: ../errores/fechas_incorrectas.php");
     exit;} 
 
-$total_dias = ($fechat - $fechai);
+$diff_dias = date($fechai)->diff(date($fechat));
 
 $query = "SELECT max(rid) FROM reservas";
 
@@ -109,11 +109,11 @@ $result_4 -> execute();
                     <br>
                 </div>
                 <div>
-                    <h5><b>Nombre hotel: </b> <?php echo $hotel[0][1] ?> </h5>
+                    <h5><b>Nombre hotel: </b> <?php echo  $hotel[0][1]?> </h5>  
                     <br>
                 </div>
                 <div>
-                    <h5><b>Precio por todos los dias: € </b> <?php echo $total_dias ?> </h5>
+                    <h5><b>Precio por todos los dias: € </b> <?php echo ($hotel[0][2] * $diff_dias->days) ?> </h5>
                     <br>
                 </div>
                 <div>
