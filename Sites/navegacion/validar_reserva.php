@@ -29,6 +29,10 @@ if ($fechai < $fecha_compra) {
     
 $diff_dias = $fechai->diff($fechat);
 
+# Reconvierto las fechas a string
+$fechai->format('Y-m-d');
+$fechat->format('Y-m-d');
+
 $query = "SELECT max(rid) FROM reservas";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -73,8 +77,8 @@ $result_4 = $db -> prepare($query_4);
 $result_4 -> bindParam(1, $rid);
 $result_4 -> bindParam(2, $uid);
 $result_4 -> bindParam(3, $hid);
-$result_4 -> bindParam(4, $fechai->format('Y-m-d'));
-$result_4 -> bindParam(5, $fechat->format('Y-m-d'));
+$result_4 -> bindParam(4, $fechai);
+$result_4 -> bindParam(5, $fechat);
 $result_4 -> execute();
 
 
