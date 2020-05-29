@@ -60,7 +60,20 @@ $result_5 = $db -> prepare($query_5);
 $result_5 -> execute();
 $tickets = $result_5 -> fetchAll();
 
+#Se construye la consulta como un string
+$query_6 = "SELECT SUM(Destinos.precio) FROM Usuarios, Tickets, Destinos
+WHERE Usuarios.uid = ?
+AND Usuarios.uid = Tickets.uid
+AND Tickets.fechac <= CURRENT_TIMESTAMP
+AND Tickets.did = Destinos.did
 
+;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_6 = $db -> prepare($query_6);
+$result_6 -> bindParam(1, $uid);
+$result_6 -> execute();
+$dinero = $result_6 -> fetchAll();
 
 
 ?> 
@@ -189,7 +202,9 @@ $tickets = $result_5 -> fetchAll();
                 </div>
                 <br>
                 
-
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
+                    Dinero gastado
+                </button>
 
                 <div>
                     <!-- Button trigger modal -->
