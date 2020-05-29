@@ -18,7 +18,7 @@ $hid = $_GET['hid'];
 $fechai = $_POST["fechai"];
 $fechat = $_POST["fechat"];
 
-if ($fechat < $fechai) {
+if ($fechat <= $fechai) {
     header("location: ../errores/fechas_incorrectas.php");
     exit;} 
 
