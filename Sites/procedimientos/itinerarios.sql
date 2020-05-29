@@ -95,7 +95,6 @@ BEGIN
     END,
     NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as hora_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3, NULL::date as fecha_d3,
     (d1.precio + d2.precio)
-    CASE fecha_d2 WHEN d1.salida + + interval '1h' * d1.duracion > d2.salida THEN fecha_d2 = fecha_d1  + interval '1 day' ELSE fecha_d2 = fecha_d1 END AS fecha_d2
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
