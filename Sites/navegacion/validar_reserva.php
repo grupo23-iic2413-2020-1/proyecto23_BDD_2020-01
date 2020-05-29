@@ -15,8 +15,8 @@ if ($_SESSION['loggedin'] == False) {
 
 $fecha_compra = date('Y-m-d');
 $hid = $_GET['hid'];
-$fechai = new date($_POST["fechai"]);
-$fechat = new date($_POST["fechat"]);
+$fechai = new DateTime($_POST["fechai"]);
+$fechat = new DateTime($_POST["fechat"]);
 
 if ($fechat <= $fechai) {
     header("location: ../errores/fechas_incorrectas.php");
@@ -72,8 +72,8 @@ $result_4 = $db -> prepare($query_4);
 $result_4 -> bindParam(1, $rid);
 $result_4 -> bindParam(2, $uid);
 $result_4 -> bindParam(3, $hid);
-$result_4 -> bindParam(4, $fechai);
-$result_4 -> bindParam(5, $fechat);
+$result_4 -> bindParam(4, to_s($fechai));
+$result_4 -> bindParam(5, to_s($fechat));
 $result_4 -> execute();
 
 
