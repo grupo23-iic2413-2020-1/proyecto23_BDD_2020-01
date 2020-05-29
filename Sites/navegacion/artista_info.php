@@ -67,57 +67,61 @@
   <br>
 
   <?php
-  $curl_handle = curl_init();
-	curl_setopt($curl_handle,CURLOPT_URL,"http://en.wikipedia.org/w/api.php?action=query&titles=".$artistas[0][1]."&prop=pageimages&format=json&pithumbsize=100");
-	curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-	$contents = curl_exec($curl_handle);
-	curl_close($curl_handle);
-		
-	
-	$images = string_extractor($contents, 'unescapedUrl":"', '",');
-	
-	$image_str = "";
-	
-	foreach($images as $image) {
-		$image_str .= "<img src='.$image.' class='graphic-choice graphic-search-image'>";
-	}	
-}
+  function curl($url){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 GTB5');
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+  }
+  
+  //parse the json output
+  function getResults($json){
+  
+    $results = array();
+  
+    $json_array = json_decode($json, true);
+  
+    foreach($json_array['query']['pages'] as $page){
+      if(count($page['images']) > 0){
+          foreach($page['images'] as $image){
+  
+            $title = str_replace(" ", "_", $image["title"]);
+            $imageinfourl = "http://en.wikipedia.org/w/api.php?action=query&titles=".$title."&prop=imageinfo&iiprop=url&format=json";
+            $imageinfo = curl($imageinfourl);
+            $iamge_array = json_decode($imageinfo, true);
+            $image_pages = $iamge_array["query"]["pages"];
+  
+          foreach($image_pages as $a){
+            $results[] = $a["imageinfo"][0]["url"];
+          }
+        }
+      }
+    }
+  
+    return $results;
+  
+  }
 
-/*-------------------------------------------------------------------------------------------------
-Returns array of strings found between two target strings
--------------------------------------------------------------------------------------------------*/
-function string_extractor($string,$start,$end) {
-													
-	# Setup
-		$cursor = 0;
-		$foundString             = -1; 
-		$stringExtractor_results = Array();
-	 			 		
-	# Extract  		
-	while($foundString != 0) {
-		$ini = strpos($string,$start,$cursor);
-				
-		if($ini >= 0) {
-			$ini    += strlen($start);
-			$len     = strpos($string,$end,$ini) - $ini;
-			$cursor  = $ini;
-			$result  = substr($string,$ini,$len);
-			array_push($stringExtractor_results,$result);
-			$foundString = strpos($string,$start,$cursor);	
-		}
-		else {
-			$foundString = 0;
-		}
+  $search = $artistas[0][1]
+
+  $term = str_replace(" ", "_", $search);
+    $url = "http://en.wikipedia.org/w/api.php?action=query&titles=".$term."&prop=images&format=json&imlimit=5";
+
+    $json = curl($url);
+    $results = getResults($json);
+
+	//print the results using an unordered list
+	echo "<ul>";
+	foreach($results as $a){
+	     echo '<li><img src="'.$a.'"></li>';
 	}
-	
-	return $stringExtractor_results;
-	
-}
+	echo "</ul>";    
 
 ?>
 
-
-<?=$image_str?>
 
 
   <br>
