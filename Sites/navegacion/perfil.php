@@ -222,7 +222,9 @@ $dinero = $result_6 -> fetchAll();
                             <tbody>
 
                             <?php
-                                echo "<tr> <td>$dinero[0][0]</td> <td>$dinero[0][0]</td> <td>$dinero[0][0]</td> <td>$dinero[0][0]</td></tr>";
+                            foreach ($dinero as $d) {
+                                echo "<tr> <td>$d[0]</td> <td>$d[0]</td> <td>$d[0]</td> <td>$d[0]</td></tr>";
+                            }
                             ?>
                             </tbody>
                             
