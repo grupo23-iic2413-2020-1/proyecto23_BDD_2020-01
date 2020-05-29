@@ -4,8 +4,12 @@ include('../templates/header.html');   ?>
 <body class= "bg-secondary text-white">
     <div class="container">
         <div class="row justify-content-md-center">
-            <h2> No existe un usuario conectado  </h2>
+            <h2> Debes registrarte antes de comprar </h2>
         </div>
+        <br>
+    <form action="../navegacion/log_in.php" method="get">
+      <input class="btn btn-success btn lg" type="submit" value="Registrarse">
+    </form>
     </div>
 </body>
 <?php include('../templates/footer.html');   ?>

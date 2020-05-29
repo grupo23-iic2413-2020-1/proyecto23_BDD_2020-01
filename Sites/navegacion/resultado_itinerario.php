@@ -28,8 +28,11 @@ include('../templates/navbar.php');   ?>
   $query2 = "SELECT * FROM itinerario('$artistas_str', $cid, '$fecha');";
   $result = $db -> prepare($query2);
   $result -> execute();
-  $itinerarios = $result -> fetchAll();
+  $itinerarios = $result -> fetchAll(); ?>
 
+
+
+<?php
   echo "<h1>Resultados Creación de Itinerarios</h1><br>
   <p>Fecha: $fecha  </p>
   <p> Ciudad Inicial:  $ciudad </p>
@@ -39,7 +42,7 @@ include('../templates/navbar.php');   ?>
   $i = 1;
   foreach ($itinerarios as $itinerario) { ?>
   <br>
-  <h5> Itinerario N° <?php echo $i ?>. Precio total = $<?php echo $itinerario[18] ?>
+  <h5> Itinerario N° <?php echo $i ?>. Precio total = €<?php echo $itinerario[18] ?>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
     <thead class="thead-dark">
       <tr style="text-align:center">
@@ -47,8 +50,8 @@ include('../templates/navbar.php');   ?>
         <th>Ciudad Destino</th>
         <th>Medio</th>
         <th>Hora Salida</th>
-        <th>Duración</th>
-        <th>Precio</th>
+        <th>Duración (hr)</th>
+        <th>Precio (€)</th>
       </tr>
     </thead>
     <tbody>

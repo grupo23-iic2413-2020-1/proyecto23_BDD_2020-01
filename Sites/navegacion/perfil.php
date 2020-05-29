@@ -117,26 +117,19 @@ $tickets = $result_5 -> fetchAll();
                         </table>
                 </div>
                 </div>
-                <div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entradas">
-                    Ver Entradas
-                    </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="entradas" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="entradas">Estas son tus entradas:</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-dark">
-                        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+                <br>
+                
+                <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#entradas" aria-expanded="false" aria-controls="collapseExample">
+                Ver Entradas
+                </button>
+                </p>
+                <div class="collapse" id="entradas">
+                <div class="card card-body">
+                    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-                            <thead class="thead-dark">
+                    <thead class="thead-dark">
                             <tr style="text-align:center">
                                 <th>Fecha Compra</th>
                                 <th>Nombre Museo</th>
@@ -153,13 +146,11 @@ $tickets = $result_5 -> fetchAll();
                             }
                             ?>
                             </tbody>
-                            
+
                         </table>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
                 </div>
+                </div>
+
                 <br>
                 
 
