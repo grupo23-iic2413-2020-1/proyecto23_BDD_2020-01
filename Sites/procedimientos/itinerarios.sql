@@ -79,10 +79,10 @@ BEGIN
     WHEN (d2.salida > d3.salida or (d2.salida + interval '1h' * d2.duracion) > d3.salida or (d2.salida <= '23:59:59' and (d2.salida + interval '1h' * d2.duracion) >= '00:00:00')) 
     THEN (
         (CASE 
-        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida) 
+        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or (d1.salida <= '23:59:59' and (d1.salida + interval '1h' * d1.duracion) >= '00:00:00')) 
         THEN (fecha  + interval '1' day)::DATE ELSE fecha END) + interval '1' day)::DATE 
     ELSE (CASE 
-        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida) 
+        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or (d1.salida <= '23:59:59' and (d1.salida + interval '1h' * d1.duracion) >= '00:00:00')) 
         THEN (fecha  + interval '1' day)::DATE ELSE fecha END)
     END AS fecha_d3 ,
     (d1.precio + d2.precio + d3.precio) as precio_total
