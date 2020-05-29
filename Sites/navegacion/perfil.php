@@ -222,9 +222,7 @@ $dinero = $result_6 -> fetchAll();
                             <tbody>
 
                             <?php
-                                foreach ($reservas as $res) {
-                                echo "<tr> <td>$dinero</td> <td>$dinero</td> <td>$dinero</td> <td>$dinero</td></tr>";
-                            }
+                                echo "<tr> <td>$dinero[0]</td> <td>$dinero[0]</td> <td>$dinero[0]</td> <td>$dinero[0]</td></tr>";
                             ?>
                             </tbody>
                             
