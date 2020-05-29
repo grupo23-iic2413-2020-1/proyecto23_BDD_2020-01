@@ -69,7 +69,7 @@
   if (isset($_POST['artistas[]'])){
       echo "Hay artistas";
   } else {
-      echo "No hay artistas"
+      echo "No hay artistas";
   }
   ?>
 
