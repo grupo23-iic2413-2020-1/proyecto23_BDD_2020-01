@@ -89,7 +89,7 @@ BEGIN
 
     UNION
 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha,
     NULL as cnombre1_d2, NULL as cnombre2_d2, NULL as medio_d2, NULL::time as fecha_d2, NULL::double precision as duracion_d2, NULL::integer as precio_d2,  NULL::date as fecha_d3,
     NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3, NULL::date as fecha_d3,
     d1.precio
