@@ -201,12 +201,12 @@ $dinero = $result_6 -> fetchAll();
                     </div>
                 </div>
                 <br>
-                
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
+                <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#dinero" aria-expanded="false" aria-controls="collapseExample">
                     Dinero gastado
                 </button>
-                <br>
-                <div class="collapse" id="reservas">
+                </p>
+                <div class="collapse" id="dinero">
                 <div class="card card-body">
                         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
@@ -231,6 +231,7 @@ $dinero = $result_6 -> fetchAll();
                         </table>
                     </div>
                     </div>
+                <br>
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
