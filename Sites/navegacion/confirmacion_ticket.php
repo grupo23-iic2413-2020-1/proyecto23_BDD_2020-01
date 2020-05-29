@@ -59,7 +59,7 @@ $asientos_disp = $result_3 -> fetchAll();
         <br>
 
         <div class="container"> 
-            <table class="table table-dark table-borderless table-hover">
+            <table class="table table-dark table-borderless table-hover style='tr:hover {background-color: grey}">
                 <tbody>
                 <tr>
                     <td><b>Fecha viaje: </b></td>
@@ -94,8 +94,8 @@ $asientos_disp = $result_3 -> fetchAll();
                     <td><?php echo $correo ?></td>
                 </tr>
                 <tr>
-                    <td><b>Precio: € </b></td>
-                    <td><?php echo $data[0][7] ?></td>
+                    <td><b>Precio: </b></td>
+                    <td>€ <?php echo $data[0][7] ?></td>
                 </tr>
                 </tbody>
             </table>
