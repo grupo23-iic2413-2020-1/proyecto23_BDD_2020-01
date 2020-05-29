@@ -109,7 +109,7 @@ $result_4 -> execute();
                     <br>
                 </div>
                 <div>
-                    <h5><b>Nombre hotel: </b> <?php echo $hotel[0][1] , $diff_dias?> </h5>
+                    <h5><b>Nombre hotel: </b> <?php echo  $diff_dias?> </h5>  
                     <br>
                 </div>
                 <div>
