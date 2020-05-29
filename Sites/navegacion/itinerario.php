@@ -23,7 +23,7 @@
 
 ?>
 
-<form align="left" action="resultado_itinerario.php" method="post">
+<form align="left" action="#" method="post">
 <div class="card card-body bg-secondary text-white">
     <label for="birthdaytime"> Elegir fecha: </label>
     <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'
