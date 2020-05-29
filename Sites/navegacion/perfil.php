@@ -193,7 +193,7 @@ $tickets = $result_5 -> fetchAll();
 
                 <div>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
                     Eliminar Cuenta
                     </button>
 

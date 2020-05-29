@@ -7,9 +7,7 @@ include('templates/navbar.php');   ?>
   <div class="container">
     
     <br>
-    <h1 class= "text-white" align="center">Entrega 2 BDD Grupo 23 </h1>
-    <br>
-    <h3 class= "text-white" align="center">Splinter S.A.</h3>
+    <h1 class= "text-white" align="center">Consultas Splinter S.A.</h1>
     <br>
     <p class= "text-white" align="left">En esta página podrás realizar múltiples consultas a la bases de datos de Splinter S.A., las cuales se encontrarán epxplicadas al final de esta página</p>
     <p class= "text-white" align="left">A continuación deberás presionar el botón correspondiente a la consulta que quieres realizar.</p>
