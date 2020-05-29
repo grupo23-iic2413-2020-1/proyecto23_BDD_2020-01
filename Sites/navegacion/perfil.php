@@ -205,7 +205,32 @@ $dinero = $result_6 -> fetchAll();
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
                     Dinero gastado
                 </button>
+                <br>
+                <div class="collapse" id="reservas">
+                <div class="card card-body">
+                        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
+                            <thead class="thead-dark">
+                            <tr style="text-align:center">
+                                <th>Tickets</th>
+                                <th>Entradas</th>
+                                <th>Reservas</th>
+                                <th>Total</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+                                foreach ($reservas as $res) {
+                                echo "<tr> <td>$dinero</td> <td>$dinero</td> <td>$dinero</td> <td>$dinero</td></tr>";
+                            }
+                            ?>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    </div>
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
