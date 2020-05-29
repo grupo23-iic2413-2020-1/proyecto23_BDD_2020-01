@@ -23,7 +23,7 @@
 
 ?>
 
-<form align="center" action="resultado_itinerario.php" method="post">
+<form action="resultado_itinerario.php" method="post">
 <div class="card card-body bg-secondary text-white">
     <label for="birthdaytime"> Elegir fecha: </label>
     <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'
@@ -37,7 +37,7 @@
        Elegir artistas:<br>
       <?php
         foreach ($artistas as $artista) {
-          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name='artistas[]' 
+          echo "<label><input align='left' type='checkbox' style='width: 1em; height: 1em' name='artistas[]' 
           value='$artista[1]'> $artista[0]</label><br>";
         }
       ?>
@@ -64,15 +64,5 @@
   </form>
 
   <br>
-
-  <?php
-    if (isset($_POST['Crear'])){
-    if (!empty($_POST['artistas[]'])){
-        echo "Hay artistas";
-    } else {
-        echo "No hay artistas";
-    }
-    }
-  ?>
 
 <?php include('../templates/footer.html'); ?>
