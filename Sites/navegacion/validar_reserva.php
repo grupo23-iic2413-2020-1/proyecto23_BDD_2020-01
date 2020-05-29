@@ -30,8 +30,8 @@ if ($fechai < $fecha_compra) {
 $diff_dias = $fechai->diff($fechat);
 
 # Reconvierto las fechas a string
-$fechai->format('Y-m-d');
-$fechat->format('Y-m-d');
+# $fechai->format('Y-m-d');
+# $fechat->format('Y-m-d');
 
 $query = "SELECT max(rid) FROM reservas";
 
@@ -106,11 +106,11 @@ $result_4 -> execute();
                 </div>
                 <div>
                 <div>
-                    <h5><b>Fecha inicio: </b> <?php echo $fechai ?> </h5>
+                    <h5><b>Fecha inicio: </b> <?php echo $fechai->format('Y-m-d') ?> </h5>
                     <br>
                 </div>
                 <div>
-                    <h5><b>Fecha termino: </b> <?php echo $fechat ?> </h5>
+                    <h5><b>Fecha termino: </b> <?php echo $fechat->format('Y-m-d') ?> </h5>
                     <br>
                 </div>
                 <div>
