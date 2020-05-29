@@ -90,7 +90,7 @@ BEGIN
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
-
+    
     UNION
 
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, (cast(fecha as text) || cast(d1.salida as text)):: timestamp, d1.duracion, d1.precio,
