@@ -46,7 +46,7 @@ include('../templates/navbar.php');   ?>
   $i = 1;
   foreach ($itinerarios as $itinerario) { ?>
   <br>
-  <h5> Itinerario N° <?php echo $i ?>. Precio total = €<?php echo $itinerario[18] ?>
+  <h5> Itinerario N° <?php echo $i ?>. Precio total = €<?php echo $itinerario[21] ?>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
     <thead class="thead-dark">
       <tr style="text-align:center">
@@ -56,6 +56,7 @@ include('../templates/navbar.php');   ?>
         <th>Hora Salida</th>
         <th>Duración (hr)</th>
         <th>Precio (€)</th>
+        <th>Fecha Viaje</th>
       </tr>
     </thead>
     <tbody>
@@ -66,25 +67,29 @@ include('../templates/navbar.php');   ?>
         <td><?php echo $itinerario[3] ?></td>
         <td><?php echo $itinerario[4] ?></td>
         <td><?php echo $itinerario[5] ?></td>
-    </tr>
-    <?php if ($itinerario[6] != NULL) { ?> 
-      <tr>
         <td><?php echo $itinerario[6] ?></td>
+    </tr>
+    <?php if ($itinerario[7] != NULL) { ?> 
+      <tr>
+        
         <td><?php echo $itinerario[7] ?></td>
         <td><?php echo $itinerario[8] ?></td>
         <td><?php echo $itinerario[9] ?></td>
         <td><?php echo $itinerario[10] ?></td>
         <td><?php echo $itinerario[11] ?></td>
-      </tr>
-    <?php } ?>
-    <?php if ($itinerario[12] != NULL) {?> 
-      <tr>
         <td><?php echo $itinerario[12] ?></td>
         <td><?php echo $itinerario[13] ?></td>
+      </tr>
+    <?php } ?>
+    <?php if ($itinerario[14] != NULL) {?> 
+      <tr>
         <td><?php echo $itinerario[14] ?></td>
         <td><?php echo $itinerario[15] ?></td>
         <td><?php echo $itinerario[16] ?></td>
         <td><?php echo $itinerario[17] ?></td>
+        <td><?php echo $itinerario[18] ?></td>
+        <td><?php echo $itinerario[19] ?></td>
+        <td><?php echo $itinerario[20] ?></td>
       </tr>
     <?php } ?>
     </tbody>
