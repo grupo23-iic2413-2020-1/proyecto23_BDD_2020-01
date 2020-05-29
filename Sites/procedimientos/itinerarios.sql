@@ -1,7 +1,7 @@
 CREATE or REPLACE Function itinerario (artistas_str text, ciudad integer, fecha date)
-RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 date, duracion_d1 double precision, precio_d1 integer,
-cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 date, duracion_d2 double precision, precio_d2 integer,
-cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 date, duracion_d3 double precision, precio_d3 integer,
+RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 time, duracion_d1 double precision, precio_d1 integer,
+cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 time, duracion_d2 double precision, precio_d2 integer,
+cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 time, duracion_d3 double precision, precio_d3 integer,
 precio_total integer) AS $$
 DECLARE
     artistas int[] := string_to_array(artistas_str, ',')::int[];
@@ -89,7 +89,7 @@ BEGIN
 
     UNION
 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, (cast(fecha as text) || cast(d1.salida as text)):: timestamp, d1.duracion, d1.precio,
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
     NULL as cnombre1_d2, NULL as cnombre2_d2, NULL as medio_d2, NULL::time as fecha_d2, NULL::double precision as duracion_d2, NULL::integer as precio_d2, 
     NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3,
     d1.precio
