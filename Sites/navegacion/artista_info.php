@@ -105,7 +105,7 @@
   
   }
 
-  $search = $artistas[0][1]
+  $search = $artistas[0][1];
 
   $term = str_replace(" ", "_", $search);
     $url = "http://en.wikipedia.org/w/api.php?action=query&titles=".$term."&prop=images&format=json&imlimit=5";
