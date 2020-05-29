@@ -71,12 +71,12 @@ BEGIN
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
     CASE 
-    WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or (d1.salida <= '23:59:59' and d1.salida + interval '1h' * d1.duracion >= '00:00:00')) 
+    WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or (d1.salida <= '23:59:59' and d1.salida + interval '1h' * d1.duracion) >= '00:00:00')) 
     THEN (fecha  + interval '1' day)::DATE ELSE fecha
     END AS fecha_d2,
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio, 
     CASE 
-    WHEN (d2.salida > d3.salida or (d2.salida + interval '1h' * d2.duracion) > d3.salida or (d2.salida <= '23:59:59' and d2.salida + interval '1h' * d2.duracion >= '00:00:00')) 
+    WHEN (d2.salida > d3.salida or (d2.salida + interval '1h' * d2.duracion) > d3.salida or (d2.salida <= '23:59:59' and (d2.salida + interval '1h' * d2.duracion) >= '00:00:00')) 
     THEN (
         (CASE 
         WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida) 
@@ -96,7 +96,7 @@ BEGIN
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
     CASE 
-    WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida) 
+    WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or (d1.salida <= '23:59:59' and d1.salida + interval '1h' * d1.duracion) >= '00:00:00')) 
     THEN (fecha  + interval '1' day)::DATE ELSE fecha 
     END AS fecha_d2 ,
     NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as hora_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3, NULL::date as fecha_d3,
