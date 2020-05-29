@@ -16,8 +16,10 @@ $result = $db -> prepare($query);
 $result -> execute();
 $hoteles = $result -> fetchAll();
 ?>
-<div class="row justify-content-md-center">
-  <h2> Hoteles Disponibles </h2>
+<div class = "container">
+    <div class="row justify-content-md-center">
+    <h2> Hoteles Disponibles </h2>
+    </div>
 </div>
     <div class="container">
 
