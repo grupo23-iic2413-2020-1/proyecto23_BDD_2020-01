@@ -16,6 +16,7 @@ $result = $db -> prepare($query);
 $result -> execute();
 $hoteles = $result -> fetchAll();
 ?>
+<br>
 <div class="row justify-content-md-center">
   <h2> Hoteles Disponibles </h2>
 </div>
