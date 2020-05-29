@@ -15,8 +15,8 @@ if ($_SESSION['loggedin'] == False) {
 
 $fecha_compra = date('Y-m-d');
 $hid = $_GET['hid'];
-$fechai = date($_POST["fechai"]);
-$fechat = date($_POST["fechat"]);
+$fechai = new date($_POST["fechai"]);
+$fechat = new date($_POST["fechat"]);
 
 if ($fechat <= $fechai) {
     header("location: ../errores/fechas_incorrectas.php");
