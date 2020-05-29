@@ -37,9 +37,8 @@
        Elegir artistas:<br>
       <?php
         foreach ($artistas as $artista) {
-          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name='artistas[]'";
-          if($artista[0]==$artistas[0][0]){ echo " checked"}
-          echo "value='$artista[1]'> $artista[0]</label><br>";
+          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name='artistas[]' 
+          value='$artista[1]'> $artista[0]</label><br>";
         }
       ?>
   </div>
@@ -65,5 +64,13 @@
   </form>
 
   <br>
+
+  <?php
+  if (isset($_POST['artistas[]'])){
+      echo "Hay artistas";
+  } else {
+      echo "No hay artistas"
+  }
+  ?>
 
 <?php include('../templates/footer.html'); ?>
