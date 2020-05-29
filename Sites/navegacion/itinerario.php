@@ -48,7 +48,7 @@
   <div class="card card-body bg-secondary text-white">
     <div class="form-group">
       <label for="sel1"> Elegir ciudad de origen</label>
-      <select class="form-control input-lg" id="sel2" name='ciudad'>
+      <select class="form-control input-lg" id="sel2" name='ciudad' style='width: 10em'>
       <?php
         foreach ($ciudades as $ciudad) {
           echo "<option>$ciudad[0]</option>";
