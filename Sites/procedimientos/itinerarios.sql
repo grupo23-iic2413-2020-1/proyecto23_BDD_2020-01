@@ -77,7 +77,13 @@ BEGIN
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio, 
     CASE 
     WHEN (d2.salida > d3.salida or (d2.salida + interval '1h' * d2.duracion) > d3.salida) 
-    THEN ((CASE WHEN ((d1.salida + interval '1h' * d1.duracion) > d2.salida) THEN (fecha  + interval '1' day)::DATE ELSE fecha END) + interval '1' day)::DATE ELSE (CASE WHEN ((d1.salida + interval '1h' * d1.duracion) > d2.salida) THEN (fecha  + interval '1')::DATE ELSE fecha END)
+    THEN (
+        (CASE 
+        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida) 
+        THEN (fecha  + interval '1' day)::DATE ELSE fecha END) + interval '1' day)::DATE 
+    ELSE (CASE 
+        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida) 
+        THEN (fecha  + interval '1')::DATE ELSE fecha END)
     END AS fecha_d3 ,
     (d1.precio + d2.precio + d3.precio) as precio_total
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
