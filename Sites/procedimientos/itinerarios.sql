@@ -72,7 +72,7 @@ BEGIN
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, fecha as fecha_d2,
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d2.salida, d3.duracion, d3.precio, fecha as fecha_d3,
     (d1.precio + d2.precio + d3.precio) as precio_total
-    CASE fecha_d2 WHEN d1.salida + + interval '1h' * d1.duracion > d2.salida THEN fecha_d2 = fecha_d1  + interval '1 day'
+    CASE fecha_d2 WHEN d1.salida + + interval '1h' * d1.duracion > d2.salida THEN fecha_d2 = fecha_d1  + interval '1 day' ELSE fecha_d2 = fecha_d1 END
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
