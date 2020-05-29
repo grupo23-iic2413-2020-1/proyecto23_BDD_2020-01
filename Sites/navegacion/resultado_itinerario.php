@@ -108,3 +108,5 @@ $i = $i + 1;
     </form><br>";
   } ?>
 
+<?php include('../templates/footer.html'); ?>
+

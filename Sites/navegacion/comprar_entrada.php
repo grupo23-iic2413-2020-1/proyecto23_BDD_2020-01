@@ -69,4 +69,6 @@ $udir = $user[0][4];
 
 </body>
 
+<?php include('../templates/footer.html'); ?>
+
 

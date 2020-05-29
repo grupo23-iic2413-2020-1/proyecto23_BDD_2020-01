@@ -118,3 +118,5 @@ $asientos_disp = $result_3 -> fetchAll();
       </form>
 
 </body>
+
+<?php include('../templates/footer.html'); ?>

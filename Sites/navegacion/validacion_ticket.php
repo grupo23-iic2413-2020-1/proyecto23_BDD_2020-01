@@ -140,3 +140,5 @@ $result_4 -> execute();
     <br>
 
 </body>
+
+<?php include('../templates/footer.html'); ?>

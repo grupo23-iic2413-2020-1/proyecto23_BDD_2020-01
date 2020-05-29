@@ -94,3 +94,5 @@ $result_3 -> execute();
       </form>
 
 </body>
+
+<?php include('../templates/footer.html'); ?>

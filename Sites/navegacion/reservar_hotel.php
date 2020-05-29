@@ -27,3 +27,4 @@ include('../templates/navbar.php');   ?>
 
 <br>
 
+<?php include('../templates/footer.html'); ?>

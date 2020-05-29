@@ -34,10 +34,6 @@ include('../templates/navbar.php');   ?>
     </div>
   
   <?php } else {  ?>
-    <br>
-    <br>
-    <br>
-    <br>
     <?php if ($_SESSION['loggedin'] == 1) { ?>
     <div class="row justify-content-md-center">
       <h2> Pasajes disponibles </h2>
@@ -98,7 +94,4 @@ include('../templates/navbar.php');   ?>
     <input class="btn btn-success btn lg" type="submit" value="Volver">
 </form>
 <br>
-<br>
-</body>
-
-</html>
+<?php include('../templates/footer.html'); ?>

@@ -109,7 +109,8 @@ $tickets = $result_5 -> fetchAll();
 
                         <?php
                             foreach ($tickets as $tik) {
-                            echo "<tr> <td>$tik[0]</td> <td>$tik[1]</td> <td>$tik[2]</td> <td>$tik[3]</td> <td>$tik[4]</td></tr>";
+                            echo "<tr> <td>$tik[0]</td> <td>".date($tik[1], 'Y-m-d')."</td> <td>".date($tik[2], 'Y-m-d').
+                                 "</td> <td>$tik[3]</td> <td>$tik[4]</td></tr>";
                         }
                         ?>
                         </tbody>
