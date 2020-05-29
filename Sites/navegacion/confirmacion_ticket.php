@@ -51,6 +51,7 @@ $asientos_disp = $result_3 -> fetchAll();
 
 <body class= "bg-secondary text-white">
     <div class="container">
+        <br>
         <div class="row justify-content-md-center">
             <h2> Detalles compra: </h2>
         </div>
@@ -58,7 +59,7 @@ $asientos_disp = $result_3 -> fetchAll();
         <br>
 
         <div class="container"> 
-            <table class="table table-dark">
+            <table class="table table-dark table-borderless table-hover">
                 <tbody>
                 <tr>
                     <td><b>Fecha viaje: </b></td>
