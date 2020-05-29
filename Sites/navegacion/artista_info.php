@@ -68,7 +68,7 @@
 
   <?php
   $curl_handle = curl_init();
-	curl_setopt($curl_handle,CURLOPT_URL,"http://en.wikipedia.org/w/api.php?action=query&titles="..$artistas[0][1]."&prop=pageimages&format=json&pithumbsize=100");
+	curl_setopt($curl_handle,CURLOPT_URL,"http://en.wikipedia.org/w/api.php?action=query&titles=".$artistas[0][1]."&prop=pageimages&format=json&pithumbsize=100");
 	curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
 	$contents = curl_exec($curl_handle);
 	curl_close($curl_handle);
