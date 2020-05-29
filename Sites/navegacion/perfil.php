@@ -48,8 +48,8 @@ $result_4 = $db -> prepare($query_4);
 $result_4 -> execute();
 $reservas = $result_4 -> fetchAll();
 
-$query_5 = "select asiento, CONVERT(date, fechac) AS 'fechac'
-            , CONVERT(date, fechav) AS 'fechac', c1.cnombre, c2.cnombre
+$query_5 = "select asiento, CONVERT(date, fechac) AS 'fechac', 
+            CONVERT(date, fechav) AS 'fechav', c1.cnombre, c2.cnombre
             from tickets, destinos, ciudades as c1, ciudades as c2
             where uid = $uid
             and tickets.did = destinos.did 
