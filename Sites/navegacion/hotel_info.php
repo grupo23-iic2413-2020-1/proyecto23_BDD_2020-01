@@ -39,7 +39,7 @@ $hotel = $result -> fetchAll();
             <h5><b>Teléfono: </b> <?php echo $hotel[0][4] ?> </h5>
         </div>
         <div>
-            <h5><b>Precio: </b> € <?php echo $hotel[0][5] ?> </h5>
+            <h5><b>Precio (por noche): </b> € <?php echo $hotel[0][5] ?> </h5>
         </div>
     </div>
 </div>
