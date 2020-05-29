@@ -65,39 +65,65 @@
 
 
   <br>
+
   <?php
-    $url = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=';
-    $key = 'http://codd.ing.puc.cl/~grupo23/navegacion/artista_info.php?aid='.$artistas[0][0].
-           '&anombre='.$artistas[0][1];
-    $url .= urlencode($artistas[0][1]).'&key='.$key;
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    $informacion = curl_exec($curl);
-    curl_close($curl);
-    $images = json_decode($informacion, true);
+  $keyword = $artistas[0][1];
 
-    echo "<pre>";
-    print_r($images);
-    echo "</pre>";
+# Only do this if we've already passed in a keyword (i.e. it's not blank)
+if($keyword != "") {
+	# Load the data from Google via cURL
+		$curl_handle = curl_init();
+		curl_setopt($curl_handle,CURLOPT_URL,"http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=icon&q=".$keyword);
+		curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+		$contents = curl_exec($curl_handle);
+		curl_close($curl_handle);
+		
+	
+	$images = string_extractor($contents, 'unescapedUrl":"', '",');
+	
+	$image_str = "";
+	
+	foreach($images as $image) {
+		$image_str .= "<img src='".$image."' class='graphic-choice graphic-search-image'>";
+	}	
+}
+
+/*-------------------------------------------------------------------------------------------------
+Returns array of strings found between two target strings
+-------------------------------------------------------------------------------------------------*/
+function string_extractor($string,$start,$end) {
+													
+	# Setup
+		$cursor = 0;
+		$foundString             = -1; 
+		$stringExtractor_results = Array();
+	 			 		
+	# Extract  		
+	while($foundString != 0) {
+		$ini = strpos($string,$start,$cursor);
+				
+		if($ini >= 0) {
+			$ini    += strlen($start);
+			$len     = strpos($string,$end,$ini) - $ini;
+			$cursor  = $ini;
+			$result  = substr($string,$ini,$len);
+			array_push($stringExtractor_results,$result);
+			$foundString = strpos($string,$start,$cursor);	
+		}
+		else {
+			$foundString = 0;
+		}
+	}
+	
+	return $stringExtractor_results;
+	
+}
+
+?>
 
 
-  if(true === function_exists('curl_init')){
-    $ch = curl_init('http://icanhascheezburger.files.wordpress.com/2008/01/funny-pictures-cute-fierce-kitten.jpg');
-    curl_setopt_array(
-      $ch,
-      array(
-        CURLOPT_RETURNTRANSFER  => true
-      )
-    );
-    $data = curl_exec($ch);
-    curl_close($ch);
-    header('Content-type: image/jpeg');
-    echo $data;
-  }
+<?=$image_str?>
 
-
-  ?>
 
   <br>
 	<div class="container">
