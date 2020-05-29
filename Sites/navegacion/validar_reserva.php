@@ -26,7 +26,7 @@ if ($fechai < $fecha_compra) {
     header("location: ../errores/fechas_incorrectas.php");
     exit;} 
 
-$diff_dias = date($fechai)->diff(date($fechat));
+$diff_dias = DateTime($fechai)->diff(DateTime($fechat));
 
 $query = "SELECT max(rid) FROM reservas";
 
