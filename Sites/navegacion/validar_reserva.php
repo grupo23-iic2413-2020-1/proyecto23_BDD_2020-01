@@ -72,8 +72,8 @@ $result_4 = $db -> prepare($query_4);
 $result_4 -> bindParam(1, $rid);
 $result_4 -> bindParam(2, $uid);
 $result_4 -> bindParam(3, $hid);
-$result_4 -> bindParam(4, to_s($fechai));
-$result_4 -> bindParam(5, to_s($fechat));
+$result_4 -> bindParam(4, $fechai->format('Y-m-d'));
+$result_4 -> bindParam(5, $fechat->format('Y-m-d'));
 $result_4 -> execute();
 
 
