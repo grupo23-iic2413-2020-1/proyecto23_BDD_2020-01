@@ -70,15 +70,15 @@ BEGIN
     RETURN QUERY 
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
-    CASE fecha_d2 
+    CASE 
     WHEN ((d1.salida + interval '1h' * d1.duracion) > d2.salida) 
     THEN fecha_d1  + interval '1 day' ELSE fecha_d1 
-    END,
+    END AS fecha_d2 ,
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d2.salida, d3.duracion, d3.precio, 
-    CASE fecha_d3 
+    CASE 
     WHEN ((d2.salida + interval '1h' * d2.duracion) > d3.salida) 
     THEN fecha_d2  + interval '1 day' ELSE fecha_d2 
-    END,
+    END AS fecha_d3 ,
     (d1.precio + d2.precio + d3.precio) as precio_total
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
@@ -89,10 +89,10 @@ BEGIN
 
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
-    CASE fecha_d2 
+    CASE 
     WHEN ((d1.salida + interval '1h' * d1.duracion) > d2.salida) 
     THEN fecha_d1  + interval '1 day' ELSE fecha_d1 
-    END,
+    END AS fecha_d2 ,
     NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as hora_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3, NULL::date as fecha_d3,
     (d1.precio + d2.precio)
     FROM itinerarios, Destinos as d1, Destinos as d2
