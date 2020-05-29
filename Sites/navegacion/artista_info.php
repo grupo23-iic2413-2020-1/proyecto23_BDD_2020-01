@@ -67,16 +67,11 @@
   <br>
 
   <?php
-  $keyword = $artistas[0][1];
-
-# Only do this if we've already passed in a keyword (i.e. it's not blank)
-if($keyword != "") {
-	# Load the data from Google via cURL
-		$curl_handle = curl_init();
-		curl_setopt($curl_handle,CURLOPT_URL,"http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=icon&q=".$keyword);
-		curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-		$contents = curl_exec($curl_handle);
-		curl_close($curl_handle);
+  $curl_handle = curl_init();
+	curl_setopt($curl_handle,CURLOPT_URL,"http://en.wikipedia.org/w/api.php?action=query&titles="..$artistas[0][1]."&prop=pageimages&format=json&pithumbsize=100");
+	curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+	$contents = curl_exec($curl_handle);
+	curl_close($curl_handle);
 		
 	
 	$images = string_extractor($contents, 'unescapedUrl":"', '",');
@@ -84,7 +79,7 @@ if($keyword != "") {
 	$image_str = "";
 	
 	foreach($images as $image) {
-		$image_str .= "<img src='".$image."' class='graphic-choice graphic-search-image'>";
+		$image_str .= "<img src='.$image.' class='graphic-choice graphic-search-image'>";
 	}	
 }
 
