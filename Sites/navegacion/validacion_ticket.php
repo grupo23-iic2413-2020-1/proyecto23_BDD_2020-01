@@ -63,6 +63,7 @@ $result_4 -> execute();
 
 <body class= "bg-secondary text-white">
     <div class="container">
+        <br>
         <div class="row justify-content-md-center">
             <h2> Tu compra ha sido realizada con éxito </h2>
         </div>
@@ -73,64 +74,64 @@ $result_4 -> execute();
         </div>
 
         <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Número de Ticket: </b> <?php echo $tid ?> </h5>
-                    <br>
-                </div>
-                <div>
-                <div>
-                    <h5><b>Fecha viaje: </b> <?php echo $fecha_pasaje ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Ciudad Origen: </b> <?php echo $ciudad_origen ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Ciudad Destino: </b> <?php echo $ciudad_destino ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Hora salida: </b> <?php echo $data[0][3] ?> </h5>
-                    <br>
-                </div>
-                <div>
-                <div>
-                    <h5><b>Asiento: </b> <?php echo $asiento ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Duracion: </b> <?php echo $data[0][4] ?> hrs</h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Medio: </b> <?php echo $data[0][5] ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Precio: € </b> <?php echo $data[0][7] ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Fecha Compra: </b> <?php echo $fecha_compra ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Usuario: </b> <?php echo $username ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                    <br>
-                </div>
-                
 
-               
+        <div class="container"> 
+            <table class="table table-bordered bg-dark table-borderless ">
+                <tbody>
+                <tr>
+                    <td><b>Número de Ticket: </b></td>
+                    <td><?php echo $tid ?></td>
+                </tr>
+                <tr>
+                    <td><b>Fecha viaje: </b></td>
+                    <td><?php echo $fecha_pasaje ?></td>
+                </tr>
+                <tr>
+                    <td><b>Ciudad Origen: </b></td>
+                    <td><?php echo $ciudad_origen ?></td>
+                </tr>
+                <tr>
+                    <td><b>Ciudad Destino: </b> </td>
+                    <td><?php echo $ciudad_destino ?></td>
+                </tr>
+                <tr>
+                    <td><b>Hora salida: </b></td>
+                    <td><?php echo $data[0][3] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Asiento: </b></td>
+                    <td><?php echo $asiento ?></td>
+                </tr>
+                <tr>
+                    <td><b>Duracion: </b></td>
+                    <td><?php echo $data[0][4] ?> hrs</td>
+                </tr>
+                <tr>
+                    <td><b>Medio: </b></td>
+                    <td><?php echo $data[0][5] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Usuario: </b></td>
+                    <td><?php echo $username ?></td>
+                </tr>
+                <tr>
+                    <td><b>Mail: </b></td>
+                    <td><?php echo $correo ?></td>
+                </tr>
+                <tr>
+                    <td><b>Fecha compra: </b></td>
+                    <td><?php echo $fecha_compra ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio: </b></td>
+                    <td>€ <?php echo $data[0][7] ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-            
-            </div>
+        <br>
+        
     </div>
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
