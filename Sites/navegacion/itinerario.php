@@ -38,7 +38,7 @@
       <?php
         foreach ($artistas as $artista) {
           echo "<label><input type='checkbox' style='width: 1em; height: 1em' name='artistas[]'";
-          if($artista[0]==$artistas[0][0]){ echo " checked"};
+          if($artista[0]==$artistas[0][0]){ echo " checked"}
           echo "value='$artista[1]'> $artista[0]</label><br>";
         }
       ?>
