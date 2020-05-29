@@ -18,6 +18,7 @@ $hoteles = $result -> fetchAll();
 ?>
 <br>
 <div class="row justify-content-md-center">
+<br>
   <h2> Hoteles Disponibles </h2>
 </div>
 <br>
