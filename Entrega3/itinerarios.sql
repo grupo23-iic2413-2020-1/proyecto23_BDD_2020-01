@@ -1,7 +1,7 @@
 CREATE or REPLACE Function itinerario (artistas_str text, ciudad integer, fecha date)
-RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 time, duracion_d1 double precision, precio_d1 integer,
-cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 time, duracion_d2 double precision, precio_d2 integer,
-cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 time, duracion_d3 double precision, precio_d3 integer,
+RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, hora_d1 time, duracion_d1 double precision, precio_d1 integer, fecha_d1 date,
+cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, hora_d2 time, duracion_d2 double precision, precio_d2 integer, fecha_d2 date,
+cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, hora_d3 time, duracion_d3 double precision, precio_d3 integer, fecha_d3 date,
 precio_total integer) AS $$
 DECLARE
     artistas int[] := string_to_array(artistas_str, ',')::int[];
@@ -41,13 +41,13 @@ BEGIN
     AND d2.cid2 <> d1.cid1;
 
     CREATE TABLE esc2 AS 
-    SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12, d2.cnombre1 as cnombre21,  d2.cnombre2 as cnombre22, d3.cnombre1 as cnombre31,  d1.cnombre2 as cnombre32
+    SELECT DISTINCT d1.did as did1, d2.did as did2, d3.did as did3, d1.cnombre1 as cnombre11,  d1.cnombre2 as cnombre12, d2.cnombre1 as cnombre21,  d2.cnombre2 as cnombre22, d3.cnombre1 as cnombre31,  d3.cnombre2 as cnombre32
     FROM dest as d1, dest as d2, dest as d3
     WHERE d1.cid1 = ciudad
     AND d1.cid2 = d2.cid1
     AND d2.cid2 <> d1.cid1
     AND d2.cid2 = d3.cid1
-    AND d3.cid2 <> d2.cid1
+    AND d2.cid1 <> d3.cid2
     AND d3.cid2 <> d1.cid1;
 
     CREATE TABLE itinerarios (did1 integer, did2 integer, did3 integer, cnombre11 varchar, cnombre12 varchar, cnombre21 varchar, cnombre22 varchar, cnombre31 varchar, cnombre32 varchar);
@@ -68,9 +68,23 @@ BEGIN
     END LOOP;
 
     RETURN QUERY 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
-    itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio,
+    CASE 
+    WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or d1.salida > (d1.salida + interval '1h' * d1.duracion)) 
+    THEN (fecha  + interval '1' day)::DATE ELSE fecha
+    END AS fecha_d2,
+    itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, d3.salida, d3.duracion, d3.precio, 
+    CASE 
+    WHEN (d2.salida > d3.salida or (d2.salida + interval '1h' * d2.duracion) > d3.salida or d2.salida > (d2.salida + interval '1h' * d2.duracion)) 
+    THEN (
+        (CASE 
+        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or d1.salida > (d1.salida + interval '1h' * d1.duracion)) 
+        THEN (fecha  + interval '1' day)::DATE ELSE fecha END) + interval '1' day)::DATE 
+    ELSE (CASE 
+        WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or d1.salida > (d1.salida + interval '1h' * d1.duracion)) 
+        THEN (fecha  + interval '1' day)::DATE ELSE fecha END)
+    END AS fecha_d3 ,
     (d1.precio + d2.precio + d3.precio) as precio_total
     FROM itinerarios, Destinos as d1, Destinos as d2, Destinos as d3
     WHERE itinerarios.did1 = d1.did
@@ -79,9 +93,13 @@ BEGIN
     
     UNION
 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
-    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3,
+    CASE 
+    WHEN (d1.salida > d2.salida or (d1.salida + interval '1h' * d1.duracion) > d2.salida or d1.salida > (d1.salida + interval '1h' * d1.duracion)) 
+    THEN (fecha  + interval '1' day)::DATE ELSE fecha 
+    END AS fecha_d2 ,
+    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as hora_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3, NULL::date as fecha_d3,
     (d1.precio + d2.precio)
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
@@ -89,9 +107,9 @@ BEGIN
 
     UNION
 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
-    NULL as cnombre1_d2, NULL as cnombre2_d2, NULL as medio_d2, NULL::time as fecha_d2, NULL::double precision as duracion_d2, NULL::integer as precio_d2, 
-    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3,
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio, fecha as fecha_d1,
+    NULL as cnombre1_d2, NULL as cnombre2_d2, NULL as medio_d2, NULL::time as hora_d2, NULL::double precision as duracion_d2, NULL::integer as precio_d2,  NULL::date as fecha_d2,
+    NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as hora_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3, NULL::date as fecha_d3,
     d1.precio
     FROM itinerarios, Destinos as d1
     WHERE itinerarios.did1 = d1.did
