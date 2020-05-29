@@ -32,12 +32,12 @@
 
   <br>
 
-  <div class="card card-body bg-secondary text-white">
+  <div class="card card-body bg-secondary text-white" align='left'>
       <p>
        Elegir artistas:<br>
       <?php
         foreach ($artistas as $artista) {
-          echo "<label><input align='left' type='checkbox' style='width: 1em; height: 1em' name='artistas[]' 
+          echo "<label><input type='checkbox' style='width: 1em; height: 1em' name='artistas[]' 
           value='$artista[1]'> $artista[0]</label><br>";
         }
       ?>

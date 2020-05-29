@@ -17,14 +17,8 @@ include('../templates/navbar.php');   ?>
 
   ?>
 
-<?php if(empty($artistas)){
-  echo "<h1>No has seleccionado ningún artista para tu itinerario</h1><br>
-        <form action='itinerario.php' method='get'>
-        <input class='btn btn-success btn lg' type='submit' value='Volver'>
-        </form><br>";
+<?php if(isset($artistas)){
   
-  } else {
-
   $query = "SELECT cid FROM Ciudades WHERE cnombre = ?";
   $result = $db -> prepare($query);
   $result -> bindParam(1, $ciudad);
@@ -98,7 +92,19 @@ include('../templates/navbar.php');   ?>
   </table>
 <?php
 $i = $i + 1;
-}}
-?>
+}
 
-<?php include('../templates/footer.html'); ?>
+?>
+  <form action='itinerario.php' method='get'>
+    <input class='btn btn-success btn lg' type='submit' value='Volver'>
+  </form><br>
+
+<?php
+  } else {
+
+    echo "<h1>No has seleccionado ningún artista para tu itinerario</h1><br>
+    <form action='itinerario.php' method='get'>
+    <input class='btn btn-success btn lg' type='submit' value='Volver'>
+    </form><br>";
+  } ?>
+
