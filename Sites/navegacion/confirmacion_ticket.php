@@ -56,49 +56,50 @@ $asientos_disp = $result_3 -> fetchAll();
         </div>
 
         <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Fecha viaje: </b> <?php echo $fecha_pasaje ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Ciudad Origen: </b> <?php echo $ciudad_origen ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Ciudad Destino: </b> <?php echo $ciudad_destino ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Hora salida: </b> <?php echo $data[0][3] ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Duracion: </b> <?php echo $data[0][4] ?> hrs</h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Medio: </b> <?php echo $data[0][5] ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Usuario: </b> <?php echo $username ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Precio: € </b> <?php echo $data[0][7] ?> </h5>
-                    <br>
-                </div>
-                
-               
 
-            </div>
-            </div>
+        <div class="container"> 
+            <table class="table table-dark">
+                <tbody>
+                <tr>
+                    <td><b>Fecha viaje: </b></td>
+                    <td><?php echo $fecha_pasaje ?></td>
+                </tr>
+                <tr>
+                    <td><b>Ciudad Origen: </b></td>
+                    <td><?php echo $ciudad_origen ?></td>
+                </tr>
+                <tr>
+                    <td><b>Ciudad Destino: </b> </td>
+                    <td><?php echo $ciudad_destino ?></td>
+                </tr>
+                <tr>
+                    <td><b>Hora salida: </b></td>
+                    <td><?php echo $data[0][3] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Duracion: </b></td>
+                    <td><?php echo $data[0][4] ?> hrs</td>
+                </tr>
+                <tr>
+                    <td><b>Medio: </b></td>
+                    <td><?php echo $data[0][5] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Usuario: </b></td>
+                    <td><?php echo $username ?></td>
+                </tr>
+                <tr>
+                    <td><b>Mail: </b></td>
+                    <td><?php echo $correo ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio: € </b></td>
+                    <td><?php echo $data[0][7] ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+                
     </div>
     <form align='center' action='validacion_ticket.php?<?php 
       echo 'fecha='.$fecha_pasaje.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino.'&did='.$did ?>'  method='post'>
