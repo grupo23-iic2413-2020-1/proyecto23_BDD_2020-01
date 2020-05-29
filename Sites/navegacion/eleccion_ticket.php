@@ -28,15 +28,16 @@ include('../templates/navbar.php');   ?>
 
   ?>
 
-
-
   <?php if(empty($destinos)) { ?>
     <div class="row justify-content-md-center">
       <h2> No existe destino para los datos solicitados </h2>
     </div>
   
   <?php } else {  ?>
-    
+    <br>
+    <br>
+    <br>
+    <br>
     <?php if ($_SESSION['loggedin'] == 1) { ?>
     <div class="row justify-content-md-center">
       <h2> Pasajes disponibles </h2>
