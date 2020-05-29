@@ -67,9 +67,9 @@
   <br>
   <?php
     $url = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=';
-    $key = 'http://codd.ing.puc.cl/~grupo23/navegacion/artista_info.php?aid='.$artista[0].
-           '&anombre='.$artista[1];
-    $url .= urlencode($artista[1]).'&key='.$key;
+    $key = 'http://codd.ing.puc.cl/~grupo23/navegacion/artista_info.php?aid='.$artistas[0][0].
+           '&anombre='.$artistas[0][1];
+    $url .= urlencode($artistas[0][1]).'&key='.$key;
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
