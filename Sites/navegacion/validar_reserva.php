@@ -113,7 +113,7 @@ $result_4 -> execute();
                     <br>
                 </div>
                 <div>
-                    <h5><b>Precio por todos los dias: € </b> <?php echo ($hotel[0][2] * $total_dias) ?> </h5>
+                    <h5><b>Precio por todos los dias: € </b> <?php echo $total_dias ?> </h5>
                     <br>
                 </div>
                 <div>
