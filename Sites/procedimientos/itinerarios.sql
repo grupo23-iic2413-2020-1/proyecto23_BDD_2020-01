@@ -1,6 +1,6 @@
 CREATE or REPLACE Function itinerario (artistas_str text, ciudad integer, fecha date)
-RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 timestamp, duracion_d1 double precision, precio_d1 integer,
-cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 timestamp, duracion_d2 double precision, precio_d2 integer,
+RETURNS TABLE (cnombre1_d1 varchar, cnombre2_d1 varchar, medio_d1 varchar, fecha_d1 date, duracion_d1 double precision, precio_d1 integer,
+cnombre1_d2 varchar, cnombre2_d2 varchar, medio_d2 varchar, fecha_d2 date, duracion_d2 double precision, precio_d2 integer,
 cnombre1_d3 varchar, cnombre2_d3 varchar, medio_d3 varchar, fecha_d3 date, duracion_d3 double precision, precio_d3 integer,
 precio_total integer) AS $$
 DECLARE
@@ -68,7 +68,7 @@ BEGIN
     END LOOP;
 
     RETURN QUERY 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, (cast(fecha as text) || cast(d1.salida as text)):: timestamp, d1.duracion, d1.precio,
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
     itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, fecha_d2, d2.duracion, d2.precio, 
     itinerarios.cnombre31, itinerarios.cnombre32, d3.medio, fecha_d3, d3.duracion, d3.precio,
     (d1.precio + d2.precio + d3.precio) as precio_total
@@ -79,18 +79,14 @@ BEGIN
     
     UNION
 
-    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, (cast(fecha as text) || cast(d1.salida as text)):: timestamp, d1.duracion, d1.precio,
-    itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, fecha_d2, d2.duracion, d2.precio, 
+    SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, d1.salida, d1.duracion, d1.precio,
+    itinerarios.cnombre21, itinerarios.cnombre22, d2.medio, d2.salida, d2.duracion, d2.precio, 
     NULL as cnombre1_d3, NULL as cnombre2_d3, NULL as medio_d3, NULL::time as fecha_d3, NULL::double precision as duracion_d3, NULL::integer as precio_d3,
     (d1.precio + d2.precio)
-    CASE
-    WHEN d1.salida + interval '1h' * d1.duracion > d2.salida 
-    THEN fecha_d2 = (cast((fecha + interval '1 day') as text) || cast(d2.salida as text)):: timestamp
-    ELSE fecha_d2 = (cast(fecha as text) || cast(d2.salida as text)):: timestamp
     FROM itinerarios, Destinos as d1, Destinos as d2
     WHERE itinerarios.did1 = d1.did
     AND itinerarios.did2 = d2.did
-    
+
     UNION
 
     SELECT DISTINCT itinerarios.cnombre11, itinerarios.cnombre12, d1.medio, (cast(fecha as text) || cast(d1.salida as text)):: timestamp, d1.duracion, d1.precio,
