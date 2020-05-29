@@ -80,6 +80,23 @@
     echo "<pre>";
     print_r($images);
     echo "</pre>";
+
+
+  if(true === function_exists('curl_init')){
+    $ch = curl_init('http://icanhascheezburger.files.wordpress.com/2008/01/funny-pictures-cute-fierce-kitten.jpg');
+    curl_setopt_array(
+      $ch,
+      array(
+        CURLOPT_RETURNTRANSFER  => true
+      )
+    );
+    $data = curl_exec($ch);
+    curl_close($ch);
+    header('Content-type: image/jpeg');
+    echo $data;
+  }
+
+
   ?>
 
   <br>
