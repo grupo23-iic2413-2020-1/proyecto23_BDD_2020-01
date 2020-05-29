@@ -102,8 +102,7 @@ $asientos_disp = $result_3 -> fetchAll();
     </div>
     <form align='center' action='validacion_ticket.php?<?php 
       echo 'fecha='.$fecha_pasaje.'&ciudad_origen='.$ciudad_origen.'&ciudad_destino='.$ciudad_destino.'&did='.$did ?>'  method='post'>
-        <div class="card card-body bg-secondary text-white">
-            <div class="form-group">      
+        <div class="card card-body bg-secondary text-white"  align='center'>  
                 <h5><b>Escoger asiento: </b> </h5>
                             
                 <select class="form-control form-control-lg" id="sel2" name='asiento' style='width: 5em' >
@@ -113,7 +112,6 @@ $asientos_disp = $result_3 -> fetchAll();
                 }
                 ?>
                 </select>
-            </div>
         </div>
              
         <input class='btn btn-primary' align='center' type='submit' value='Validar Compra'>

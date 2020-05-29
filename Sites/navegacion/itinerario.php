@@ -45,7 +45,7 @@
   
   <br>
 
-  <div class="card card-body bg-secondary text-white">
+  <div class="card card-body bg-secondary text-white" align='center'>
     <div class="form-group">
       <label for="sel1"> Elegir ciudad de origen</label>
       <select class="form-control input-lg" id="sel2" name='ciudad' style='width: 10em'>
