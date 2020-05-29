@@ -23,7 +23,7 @@
 
 ?>
 
-<form align="left" action="#" method="post">
+<form align="center" action="resultado_itinerario.php" method="post">
 <div class="card card-body bg-secondary text-white">
     <label for="birthdaytime"> Elegir fecha: </label>
     <input style="width: 10em; height: 1em; font-size: 25px; color: black" type="date" name='fecha'
@@ -60,17 +60,19 @@
   
   <br>
 
-  <input class="btn btn-primary" align="center" type="submit" value="Crear Itinerario">
+  <input class="btn btn-primary" align="center" type="submit" value="Crear Itinerario" name='Crear'>
   </form>
 
   <br>
 
   <?php
-  if (isset($_POST['artistas[]'])){
-      echo "Hay artistas";
-  } else {
-      echo "No hay artistas";
-  }
+    if (isset($_POST['Crear'])){
+    if (!empty($_POST['artistas[]'])){
+        echo "Hay artistas";
+    } else {
+        echo "No hay artistas";
+    }
+    }
   ?>
 
 <?php include('../templates/footer.html'); ?>
