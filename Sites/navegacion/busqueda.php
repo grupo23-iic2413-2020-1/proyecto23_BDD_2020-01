@@ -51,9 +51,12 @@ $busq = $_POST["busqueda"];
   </thead>
   <tbody>
     <?php
+    if ($artistas[0][0] == Null) {
+        echo "<tr><td>No se encontraron resultados</td></tr>";
+    } else {
       foreach ($artistas as $artista) {
         echo "<tr><td><a href='artista_info.php?aid=$artista[1]&anombre=$artista[0]'>$artista[0]</a></td></tr>";
-    }
+    }}
     ?>
   </tbody> 
 </table>
@@ -103,9 +106,12 @@ $busq = $_POST["busqueda"];
       <tbody>
 
         <?php
+        if ($museos[0][0] == Null) {
+            echo "<tr><td>No se encontraron resultados</td></tr>";
+        } else {
           foreach ($museos as $museo) {
             echo "<tr><td><a href='lugar_info.php?lid=$museo[1]&lnombre=$museo[0]'>$museo[0]</a></td></tr>";
-        }
+        }}
         ?>
       </tbody>
         
@@ -125,9 +131,12 @@ $busq = $_POST["busqueda"];
       <tbody>
 
         <?php
+        if ($iglesias[0][0] == Null) {
+            echo "<tr><td>No se encontraron resultados</td></tr>";
+        } else {
           foreach ($iglesias as $iglesia) {
             echo "<tr><td><a href='lugar_info.php?lid=$iglesia[1]&lnombre=$iglesia[0]'>$iglesia[0]</a></td></tr>";
-        }
+        }}
         ?>
       </tbody>
         
@@ -146,9 +155,12 @@ $busq = $_POST["busqueda"];
       <tbody>
 
         <?php
+        if ($plazas[0][0] == Null) {
+            echo "<tr><td>No se encontraron resultados</td></tr>";
+        } else {
           foreach ($plazas as $plaza) {
             echo "<tr><td><a href='lugar_info.php?lid=$plaza[1]&lnombre=$plaza[0]'>$plaza[0]</a></td></tr>";
-        }
+        }}
         ?>
       </tbody>
         
@@ -180,9 +192,12 @@ $busq = $_POST["busqueda"];
   <tbody>
 
     <?php
+    if ($obras[0][0] == Null) {
+        echo "<tr><td>No se encontraron resultados</td></tr>";
+    } else {
       foreach ($obras as $obra) {
         echo "<tr><td><a href='obra_info.php?oid=$obra[1]&onombre=$obra[0]'>$obra[0]</a></td></tr>";
-    }
+    }}
     ?>
   </tbody>
     
@@ -216,9 +231,12 @@ $busq = $_POST["busqueda"];
     <tbody>
 
     <?php
+    if ($hoteles[0][0] == Null) {
+        echo "<tr><td>No se encontraron resultados</td><td>No se encontraron resultados</td></tr>";
+    } else {
         foreach ($hoteles as $htl) {
         echo "<tr><td><a href='hotel_info.php?hid=$htl[0]&hnombre=$htl[1]&cnombre=$htl[2]'>$htl[1]</a></td> <td> $htl[2] </td> </tr>";
-        }
+        }}
     ?>
     </tbody>
     
