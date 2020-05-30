@@ -101,9 +101,11 @@ $i = $i + 1;
 }
 
 ?>
+  <br>
   <form action='itinerario.php' method='get'>
     <input class='btn btn-success btn lg' type='submit' value='Volver'>
-  </form><br>
+  </form>
+  <br>
 
 <?php
   } else {

@@ -74,8 +74,10 @@ include('templates/navbar.php');
                             <h3 class="mb-0 text-truncated" style='color: black'>Clemente Maruri</h3>
                             <p class="lead" style='color: black'>Huaso/ Al peo</p>
                             <p style='color: black'>
-                              Brindo por el pan, brindo por el vino, y le doy gracias a dios, 
-                              por hecerme tan divino.
+                              Brindo por las fondas
+                              porque siempre me han gustado
+                              pero apuesto que este año
+                              pucha que las paso encerrao'
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
