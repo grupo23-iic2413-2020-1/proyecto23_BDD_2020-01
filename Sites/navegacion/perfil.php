@@ -9,6 +9,31 @@ if ($_SESSION['loggedin'] == False) {
     header("location: ../errores/perfil1.php");
     exit;} 
 
+if (isset($_POST['devolver_ticket'])) {
+    $query_a = "DELETE FROM Tickets WHERE Tickets.tid = ?";
+
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_a = $db -> prepare($query_a);
+    $result_a -> bindParam(1, $_POST['tid']);
+    $result_a -> execute();
+    
+} elseif (isset($_POST['devolver_entrada'])) {
+    $query_b = "DELETE FROM Entradas WHERE Entradas.eid = ?";
+
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_b = $db -> prepare($query_b);
+    $result_b -> bindParam(1, $_POST['eid']);
+    $result_b -> execute();
+
+} elseif (isset($_POST['cancelar_reserva'])) {
+    $query_c = "DELETE FROM Reservas WHERE Reservas.rid = ?";
+
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_c = $db -> prepare($query_c);
+    $result_c -> bindParam(1, $_POST['rid']);
+    $result_c -> execute();
+    }
+
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -23,7 +48,7 @@ $unombre = $user[0][2];
 $correo = $user[0][3];
 $udir = $user[0][4];
 
-$query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre FROM 
+$query_2 = "SELECT t2.fecha_compra, t1.lnombre, t1.hora_apertura, t1.hora_cierre, t2.eid FROM 
             dblink('dbname=grupo50e3 host=localhost port=5432 user=grupo50 password=grupo2350',
             'SELECT m.lid, l.lnombre, m.hora_apertura, m.hora_cierre FROM Museo AS m, Lugar AS l WHERE m.lid = l.lid')
             AS t1(lid INT, lnombre VARCHAR(255), hora_apertura TIME, hora_cierre TIME), Entradas AS t2
@@ -38,7 +63,7 @@ $entradas = $result_2 -> fetchAll();
 
 
 
-$query_4 = "Select Reservas.fechai, Reservas.fechat, Hoteles.hnombre, Hoteles.hdir
+$query_4 = "Select Reservas.fechai, Reservas.fechat, Hoteles.hnombre, Hoteles.hdir, Reservas.rid
             from Hoteles, Reservas
             where reservas.uid = $uid 
             and reservas.hid = hoteles.hid;";
@@ -48,7 +73,7 @@ $result_4 = $db -> prepare($query_4);
 $result_4 -> execute();
 $reservas = $result_4 -> fetchAll();
 
-$query_5 = "select asiento, fechac, fechav, c1.cnombre, c2.cnombre
+$query_5 = "select asiento, fechac, fechav, c1.cnombre, c2.cnombre, tickets.tid
             from tickets, destinos, ciudades as c1, ciudades as c2
             where uid = $uid
             and tickets.did = destinos.did 
@@ -134,7 +159,13 @@ $dinero = $result_6 -> fetchAll();
                         <?php
                             foreach ($tickets as $tik) {
                             echo "<tr> <td>$tik[0]</td> <td>".date('Y-m-d', strtotime($tik[1]))."</td> 
-                            <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td></tr>";
+                            <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td>
+                            <td>
+                            <form align='center' action='perfil.php'  method='post'>
+                                <input type='hidden' name='tid' value=$tik[5]>
+                                <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket'>
+                            </form>
+                            </td></tr>";
                         }
                         ?>
                         </tbody>
@@ -169,7 +200,12 @@ $dinero = $result_6 -> fetchAll();
                             <?php
                                 foreach ($entradas as $entr) {
                                 echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td>
-                                        </tr>";
+                                    <td>
+                                    <form align='center' action='perfil.php'  method='post'>
+                                        <input type='hidden' name='eid' value=$entr[4]>
+                                        <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_entrada'>
+                                    </form>
+                                    </td></tr>";
                             }
                             ?>
                             </tbody>
@@ -198,6 +234,7 @@ $dinero = $result_6 -> fetchAll();
                                 <th>Fecha Termino</th>
                                 <th>Nombre Hotel</th>
                                 <th>Dirección Hotel</th>
+                                <th>Cancelar reserva</th>
 
                             </tr>
                             </thead>
@@ -205,7 +242,13 @@ $dinero = $result_6 -> fetchAll();
 
                             <?php
                                 foreach ($reservas as $res) {
-                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td></tr>";
+                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]<</td>
+                                    <td>
+                                    <form align='center' action='perfil.php'  method='post'>
+                                        <input type='hidden' name='rid' value=$res[4]>
+                                        <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva'>
+                                    </form>
+                                    </td></tr>";
                             }
                             ?>
                             </tbody>
