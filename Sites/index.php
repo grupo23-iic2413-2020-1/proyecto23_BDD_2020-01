@@ -61,18 +61,64 @@ include('templates/navbar.php');
 
     <h5 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h5>
     <br>
-    <p class= "text-white" align="center">Sección en desarrollo</p>
+    <p class= "text-white" align="center">Conoce a nuestros fundadores</p>
   </div>
   <br>
   <div class="container">
-    <div class="row">
+  <div class="row">
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-lg-8 col-md-6">
-                            <h3 class="mb-0 text-truncated" style='color: black'>Juan Pablo Correa</h3>
-                            <p class="lead" style='color: black'>Web / UI Designer</p>
+                            <h3 class="mb-0 text-truncated" style='color: black'>Clemente Maruri</h3>
+                            <p class="lead" style='color: black'>Huaso/ Al peo</p>
+                            <p style='color: black'>
+                                Manejo tanto datos como caballos
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6 text-center">
+                            <img src="imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <br>
+                            <ul class="list-inline ratings text-center" title="Ratings">
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>5</h3>
+                            <small style='color: black'>Followers</small>
+                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>56k</h3>
+                            <small style='color: black'>Following</small>
+                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>3</h3>
+                            <small style='color: black'>Ramos echados</small>
+                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <h3 class="mb-0 text-truncated" style='color: black'>Diego Fluxá</h3>
+                            <p class="lead" style='color: black'>Diseñador Web/ Al puro bootstrap</p>
                             <p style='color: black'>
                                 Mi pasión por diseñar páginas web no tiene límites
                             </p>
@@ -94,17 +140,111 @@ include('templates/navbar.php');
                             </ul>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>20.7K</h3>
+                            <h3 class="mb-0" style='color: black'>5</h3>
                             <small style='color: black'>Followers</small>
                             <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>245</h3>
+                            <h3 class="mb-0" style='color: black'>56k</h3>
                             <small style='color: black'>Following</small>
                             <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
                         </div>
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>3</h3>
+                            <small style='color: black'>Ramos echados</small>
+                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <h3 class="mb-0 text-truncated" style='color: black'>Juan Pablo Correa</h3>
+                            <p class="lead" style='color: black'>Tenista/ Pero piola</p>
+                            <p style='color: black'>
+                                Mi pasión por diseñar páginas web no tiene límites
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6 text-center">
+                            <img src="imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <br>
+                            <ul class="list-inline ratings text-center" title="Ratings">
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>5</h3>
+                            <small style='color: black'>Followers</small>
+                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>56k</h3>
+                            <small style='color: black'>Following</small>
+                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>3</h3>
+                            <small style='color: black'>Ramos echados</small>
+                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <h3 class="mb-0 text-truncated" style='color: black'>Felipe Lira</h3>
+                            <p class="lead" style='color: black'>Chef/ Sólo huevos revueltos</p>
+                            <p style='color: black'>
+                                Amante de los datos y todo lo que son sus bases
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6 text-center">
+                            <img src="imagenes_perfil/lira.jpeg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <br>
+                            <ul class="list-inline ratings text-center" title="Ratings">
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>14</h3>
+                            <small style='color: black'>Followers</small>
+                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>Caleta</h3>
+                            <small style='color: black'>Following</small>
+                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0" style='color: black'>F</h3>
                             <small style='color: black'>Ramos echados</small>
                             <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
                         </div>
