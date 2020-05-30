@@ -96,7 +96,7 @@ AND Tickets.did = Destinos.did;";
 $result_6 = $db -> prepare($query_6);
 $result_6 -> bindParam(1, $uid);
 $result_6 -> execute();
-$dinero = $result_6 -> fetchAll();
+$dinero_tickets = $result_6 -> fetchAll();
 
 
 ?> 
@@ -279,7 +279,7 @@ $dinero = $result_6 -> fetchAll();
                             <tbody>
 
                             <?php
-                            foreach ($dinero as $d) {
+                            foreach ($dinero_tickets as $d) {
                                 echo "<tr> <td>$d[0]</td> <td>$d[0]</td> <td>$d[0]</td> <td>$d[0]</td></tr>";
                             }
                             ?>
