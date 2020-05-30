@@ -40,22 +40,30 @@ $base_url = $_SESSION["base_url"];?>
           <a class="dropdown-item" href="<?php echo $base_url ?>/navegacion/comprar_ticket.php">Comprar Ticket</a>
         </div>
       </li>
+      <li class="nav-item px-2">
+        <form class="form-inline" action="#" method="post">
+          <input class="form-control mr-sm-1" type="text" placeholder="Búsqueda" name="Busqueda">
+          <button class="btn btn-success" type="submit">Buscar</button>
+        </form>
+      </li>
       
 
       
     </ul>
     <?php if ($_SESSION["loggedin"] == 1) { ?>
       <ul class="navbar-nav my-2 my-lg-0">
+      
         <li class="nav-item dropdown">
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?php echo $_SESSION['current_username'] ?>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/perfil.php'> Perfil </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/log_out.php'> Cerrar sesión </a>
           </div>
         </li>
+        <br>
       </ul>
     <?php } else { ?>
       <ul class="navbar-nav my-2 my-lg-0">

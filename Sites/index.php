@@ -65,9 +65,7 @@ include('templates/navbar.php');
   </div>
   <br>
   <div class="container">
-  <div class="row">
-        <div class="col-6">
-            <div class="card">
+            <div class="card" style="width: 33.8rem;margin:0 auto;" >
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-lg-8 col-md-6">
@@ -114,54 +112,6 @@ include('templates/navbar.php');
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12 col-lg-8 col-md-6">
-                            <h3 class="mb-0 text-truncated" style='color: black'>Diego Fluxá</h3>
-                            <p class="lead" style='color: black'>Cazador de monos/ Preferencia orangutanes</p>
-                            <p style='color: black'>
-                                Monos y monadas, locuras que me atraen
-                            </p>
-                        </div>
-                        <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/diego.jpg" alt="" class="mx-auto rounded-circle img-fluid">
-                            <br>
-                            <ul class="list-inline ratings text-center" title="Ratings">
-                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>5</h3>
-                            <small style='color: black'>Followers</small>
-                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>56k</h3>
-                            <small style='color: black'>Following</small>
-                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>3</h3>
-                            <small style='color: black'>Ramos echados</small>
-                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <br>
     <div class="row">
         <div class="col-6">
