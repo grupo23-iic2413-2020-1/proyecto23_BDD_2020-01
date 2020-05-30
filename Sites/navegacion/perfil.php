@@ -308,7 +308,7 @@ $dinero_hoteles = $result_7 -> fetchAll();
                             echo "<tr>  <td>$tickets_total</td>
                                         <td>$d[0]</td>
                                         <td>$dinero_total_hoteles</td>
-                                        <td>$total_gastado [0]</td></tr>";
+                                        <td>$total_gastado</td></tr>";
                             ?>
                             </tbody>
                             
