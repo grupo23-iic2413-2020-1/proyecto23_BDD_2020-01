@@ -107,7 +107,7 @@ $result_7 = $db -> prepare($query_7);
 $result_7 -> bindParam(1, $uid);
 $result_7 -> execute();
 $dinero_hoteles = $result_7 -> fetchAll();
-$dinero_total_hoteles = 0;
+
 
 
 
@@ -295,6 +295,7 @@ $dinero_total_hoteles = 0;
                             foreach ($dinero_tickets as $d) {
                                 $tickets_total = $d[0];
                             }
+                            $dinero_total_hoteles = 0;
                             foreach ($dinero_hoteles as $htl){
                                 $precio_unidad = $htl[0];
                                 $fecha_inicio = new DateTime($htl[1]);
@@ -303,7 +304,7 @@ $dinero_total_hoteles = 0;
                                 $precio_agregar = ($diff_dias->days * $precio_unidad);
                                 $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
                             }
-                            echo "<tr> <td>$tickets_total[0]</td> <td>$d[0]</td> <td>$dinero_total_agregar[0]</td> <td>$d[0]</td></tr>";
+                            echo "<tr> <td>$d[0]</td> <td>$d[0]</td> <td>$dinero_total_hoteles[0]</td> <td>$d[0]</td></tr>";
                             ?>
                             </tbody>
                             
