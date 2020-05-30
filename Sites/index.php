@@ -74,11 +74,12 @@ include('templates/navbar.php');
                             <h3 class="mb-0 text-truncated" style='color: black'>Clemente Maruri</h3>
                             <p class="lead" style='color: black'>Huaso/ Al peo</p>
                             <p style='color: black'>
-                                Manejo tanto datos como caballos
+                              Brindo por el pan, brindo por el vino, y le doy gracias a dios, 
+                              por hecerme tan divino.
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="imagenes_perfil/tito.jpg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
@@ -118,13 +119,13 @@ include('templates/navbar.php');
                     <div class="row">
                         <div class="col-12 col-lg-8 col-md-6">
                             <h3 class="mb-0 text-truncated" style='color: black'>Diego Fluxá</h3>
-                            <p class="lead" style='color: black'>Diseñador Web/ Al puro bootstrap</p>
+                            <p class="lead" style='color: black'>Cazador de monos/ Preferencia orangutanes</p>
                             <p style='color: black'>
-                                Mi pasión por diseñar páginas web no tiene límites
+                                Monos y monadas, locuras que me atraen
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="imagenes_perfil/diego.jpg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
@@ -159,6 +160,7 @@ include('templates/navbar.php');
             </div>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-6">
             <div class="card">
@@ -172,7 +174,7 @@ include('templates/navbar.php');
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="imagenes_perfil/pelao.jpeg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
