@@ -342,7 +342,8 @@ $dinero_hoteles = $result_7 -> fetchAll();
     </div>
     
 </div>
-
+<br>
+<br>
 </body>
 
 <?php ob_end_flush(); ?>
