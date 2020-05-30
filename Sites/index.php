@@ -71,9 +71,9 @@ include('templates/navbar.php');
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-lg-8 col-md-6">
-                            <h3 class="mb-0 text-truncated">Juan Pablo Correa</h3>
-                            <p class="lead">Web / UI Designer</p>
-                            <p>
+                            <h3 class="mb-0 text-truncated" style='color: black'>Juan Pablo Correa</h3>
+                            <p class="lead" style='color: black'>Web / UI Designer</p>
+                            <p style='color: black'>
                                 Mi pasión por diseñar páginas web no tiene límites
                             </p>
                         </div>
@@ -94,25 +94,22 @@ include('templates/navbar.php');
                             </ul>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0">20.7K</h3>
-                            <small>Followers</small>
+                            <h3 class="mb-0" style='color: black'>20.7K</h3>
+                            <small style='color: black'>Followers</small>
                             <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0">245</h3>
-                            <small>Following</small>
+                            <h3 class="mb-0" style='color: black'>245</h3>
+                            <small style='color: black'>Following</small>
                             <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0">3</h3>
-                            <small>Ramos echados</small>
+                            <h3 class="mb-0" style='color: black'>3</h3>
+                            <small style='color: black'>Ramos echados</small>
                             <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
                         </div>
-                        <!--/col-->
                     </div>
-                    <!--/row-->
                 </div>
-                <!--/card-block-->
             </div>
         </div>
     </div>
