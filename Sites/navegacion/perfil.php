@@ -147,205 +147,201 @@ $dinero_hoteles = $result_7 -> fetchAll();
                 <br>
                 <br>
                 <br>
-                <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tickets" aria-expanded="false" aria-controls="collapseExample">
-                    Ver tickets
-                </button>
-                </p>
-                <div class="collapse" id="tickets">
-                <div class="card card-body">
-                    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+<!--- BEGIN TABS --->
+<div class='card bg-secondary'>
+<!-- Nav pills -->
+<ul class="nav nav-pills justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active btn-success text-white" data-toggle="pill" href="#tickets">Tickets</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn-success text-white" data-toggle="pill" href="#entradas">Entradas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn-success text-white" data-toggle="pill" href="#reservas">Reservas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn-success text-white" data-toggle="pill" href="#dinero">Dinero Gastado</a>
+  </li>
+</ul>
 
-                        <thead class="thead-dark">
-                        <tr style="text-align:center">
-                            <th>Asiento</th>
-                            <th>Fecha compra</th>
-                            <th>Fecha viaje</th>
-                            <th>Ciudad origen</th>
-                            <th>Ciudad destino</th>
-                            <th>Devolver ticket</th>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane container active" id="tickets">
+        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-                        </tr>
-                        </thead>
-                        <tbody>
+            <thead class="thead-dark">
+            <tr style="text-align:center">
+                <th>Asiento</th>
+                <th>Fecha compra</th>
+                <th>Fecha viaje</th>
+                <th>Ciudad origen</th>
+                <th>Ciudad destino</th>
+                <th>Devolver ticket</th>
 
-                        <?php
-                            foreach ($tickets as $tik) {
-                            echo "<tr> <td>$tik[0]</td> <td>".date('Y-m-d', strtotime($tik[1]))."</td> 
-                            <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td>
-                            <td>
-                            <form align='center' action='perfil.php'  method='post'>
-                                <input type='hidden' name='tid' value=$tik[5]>
-                                <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket' style='font-size: 17px'>
-                            </form>
-                            </td></tr>";
-                        }
-                        ?>
-                        </tbody>
+            </tr>
+            </thead>
+            <tbody>
 
-                        </table>
-                </div>
-                </div>
+            <?php
+                foreach ($tickets as $tik) {
+                echo "<tr> <td>$tik[0]</td> <td>".date('Y-m-d', strtotime($tik[1]))."</td> 
+                <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td>
+                <td>
+                <form align='center' action='perfil.php'  method='post'>
+                    <input type='hidden' name='tid' value=$tik[5]>
+                    <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket' style='font-size: 17px'>
+                </form>
+                </td></tr>";
+            }
+            ?>
+            </tbody>
 
-                <br>
-                
-                <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#entradas" aria-expanded="false" aria-controls="collapseExample">
-                Ver Entradas
-                </button>
-                </p>
-                <div class="collapse" id="entradas">
-                <div class="card card-body">
-                    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+        </table>
+  </div>
+  <div class="tab-pane container fade" id="entradas">
+        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-                    <thead class="thead-dark">
-                            <tr style="text-align:center">
-                                <th>Fecha Compra</th>
-                                <th>Nombre Museo</th>
-                                <th>Hora Apertura</th>
-                                <th>Hora Cierre</th>
-                                <th>Devolver entrada</th>
+        <thead class="thead-dark">
+                <tr style="text-align:center">
+                    <th>Fecha Compra</th>
+                    <th>Nombre Museo</th>
+                    <th>Hora Apertura</th>
+                    <th>Hora Cierre</th>
+                    <th>Devolver entrada</th>
 
-                            </tr>
-                            </thead>
-                            <tbody>
+                </tr>
+                </thead>
+                <tbody>
 
-                            <?php
-                                foreach ($entradas as $entr) {
-                                echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td>
-                                    <td>
-                                    <form align='center' action='perfil.php'  method='post'>
-                                        <input type='hidden' name='eid' value=$entr[4]>
-                                        <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_entrada' style='font-size: 17px'>
-                                    </form>
-                                    </td></tr>";
-                            }
-                            ?>
-                            </tbody>
+                <?php
+                    foreach ($entradas as $entr) {
+                    echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td>
+                        <td>
+                        <form align='center' action='perfil.php'  method='post'>
+                            <input type='hidden' name='eid' value=$entr[4]>
+                            <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_entrada' style='font-size: 17px'>
+                        </form>
+                        </td></tr>";
+                }
+                ?>
+                </tbody>
 
-                        </table>
-                </div>
-                </div>
+            </table>
+  </div>
+  <div class="tab-pane container fade" id="reservas">
+        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-                <br>
-                
+            <thead class="thead-dark">
+            <tr style="text-align:center">
+                <th>Tickets</th>
+                <th>Entradas</th>
+                <th>Reservas</th>
+                <th>Total</th>
 
-                <div>     
-                <div>
-                <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#reservas" aria-expanded="false" aria-controls="collapseExample">
-                    Ver reservas
-                </button>
-                </p>
-                <div class="collapse" id="reservas">
-                <div class="card card-body">
-                        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+            </tr>
+            </thead>
+            <tbody>
 
-                            <thead class="thead-dark">
-                            <tr style="text-align:center">
-                                <th>Fecha Inicio</th>
-                                <th>Fecha Termino</th>
-                                <th>Nombre Hotel</th>
-                                <th>Dirección Hotel</th>
-                                <th>Cancelar reserva</th>
+            <?php
+            foreach ($dinero_tickets as $d) {
+                $tickets_total = $d[0];
+            }
+            $dinero_total_hoteles = 0;
+            foreach ($dinero_hoteles as $htl){
+                $precio_unidad = $htl[0];
+                $fecha_inicio = new DateTime($htl[1]);
+                $fecha_termino = new DateTime($htl[2]);
+                $diff_dias = $fecha_inicio->diff($fecha_termino);
+                $precio_agregar = ($diff_dias->days * $precio_unidad);
+                $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
+            }
+            $total_gastado = $dinero_total_hoteles + $tickets_total;
+            echo "<tr>  <td>$tickets_total</td>
+                        <td>$d[0]</td>
+                        <td>$dinero_total_hoteles</td>
+                        <td>$total_gastado</td></tr>";
+            ?>
+            </tbody>
+            
+        </table>
+  </div>
+  <div class="tab-pane container fade" id="dinero">
+        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-                            </tr>
-                            </thead>
-                            <tbody>
+            <thead class="thead-dark">
+            <tr style="text-align:center">
+                <th>Tickets</th>
+                <th>Entradas</th>
+                <th>Reservas</th>
+                <th>Total</th>
 
-                            <?php
-                                foreach ($reservas as $res) {
-                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td>
-                                    <td>
-                                    <form align='center' action='perfil.php'  method='post'>
-                                        <input type='hidden' name='rid' value=$res[4]>
-                                        <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva' style='font-size: 17px'>
-                                    </form>
-                                    </td></tr>";
-                            }
-                            ?>
-                            </tbody>
-                            
-                        </table>
-                    </div>
-                    </div>
-                </div>
-                <br>
-                <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#dinero" aria-expanded="false" aria-controls="collapseExample">
-                    Dinero gastado
-                </button>
-                </p>
-                <div class="collapse" id="dinero">
-                <div class="card card-body">
-                        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+            </tr>
+            </thead>
+            <tbody>
 
-                            <thead class="thead-dark">
-                            <tr style="text-align:center">
-                                <th>Tickets</th>
-                                <th>Entradas</th>
-                                <th>Reservas</th>
-                                <th>Total</th>
+            <?php
+            foreach ($dinero_tickets as $d) {
+                $tickets_total = $d[0];
+            }
+            $dinero_total_hoteles = 0;
+            foreach ($dinero_hoteles as $htl){
+                $precio_unidad = $htl[0];
+                $fecha_inicio = new DateTime($htl[1]);
+                $fecha_termino = new DateTime($htl[2]);
+                $diff_dias = $fecha_inicio->diff($fecha_termino);
+                $precio_agregar = ($diff_dias->days * $precio_unidad);
+                $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
+            }
+            $total_gastado = $dinero_total_hoteles + $tickets_total;
+            echo "<tr>  <td>$tickets_total</td>
+                        <td>$d[0]</td>
+                        <td>$dinero_total_hoteles</td>
+                        <td>$total_gastado</td></tr>";
+            ?>
+            </tbody>
+            
+        </table>
+  </div>
+</div>
 
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            <?php
-                            foreach ($dinero_tickets as $d) {
-                                $tickets_total = $d[0];
-                            }
-                            $dinero_total_hoteles = 0;
-                            foreach ($dinero_hoteles as $htl){
-                                $precio_unidad = $htl[0];
-                                $fecha_inicio = new DateTime($htl[1]);
-                                $fecha_termino = new DateTime($htl[2]);
-                                $diff_dias = $fecha_inicio->diff($fecha_termino);
-                                $precio_agregar = ($diff_dias->days * $precio_unidad);
-                                $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
-                            }
-                            $total_gastado = $dinero_total_hoteles + $tickets_total;
-                            echo "<tr>  <td>$tickets_total</td>
-                                        <td>$d[0]</td>
-                                        <td>$dinero_total_hoteles</td>
-                                        <td>$total_gastado</td></tr>";
-                            ?>
-                            </tbody>
-                            
-                        </table>
-                    </div>
-                    </div>
-                <br>
-                <div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                    Eliminar Cuenta
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="deleteModalLabel">¿Estas seguro de eliminar este usuario?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-dark">
-                            <p>Una vez que elimines a este usuario no podrás volver a ingresar a esta cuenta.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a role="button" href='../navegacion/delete_user.php' class="btn btn-danger" >Eliminar</a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+<!--- END TABS --->
+</div>
+<br>
+<br>
+<div class="container">
+    <div>
+        <a  role='button' class="btn btn-dark" href='log_out.php'> Cerrar sesión </a>
     </div>
+    <br>
+    <div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+        Eliminar Cuenta
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="deleteModalLabel">¿Estas seguro de eliminar este usuario?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-dark">
+                    <p>Una vez que elimines a este usuario no podrás volver a ingresar a esta cuenta.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a role="button" href='../navegacion/delete_user.php' class="btn btn-danger" >Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
 
 </body>
 
