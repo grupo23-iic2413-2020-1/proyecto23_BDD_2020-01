@@ -59,9 +59,9 @@ include('templates/navbar.php');
     <br>
     <br>
 
-    <h5 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h5>
+    <h1 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h1>
     <br>
-    <p class= "text-white" align="center">Conoce a nuestros fundadores</p>
+    <h2 class= "text-white" align="center">Conoce a nuestros fundadores</h2>
   </div>
   <br>
   <div class="container">

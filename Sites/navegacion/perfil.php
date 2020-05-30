@@ -163,7 +163,7 @@ $dinero = $result_6 -> fetchAll();
                             <td>
                             <form align='center' action='perfil.php'  method='post'>
                                 <input type='hidden' name='tid' value=$tik[5]>
-                                <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket'>
+                                <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket' style='width: 7em'>
                             </form>
                             </td></tr>";
                         }
@@ -203,7 +203,7 @@ $dinero = $result_6 -> fetchAll();
                                     <td>
                                     <form align='center' action='perfil.php'  method='post'>
                                         <input type='hidden' name='eid' value=$entr[4]>
-                                        <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_entrada'>
+                                        <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_entrada' style='width: 7em'>
                                     </form>
                                     </td></tr>";
                             }
@@ -246,7 +246,7 @@ $dinero = $result_6 -> fetchAll();
                                     <td>
                                     <form align='center' action='perfil.php'  method='post'>
                                         <input type='hidden' name='rid' value=$res[4]>
-                                        <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva'>
+                                        <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva' style='width: 7em'>
                                     </form>
                                     </td></tr>";
                             }
