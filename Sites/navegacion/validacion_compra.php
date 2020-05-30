@@ -49,46 +49,54 @@ $result_3 -> execute();
 ?> 
 
 <body class= "bg-secondary text-white">
-    <div class="container">
+<div class="container">
+        <br>
         <div class="row justify-content-md-center">
-            <h2> Tu Compra ha sido realizada con éxito </h2>
+            <h2> Tu compra ha sido realizada con éxito </h2>
         </div>
+        <br>
         <br>
         <div class="row justify-content-md-center">
             <h2> Detalles compra: </h2>
         </div>
 
         <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Nombre Lugar: </b> <?php echo $lnombre ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Usuario: </b> <?php echo $username ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Número de Ticket: </b> <?php echo $eid ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Precio: </b> <?php echo $precio ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Fecha de Compra: </b> <?php echo $fecha_compra ?> </h5>
-                    <br>
-                </div>
 
-            </div>
-            </div>
+        <div class="container"> 
+            <table class="table table-bordered bg-white table-borderless ">
+                <tbody>
+                <tr>
+                    <td><b>Nombre Lugar: </b></td>
+                    <td><?php echo $lnombre ?></td>
+                </tr>
+                <tr>
+                    <td><b>Usuario: </b></td>
+                    <td><?php echo $username ?></td>
+                </tr>
+                <tr>
+                    <td><b>Mail: </b></td>
+                    <td><?php echo $correo ?></td>
+                </tr>
+                <tr>
+                    <td><b>Número de Entrada: </b></td>
+                    <td><?php echo $eid ?></td>
+                </tr>
+                <tr>
+                    <td><b>Fecha compra: </b></td>
+                    <td><?php echo $fecha_compra ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio: </b></td>
+                    <td>€ <?php echo $precio ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        
     </div>
+
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
       </form>

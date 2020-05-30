@@ -29,33 +29,39 @@ $udir = $user[0][4];
 ?> 
 
 <body class= "bg-secondary text-white">
-    <div class="container">
+<div class="container">
+        <br>
         <div class="row justify-content-md-center">
-            <h2> Detalles compra </h2>
+            <h2> Detalles compra: </h2>
         </div>
 
         <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Nombre lugar: </b> <?php echo $lnombre ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Usuario: </b> <?php echo $username ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Precio: </b> <?php echo $precio ?> </h5>
-                    <br>
-                </div>
 
-            </div>
-            </div>
+        <div class="container"> 
+            <table class="table table-bordered bg-white table-borderless ">
+                <tbody>
+                <tr>
+                    <td><b>Nombre lugar: </b></td>
+                    <td><?php echo $lnombre ?></td>
+                </tr>
+                <tr>
+                    <td><b>Usuario: </b></td>
+                    <td><?php echo $username ?></td>
+                </tr>
+                <tr>
+                    <td><b>Mail: </b></td>
+                    <td><?php echo $correo ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio: </b></td>
+                    <td>€ <?php echo $precio ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        
     </div>
     <form align='center' action='validacion_compra.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>
       &precio=<?php echo $precio ?>' method='post'>
