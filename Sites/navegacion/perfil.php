@@ -304,7 +304,7 @@ $dinero_hoteles = $result_7 -> fetchAll();
                                 $precio_agregar = ($diff_dias->days * $precio_unidad);
                                 $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
                             }
-                            echo "<tr> <td>$d[0]</td> <td>$d[0]</td> <td>$dinero_total_hoteles[0]</td> <td>$d[0]</td></tr>";
+                            echo "<tr> <td>$d[0]</td> <td>$d[0]</td> <td>$diff_dias->days</td> <td>$d[0]</td></tr>";
                             ?>
                             </tbody>
                             
