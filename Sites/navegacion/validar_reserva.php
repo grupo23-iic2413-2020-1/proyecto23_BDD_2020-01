@@ -87,7 +87,8 @@ $result_4 -> execute();
 
 
 <body class= "bg-secondary text-white">
-    <div class="container">
+<div class="container">
+        <br>
         <div class="row justify-content-md-center">
             <h2> Tu reserva ha sido realizada con éxito </h2>
         </div>
@@ -98,43 +99,56 @@ $result_4 -> execute();
         </div>
 
         <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Número de Reserva: </b> <?php echo $rid ?> </h5>
-                    <br>
-                </div>
-                <div>
-                <div>
-                    <h5><b>Fecha inicio: </b> <?php echo $fechai->format('Y-m-d') ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Fecha termino: </b> <?php echo $fechat->format('Y-m-d') ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Nombre hotel: </b> <?php echo  $hotel[0][1]?> </h5>  
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Precio por todos los dias: € </b> <?php echo ($hotel[0][2] * $diff_dias->days) ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Fecha Compra: </b> <?php echo $fecha_compra ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Usuario: </b> <?php echo $username ?> </h5>
-                    <br>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                    <br>
-                </div>
 
-            </div>
+        <div class="container"> 
+            <table class="table table-bordered bg-white table-borderless ">
+                <tbody>
+                <tr>
+                    <td><b>Número de Reserva: </b></td>
+                    <td> <?php echo $rid ?></td>
+                </tr>
+                <tr>
+                    <td><b>Fecha inicio: </b></td>
+                    <td> <?php echo $fechai->format('Y-m-d') ?></td>
+                </tr>
+                <tr>
+                    <td><b>Fecha término: </b></td>
+                    <td><?php echo $fechat->format('Y-m-d') ?></td>
+                </tr>
+                <tr>
+                    <td><b>Nombre hotel: </b> </td>
+                    <td><?php echo  $hotel[0][1]?></td>
+                </tr>
+                <tr>
+                    <td><b>Total dias: </b></td>
+                    <td><?php echo $diff_dias->days ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio por noche: </b></td>
+                    <td>€ <?php echo $hotel[0][2] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio total: </b></td>
+                    <td>€ <?php echo ($hotel[0][2] * $diff_dias->days) ?></td>
+                </tr>
+                <tr>
+                    <td><b>Fecha Compra: </b></td>
+                    <td> <?php echo $fecha_compra ?></td>
+                </tr>
+                <tr>
+                    <td><b>Usuario: </b></td>
+                    <td><?php echo $username ?></td>
+                </tr>
+                <tr>
+                    <td><b>Mail: </b></td>
+                    <td><?php echo $correo ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+    </div>
+
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
       </form>

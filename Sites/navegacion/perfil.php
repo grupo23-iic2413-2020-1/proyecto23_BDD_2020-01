@@ -65,9 +65,7 @@ $query_6 = "SELECT SUM(Destinos.precio) FROM Usuarios, Tickets, Destinos
 WHERE Usuarios.uid = ?
 AND Usuarios.uid = Tickets.uid
 AND Tickets.fechac <= CURRENT_TIMESTAMP
-AND Tickets.did = Destinos.did
-
-;";
+AND Tickets.did = Destinos.did;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result_6 = $db -> prepare($query_6);
@@ -79,23 +77,35 @@ $dinero = $result_6 -> fetchAll();
 ?> 
 
 <body class= "bg-secondary text-white">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <h2> Perfil de <?php echo $username;?> </h2>
-        </div>
 
-        <br>
-        <div class="row justify-content-md-center">
-            <div class='col-md-auto'>
-                <div>
-                    <h5><b>Nombre: </b> <?php echo $unombre ?> </h5>
-                </div>
-                <div>
-                    <h5><b>Mail: </b> <?php echo $correo ?> </h5>
-                </div>
-                <div>
-                    <h5><b>Dirección: </b> <?php echo $udir ?> </h5>
-                </div>
+    <div class="container">
+            <br>
+            <div class="row justify-content-md-center">
+                <h2> Perfil de <?php echo $username;?> </h2>
+            </div>
+            <br>
+            <br>
+
+            <div class="container"> 
+                <table class="table table-bordered bg-white table-borderless ">
+                    <tbody>
+                    <tr>
+                        <td><b>Nombre: </b></td>
+                        <td><?php echo $unombre ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Mail: </b></td>
+                        <td><?php echo $correo ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Dirección: </b></td>
+                        <td><?php echo $udir ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
                 <br>
                 <br>
                 <br>
@@ -115,6 +125,7 @@ $dinero = $result_6 -> fetchAll();
                             <th>Fecha viaje</th>
                             <th>Ciudad origen</th>
                             <th>Ciudad destino</th>
+                            <th>Devolver ticket</th>
 
                         </tr>
                         </thead>
@@ -122,7 +133,8 @@ $dinero = $result_6 -> fetchAll();
 
                         <?php
                             foreach ($tickets as $tik) {
-                            echo "<tr> <td>$tik[0]</td> <td>".date('Y-m-d', strtotime($tik[1]))."</td> <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td></tr>";
+                            echo "<tr> <td>$tik[0]</td> <td>".date('Y-m-d', strtotime($tik[1]))."</td> 
+                            <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td></tr>";
                         }
                         ?>
                         </tbody>
@@ -148,6 +160,7 @@ $dinero = $result_6 -> fetchAll();
                                 <th>Nombre Museo</th>
                                 <th>Hora Apertura</th>
                                 <th>Hora Cierre</th>
+                                <th>Devolver entrada</th>
 
                             </tr>
                             </thead>
@@ -155,7 +168,8 @@ $dinero = $result_6 -> fetchAll();
 
                             <?php
                                 foreach ($entradas as $entr) {
-                                echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td></tr>";
+                                echo "<tr> <td>$entr[0]</td> <td>$entr[1]</td> <td>$entr[2]</td> <td>$entr[3]</td>
+                                        </tr>";
                             }
                             ?>
                             </tbody>
@@ -253,7 +267,7 @@ $dinero = $result_6 -> fetchAll();
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a role="button" href='../navegacion/delete_user.php' class="btn btn-primary" >Eliminar</a>
+                            <a role="button" href='../navegacion/delete_user.php' class="btn btn-danger" >Eliminar</a>
                         </div>
                         </div>
                     </div>

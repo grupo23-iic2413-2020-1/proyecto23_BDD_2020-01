@@ -135,7 +135,7 @@ $result_4 -> execute();
     </div>
     <form align='center' action='perfil.php'  method='post'>
         <input class='btn btn-primary' align='center' type='submit' value='Ir al perfil'>
-      </form>
+    </form>
 
     <br>
     <br>

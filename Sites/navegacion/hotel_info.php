@@ -19,31 +19,44 @@ $result = $db -> prepare($query);
 $result -> execute();
 $hotel = $result -> fetchAll();
 ?>
-<div class="row justify-content-md-center">
+
+<div class="container">
+        <br>
+        <div class="row justify-content-md-center">
             <h2> Informacion de <?php echo $hotel[0][1];?> </h2>
         </div>
 
         <br>
-<div class="row justify-content-md-center">
-    <div class='col-md-auto'>
-        <div>
-            <h5><b>Nombre: </b> <?php echo $hotel[0][1] ?> </h5>
+
+        <div class="container"> 
+            <table class="table table-bordered bg-white table-borderless ">
+                <tbody>
+                <tr>
+                    <td><b>Nombre: </b></td>
+                    <td><?php echo $hotel[0][1] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Ciudad: </b></td>
+                    <td><?php echo $cnombre ?></td>
+                </tr>
+                <tr>
+                    <td><b>Dirección: </b> </td>
+                    <td><?php echo $hotel[0][3] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Teléfono: </b></td>
+                    <td><?php echo $hotel[0][4] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Precio (por noche): </b> </td>
+                    <td>€ <?php echo $hotel[0][5] ?></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div>
-            <h5><b>Ciudad: </b> <?php echo $cnombre ?> </h5>
-        </div>
-        <div>
-            <h5><b>Dirección: </b> <?php echo $hotel[0][3] ?> </h5>
-        </div>
-        <div>
-            <h5><b>Teléfono: </b> <?php echo $hotel[0][4] ?> </h5>
-        </div>
-        <div>
-            <h5><b>Precio (por noche): </b> € <?php echo $hotel[0][5] ?> </h5>
-        </div>
+                
     </div>
-</div>
-<br>
+
 <br>
 
 <p>
@@ -61,6 +74,7 @@ $hotel = $result -> fetchAll();
              value=<?php echo date('Y-m-d') ?> min=<?php echo date('Y-m-d') ?>>
             </div>
         </div>
+        <br>
         <div class="center">
             <label for="birthdaytime"> Elegir fecha termino: </label>
             <div class='center'>
@@ -68,7 +82,7 @@ $hotel = $result -> fetchAll();
              value=<?php echo date('Y-m-d') ?> min=<?php echo date('Y-m-d') ?>>
             </div>
         </div>
-        
+        <br>
             
         <input class='btn btn-primary' align='center' type='submit' value='Validar Reserva'>
     </form>
