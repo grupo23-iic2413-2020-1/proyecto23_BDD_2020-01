@@ -70,7 +70,7 @@ $udir = $user[0][4];
 
     <br>
     <form align='center' action='lugar_info.php?lid=<?php echo $lid ?>&lnombre=<?php echo $lnombre ?>' method='post'>
-        <input class='btn btn-primary' align='center' type='submit' value='Cancelar Compra'>
+        <input class='btn btn-danger' align='center' type='submit' value='Cancelar Compra'>
       </form>
 
 </body>

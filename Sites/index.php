@@ -64,6 +64,59 @@ include('templates/navbar.php');
     <p class= "text-white" align="center">Sección en desarrollo</p>
   </div>
   <br>
+  <div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <h3 class="mb-0 text-truncated">Juan Pablo Correa</h3>
+                            <p class="lead">Web / UI Designer</p>
+                            <p>
+                                Mi pasión por diseñar páginas web no tiene límites
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6 text-center">
+                            <img src="/imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <br>
+                            <ul class="list-inline ratings text-center" title="Ratings">
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0">20.7K</h3>
+                            <small>Followers</small>
+                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0">245</h3>
+                            <small>Following</small>
+                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h3 class="mb-0">3</h3>
+                            <small>Ramos echados</small>
+                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
+                        </div>
+                        <!--/col-->
+                    </div>
+                    <!--/row-->
+                </div>
+                <!--/card-block-->
+            </div>
+        </div>
+    </div>
+</div>
   <br>
 </body>
 </html>
