@@ -11,6 +11,17 @@ $busq = $_POST["busqueda"];
 <div class="container">
 
 <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Resultados Búsqueda</h1>
+<br>
+
+<div class="center">
+<a role="button" href='#artistas' class="btn btn-dark">Artistas</a>
+<a role="button" href='#obras' class="btn btn-dark">Obras</a>
+<a role="button" href='#museos' class="btn btn-dark">Museos</a>
+<a role="button" href='#iglesias' class="btn btn-dark">Iglesias</a>
+<a role="button" href='#plazas' class="btn btn-dark">Plazas</a>
+<a role="button" href='#hoteles' class="btn btn-dark">Hoteles y Ciudades</a>
+</div>
+
 <!--- ARTISTAS --->
 <?php 
 # Muestra una tabla con todos los artistas
@@ -29,6 +40,9 @@ $busq = $_POST["busqueda"];
   ?>
 <br>
 <h3 class= "text-white" style="text-align: center; margin-top: 1rem">Artistas: </h3>
+<a id="artistas">
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+</a>
 <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
   <thead class="thead-dark">
     <tr style="text-align:center">
@@ -75,7 +89,11 @@ $busq = $_POST["busqueda"];
   
 ?>
     <h3 class= "text-white" style="text-align: center; margin-top: 1rem">Lugares: </h3>
-    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+    <a id="museos">
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+    </a>
+    
+    <table class="table table-bordered table-hover bg-white" id='' style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
         <tr style="text-align:center">
@@ -92,12 +110,16 @@ $busq = $_POST["busqueda"];
       </tbody>
         
     </table>
+  
     <br>
+    <a id='iglesias'>
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+    </a>
     <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
         <tr style="text-align:center">
-          <th>Iglesias</th>
+          <th >Iglesias</th>
         </tr>
       </thead>
       <tbody>
@@ -111,7 +133,10 @@ $busq = $_POST["busqueda"];
         
     </table>
     <br>
-    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+    <a id='plazas'>
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+    </a>
+    <table class="table table-bordered table-hover bg-white" id='plazas' style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
         <tr style="text-align:center">
@@ -140,8 +165,11 @@ $busq = $_POST["busqueda"];
 	$obras = $result -> fetchAll();
   
 ?>
-<h3 class= "text-white" style="text-align: center; margin-top: 1rem">Obras: </h3>
 
+<h3 class= "text-white" style="text-align: center; margin-top: 1rem">Obras: </h3>
+<a id="obras">
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+</a>
 <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
   <thead class="thead-dark">
@@ -173,8 +201,10 @@ $busq = $_POST["busqueda"];
     $result -> execute();
     $hoteles = $result -> fetchAll();
 ?>
-<h3 class= "text-white" style="text-align: center; margin-top: 1rem">Hoteles y ciudades: </h3>
-
+<h3 class= "text-white"' style="text-align: center; margin-top: 1rem">Hoteles y ciudades: </h3>
+<a id="hoteles">
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+</a>
 <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
     <thead class="thead-dark">
