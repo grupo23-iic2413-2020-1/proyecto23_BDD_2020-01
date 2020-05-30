@@ -41,8 +41,8 @@ $base_url = $_SESSION["base_url"];?>
         </div>
       </li>
       <li class="nav-item px-2">
-        <form class="form-inline" action="#" method="post">
-          <input class="form-control mr-sm-1" type="text" placeholder="Búsqueda" name="Busqueda">
+        <form class="form-inline" action="<?php echo $base_url ?>/navegacion/busqueda.php" method="post">
+          <input class="form-control mr-sm-1" type="text" placeholder="Búsqueda" name="busqueda">
           <button class="btn btn-success" type="submit">Buscar</button>
         </form>
       </li>
