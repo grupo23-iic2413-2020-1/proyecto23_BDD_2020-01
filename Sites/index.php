@@ -78,7 +78,7 @@ include('templates/navbar.php');
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/pelao.jpg" class="rounded-circle" alt="Pela3">
+                            <img src="imagenes_perfil/pelao.jpg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
