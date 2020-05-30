@@ -99,6 +99,19 @@ $result_6 -> execute();
 $dinero_tickets = $result_6 -> fetchAll();
 
 
+#Se construye la consulta como un string
+$query_7 = "SELECT precio, fechai, fechat FROM Reservas, Hoteles WHERE Reservas.uid = ? AND Reservas.hid = Hoteles.hid";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_7 = $db -> prepare($query_7);
+$result_7 -> bindParam(1, $uid);
+$result_7 -> execute();
+$dinero_hoteles = $result_7 -> fetchAll();
+$dinero_total_hoteles = 0;
+
+
+
+
 ?> 
 
 <body class= "bg-secondary text-white">
@@ -242,7 +255,7 @@ $dinero_tickets = $result_6 -> fetchAll();
 
                             <?php
                                 foreach ($reservas as $res) {
-                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]<</td>
+                                echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td>
                                     <td>
                                     <form align='center' action='perfil.php'  method='post'>
                                         <input type='hidden' name='rid' value=$res[4]>
@@ -280,8 +293,17 @@ $dinero_tickets = $result_6 -> fetchAll();
 
                             <?php
                             foreach ($dinero_tickets as $d) {
-                                echo "<tr> <td>$d[0]</td> <td>$d[0]</td> <td>$d[0]</td> <td>$d[0]</td></tr>";
+                                $tickets_total = $d[0];
                             }
+                            foreach ($dinero_hoteles as $htl){
+                                $precio_unidad = $htl[0];
+                                $fecha_inicio = new DateTime($htl[1]);
+                                $fecha_termino = new DateTime($htl[2]);
+                                $diff_dias = $fecha_inicio->diff($fecha_termino);
+                                $precio_agregar = ($diff_dias->days * $precio_unidad);
+                                $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
+                            }
+                            echo "<tr> <td>$tickets_total[0]</td> <td>$d[0]</td> <td>$dinero_total_agregar[0]</td> <td>$d[0]</td></tr>";
                             ?>
                             </tbody>
                             
