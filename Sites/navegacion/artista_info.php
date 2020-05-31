@@ -69,27 +69,20 @@
   <br>
 
 <?php
-  $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
-  // Replace the accessKey string value with your valid access key.
-  $accessKey = 'caf911e140684520b515eaefe37af2e8';
-  $term = $artistas[0][1];
+  $nombre_busqueda = $artistas[0][1]
 
-  $headers = "Ocp-Apim-Subscription-Key: $accesskey\r\n";
-  $options = array ( 'http' => array (
-                        'header' => $headers,
-                        'method' => 'GET' ));
-
-  $context = stream_context_create($options);
-  $result_search = file_get_contents($url . "?q=" . urlencode($term), false, $context);
-
-  $headers = array();
-    foreach ($http_response_header as $k => $v) {
-        $h = explode(":", $v, 2);
-        if (isset($h[1]))
-            if (preg_match("/^BingAPIs-/", $h[0]) || preg_match("/^X-MSEdge-/", $h[0]))
-                $headers[trim($h[0])] = trim($h[1]);
-    }
-    return array($headers, $result_search);
+  $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=$nombre_busqueda";
+  $key = "caf911e140684520b515eaefe37af2e8";
+  
+  
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $sURL); 
+  curl_setopt($ch, CURLOPT_TIMEOUT, '1'); 
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_HEADER, 'ocp-apim-subscription-key:$key');
+  $content = curl_exec($ch);
+  
+  echo $content;
 
 ?>
 
