@@ -302,8 +302,8 @@ $dinero_entradas = $result_8 -> fetchAll();
 
             $total_gastado = $dinero_total_hoteles + $tickets_total + $dinero_total_entradas;
             echo "<tr>  <td>$tickets_total</td>
-                        <td>$d[0]</td>
-                        <td>$dinero_total_entradas</td>
+                        <td>$$dinero_total_entradas</td>
+                        <td>$dinero_total_hoteles</td>
                         <td>$total_gastado</td></tr>";
             ?>
             </tbody>
