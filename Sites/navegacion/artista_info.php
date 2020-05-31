@@ -67,6 +67,33 @@
   <br>
 
   <br>
+
+<?php
+  $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
+  // Replace the accessKey string value with your valid access key.
+  $accessKey = 'caf911e140684520b515eaefe37af2e8';
+  $term = $artistas[0][1];
+
+  $headers = "Ocp-Apim-Subscription-Key: $key\r\n";
+  $options = array ( 'http' => array (
+                        'header' => $headers,
+                        'method' => 'GET' ));
+
+  $context = stream_context_create($options);
+  $result = file_get_contents($url . "?q=" . urlencode($query), false, $context);
+
+  $headers = array();
+    foreach ($http_response_header as $k => $v) {
+        $h = explode(":", $v, 2);
+        if (isset($h[1]))
+            if (preg_match("/^BingAPIs-/", $h[0]) || preg_match("/^X-MSEdge-/", $h[0]))
+                $headers[trim($h[0])] = trim($h[1]);
+    }
+    return array($headers, $result);
+
+?>
+
+
 	<div class="container">
 
     <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Obras de <?php echo $anombre ?></h1>

@@ -79,7 +79,7 @@ include('templates/navbar.php');
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/tito.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="img/perfil/tito.jpg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
@@ -126,7 +126,7 @@ include('templates/navbar.php');
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/pelao.jpeg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="img/perfil/pelao.jpeg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
@@ -172,7 +172,7 @@ include('templates/navbar.php');
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="imagenes_perfil/lira.jpeg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="img/perfil/lira.jpeg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
