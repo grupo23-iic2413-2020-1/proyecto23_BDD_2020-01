@@ -1,6 +1,6 @@
 <?php session_start();
 $httpProtocol = !isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http' : 'https';
-$base_url = $httpProtocol.'://'.$_SERVER['HTTP_HOST'].'/';
+$base_url = $httpProtocol.'://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'/..'
   ?> 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-success" href="<?php echo $base_url ?>/index.php"><b>Splinter S.A.</b></a>
