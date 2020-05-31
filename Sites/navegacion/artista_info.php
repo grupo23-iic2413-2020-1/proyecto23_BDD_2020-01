@@ -94,18 +94,12 @@
 
     list($headers, $json) = array($headers, $resultado);
 
-    print "\nRelevant Headers:\n\n";
-    foreach ($headers as $k => $v) {
-        print $k . ": " . $v . "\n";
-    }
     // Prints JSON encoded response.
-    print "\nJSON Response:\n\n";
-    echo $json;
-    echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
-
+    // echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 
 ?>
 
+  <img src=<?php $json["contentUrl"] ?> alt=<?php $busqueda ?>>
 
 	<div class="container">
 
