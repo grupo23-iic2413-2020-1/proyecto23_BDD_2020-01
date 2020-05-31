@@ -98,9 +98,12 @@
 
     $json = json_decode($json, true);
     // echo $json['value'][0]['contentUrl'].'<br><br><br><br>';
+
+    $image = $json['value'][0]['contentUrl'];
+    $imageData = base64_encode(file_get_contents($image));
+    echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
 ?>
 
-  <img src=<?php $json['value'][0]['contentUrl'] ?> alt=<?php $busqueda ?>>
 
 	<div class="container">
 
