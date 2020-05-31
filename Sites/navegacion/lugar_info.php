@@ -182,7 +182,7 @@ include('../templates/navbar.php');
 <br>
 
 <?php
-  $busqueda = 'lugar '.$lnombre;
+  $busqueda = 'Lugar '.$lnombre;
 
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
   $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
