@@ -72,7 +72,7 @@
   $busqueda = $artistas[0][1];
 
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
-  $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images';
+  $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch';
 
   $headers = "Ocp-Apim-Subscription-Key: $accessKey\r\n";
     $options = array ('http' => array (
