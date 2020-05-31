@@ -92,7 +92,7 @@
     }
 
     list($headers, $json) = array($headers, $resultado);
-    echo $json.'<br><br><br>'
+    echo $json.'<br><br><br>';
     // Prints JSON encoded response.
     // echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
     echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
