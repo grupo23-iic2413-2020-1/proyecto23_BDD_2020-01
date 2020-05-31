@@ -69,7 +69,7 @@
   <br>
 
 <?php
-  $nombre_busqueda = $artistas[0][1]
+  $nombre_busqueda = $artistas[0][1];
 
   $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=$nombre_busqueda";
   $key = "caf911e140684520b515eaefe37af2e8";
