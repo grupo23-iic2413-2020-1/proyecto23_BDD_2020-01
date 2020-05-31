@@ -98,17 +98,24 @@ include('templates/navbar.php');
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>52k</h3>
                             <small style='color: black'>Followers</small>
-                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
+                            
+                            
+                            <!--Instagram-->
+                            <a class="btn-floating btn-lg btn-ins" type="button" role="button"><i class="fab fa-instagram"></i></a>
+                            
+
                         </div>
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>30k</h3>
                             <small style='color: black'>Following</small>
-                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
+                            <!--Twitter-->
+                            <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
                         </div>
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>1°</h3>
                             <small style='color: black'>Ranking Agencias</small>
-                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
+                            <!--Facebook-->
+                            <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
