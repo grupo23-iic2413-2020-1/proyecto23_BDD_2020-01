@@ -108,8 +108,8 @@ $result_7 -> bindParam(1, $uid);
 $result_7 -> execute();
 $dinero_hoteles = $result_7 -> fetchAll();
 
-$query_8 = "SELECT precio FROM
-dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 passworde=grupo2350', 'SELECT lid, precio FROM Museo') 
+$query_8 = "SELECT Lugar.precio FROM
+dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 password=grupo2350', 'SELECT lid, precio FROM Museo') 
 AS Lugar(lid integer, precio integer), Entradas WHERE Entradas.uid = ? AND Entradas.lid = Lugar.lid";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -297,7 +297,6 @@ $dinero_entradas = $result_8 -> fetchAll();
             }
             $dinero_total_entradas = 0;
             foreach ($dinero_entradas as $ent){
-                echo "$ent[0]";
                 $dinero_total_entradas = $dinero_total_entradas + $ent[0];
             }
 
