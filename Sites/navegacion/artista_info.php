@@ -69,7 +69,7 @@
   <br>
 
 <?php
-  $busqueda = $artistas[0][1]
+  $busqueda = $artistas[0][1];
 
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
   $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images';
