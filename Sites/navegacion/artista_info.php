@@ -128,10 +128,14 @@
     // echo $json['value'][0]['contentUrl'].'<br><br><br><br>';
 
     $image = $json['value'][0]['contentUrl'];
-    $imageData = base64_encode(file_get_contents($image));
-    echo '<img src="data:image/jpeg;base64,'.$imageData.'" alt='.$busqueda.' width="700" height=auto>';
-    echo '<h3>'.$busqueda.'</h3>';
-    echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>';
+    if (isset($image)) {
+      $imageData = base64_encode(file_get_contents($image));
+      echo '<img src="data:image/jpeg;base64,'.$imageData.'" alt='.$anombre.' width="700" height=auto>';
+      echo '<h3>'.$anombre.'</h3>';
+      echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>';
+    } else {
+      echo '<h3>No tenemos una imagen para el artista '.$anombre.'</h3>';
+    }
 ?>
 
 
