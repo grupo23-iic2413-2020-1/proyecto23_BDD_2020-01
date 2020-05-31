@@ -1,7 +1,5 @@
 <?php session_start();
-$httpProtocol = !isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http' : 'https';
-$base_url = $httpProtocol.'://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'/..'
-  ?> 
+$base_url = $_SESSION["base_url"];?> 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-success" href="<?php echo $base_url ?>/index.php"><b>Splinter S.A.</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
