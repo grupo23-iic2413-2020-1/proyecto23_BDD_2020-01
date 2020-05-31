@@ -108,7 +108,15 @@ $result_7 -> bindParam(1, $uid);
 $result_7 -> execute();
 $dinero_hoteles = $result_7 -> fetchAll();
 
+$query_8 = "SELECT precio FROM
+dblink('dbname=grupo50e3 host=146.155.13.72 port=5432 user=grupo50 passworde=grupo2350', 'SELECT lid, precio FROM Museo') 
+AS Lugar(lid integer, precio integer), Entradas WHERE Entradas.uid = ? AND Entradas.lid = Lugar.lid";
 
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result_8 = $db -> prepare($query_8);
+$result_8 -> bindParam(1, $uid);
+$result_8 -> execute();
+$dinero_entradas = $result_8 -> fetchAll();
 
 
 
