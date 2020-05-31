@@ -96,7 +96,7 @@
     // echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
     //echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 
-    echo $headers;
+    echo $headers['value']['contentUrl'];
 
     $json = json_encode(json_decode($json), true);
     echo $json['value']['contentUrl'].'<br><br><br><br>';
