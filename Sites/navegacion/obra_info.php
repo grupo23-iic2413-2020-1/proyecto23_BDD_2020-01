@@ -88,6 +88,45 @@
     </table>
   </div>
 
+  <br>
+
+<?php
+  $busqueda = $onombre;
+
+  $accessKey = 'caf911e140684520b515eaefe37af2e8';
+  $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
+
+  $headers = "Ocp-Apim-Subscription-Key: $accessKey\r\n";
+    $options = array ('http' => array (
+                          'header' => $headers,
+                           'method' => 'GET'));
+
+    // Perform the request and get a JSON response.
+    $context = stream_context_create($options);
+    $resultado = file_get_contents($endpoint . "?q=" . urlencode($busqueda), false, $context);
+    // Extract Bing HTTP headers.
+    $headers = array();
+    foreach ($http_response_header as $k => $v) {
+        $h = explode(":", $v, 2);
+        if (isset($h[1]))
+            if (preg_match("/^BingAPIs-/", $h[0]) || preg_match("/^X-MSEdge-/", $h[0]))
+                $headers[trim($h[0])] = trim($h[1]);
+    }
+
+    list($headers, $json) = array($headers, $resultado);
+    // Prints JSON encoded response.
+    // echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
+    //echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
+
+    $json = json_decode($json, true);
+    // echo $json['value'][0]['contentUrl'].'<br><br><br><br>';
+
+    $image = $json['value'][0]['contentUrl'];
+    $imageData = base64_encode(file_get_contents($image));
+    echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
+    echo '<h3>'.$busqueda'</h3>'
+    echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>'
+?>
 
   <br>
 

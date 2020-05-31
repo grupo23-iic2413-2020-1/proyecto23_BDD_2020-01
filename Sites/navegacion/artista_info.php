@@ -68,8 +68,36 @@
 
   <br>
 
+	<div class="container">
+
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Obras de <?php echo $anombre ?></h1>
+
+    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+      <thead class="thead-dark">
+        <tr style="text-align:center">
+          <th>id obra</th>
+          <th>id lugar</th>
+          <th>Nombre</th>
+          <th>Periodo</th>
+          <th>Fecha Inicio</th>
+          <th>Fecha Termino</th>
+          </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($obras as $obra) {
+                echo "<tr> <td>$obra[0]</td> <td>$obra[1]</td> <td><p><b><a href='obra_info.php?oid=$obra[0]&onombre=$obra[2]'>$obra[2]</a></b></p>
+                </td> <td>$obra[3]</td> <td>$obra[4]</td> <td>$obra[5]</td></tr>";
+        }
+        ?>
+      </tbody>  
+    </table>
+
+<br>
+
 <?php
-  $busqueda = $artistas[0][1];
+  $busqueda = $anombre;
 
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
   $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
@@ -102,34 +130,10 @@
     $image = $json['value'][0]['contentUrl'];
     $imageData = base64_encode(file_get_contents($image));
     echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
+    echo '<h3>'.$busqueda'</h3>'
+    echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>'
 ?>
 
-
-	<div class="container">
-
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Obras de <?php echo $anombre ?></h1>
-
-    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
-
-      <thead class="thead-dark">
-        <tr style="text-align:center">
-          <th>id obra</th>
-          <th>id lugar</th>
-          <th>Nombre</th>
-          <th>Periodo</th>
-          <th>Fecha Inicio</th>
-          <th>Fecha Termino</th>
-          </tr>
-      </thead>
-      <tbody>
-        <?php
-        foreach ($obras as $obra) {
-                echo "<tr> <td>$obra[0]</td> <td>$obra[1]</td> <td><p><b><a href='obra_info.php?oid=$obra[0]&onombre=$obra[2]'>$obra[2]</a></b></p>
-                </td> <td>$obra[3]</td> <td>$obra[4]</td> <td>$obra[5]</td></tr>";
-        }
-        ?>
-      </tbody>  
-    </table>
 
 <br>
 
