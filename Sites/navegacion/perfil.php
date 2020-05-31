@@ -230,41 +230,34 @@ $dinero_hoteles = $result_7 -> fetchAll();
             </table>
   </div>
   <div class="tab-pane container fade" id="reservas">
-        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
-            <thead class="thead-dark">
-            <tr style="text-align:center">
-                <th>Tickets</th>
-                <th>Entradas</th>
-                <th>Reservas</th>
-                <th>Total</th>
+        <thead class="thead-dark">
+        <tr style="text-align:center">
+            <th>Fecha Inicio</th>
+            <th>Fecha Termino</th>
+            <th>Nombre Hotel</th>
+            <th>Dirección Hotel</th>
+            <th>Cancelar reserva</th>
 
-            </tr>
-            </thead>
-            <tbody>
+        </tr>
+        </thead>
+        <tbody>
 
-            <?php
-            foreach ($dinero_tickets as $d) {
-                $tickets_total = $d[0];
-            }
-            $dinero_total_hoteles = 0;
-            foreach ($dinero_hoteles as $htl){
-                $precio_unidad = $htl[0];
-                $fecha_inicio = new DateTime($htl[1]);
-                $fecha_termino = new DateTime($htl[2]);
-                $diff_dias = $fecha_inicio->diff($fecha_termino);
-                $precio_agregar = ($diff_dias->days * $precio_unidad);
-                $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
-            }
-            $total_gastado = $dinero_total_hoteles + $tickets_total;
-            echo "<tr>  <td>$tickets_total</td>
-                        <td>$d[0]</td>
-                        <td>$dinero_total_hoteles</td>
-                        <td>$total_gastado</td></tr>";
-            ?>
-            </tbody>
-            
-        </table>
+        <?php
+            foreach ($reservas as $res) {
+            echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td>
+                <td>
+                <form align='center' action='perfil.php'  method='post'>
+                    <input type='hidden' name='rid' value=$res[4]>
+                    <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva' style='font-size: 17px'>
+                </form>
+                </td></tr>";
+        }
+        ?>
+        </tbody>
+
+    </table>
   </div>
   <div class="tab-pane container fade" id="dinero">
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
