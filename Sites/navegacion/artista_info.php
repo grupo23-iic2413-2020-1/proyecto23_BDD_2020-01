@@ -97,7 +97,7 @@
 <br>
 
 <?php
-  $busqueda = $anombre;
+  $busqueda = 'artista '.$anombre;
 
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
   $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
@@ -129,7 +129,7 @@
 
     $image = $json['value'][0]['contentUrl'];
     $imageData = base64_encode(file_get_contents($image));
-    echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
+    echo '<img src="data:image/jpeg;base64,'.$imageData.'" alt='.$busqueda.' width="700" height=auto>';
     echo '<h3>'.$busqueda.'</h3>';
     echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>';
 ?>
