@@ -73,16 +73,20 @@
 
   $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=$nombre_busqueda";
   $key = "caf911e140684520b515eaefe37af2e8";
-  
-  
+
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $sURL); 
   curl_setopt($ch, CURLOPT_TIMEOUT, '1'); 
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_HEADER, 'ocp-apim-subscription-key:$key');
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+      'Content-Type: multipart/form-data',
+      'Ocp-Apim-Subscription-Key: caf911e140684520b515eaefe37af2e8'
+  ));
   $content = curl_exec($ch);
   
   echo $content;
+
 
 ?>
 
