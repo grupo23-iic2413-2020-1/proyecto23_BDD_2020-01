@@ -97,10 +97,10 @@
     //echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 
     $json = json_decode($json, true);
-    echo $json['value']['contentUrl'].'<br><br><br><br>';
+    // echo $json['value'][0]['contentUrl'].'<br><br><br><br>';
 ?>
 
-  <!-- <img src=<?php // $json["contentUrl"] ?> alt=<?php // $busqueda ?>> -->
+  <img src=<?php $json['value'][0]['contentUrl'] ?> alt=<?php $busqueda ?>>
 
 	<div class="container">
 
