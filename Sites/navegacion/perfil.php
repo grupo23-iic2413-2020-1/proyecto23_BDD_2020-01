@@ -270,10 +270,10 @@ $dinero_entradas = $result_8 -> fetchAll();
 
             <thead class="thead-dark">
             <tr style="text-align:center">
-                <th>Tickets</th>
-                <th>Entradas</th>
-                <th>Reservas</th>
-                <th>Total</th>
+                <th>Tickets (€)</th>
+                <th>Entradas (€)</th>
+                <th>Reservas (€)</th>
+                <th>Total (€)</th>
 
             </tr>
             </thead>

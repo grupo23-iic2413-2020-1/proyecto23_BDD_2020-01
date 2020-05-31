@@ -74,7 +74,7 @@ include('templates/navbar.php');
                             <p style='color: black; text-align: justify'>
                               Durante el año 2020 se celebran 500 años de la muerte de Raffaello Sanzio, 
                               conocido simplemente como Rafael, quien es uno de los más célebres pintores
-                              y arquitectos del renacimiento. Es por esto, que ha surgido Splinter S.A, una empresa que
+                              y arquitectos del renacimiento. Es por esto, que ha surgido Splinter S.A, una agencia que
                               busca que gente alrededor de todo el mundo planee
                               hacer viajes para conocer personalmente todas las obras de este gran artista.
                             </p>
@@ -96,18 +96,18 @@ include('templates/navbar.php');
                             </ul>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>5</h3>
+                            <h3 class="mb-0" style='color: black'>52k</h3>
                             <small style='color: black'>Followers</small>
                             <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>56k</h3>
+                            <h3 class="mb-0" style='color: black'>30k</h3>
                             <small style='color: black'>Following</small>
                             <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <h3 class="mb-0" style='color: black'>3</h3>
-                            <small style='color: black'>Ramos echados</small>
+                            <h3 class="mb-0" style='color: black'>1°</h3>
+                            <small style='color: black'>Ranking Agencias</small>
                             <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
                         </div>
                     </div>
