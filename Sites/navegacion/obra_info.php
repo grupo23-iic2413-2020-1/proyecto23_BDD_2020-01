@@ -90,6 +90,35 @@
 
   <br>
 
+
+  <br>
+	<div class="container">
+
+    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información extra sobre <?php echo $onombre ?></h1>
+
+    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+
+      <thead class="thead-dark">
+        <tr style="text-align:center">
+          <th>Nombre Artista</th>
+          <th>Nombre Lugar</th>
+          <th>Ciudad</th>
+          <th>País</th>
+          </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($datos as $dat) {
+          echo "<tr> <td><p><b><a href='artista_info.php?aid=$dat[5]&anombre=$dat[0]'>$dat[0]</a></b></p></td>
+           <td><p><b><a href='lugar_info.php?lid=$dat[4]&lnombre=$dat[1]'>$dat[1]</a></b></p></td> 
+           <td>$dat[2]</td> <td>$dat[3]</td></tr>";
+        }
+        ?>
+      </tbody>  
+    </table>
+
+    <br>
+
 <?php
   $busqueda = $onombre;
 
@@ -124,38 +153,9 @@
     $image = $json['value'][0]['contentUrl'];
     $imageData = base64_encode(file_get_contents($image));
     echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
-    echo '<h3>'.$busqueda'</h3>'
-    echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>'
+    echo '<h3>'.$busqueda'</h3>';
+    echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>';
 ?>
-
-  <br>
-
-
-  <br>
-	<div class="container">
-
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Información extra sobre <?php echo $onombre ?></h1>
-
-    <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
-
-      <thead class="thead-dark">
-        <tr style="text-align:center">
-          <th>Nombre Artista</th>
-          <th>Nombre Lugar</th>
-          <th>Ciudad</th>
-          <th>País</th>
-          </tr>
-      </thead>
-      <tbody>
-        <?php
-        foreach ($datos as $dat) {
-          echo "<tr> <td><p><b><a href='artista_info.php?aid=$dat[5]&anombre=$dat[0]'>$dat[0]</a></b></p></td>
-           <td><p><b><a href='lugar_info.php?lid=$dat[4]&lnombre=$dat[1]'>$dat[1]</a></b></p></td> 
-           <td>$dat[2]</td> <td>$dat[3]</td></tr>";
-        }
-        ?>
-      </tbody>  
-    </table>
 
 <br>
 
