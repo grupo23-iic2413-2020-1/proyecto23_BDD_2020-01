@@ -152,24 +152,22 @@ $dinero_entradas = $result_8 -> fetchAll();
             </div>
 
             <br>
-                <br>
-                <br>
-                <br>
+
 <!--- BEGIN TABS --->
 <div class='card bg-secondary'>
 <!-- Nav pills -->
-<ul class="nav nav-pills justify-content-center">
+<ul class="nav nav-pills nav-justified">
   <li class="nav-item">
-    <a class="nav-link active btn-success text-white" data-toggle="pill" href="#tickets">Tickets</a>
+    <a class="nav-link active btn btn-outline-success text-white" data-toggle="pill" href="#tickets"><h4>Tickets</h4></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link btn-success text-white" data-toggle="pill" href="#entradas">Entradas</a>
+    <a class="nav-link btn btn-outline-success text-white" data-toggle="pill" href="#entradas"><h4>Entradas</h4></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link btn-success text-white" data-toggle="pill" href="#reservas">Reservas</a>
+    <a class="nav-link btn btn-outline-success text-white" data-toggle="pill" href="#reservas"><h4>Reservas</h4></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link btn-success text-white" data-toggle="pill" href="#dinero">Dinero Gastado</a>
+    <a class="nav-link btn btn-outline-success text-white" data-toggle="pill" href="#dinero"><h4>Dinero Gastado</h4></a>
   </li>
 </ul>
 
