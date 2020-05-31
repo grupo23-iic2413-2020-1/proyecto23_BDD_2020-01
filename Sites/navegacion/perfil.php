@@ -270,10 +270,10 @@ $dinero_entradas = $result_8 -> fetchAll();
 
             <thead class="thead-dark">
             <tr style="text-align:center">
-                <th>Tickets (€)</th>
-                <th>Entradas (€)</th>
-                <th>Reservas (€)</th>
-                <th>Total (€)</th>
+                <th>Tickets</th>
+                <th>Entradas</th>
+                <th>Reservas</th>
+                <th>Total</th>
 
             </tr>
             </thead>
@@ -299,10 +299,10 @@ $dinero_entradas = $result_8 -> fetchAll();
             }
 
             $total_gastado = $dinero_total_hoteles + $tickets_total + $dinero_total_entradas;
-            echo "<tr>  <td>$tickets_total</td>
-                        <td>$dinero_total_entradas</td>
-                        <td>$dinero_total_hoteles</td>
-                        <td>$total_gastado</td></tr>";
+            echo "<tr>  <td>€ $tickets_total</td>
+                        <td>€ $dinero_total_entradas</td>
+                        <td>€ $dinero_total_hoteles</td>
+                        <td>€ $total_gastado</td></tr>";
             ?>
             </tbody>
             
