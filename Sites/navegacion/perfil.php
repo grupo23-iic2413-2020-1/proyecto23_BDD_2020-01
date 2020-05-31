@@ -285,6 +285,7 @@ $dinero_entradas = $result_8 -> fetchAll();
             foreach ($dinero_tickets as $d) {
                 $tickets_total = $d[0];
             }
+
             $dinero_total_hoteles = 0;
             foreach ($dinero_hoteles as $htl){
                 $precio_unidad = $htl[0];
@@ -294,10 +295,15 @@ $dinero_entradas = $result_8 -> fetchAll();
                 $precio_agregar = ($diff_dias->days * $precio_unidad);
                 $dinero_total_hoteles = $dinero_total_hoteles + $precio_agregar;
             }
-            $total_gastado = $dinero_total_hoteles + $tickets_total;
+            $dinero_total_entradas = 0;
+            foreach ($dinero_entradas as $ent){
+                $dinero_total_entradas = $dinero_total_entradas + $ent[0];
+            }
+
+            $total_gastado = $dinero_total_hoteles + $tickets_total + $dinero_total_entradas;
             echo "<tr>  <td>$tickets_total</td>
                         <td>$d[0]</td>
-                        <td>$dinero_total_hoteles</td>
+                        <td>$dinero_total_entradas</td>
                         <td>$total_gastado</td></tr>";
             ?>
             </tbody>
