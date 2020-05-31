@@ -215,7 +215,7 @@ include('../templates/navbar.php');
     $image = $json['value'][0]['contentUrl'];
     $imageData = base64_encode(file_get_contents($image));
     echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
-    echo '<h3>'.$busqueda'</h3>';
+    echo '<h3>'.$busqueda.'</h3>';
     echo '<h5>La imagen podría estar protegida por derechos de autor.</h5>';
 ?>
 
