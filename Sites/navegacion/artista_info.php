@@ -74,13 +74,13 @@
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
   $term = $artistas[0][1];
 
-  $headers = "Ocp-Apim-Subscription-Key: $key\r\n";
+  $headers = "Ocp-Apim-Subscription-Key: $accesskey\r\n";
   $options = array ( 'http' => array (
                         'header' => $headers,
                         'method' => 'GET' ));
 
   $context = stream_context_create($options);
-  $result = file_get_contents($url . "?q=" . urlencode($query), false, $context);
+  $result_search = file_get_contents($url . "?q=" . urlencode($term), false, $context);
 
   $headers = array();
     foreach ($http_response_header as $k => $v) {
@@ -89,7 +89,7 @@
             if (preg_match("/^BingAPIs-/", $h[0]) || preg_match("/^X-MSEdge-/", $h[0]))
                 $headers[trim($h[0])] = trim($h[1]);
     }
-    return array($headers, $result);
+    return array($headers, $result_search);
 
 ?>
 
