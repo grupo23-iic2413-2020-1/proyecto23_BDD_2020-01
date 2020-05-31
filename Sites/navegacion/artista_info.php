@@ -82,7 +82,6 @@
     // Perform the request and get a JSON response.
     $context = stream_context_create($options);
     $resultado = file_get_contents($endpoint . "?q=" . urlencode($busqueda), false, $context);
-    echo $resultado;
     // Extract Bing HTTP headers.
     $headers = array();
     foreach ($http_response_header as $k => $v) {
@@ -96,7 +95,7 @@
 
     // Prints JSON encoded response.
     // echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
-
+    $json = json_encode(json_decode($json), true);
 ?>
 
   <img src=<?php $json["contentUrl"] ?> alt=<?php $busqueda ?>>
