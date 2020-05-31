@@ -61,7 +61,7 @@ include('templates/navbar.php');
 
     <h1 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h1>
     <br>
-    <h2 class= "text-white" align="center">Conoce a nuestros fundadores</h2>
+    <h2 class= "text-white" align="center">Quiénes somos</h2>
   </div>
   <br>
   <div class="container">
@@ -71,15 +71,16 @@ include('templates/navbar.php');
                         <div class="col-12 col-lg-8 col-md-6">
                             <h3 class="mb-0 text-truncated" style='color: black'>Splinter S.A</h3>
                             <p class="lead" style='color: black'>Ofrecemos turismo de verdad</p>
-                            <p style='color: black'>
+                            <p style='color: black; text-align: justify'>
                               Durante el año 2020 se celebran 500 años de la muerte de Raffaello Sanzio, 
                               conocido simplemente como Rafael, quien es uno de los más célebres pintores
-                              y arquitectos del renacimiento. Gente alrededor de todo el mundo está planeando
-                              hacer viajes para conocer personalmente toda la obra de este artista.
+                              y arquitectos del renacimiento. Es por esto, que ha surgido Splinter S.A, una empresa que
+                              busca que gente alrededor de todo el mundo planee
+                              hacer viajes para conocer personalmente todas las obras de este gran artista.
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-6 text-center">
-                            <img src="img/perfil/logo_viaje.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                            <img src="img/perfil/logo_mundo.jpg" alt="" class="mx-auto rounded-circle img-fluid">
                             <br>
                             <ul class="list-inline ratings text-center" title="Ratings">
                                 <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
