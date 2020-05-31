@@ -297,6 +297,7 @@ $dinero_entradas = $result_8 -> fetchAll();
             }
             $dinero_total_entradas = 0;
             foreach ($dinero_entradas as $ent){
+                echo "$ent[0]";
                 $dinero_total_entradas = $dinero_total_entradas + $ent[0];
             }
 
