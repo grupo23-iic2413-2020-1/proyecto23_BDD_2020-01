@@ -92,13 +92,13 @@
     }
 
     list($headers, $json) = array($headers, $resultado);
-
+    echo $json.'<br><br><br>'
     // Prints JSON encoded response.
     // echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
-    $json = json_encode(json_decode($json), true);
+    echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 ?>
 
-  <img src=<?php $json["contentUrl"] ?> alt=<?php $busqueda ?>>
+  <!-- <img src=<?php // $json["contentUrl"] ?> alt=<?php // $busqueda ?>> -->
 
 	<div class="container">
 
