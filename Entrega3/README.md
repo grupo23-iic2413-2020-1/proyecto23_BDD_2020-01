@@ -13,7 +13,7 @@ Para los usuarios de la base de datos entregada se les registró con una constra
 
 - Dinero gastado en la aplicación: en la página de "Mi perfil", entrega por usuario el detalle de cuanto ha gastado en la aplicación con su total.
 
-- Devolver y cancelar compras: en la página de "Mi perfil", se pueden devolver tickets y entradas, y cancelar reservas, actualizando los datos.
+- Devolver y cancelar compras: en la página de "Mi perfil", se pueden devolver tickets y entradas, y cancelar reservas, actualizando los datos. Esto no será posible para los tickets y reservas cuando la fecha de viaje y la fecha de inicio respectivamente coincidan con la fecha actual o sean anteriores a esta. Se asume que una entrada a un museo se puede usar cuando se desee, por lo que mientras no haya sido utilizada se podrá devolver.
 
 - Páginas de listas obras y lugares: se presentan estas páginas para acceso rápido, se muestran de forma intuitiva en la barra de navegación. 
 
@@ -24,5 +24,7 @@ Para los usuarios de la base de datos entregada se les registró con una constra
 ## Consideraciones
 
 - La entrega 2 de los grupos 23 y 50 se encuentra anexada en esta entrega en la página "Preguntas Frecuentes", aludiendo a las consultas que debían entregarse.
+
+- Si por algún motivo no llegase a funcionar la barra de navegación en la corrección, se habilitaron botones al final de la página index para poder acceder a las distintas páginas.
 
 - **Bonus por imágenes:** se agregan las imágenes correspondientes en las páginas del artista, obra o lugar específico mediante la API de Bing, con la búsqueda de lo especificado entrega la primera imagen. El problema de esto, es que requiere una "key" para solicitar la imagen, la que utilizamos, pero por ser gratuita sólo tiene vigencia por 7 días. Favor de **probar la página y ver las imágenes antes de los 7 días** para cumplir con el bonus, ya que podemos hacerlo, pero para tener una key "infinita" es necesario pagarla. 
