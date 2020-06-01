@@ -116,5 +116,27 @@ include('templates/navbar.php');
     
   </div>
   <br>
+  <form class="form-inline justify-content-center" action="navegacion/busqueda.php" method="post">
+    <input class="form-control mr-sm-1" type="text" placeholder="Búsqueda" name="busqueda">
+    <button class="btn btn-success" type="submit">Buscar</button>
+  </form>
+  <div class="btn-group" role="group" aria-label="accesos_emergencia">
+  <?php if ($_SESSION["loggedin"] == 1) { ?>
+  <a role="button" href='navegacion/perfil.php' class="btn btn-dark">Perfil</a>
+  <a role="button" href='navegacion/log_out.php' class="btn btn-dark">Cerrar Sesión</a><?php }
+  else {?> 
+  <a role="button" href='navegacion/registration.php' class="btn btn-dark">Registrarse</a>
+  <a role="button" href='navegacion/log_in.php' class="btn btn-dark">Iniciar Sesión</a>
+  <?php } ?>
+  <a role="button" href='index_E2.php' class="btn btn-dark">Consultas</a>
+  <a role="button" href='navegacion/ver_hoteles.php' class="btn btn-dark">Hoteles</a>
+  <a role="button" href='navegacion/artistas.php' class="btn btn-dark">Artistas</a>
+  <a role="button" href='navegacion/obras.php' class="btn btn-dark">Obras</a>
+  <a role="button" href='navegacion/lugares.php' class="btn btn-dark">Lugares</a>
+  <a role="button" href='navegacion/ver_hoteles.php' class="btn btn-dark">Reserva</a>
+  <a role="button" href='navegacion/itinerario.php' class="btn btn-dark">Itinerario</a>
+  <a role="button" href='navegacion/comprar_ticket.php' class="btn btn-dark">Ticket</a>
+  
+</div>
 </body>
 </html>
