@@ -13,7 +13,9 @@ Para los usuarios de la base de datos entregada se les registró con una constra
 
 - Dinero gastado en la aplicación: en la página de "Mi perfil", entrega por usuario el detalle de cuanto ha gastado en la aplicación con su total.
 
-- Devolver y cancelar compras: en la página de "Mi perfil", se pueden devolver tickets y entradas, y cancelar reservas, actualizando los datos. Esto no será posible para los tickets y reservas cuando la fecha de viaje y la fecha de inicio respectivamente coincidan con la fecha actual o sean anteriores a esta. Se asume que una entrada a un museo se puede usar cuando se desee, por lo que mientras no haya sido utilizada se podrá devolver.
+- Devolver y cancelar compras: en la página de "Mi perfil", se pueden devolver tickets y entradas, y cancelar reservas, actualizando los datos. 
+Esto no será posible para los tickets y reservas cuando la fecha de viaje y la fecha de inicio respectivamente coincidan con la fecha actual o sean anteriores a esta (Se mostrará como 'No Habilitado'). En otras palabras, solo se pueden devolver eventos futuros y, en el caso de los tickets, no se pueden devolver el mismo dia del viaje.
+Por último, se asume que una entrada a un museo se puede usar en la fecha que uno desee, por lo que mientras no haya sido utilizada se podrá devolver.
 
 - Páginas de listas obras y lugares: se presentan estas páginas para acceso rápido, se muestran de forma intuitiva en la barra de navegación. 
 
