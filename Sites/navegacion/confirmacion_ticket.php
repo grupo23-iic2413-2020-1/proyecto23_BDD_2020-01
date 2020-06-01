@@ -40,8 +40,8 @@ $result_2 -> execute();
 $data = $result_2 -> fetchAll();
 
 $cap_max = $data[0][6];
-
-$query3 = "SELECT * FROM asientos($cap_max, $did, $fecha_pasaje.' 00:00:00')";
+echo $fecha_pasaje
+$query3 = "SELECT * FROM asientos($cap_max, $did, $fecha_pasaje.'00:00:00')";
 $result_3 = $db -> prepare($query3);
 $result_3 -> execute();
 $asientos_disp = $result_3 -> fetchAll();
