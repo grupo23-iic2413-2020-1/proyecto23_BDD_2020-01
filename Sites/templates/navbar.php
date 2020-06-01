@@ -1,5 +1,8 @@
 <?php session_start();
-include("config/url_base.php");?> 
+if (file_exists("config/url_base1.php")) {
+  include_once("config/url_base1.php");
+} else {
+include_once("../config/url_base2.php");}?> 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-success" href="<?php echo $base_url ?>/index.php"><b>Splinter S.A.</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
