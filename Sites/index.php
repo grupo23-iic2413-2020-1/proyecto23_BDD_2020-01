@@ -74,7 +74,7 @@ include('templates/navbar.php');
                             <p style='color: black; text-align: justify'>
                               Durante el año 2020 se celebran 500 años de la muerte de Raffaello Sanzio, 
                               conocido simplemente como Rafael, quien es uno de los más célebres pintores
-                              y arquitectos del renacimiento. Es por esto, que ha surgido Splinter S.A, una agencia que
+                              y arquitectos del renacimiento. Es por esto, que ha surgido Splinter S.A, una empresa que
                               busca que gente alrededor de todo el mundo planee
                               hacer viajes para conocer personalmente todas las obras de este gran artista.
                             </p>
@@ -98,45 +98,17 @@ include('templates/navbar.php');
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>52k</h3>
                             <small style='color: black'>Followers</small>
-                            <div class="col-md-6 grid-margin stretch-card">
-                              <div class="card">
-                                  <div class="card-body">
-                                      <div class="template-demo"> 
-                                      <button type="button" class="btn btn-social-icon btn-twitter btn-rounded">
-                                      <i class="fa fa-twitter"></i></button> 
-                                       </div>
-                                  </div>
-                              </div>
-                          </div>
-                            
-              
+                            <button class="btn btn-block btn-outline-success"><span class="fa fa-plus-circle"></span> Follow</button>
                         </div>
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>30k</h3>
                             <small style='color: black'>Following</small>
-                            <div class="col-md-6 grid-margin stretch-card">
-                              <div class="card">
-                                  <div class="card-body">
-                                      <div class="template-demo"> 
-                                      <button type="button" class="btn btn-social-icon btn-instagram btn-rounded">
-                                      <i class="fa fa-instagram"></i></button> </div>
-                                  </div>
-                              </div>
-                          </div>
+                            <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> View Profile</button>
                         </div>
                         <div class="col-12 col-lg-4">
                             <h3 class="mb-0" style='color: black'>1°</h3>
                             <small style='color: black'>Ranking Agencias</small>
-                            <div class="col-md-6 grid-margin stretch-card">
-                              <div class="card">
-                                  <div class="card-body">
-                                      <div class="template-demo"> 
-                                      <button type="button" class="btn btn-social-icon btn-facebook btn-rounded">
-                                      <i class="fa fa-facebook"></i></button> 
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                            <button type="button" class="btn btn-outline-primary btn-block"><span class="fa fa-gear"></span> Options</button>
                         </div>
                     </div>
                 </div>
