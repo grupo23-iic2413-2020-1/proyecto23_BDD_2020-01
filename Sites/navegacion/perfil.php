@@ -280,6 +280,7 @@ $dinero_entradas = $result_8 -> fetchAll();
             <tbody>
 
             <?php
+            $tickets_total = 0;
             foreach ($dinero_tickets as $d) {
                 $tickets_total = $d[0];
             }
