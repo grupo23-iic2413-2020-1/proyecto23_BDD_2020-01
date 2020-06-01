@@ -73,7 +73,7 @@ $result_4 = $db -> prepare($query_4);
 $result_4 -> execute();
 $reservas = $result_4 -> fetchAll();
 
-$query_5 = "select asiento, fechac, fechav, c1.cnombre, c2.cnombre, tickets.tid
+$query_5 = "select asiento, fechac, fechav, c1.cnombre, c2.cnombre, tickets.tid, destinos.salida
             from tickets, destinos, ciudades as c1, ciudades as c2
             where uid = $uid
             and tickets.did = destinos.did 
@@ -181,6 +181,7 @@ $dinero_entradas = $result_8 -> fetchAll();
                 <th>Asiento</th>
                 <th>Fecha compra</th>
                 <th>Fecha viaje</th>
+                <th>Hora Salida</th>
                 <th>Ciudad origen</th>
                 <th>Ciudad destino</th>
                 <th>Devolver ticket</th>
@@ -192,12 +193,16 @@ $dinero_entradas = $result_8 -> fetchAll();
             <?php
                 foreach ($tickets as $tik) {
                 echo "<tr> <td>$tik[0]</td> <td>".date('Y-m-d', strtotime($tik[1]))."</td> 
-                <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[3]</td> <td>$tik[4]</td>
-                <td>
-                <form align='center' action='perfil.php'  method='post'>
+                <td>".date('Y-m-d', strtotime($tik[2]))."</td> <td>$tik[6]</td> <td>$tik[3]</td> <td>$tik[4]</td>
+                <td>";
+                if (date("Y-m-d") < date('Y-m-d', strtotime($tik[2]))) {
+                echo "<form align='center' action='perfil.php'  method='post'>
                     <input type='hidden' name='tid' value=$tik[5]>
-                    <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket' style='font-size: 17px'>
-                </form>
+                    <input class='btn btn-danger' align='center' type='submit' value='Devolver' name='devolver_ticket' style='font-size: 17px'>";}
+                else {
+                    echo " No habilitado ";
+                }
+                echo "</form>
                 </td></tr>";
             }
             ?>
@@ -253,12 +258,16 @@ $dinero_entradas = $result_8 -> fetchAll();
         <?php
             foreach ($reservas as $res) {
             echo "<tr> <td>$res[0]</td> <td>$res[1]</td> <td>$res[2]</td> <td>$res[3]</td>
-                <td>
-                <form align='center' action='perfil.php'  method='post'>
+                <td>";
+            if (date("Y-m-d") < $res[0]) { 
+                echo "<form align='center' action='perfil.php'  method='post'>
                     <input type='hidden' name='rid' value=$res[4]>
-                    <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva' style='font-size: 17px'>
-                </form>
-                </td></tr>";
+                    <input class='btn btn-danger' align='center' type='submit' value='Cancelar' name='cancelar_reserva' style='font-size: 17px'>";}
+            else {
+            echo "No habilitado";
+            }
+            echo "</form>
+                    </td></tr>";
         }
         ?>
         </tbody>
