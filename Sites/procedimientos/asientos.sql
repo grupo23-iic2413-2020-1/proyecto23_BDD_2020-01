@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION
-asientos (total_asientos INTEGER, dest_id INTEGER, fecha_p DATETIME)
+asientos (total_asientos INTEGER, dest_id INTEGER, fecha_p TEXT)
 RETURNS TABLE (asiento integer) AS $$
 DECLARE
 actual INTEGER;
