@@ -282,7 +282,8 @@ $dinero_entradas = $result_8 -> fetchAll();
             <?php
             $tickets_total = 0;
             foreach ($dinero_tickets as $d) {
-                $tickets_total = $d[0];
+                $dinero_tickets_agregar = $d[0];
+                $tickets_total = $dinero_tickets_agregar;
             }
 
             $dinero_total_hoteles = 0;
