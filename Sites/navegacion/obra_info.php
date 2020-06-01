@@ -120,7 +120,7 @@
     <br>
 
 <?php
-  $busqueda = $onombre.''.$datos[0][0];
+  $busqueda = $onombre.' '.$datos[0][0];
 
   $accessKey = 'caf911e140684520b515eaefe37af2e8';
   $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
