@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION
-asientos (total_asientos INTEGER, dest_id INTEGER)
+asientos (total_asientos INTEGER, dest_id INTEGER, fecha_p DATE)
 RETURNS TABLE (asiento integer) AS $$
 DECLARE
 actual INTEGER;
@@ -11,7 +11,8 @@ WHILE total_asientos >= actual LOOP
 	INSERT INTO secuencia VALUES (actual);
 	actual = actual + 1;
 END LOOP;
-RETURN QUERY SELECT * FROM secuencia EXCEPT (SELECT Tickets.asiento FROM Tickets WHERE Tickets.did = dest_id ) ORDER BY asiento;
+RETURN QUERY SELECT * FROM secuencia EXCEPT (SELECT Tickets.asiento FROM Tickets
+ WHERE Tickets.did = dest_id AND Tickets.fechav = fecha_p ) ORDER BY asiento;
 DROP TABLE secuencia;
 END;
 $$ language plpgsql
