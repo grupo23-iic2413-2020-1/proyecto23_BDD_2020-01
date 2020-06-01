@@ -17,7 +17,7 @@ include('templates/navbar.php');
         <div class="card bg-secondary">
           <h1>Bienvenido a Splinter S.A</h1>
           <p>Aquí encontrarás todo lo necesario para realizar el viaje artístico de tu vida</p>
-          <a role="button" href="#" class="btn btn-success">Ver más</a>
+          <a role="button" href="#nosotros" class="btn btn-success">Ver más</a>
         </div>
       </div>
     </div>
@@ -57,9 +57,12 @@ include('templates/navbar.php');
   <div class="container">
     <br>
     <br>
-
+<a id="nosotros">
+    <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
+</a>
     <h1 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h1>
     <br>
+
     <h2 class= "text-white" align="center">Quiénes somos</h2>
   </div>
   <br>
