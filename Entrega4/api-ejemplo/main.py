@@ -9,9 +9,9 @@ import os
 USER_KEYS = ['uid', 'name', 'last_name',
             'occupation', 'follows', 'age']
 
-USER = "grupoXX"
-PASS = "grupoXX"
-DATABASE = "grupoXX"
+USER = "grupo23"
+PASS = "grupo23"
+DATABASE = "grupo23"
 
 # El cliente se levanta en la URL de la wiki
 # URL = "mongodb://grupoXX:grupoXX@gray.ing.puc.cl/grupoXX"
@@ -19,10 +19,11 @@ URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}"
 client = MongoClient(URL)
 
 # Utilizamos la base de datos del grupo
-db = client["grupoXX"]
+db = client["grupo23"]
 
 # Seleccionamos la collección de usuarios
-usuarios = db.usuarios
+usuarios = db.users
+
 
 '''
 Usuarios:
@@ -42,7 +43,9 @@ def home():
     '''
     Página de inicio
     '''
-    return "<h1>¡Hola!</h1>"
+    users = usuarios.find({}, {"_id": 0})
+    text = "<h1>Hola chicossss\n{} </h1>".format(users)
+    return text
 
 # Mapeamos esta función a la ruta '/plot' con el método get.
 @app.route("/plot")
