@@ -23,6 +23,7 @@ db = client["grupo23"]
 
 # Seleccionamos la collección de usuarios
 usuarios = db.users
+mensajes = db.messages
 
 
 '''
@@ -134,7 +135,24 @@ def test():
             <p>header: {param2}</p>
             <p>body: {body}</p>
             '''
-            
+
+@app.route("/messages")
+def get_messages():
+    '''
+    Obtiene todos los usuarios
+    '''
+    # Omitir el _id porque no es json serializable
+    resultados = list(mensajes.find({}, {"_id": 0}))
+    return json.jsonify(resultados)
+
+@app.route("/messages/<int:mid>")
+def get_message(mid):
+    '''
+    Obtiene el mensaje de id entregada
+    '''
+    message = list(mensajes.find({"mid": mid}, {"_id": 0}))
+    return json.jsonify(message)
+
 if __name__ == "__main__":
     app.run()
     # app.run(debug=True) # Para debuggear!
