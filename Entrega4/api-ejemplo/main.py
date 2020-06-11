@@ -44,8 +44,8 @@ def home():
     '''
     Página de inicio
     '''
-    users = usuarios.find({}, {"_id": 0})
-    text = "<h1>Hola chicossss\n{} </h1>".format(users)
+    
+    text = "<h1>Entrega 4: API Grupo 23-50 </h1>"
     return text
 
 # Mapeamos esta función a la ruta '/plot' con el método get.
