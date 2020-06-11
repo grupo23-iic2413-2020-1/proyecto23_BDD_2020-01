@@ -89,8 +89,18 @@ def get_user(uid):
     '''
     Obtiene el usuario de id entregada
     '''
-    users = list(usuarios.find({"uid": uid}, {"_id": 0}))
-    return json.jsonify(users)
+    user = list(usuarios.find({"uid": uid}, {"_id": 0}))
+    if len(user) > 0:
+        messages = list(mensajes.find({"sender": uid}, {"_id": 0, "date": 0, "lat": 0, "long": 0, "sender": 0, "mid": 0, "receptant": 0}))
+        retorno = {"user": user, "messages": messages}
+        #sort_retorno = sorted(retorno.items(), reverse=True)
+        return json.jsonify(retorno)
+    
+    else:
+        text = "<h1>Error: No existe el usario con uid: {}  </h1>".format(uid)
+        return text
+        
+    
 
 @app.route("/users", methods=['POST'])
 def create_user():
@@ -142,8 +152,28 @@ def get_messages():
     Obtiene todos los usuarios
     '''
     # Omitir el _id porque no es json serializable
-    resultados = list(mensajes.find({}, {"_id": 0}))
-    return json.jsonify(resultados)
+    id1 = request.args.get("id1")
+    id2 = request.args.get("id2")
+    
+    if id1 and id2:
+        id1 = int(id1)
+        id2 = int(id2)
+        resultados = list(mensajes.find({"$or": [{"sender": id1, "receptant": id2},
+        {"sender": id2, "receptant": id1}]}, {"_id": 0}))
+        if len(resultados) > 0:
+            return json.jsonify(resultados)
+
+        else:
+            text = "<h1>No existen mensajes entre:  {} y {} </h1>".format(id1, id2)
+            return text
+            
+
+    else:
+        resultados = list(mensajes.find({}, {"_id": 0}))
+
+        return json.jsonify(resultados)
+    #text = "<h1>Somos: {} </h1>".format([id1, id2])
+    #return text
 
 @app.route("/messages/<int:mid>")
 def get_message(mid):
@@ -151,7 +181,13 @@ def get_message(mid):
     Obtiene el mensaje de id entregada
     '''
     message = list(mensajes.find({"mid": mid}, {"_id": 0}))
-    return json.jsonify(message)
+    if len(message) > 0:
+        return json.jsonify(message)
+
+    else:
+        text = "<h1>Error: No existe mensaje con mid: {}  </h1>".format(mid)
+        return text
+
 
 if __name__ == "__main__":
     app.run()
