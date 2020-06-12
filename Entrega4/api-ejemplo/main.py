@@ -6,8 +6,10 @@ import os
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
-USER_KEYS = ['uid', 'name', 'last_name',
-            'occupation', 'follows', 'age']
+USER_KEYS = ['uid', 'name', 'age',
+            'description']
+
+USER_DEL = ['uid', 'name']
 
 USER = "grupo23"
 PASS = "grupo23"
@@ -119,6 +121,25 @@ def create_user():
     result = usuarios.insert_one(data)
 
     return json.jsonify({'success': True, 'message': 'Usuario con id 1 creado'})
+
+
+@app.route("/users", methods=['DELETE'])
+def delete_user():
+    '''
+    Crea un nuevo usuario en la base de datos
+    Se  necesitan todos los atributos de model, a excepcion de _id
+    '''
+
+    # En este caso nos entregarán la id del usuario,
+    # Y los datos serán ingresados como json
+    # Body > raw > JSON en Postman
+    data = {key: request.json[key] for key in USER_DEL}
+
+    # El valor de result nos puede ayudar a revisar
+    # si el usuario fue insertado con éxito
+    result = usuarios.remove(data)
+
+    return json.jsonify({'success': True, 'message': 'Usuario con id 1 eliminado'})
 
 
 @app.route("/test")
