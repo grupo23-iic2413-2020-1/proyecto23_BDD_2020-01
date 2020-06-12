@@ -211,6 +211,6 @@ def get_message(mid):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
     # app.run(debug=True) # Para debuggear!
 # ¡Mucho ánimo y éxito! ¡Saludos! :D
