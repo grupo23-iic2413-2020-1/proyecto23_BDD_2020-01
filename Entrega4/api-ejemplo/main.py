@@ -197,16 +197,13 @@ def create_message():
 
 @app.route("/messages/<int:mid>", methods=['DELETE'])
 def delete_message(mid):
-    messages = list(mensajes.find({}, {"_id": 0, "mid": 1}))
-    id_messages = [i.get('mid') for i in messages]
-
-    if mid not in id_messages:
+    messages = list(mensajes.find({"mid": mid}, {"_id": 0}))
+    
+    if len(messages) == 0:
         return json.jsonify({'success': False, 'message': 'Mensaje con id {} no existe'.format(mid)})
 
-    
-    elif mid in id_messages:
-        data = {key: request.json[key] for key in USER_DEL_M}
-        result = mensajes.remove(data)
+    else:
+        mensajes.delete_one({"mid": mid})
         return json.jsonify({'success': True, 'message': 'Mensaje con id {} eliminado'.format(mid)})
         
     # El valor de result nos puede ayudar a revisar
@@ -256,7 +253,7 @@ def get_messages():
         id2 = int(id2)
         resultados = list(mensajes.find({"$or": [{"sender": id1, "receptant": id2},
         {"sender": id2, "receptant": id1}]}, {"_id": 0}))
-        if len(resultados) <= 0:
+        if len(resultados) == 0:
 
             resultados = {"Error": f"No existen mensajes entre: {id1} y {id2}"}
         
