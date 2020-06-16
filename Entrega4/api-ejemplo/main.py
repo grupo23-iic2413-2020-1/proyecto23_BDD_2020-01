@@ -106,11 +106,11 @@ def get_user(uid):
         messages = list(mensajes.find({"sender": uid}, {"_id": 0, "date": 0, "lat": 0, "long": 0, "sender": 0, "mid": 0, "receptant": 0}))
         retorno = {"user": user, "messages": messages}
         #sort_retorno = sorted(retorno.items(), reverse=True)
-        return json.jsonify(retorno)
     
     else:
-        text = "<h1>Error: No existe el usario con uid: {}  </h1>".format(uid)
-        return text
+        retorno = {"Error": f"No existe el usario con uid: {uid}"}
+    
+    return json.jsonify(retorno)
         
     
 
@@ -256,12 +256,11 @@ def get_messages():
         id2 = int(id2)
         resultados = list(mensajes.find({"$or": [{"sender": id1, "receptant": id2},
         {"sender": id2, "receptant": id1}]}, {"_id": 0}))
-        if len(resultados) > 0:
-            return json.jsonify(resultados)
+        if len(resultados) <= 0:
 
-        else:
-            text = "<h1>No existen mensajes entre:  {} y {} </h1>".format(id1, id2)
-            return text
+            resultados = {"Error": f"No existen mensajes entre: {id1} y {id2}"}
+        
+        return json.jsonify(resultados)
             
 
     else:
@@ -277,12 +276,10 @@ def get_message(mid):
     Obtiene el mensaje de id entregada
     '''
     message = list(mensajes.find({"mid": mid}, {"_id": 0}))
-    if len(message) > 0:
-        return json.jsonify(message)
-
-    else:
-        text = "<h1>Error: No existe mensaje con mid: {}  </h1>".format(mid)
-        return text
+    if len(message) <= 0:
+        message = {"Error": f"No existe mensaje con mid: {mid}"}
+        
+    return json.jsonify(message)
 
 
 if __name__ == "__main__":
