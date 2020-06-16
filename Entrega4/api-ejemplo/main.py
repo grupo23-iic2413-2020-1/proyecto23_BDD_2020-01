@@ -17,6 +17,8 @@ USER_DEL = ['uid', 'name']
 
 USER_DEL_M = ['mid']
 
+SEARCH_KEYS = ['desired', 'required', 'forbidden', 'userId']
+
 USER = "grupo23"
 PASS = "grupo23"
 DATABASE = "grupo23"
@@ -33,7 +35,7 @@ db = client["grupo23"]
 usuarios = db.users
 mensajes = db.messages
 
-
+mensajes.create_index([("message", "text")])
 
 '''
 Usuarios:
@@ -51,6 +53,7 @@ app = Flask(__name__)
 # Establece encoding como UTF-8
 app.config['JSON_AS_ASCII'] = False
 
+
 @app.route("/")
 def home():
     '''
@@ -59,6 +62,7 @@ def home():
     
     text = "<h1>Entrega 4: API Grupo 23-50 </h1>"
     return text
+
 
 # Mapeamos esta función a la ruta '/plot' con el método get.
 @app.route("/plot")
@@ -87,6 +91,7 @@ def plot():
     # Retorna un html "rendereado"
     return render_template('plot.html')
 
+
 @app.route("/users")
 def get_users():
     '''
@@ -95,6 +100,7 @@ def get_users():
     # Omitir el _id porque no es json serializable
     resultados = list(usuarios.find({}, {"_id": 0}))
     return json.jsonify(resultados)
+
 
 @app.route("/users/<int:uid>")
 def get_user(uid):
@@ -113,7 +119,6 @@ def get_user(uid):
     return json.jsonify(retorno)
         
     
-
 @app.route("/users", methods=['POST'])
 def create_user():
     '''
@@ -228,8 +233,6 @@ def delete_message(mid):
     #result = usuarios.remove(data)
 
 
-
-
 @app.route("/test")
 def test():
     # Obtener un parámero de la URL
@@ -293,6 +296,15 @@ def get_message(mid):
         message = {"Error": f"No existe mensaje con mid: {mid}"}
 
     return json.jsonify(message)
+
+
+@app.route("/text-search")
+def search_messages():
+    data = {key: request.json[key] for key in SEARCH_KEYS}
+
+    resultados = list(mensajes.find({"$text": {"$search": '"{}"'.format(str('" "').join(data['required']))}},{"_id": 0}))
+    
+    return json.jsonify(resultados) 
 
 
 if __name__ == "__main__":
