@@ -173,11 +173,27 @@ def create_message():
     # En este caso nos entregarán la id del usuario,
     # Y los datos serán ingresados como json
     # Body > raw > JSON en Postman
+
+    # Siguiente if revisa que se hayan ingresado todos los atributos y si no estan todos retorna un 
+    # json que indica para cada parámetro si existe (True) o no (False) en el request
+    # FALTA VERIFICAR QUE LOS PARAMETROS CUMPLAN CON SER EL TIPO DE DATO CORRECTO (int, str, float, ...)
+    if len(request.json) < 6:
+        return json.jsonify({'success': False, 'message': 'Faltan parámetros para crear el mensaje', 
+        'date': 'date' in request.json.keys(),
+        'lat': 'lat' in request.json.keys(),
+        'long': 'long' in request.json.keys(),
+        'message': 'message' in request.json.keys(),
+        'receptant': 'receptant' in request.json.keys(),
+        'sender': 'sender' in request.json.keys()
+        })
+
     data = {key: request.json[key] for key in USER_KEYS_M}
     
     users = list(usuarios.find({}, {"_id": 0, "uid": 1}))
     id_users = [i.get('uid') for i in users]
     messages = list(mensajes.find({}, {"_id": 0}))
+
+    
     if data['sender'] in id_users and data['receptant'] in id_users:
         id_message = len(messages) + 1
     
