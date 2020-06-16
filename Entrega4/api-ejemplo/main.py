@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
 USER_KEYS = ['name', 'age',
@@ -33,6 +34,7 @@ usuarios = db.users
 mensajes = db.messages
 
 
+
 '''
 Usuarios:
   "uid": <id del usuario>,
@@ -45,6 +47,9 @@ Usuarios:
 
 # Iniciamos la aplicación de flask
 app = Flask(__name__)
+
+# Establece encoding como UTF-8
+app.config['JSON_AS_ASCII'] = False
 
 @app.route("/")
 def home():
@@ -240,7 +245,7 @@ def test():
 @app.route("/messages")
 def get_messages():
     '''
-    Obtiene todos los usuarios
+    Obtiene todos los mensajes
     '''
     # Omitir el _id porque no es json serializable
     id1 = request.args.get("id1")
