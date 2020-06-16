@@ -302,8 +302,7 @@ def get_message(mid):
 def search_messages():
     data = {key: request.json[key] for key in SEARCH_KEYS}
 
-    resultados = list(mensajes.find({"$text": {"$search": '"{}"'.format(str('" "').join(data['required']))}},{"_id": 0}))
-    
+    resultados = list(mensajes.find({"$text": {"$search": '"{}" -{}'.format(str('" "').join(data['required']), str(' -').join(data['forbidden']))}},{"_id": 0}))
     return json.jsonify(resultados) 
 
 
