@@ -6,10 +6,15 @@ import os
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
-USER_KEYS = ['uid', 'name', 'age',
+USER_KEYS = ['name', 'age',
             'description']
 
+USER_KEYS_M = [ "message","sender",
+                "receptant","lat","long","date"]
+
 USER_DEL = ['uid', 'name']
+
+USER_DEL_M = ['mid']
 
 USER = "grupo23"
 PASS = "grupo23"
@@ -115,12 +120,22 @@ def create_user():
     # Y los datos serán ingresados como json
     # Body > raw > JSON en Postman
     data = {key: request.json[key] for key in USER_KEYS}
+    
+    users = list(usuarios.find({}, {"_id": 0, "uid": 1}))
+    id_users = [i.get('uid') for i in users]
+    user_id = len(id_users) + 1
+    
+        # El valor de result nos puede ayudar a revisar
+        # si el usuario fue insertado con éxito
+    data['uid'] = user_id
+    result = usuarios.insert_one(data)
+
+    return json.jsonify({'success': True, 'message': 'Usuario con id {} creado'.format(user_id)})
+        
 
     # El valor de result nos puede ayudar a revisar
     # si el usuario fue insertado con éxito
-    result = usuarios.insert_one(data)
-
-    return json.jsonify({'success': True, 'message': 'Usuario con id 1 creado'})
+    
 
 
 @app.route("/users", methods=['DELETE'])
@@ -140,6 +155,61 @@ def delete_user():
     result = usuarios.remove(data)
 
     return json.jsonify({'success': True, 'message': 'Usuario con id 1 eliminado'})
+
+
+
+@app.route("/messages", methods=['POST'])
+def create_message():
+    '''
+    Crea un nuevo usuario en la base de datos
+    Se  necesitan todos los atributos de model, a excepcion de _id
+    '''
+
+    # En este caso nos entregarán la id del usuario,
+    # Y los datos serán ingresados como json
+    # Body > raw > JSON en Postman
+    data = {key: request.json[key] for key in USER_KEYS_M}
+    
+    users = list(usuarios.find({}, {"_id": 0, "uid": 1}))
+    id_users = [i.get('uid') for i in users]
+    messages = list(mensajes.find({}, {"_id": 0}))
+    if data['sender'] in id_users and data['receptant'] in id_users:
+        id_message = len(messages) + 1
+    
+        # El valor de result nos puede ayudar a revisar
+        # si el usuario fue insertado con éxito
+        data['mid'] = id_message
+        result = mensajes.insert_one(data)
+
+        return json.jsonify({'success': True, 'message': 'Mensaje con id {} creado'.format(id_message)})
+        
+    elif data['sender'] not in id_users:
+        return json.jsonify({'success': False, 'message': 'Sender con id {} no existe'.format(data['sender'])})
+
+    elif data['receptant'] not in id_users:
+        return json.jsonify({'success': False, 'message': 'Receptant con id {} no existe'.format(data['receptant'])})
+
+
+@app.route("/messages/<int:mid>", methods=['DELETE'])
+def delete_message(mid):
+    messages = list(mensajes.find({}, {"_id": 0, "mid": 1}))
+    id_messages = [i.get('mid') for i in messages]
+
+    if mid not in id_messages:
+        return json.jsonify({'success': False, 'message': 'Mensaje con id {} no existe'.format(mid)})
+
+    
+    elif mid in id_messages:
+        data = {key: request.json[key] for key in USER_DEL_M}
+        result = mensajes.remove(data)
+        return json.jsonify({'success': True, 'message': 'Mensaje con id {} eliminado'.format(mid)})
+        
+    # El valor de result nos puede ayudar a revisar
+    # si el usuario fue insertado con éxito
+    #data = {key: request.json[key] for key in USER_DEL}
+    #result = usuarios.remove(data)
+
+
 
 
 @app.route("/test")
