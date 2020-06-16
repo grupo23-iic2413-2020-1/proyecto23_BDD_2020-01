@@ -300,9 +300,19 @@ def get_message(mid):
 
 @app.route("/text-search")
 def search_messages():
-    data = {key: request.json[key] for key in SEARCH_KEYS}
+    data = {key: request.json[key] for key in request.json.keys()}
 
-    resultados = list(mensajes.find({"$text": {"$search": '"{}" -{}'.format(str('" "').join(data['required']), str(' -').join(data['forbidden']))}},{"_id": 0}))
+    resultados = list(mensajes.find({}, {"_id": 0}))
+
+    resultados = list(mensajes.find({"$text": 
+    {"$search": '{} "{}" -{}'.format(str(' ').join(data['desired']),
+     str('" "').join(data['required']),
+      str(' -').join(data['forbidden']))}
+      },{"_id": 0}
+      ).sort([('score', {'$meta': "textScore" })]))
+
+    
+
     return json.jsonify(resultados) 
 
 
