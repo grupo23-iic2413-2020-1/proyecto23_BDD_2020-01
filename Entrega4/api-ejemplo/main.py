@@ -276,9 +276,9 @@ def get_message(mid):
     Obtiene el mensaje de id entregada
     '''
     message = list(mensajes.find({"mid": mid}, {"_id": 0}))
-    if len(message) <= 0:
+    if len(message) == 0:
         message = {"Error": f"No existe mensaje con mid: {mid}"}
-        
+
     return json.jsonify(message)
 
 
