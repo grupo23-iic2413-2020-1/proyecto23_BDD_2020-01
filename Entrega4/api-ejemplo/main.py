@@ -313,8 +313,12 @@ def search_messages():
     {"_id": 0, 'score': {'$meta': "textScore"}}
     ).sort([('score', {'$meta': "textScore" })])) 
     '''
+    if request.json == None:
+        resultados = list(mensajes.find({},{"_id": 0}))
+        return json.jsonify(resultados) 
 
     data = {key: request.json[key] for key in request.json.keys()}
+    
     string = ''
     for key in data.keys():
         if key == 'desired':
@@ -331,8 +335,14 @@ def search_messages():
         {"_id": 0, 'score': {'$meta': "textScore"}}
     ).sort([('score', {'$meta': "textScore" })]))
 
-    if len(resultados) == 0:
+    if len(resultados) == 0 and 'required' not in data.keys() and 'desired' not in data.keys():
         resultados = list(mensajes.find({},{"_id": 0}))
+        if 'forbidden' in data.keys():
+            prohibidos = list(mensajes.find(
+                {"$text": {"$search": (' '.join(string.split(' -'))).strip(' -')}},
+                {"_id": 0}))
+            
+            resultados = [mensaje for mensaje in resultados if mensaje not in prohibidos]
 
     if 'userId' in data.keys():
         # NO UTILIZA TEXT SEARCH ???
