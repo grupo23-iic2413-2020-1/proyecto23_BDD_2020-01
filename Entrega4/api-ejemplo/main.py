@@ -300,18 +300,45 @@ def get_message(mid):
 
 @app.route("/text-search")
 def search_messages():
+
+    '''
+    resultados = list(mensajes.find(
+        {"$text": {
+            "$search": '{} "{}" -{}'.format(
+                str(' ').join(data['desired']),
+                str('" "').join(data['required']),
+                str(' -').join(data['forbidden']))
+            }
+        },
+    {"_id": 0, 'score': {'$meta': "textScore"}}
+    ).sort([('score', {'$meta': "textScore" })])) 
+    '''
+
     data = {key: request.json[key] for key in request.json.keys()}
-
-    resultados = list(mensajes.find({}, {"_id": 0}))
-
-    resultados = list(mensajes.find({"$text": 
-    {"$search": '{} "{}" -{}'.format(str(' ').join(data['desired']),
-     str('" "').join(data['required']),
-      str(' -').join(data['forbidden']))}
-      },{"_id": 0}
-      ).sort([('score', {'$meta': "textScore" })]))
-
+    string = ''
+    for key in data.keys():
+        if key == 'desired':
+            string += ' '+' '.join(data['desired'])
+        elif key == 'required':
+            string += ' "'+'" "'.join(data['required'])+'"'
+        elif key == 'forbidden':
+            string += ' -'+' -'.join(data['forbidden'])
     
+    string = string.strip(' ')
+
+    resultados = list(mensajes.find(
+        {"$text": {"$search": string}},
+        {"_id": 0, 'score': {'$meta': "textScore"}}
+    ).sort([('score', {'$meta': "textScore" })]))
+
+    if len(resultados) == 0:
+        resultados = list(mensajes.find({},{"_id": 0}))
+
+    if 'userId' in data.keys():
+        # NO UTILIZA TEXT SEARCH ???
+        resultados = [mensaje for mensaje in resultados if mensaje['sender'] == data['userId']]
+    
+
 
     return json.jsonify(resultados) 
 
