@@ -183,13 +183,13 @@ def create_message():
     # json que indica para cada parámetro si existe (True) o no (False) en el request
     # FALTA VERIFICAR QUE LOS PARAMETROS CUMPLAN CON SER EL TIPO DE DATO CORRECTO (int, str, float, ...)
     if len(request.json) < 6:
-        return json.jsonify({'success': False, 'message': 'Faltan parámetros para crear el mensaje', 
-        'date': 'date' in request.json.keys(),
+        return json.jsonify({'success': False, 'error': 'Faltan parámetros para crear el mensaje', 'parametros':
+        {'date': 'date' in request.json.keys(),
         'lat': 'lat' in request.json.keys(),
         'long': 'long' in request.json.keys(),
         'message': 'message' in request.json.keys(),
         'receptant': 'receptant' in request.json.keys(),
-        'sender': 'sender' in request.json.keys()
+        'sender': 'sender' in request.json.keys()}
         })
 
     data = {key: request.json[key] for key in USER_KEYS_M}
