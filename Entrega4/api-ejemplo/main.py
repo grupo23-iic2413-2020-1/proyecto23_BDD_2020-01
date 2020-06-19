@@ -182,7 +182,9 @@ def create_message():
     # Siguiente if revisa que se hayan ingresado todos los atributos y si no estan todos retorna un 
     # json que indica para cada parámetro si existe (True) o no (False) en el request
     # FALTA VERIFICAR QUE LOS PARAMETROS CUMPLAN CON SER EL TIPO DE DATO CORRECTO (int, str, float, ...)
-    if len(request.json) < 6:
+    if not request.data:
+        return json.jsonify({'success': False, 'error': 'No se ha ingresado un body'})
+    elif len(request.json) < 6:
         return json.jsonify({'success': False, 'error': 'Faltan parámetros para crear el mensaje', 'parametros':
         {'date': 'date' in request.json.keys(),
         'lat': 'lat' in request.json.keys(),
@@ -313,11 +315,11 @@ def search_messages():
     {"_id": 0, 'score': {'$meta': "textScore"}}
     ).sort([('score', {'$meta': "textScore" })])) 
     '''
-    if request.json == None:
+    if not request.data or not request:
         resultados = list(mensajes.find({},{"_id": 0}))
         return json.jsonify(resultados) 
 
-    data = {key: request.json[key] for key in request.json.keys()}
+    data = {key: request.json[key] for key in request.json.keys() if request.json[key] != []}
     
     string = ''
     for key in data.keys():
