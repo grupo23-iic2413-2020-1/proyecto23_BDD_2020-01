@@ -216,7 +216,7 @@ def create_message():
         return json.jsonify({'success': False, 'message': 'Receptant con id {} no existe'.format(data['receptant'])})
 
 
-@app.route("/messages/<int:mid>", methods=['DELETE'])
+@app.route("/message/<int:mid>", methods=['DELETE'])
 def delete_message(mid):
     messages = list(mensajes.find({"mid": mid}, {"_id": 0}))
     
