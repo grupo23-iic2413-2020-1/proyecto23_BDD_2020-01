@@ -133,7 +133,7 @@ def create_user():
     
     users = list(usuarios.find({}, {"_id": 0, "uid": 1}))
     id_users = [i.get('uid') for i in users]
-    user_id = len(id_users) + 1
+    id_user = max(id_messages) + 1
     
         # El valor de result nos puede ayudar a revisar
         # si el usuario fue insertado con éxito
@@ -202,7 +202,8 @@ def create_message():
 
     
     if data['sender'] in id_users and data['receptant'] in id_users:
-        id_message = len(messages) + 1
+        id_messages = [i.get('mid') for i in messages]
+        id_message = max(id_messages) + 1
     
         # El valor de result nos puede ayudar a revisar
         # si el usuario fue insertado con éxito
@@ -269,6 +270,15 @@ def get_messages():
     id1 = request.args.get("id1")
     id2 = request.args.get("id2")
     
+    messages = list(mensajes.find({}, {"_id": 0}))
+    mensajes.delete_one({"mid": 227})
+    mensajes.delete_one({"mid": 226})
+    mensajes.delete_one({"mid": 225})
+    mensajes.delete_one({"mid": 222})
+    mensajes.delete_one({"mid": 221})
+    mensajes.delete_one({"mid": 227})
+    mensajes.delete_one({"mid": 226})
+
     if id1 and id2:
         id1 = int(id1)
         id2 = int(id2)

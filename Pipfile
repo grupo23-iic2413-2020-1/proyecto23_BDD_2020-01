@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 pandas = "*"
+flask = "*"
+pymongo = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.6"
