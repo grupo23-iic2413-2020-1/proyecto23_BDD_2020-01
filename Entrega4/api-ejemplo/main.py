@@ -109,7 +109,7 @@ def get_user(uid):
     '''
     user = list(usuarios.find({"uid": uid}, {"_id": 0}))
     if len(user) > 0:
-        messages = list(mensajes.find({"sender": uid}, {"_id": 0, "date": 0, "lat": 0, "long": 0, "sender": 0, "mid": 0, "receptant": 0}))
+        messages = list(mensajes.find({"sender": uid}, {"_id": 0}))
         retorno = {"user": user, "messages": messages}
         #sort_retorno = sorted(retorno.items(), reverse=True)
     
@@ -184,7 +184,9 @@ def create_message():
     # FALTA VERIFICAR QUE LOS PARAMETROS CUMPLAN CON SER EL TIPO DE DATO CORRECTO (int, str, float, ...)
     if not request.data:
         return json.jsonify({'success': False, 'error': 'No se ha ingresado un body'})
+
     elif len(request.json) < 6:
+
         return json.jsonify({'success': False, 'error': 'Faltan parámetros para crear el mensaje', 'parametros':
         {'date': 'date' in request.json.keys(),
         'lat': 'lat' in request.json.keys(),
@@ -194,8 +196,14 @@ def create_message():
         'sender': 'sender' in request.json.keys()}
         })
 
+ 
     data = {key: request.json[key] for key in USER_KEYS_M}
-    
+
+    if type(data['date']) != str or type(data['lat']) != float or \
+        type(data['long']) != float or type(data['message']) != str or\
+            type(data['receptant']) != int or type(data['sender']) != int:
+         return json.jsonify({'success': False, 'error': 'Formato parametros erróneo'})
+
     users = list(usuarios.find({}, {"_id": 0, "uid": 1}))
     id_users = [i.get('uid') for i in users]
     messages = list(mensajes.find({}, {"_id": 0}))
@@ -271,13 +279,7 @@ def get_messages():
     id2 = request.args.get("id2")
     
     messages = list(mensajes.find({}, {"_id": 0}))
-    mensajes.delete_one({"mid": 227})
-    mensajes.delete_one({"mid": 226})
-    mensajes.delete_one({"mid": 225})
-    mensajes.delete_one({"mid": 222})
-    mensajes.delete_one({"mid": 221})
-    mensajes.delete_one({"mid": 227})
-    mensajes.delete_one({"mid": 226})
+    
 
     if id1 and id2:
         id1 = int(id1)
@@ -327,6 +329,7 @@ def search_messages():
     '''
     if not request.data or not request:
         resultados = list(mensajes.find({},{"_id": 0}))
+
         return json.jsonify(resultados) 
 
     data = {key: request.json[key] for key in request.json.keys() if request.json[key] != []}
@@ -335,8 +338,10 @@ def search_messages():
     for key in data.keys():
         if key == 'desired':
             string += ' '+' '.join(data['desired'])
+
         elif key == 'required':
             string += ' "'+'" "'.join(data['required'])+'"'
+
         elif key == 'forbidden':
             string += ' -'+' -'.join(data['forbidden'])
     
@@ -346,20 +351,27 @@ def search_messages():
         if 'forbidden' in data.keys():
             resultados = list(mensajes.find({},{"_id": 0}))
             string_prohibidos = (' '.join(string.split(' -'))).strip(' -')
+
             if 'userId' in data.keys():
                 prohibidos = list(mensajes.find(
                     {"$text": {"$search": string_prohibidos}},
                     {"_id": 0})) + list(mensajes.find({"sender": {"$ne": data["userId"]}},{"_id": 0}))
+
             else:
                 prohibidos = list(mensajes.find(
                     {"$text": {"$search": string_prohibidos}},
                     {"_id": 0}))
             resultados = [mensaje for mensaje in resultados if mensaje not in prohibidos]
+
             return json.jsonify(resultados) 
+
         elif 'userId' in data.keys():
             resultados = list(mensajes.find({"sender": data["userId"]},{"_id": 0}))
+
             return json.jsonify(resultados) 
+
         resultados = list(mensajes.find({},{"_id": 0}))
+
         return json.jsonify(resultados)
 
     elif 'userId' in data.keys():
@@ -367,6 +379,7 @@ def search_messages():
             {"$text": {"$search": string}}, {"sender": data['userId']}]},
             {"_id": 0, 'score': {'$meta': "textScore"}}
         ).sort([('score', {'$meta': "textScore" })]))
+
         return json.jsonify(resultados)
 
     else:
@@ -374,6 +387,7 @@ def search_messages():
             {"$text": {"$search": string}},
             {"_id": 0, 'score': {'$meta': "textScore"}}
         ).sort([('score', {'$meta': "textScore" })])) 
+
         return json.jsonify(resultados)
 
             
