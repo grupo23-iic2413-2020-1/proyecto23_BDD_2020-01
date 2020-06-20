@@ -332,27 +332,45 @@ def search_messages():
     
     string = string.strip(' ')
 
-    resultados = list(mensajes.find(
-        {"$text": {"$search": string}},
-        {"_id": 0, 'score': {'$meta': "textScore"}}
-    ).sort([('score', {'$meta': "textScore" })]))
-
-    if len(resultados) == 0 and 'required' not in data.keys() and 'desired' not in data.keys():
-        resultados = list(mensajes.find({},{"_id": 0}))
+    if 'required' not in data.keys() and 'desired' not in data.keys():
         if 'forbidden' in data.keys():
-            prohibidos = list(mensajes.find(
-                {"$text": {"$search": (' '.join(string.split(' -'))).strip(' -')}},
-                {"_id": 0}))
-            
+            resultados = list(mensajes.find({},{"_id": 0}))
+            string_prohibidos = (' '.join(string.split(' -'))).strip(' -')
+            if 'userId' in data.keys():
+                prohibidos = list(mensajes.find(
+                    {"$text": {"$search": string_prohibidos}},
+                    {"_id": 0})) + list(mensajes.find({"sender": {"$ne": data["userId"]}},{"_id": 0}))
+            else:
+                prohibidos = list(mensajes.find(
+                    {"$text": {"$search": string_prohibidos}},
+                    {"_id": 0}))
             resultados = [mensaje for mensaje in resultados if mensaje not in prohibidos]
+            return json.jsonify(resultados) 
+        elif 'userId' in data.keys():
+            resultados = list(mensajes.find({"sender": data["userId"]},{"_id": 0}))
+            return json.jsonify(resultados) 
+        resultados = list(mensajes.find({},{"_id": 0}))
+        return json.jsonify(resultados)
 
+    elif 'userId' in data.keys():
+        resultados = list(mensajes.find({"$and": [
+            {"$text": {"$search": string}}, {"sender": data['userId']}]},
+            {"_id": 0, 'score': {'$meta': "textScore"}}
+        ).sort([('score', {'$meta': "textScore" })]))
+        return json.jsonify(resultados)
+
+    else:
+        resultados = list(mensajes.find(
+            {"$text": {"$search": string}},
+            {"_id": 0, 'score': {'$meta': "textScore"}}
+        ).sort([('score', {'$meta': "textScore" })])) 
+        return json.jsonify(resultados)
+
+            
+    '''
     if 'userId' in data.keys():
         # NO UTILIZA TEXT SEARCH ???
-        resultados = [mensaje for mensaje in resultados if mensaje['sender'] == data['userId']]
-    
-
-
-    return json.jsonify(resultados) 
+        resultados = [mensaje for mensaje in resultados if mensaje['sender'] == data['userId']]'''
 
 
 if __name__ == "__main__":
