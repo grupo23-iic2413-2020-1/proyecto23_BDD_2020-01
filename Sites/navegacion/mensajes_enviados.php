@@ -1,15 +1,18 @@
 <?php session_start(); ?>
 <?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php');  ?>
+<?php include('../templates/navbar.php');  
+require("../config/conexion.php"); ?>
 
 <?php 
-$query = "SELECT uid FROM Usuarios WHERE Usuarios.uid = ?";
+$query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
 $result -> bindParam(1, $_SESSION['current_uid']);
 $result -> execute();
-$uid = $result -> fetchAll();
+$user = $result -> fetchAll();
+
+$uid = $user[0][0];
 
 $url = "https://nameless-meadow-87804.herokuapp.com/users/".$uid;
 $json = file_get_contents($url);
