@@ -3,17 +3,12 @@
 <?php include('../templates/navbar.php');   ?> 
 
 <?php 
-$heroku = new HerokuClient([
-                            'baseUrl' => 'https://entrega5-2350-api-heroku.herokuapp.com/',   // Defaults to https://api.heroku.com/
-                          ]);
+$client = new GuzzleHttp\Client();
+$res = $client->request('GET', 'https://entrega5-2350-api-heroku.herokuapp.com/users', [
+    'auth' => ['user', 'pass']
+]);
 
-
-
-$users = $heroku->get('users')->quantity;
-
-$json = json_decode($users, true);
-
-echo '$json'
+echo $res->getBody();
 
 ?>
  
