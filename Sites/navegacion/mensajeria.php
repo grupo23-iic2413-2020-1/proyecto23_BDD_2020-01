@@ -5,6 +5,8 @@ include('../templates/navbar.php');
 
 require("../config/conexion.php");
 
+
+
 if ($_SESSION['loggedin'] == False) {
     header("location: ../errores/perfil1.php");
     exit;} 
