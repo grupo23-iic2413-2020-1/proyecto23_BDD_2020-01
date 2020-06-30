@@ -16,7 +16,7 @@ $uid = $user[0][0];
 
 $url = "https://nameless-meadow-87804.herokuapp.com/users/".$uid;
 $json = file_get_contents($url);
-$element = json_decode($json, true);
+$json_data = json_decode($json, true);
 foreach ($json_data['messages'] as $element) {
     // $url2 = "https://cryptic-hollows-16856.herokuapp.com/users/". $element['receptant'];
     // $json2 = file_get_contents($url2);
