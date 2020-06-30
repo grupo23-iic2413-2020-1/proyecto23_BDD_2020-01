@@ -3,11 +3,7 @@
 <?php include('../templates/navbar.php'); 
 include('../library/Requests.php');  ?>
 
-// Next, make sure Requests can load internal classes
-Requests::register_autoloader();
 <?php 
-
-Requests::register_autoloader();
 
 $response = Requests::get('https://entrega5-2350-api-heroku.herokuapp.com/users');
 
