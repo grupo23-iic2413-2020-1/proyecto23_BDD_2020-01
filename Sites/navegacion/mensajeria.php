@@ -31,11 +31,13 @@ $udir = $user[0][4];
 
 <body>
 
-<div class="sidenav">
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
+<div class="sidenav" style= 'color: black'>
+  
+  <a href="#services">Mensajes Enviados</a>
+  <a href="#clients">Mensajes recibidos</a>
+  <a href="#contact">Enviar mensaje</a>
+  <a href="#about">Buscar mensaje</a>
+
 </div>
 
 </body>
