@@ -5,7 +5,6 @@
 <?php 
 $heroku = new HerokuClient([
                             'baseUrl' => 'https://entrega5-2350-api-heroku.herokuapp.com/',   // Defaults to https://api.heroku.com/
-                            ],
                           ]);
 
 
