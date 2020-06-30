@@ -122,8 +122,15 @@ $dinero_entradas = $result_8 -> fetchAll();
 
 ?> 
 
-<body class= "bg-secondary text-white">
 
+
+<body class= "bg-secondary text-white">
+    <div class="sidenav">
+    <a href="#about">Mensajes enviados</a>
+    <a href="#services">Mensajes recibidos</a>
+    <a href="#clients">Enviar mensaje</a>
+    <a href="#contact">Buscar mensaje</a>
+    </div>
     <div class="container">
             <br>
             <div class="row justify-content-md-center">
