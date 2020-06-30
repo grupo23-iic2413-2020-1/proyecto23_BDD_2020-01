@@ -1,14 +1,17 @@
 <?php session_start(); ?>
 <?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php');   ?> 
+<?php include('../templates/navbar.php'); 
+include('../library/Requests.php');  ?>
 
+// Next, make sure Requests can load internal classes
+Requests::register_autoloader();
 <?php 
-$client = new GuzzleHttp\Client();
-$res = $client->request('GET', 'https://entrega5-2350-api-heroku.herokuapp.com/users', [
-    'auth' => ['user', 'pass']
-]);
 
-echo $res->getBody();
+Requests::register_autoloader();
+
+$response = Requests::get('https://entrega5-2350-api-heroku.herokuapp.com/users');
+
+echo var_dump($response->body);
 
 ?>
  
