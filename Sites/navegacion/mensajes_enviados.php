@@ -1,13 +1,29 @@
 <?php session_start(); ?>
 <?php include('../templates/header.html');   ?>
-<?php include('../templates/navbar.php'); 
-include('../library/Requests.php');  ?>
+<?php include('../templates/navbar.php');  ?>
 
 <?php 
+$query = "SELECT uid FROM Usuarios WHERE Usuarios.uid = ?";
 
-$response = Requests::get('https://entrega5-2350-api-heroku.herokuapp.com/users');
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result = $db -> prepare($query);
+$result -> bindParam(1, $_SESSION['current_uid']);
+$result -> execute();
+$uid = $result -> fetchAll();
 
-echo var_dump($response->body);
+$url = "https://nameless-meadow-87804.herokuapp.com/users/".$uid;
+$json = file_get_contents($url);
+$json_data = json_decode($json, true);
+foreach ($json_data as $element) {
+    // $url2 = "https://cryptic-hollows-16856.herokuapp.com/users/". $element['receptant'];
+    // $json2 = file_get_contents($url2);
+    // $json_data2 = json_decode($json2, true);
+    // echo $json_data2;
+    echo '<br/>[' . $element['date'] . ']<br />';
+    echo '<br/> Enviaste a: ' . $element['receptant'] . '<br />';
+    echo '' . $element['message'] . '<br />';
+}
+
 
 ?>
  
