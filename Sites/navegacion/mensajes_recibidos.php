@@ -25,12 +25,12 @@ $json_data = json_decode($json, true);?>
         <?php
         foreach ($json_data as $message) {
             if ($message['receptant'] == $_SESSION['current_uid']) {
-            echo '<tr><td>'.$message['mid'].'</a></td></tr>';
-            echo '<tr><td>'.$message['sender'].'</a></td></tr>';
-            echo '<tr><td>'.$message['date'].'</a></td></tr>';
-            echo '<tr><td>'.$message['lat'].'</a></td></tr>';
-            echo '<tr><td>'.$message['long'].'</a></td></tr>';
-            echo '<tr><td>'.$message['message'].'</a></td></tr>';
+            echo '<tr><td>'.$message['mid'].'</a></td>';
+            echo '<td>'.$message['sender'].'</a></td>';
+            echo '<td>'.$message['date'].'</a></td>';
+            echo '<td>'.$message['lat'].'</a></td>';
+            echo '<td>'.$message['long'].'</a></td>';
+            echo '<td>'.$message['message'].'</a></td></tr>';
         }}
         ?>
       </tbody>
