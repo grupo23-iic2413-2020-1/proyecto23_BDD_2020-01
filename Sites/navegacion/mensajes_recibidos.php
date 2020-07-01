@@ -13,7 +13,7 @@ $json_data = json_decode($json, true);?>
       <thead class="thead-dark">
         <tr style="text-align:center">
         <th>Id Mensaje</th>
-        <th>Id Remitente</th>
+        <th>Remitente</th>
         <th>Fecha</th>
         <th>Latitud</th>
         <th>Longitud</th>
@@ -25,8 +25,14 @@ $json_data = json_decode($json, true);?>
         <?php
         foreach ($json_data as $message) {
             if ($message['receptant'] == $_SESSION['current_uid']) {
+            $query = "SELECT unombre FROM Usuarios WHERE Usuarios.uid = ?";
+            #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+            $result = $db -> prepare($query);
+            $result -> bindParam(1, $message['sender']);
+            $result -> execute();
+            $user = $result -> fetchAll();
             echo '<tr><td>'.$message['mid'].'</a></td>';
-            echo '<td>'.$message['sender'].'</a></td>';
+            echo '<td>'.$user[0][0].'</a></td>';
             echo '<td>'.$message['date'].'</a></td>';
             echo '<td>'.$message['lat'].'</a></td>';
             echo '<td>'.$message['long'].'</a></td>';
