@@ -12,7 +12,7 @@ $json_data = json_decode($json, true);?>
 
       <thead class="thead-dark">
         <tr style="text-align:center">
-        <th>Id mensaje</th>
+        <th>Id Mensaje</th>
         <th>Id Remitente</th>
         <th>Fecha</th>
         <th>Latitud</th>
