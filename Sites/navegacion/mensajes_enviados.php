@@ -25,6 +25,16 @@ foreach ($json_data['messages'] as $element) {
     echo '<br/>[' . $element['date'] . ']<br />';
     echo '<br/> Enviaste a: ' . $element['receptant'] . '<br />';
     echo '' . $element['message'] . '<br />';
+    $query = "SELECT unombre FROM Usuarios WHERE Usuarios.uid = ?";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result = $db -> prepare($query);
+    $result -> bindParam(1, $element['receptant']);
+    $result -> execute();
+    $user = $result -> fetchAll();
+    $user_nombre = $user[0][0];
+    echo '<br/>[' . $element['date'] . ']<br />';
+    echo '<br/> Enviaste a: ' . $user_nombre . '<br />';
+    echo '' . $element['message'] . '<br />';
 }
 
 
