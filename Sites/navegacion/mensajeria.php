@@ -34,7 +34,7 @@ $udir = $user[0][4];
 <div class="sidenav">
   
   <a href="mensajes_enviados.php">Mensajes Enviados</a>
-  <a href="#clients">Mensajes recibidos</a>
+  <a href="mensajes_recibidos.php">Mensajes recibidos</a>
   <a href="#contact">Enviar mensaje</a>
   <a href="#about">Buscar mensaje</a>
 
