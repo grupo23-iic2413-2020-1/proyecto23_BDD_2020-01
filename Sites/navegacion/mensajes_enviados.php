@@ -43,8 +43,6 @@ foreach ($json_data['messages'] as $element) {
 
   <div class="container">
 
-    <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Artistas</h1>
-
     
   </div>
 
