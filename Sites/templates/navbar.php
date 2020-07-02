@@ -44,9 +44,6 @@ include_once("../config/url_base2.php");}?>
         </div>
       </li>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo $base_url ?>/navegacion/mensajeria.php">Mensajeria</a>
-      </li>
 
       <li class="nav-item px-2">
         <form class="form-inline" action="<?php echo $base_url ?>/navegacion/busqueda.php" method="post">
