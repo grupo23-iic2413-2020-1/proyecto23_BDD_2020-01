@@ -3,12 +3,16 @@ include('../templates/header.html');
 include('../templates/navbar.php');  
 require("../config/conexion.php");  
 
+$fechai = $_POST["fechai"];
+$fechat = $_POST["fechat"];
+
 $url = "https://nameless-meadow-87804.herokuapp.com/users/".$_SESSION['current_uid'];
 $json = file_get_contents($url);
 $json_data = json_decode($json, true);
 $marker_list = [];
 foreach ($json_data['messages'] as $message) {
-    array_push($marker_list, ["lat" => $message['lat'], "long" => $message['long']]);
+    if ($message['date'] >= $fechai and $message['date'] <= $fechat){
+    array_push($marker_list, ["lat" => $message['lat'], "long" => $message['long']]);}
 }
 ?>
 
@@ -20,7 +24,7 @@ foreach ($json_data['messages'] as $message) {
 	crossorigin=""/>
  </head>
  <body class= "bg-secondary text-white">
- 
+
  <?php echo '<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mapa de mensajes enviados</h1>'; ?> 
  <?php 
     $lat = 0;
