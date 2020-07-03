@@ -14,7 +14,20 @@ $json_data = json_decode($json, true);?>
     <div class="container">
       <div class='col-no-gutters'>
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Buscar Mensajes</h1>
+        <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Ingrese las características del mensaje</h2>
+        <h3 align="center"> Indique el texto en los campos respectivos</h3>
 
+        <form align="center" action="consultas/consulta_3.php" method="post">
+        Requerido:
+        <input class="w-25" type="text" name="required">
+        <br/><br/>
+        Deseado:
+        <input class="w-25" type="text" name="desired">
+        <br/><br/>
+        Prohibido:
+        <input class="w-25" type="text" name="forbidden">
+        <br/><br/>
+        <input class="btn btn-primary" type="submit" value="Buscar">
         <?php include('../templates/footer.html'); ?>
       </div>
     </div>
