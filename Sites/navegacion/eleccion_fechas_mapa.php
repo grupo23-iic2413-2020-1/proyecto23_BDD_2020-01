@@ -18,7 +18,7 @@ require("../config/conexion.php");  ?>
             </div>
             <br>
             <div align='center' >
-                <input class="btn btn-primary" align="center" type="submit" value="Crear Itinerario" name='Buscar'>
+                <input class="btn btn-primary" align="center" type="submit" value="Crear Mapa" name='Buscar'>
             </div>
         </div>
     </form>
