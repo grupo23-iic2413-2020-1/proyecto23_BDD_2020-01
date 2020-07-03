@@ -20,20 +20,22 @@ foreach ($json_data['messages'] as $message) {
 	crossorigin=""/>
  </head>
  <body class= "bg-secondary text-white">
+ 
  <?php echo '<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mapa de mensajes enviados</h1>'; ?> 
  <?php 
-    $lat = -33.4726900;
-    $long = -70.6472400;
+    $lat = 0;
+    $long = 0;
 ?>
 
  <div id="mapid" style="height: 500px"></div>
+ <?php include('../templates/footer.html'); ?>
  </body>
 
  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
 <script>
-    var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 6);
+    var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 1);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -44,4 +46,5 @@ foreach ($json_data['messages'] as $message) {
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
     } ?>
 </script>
+
 </html>
