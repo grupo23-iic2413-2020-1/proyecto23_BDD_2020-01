@@ -65,7 +65,7 @@ include_once("../config/url_base2.php");}?>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/perfil.php'> Perfil </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/mensajeria.php'> Mensajería </a>
+            <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/mensajes_recibidos.php'> Mensajería </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href='<?php echo $base_url ?>/navegacion/log_out.php'> Cerrar sesión </a>
           </div>
