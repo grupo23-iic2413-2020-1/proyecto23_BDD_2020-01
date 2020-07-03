@@ -19,8 +19,8 @@ foreach ($json_data['messages'] as $message) {
 	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 	crossorigin=""/>
  </head>
- <body>
- <?php echo '<h1 class= "text-dark" style="text-align: center; margin-top: 1rem">Mapa de mensajes enviados</h1>'; ?> 
+ <body class= "bg-secondary text-white">
+ <?php echo '<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mapa de mensajes enviados</h1>'; ?> 
  <?php 
     $lat = -33.4726900;
     $long = -70.6472400;

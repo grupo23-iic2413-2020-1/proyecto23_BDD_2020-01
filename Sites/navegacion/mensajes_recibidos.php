@@ -7,7 +7,8 @@ $url = "https://nameless-meadow-87804.herokuapp.com/messages";
 $json = file_get_contents($url);
 $json_data = json_decode($json, true);?>
 <div class="container">
-<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Lugares</h1>
+<body class= "bg-secondary text-white">
+<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes recibidos</h1>
 <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 
       <thead class="thead-dark">
@@ -40,8 +41,11 @@ $json_data = json_decode($json, true);?>
         }}
         ?>
       </tbody>
-<br>
+</table>
 <?php include('../templates/footer.html'); ?>
 </div>
+
+
+
 
 

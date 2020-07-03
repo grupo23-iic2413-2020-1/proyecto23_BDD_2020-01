@@ -17,6 +17,10 @@ $uid = $user[0][0];
 $url = "https://nameless-meadow-87804.herokuapp.com/users/".$uid;
 $json = file_get_contents($url);
 $json_data = json_decode($json, true); ?>
+<div class="container">
+<body class= "bg-secondary text-white">
+<h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes Enviados</h1>
+<table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
 <thead class="thead-dark">
         <tr style="text-align:center">
         <th>Id Mensaje</th>
@@ -48,24 +52,7 @@ foreach ($json_data['messages'] as $element) {
     echo '<td>'.$element['long'].'</a></td>';
     echo '<td>'.$element['message'].'</a></td></tr>';
 }
-
-
 ?>
- 
-<body class= "bg-secondary text-white">
-<?php 
-# Muestra una tabla con todos los artistas
-
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
-
-  #Se construye la consulta como un string
- 
-  ?>
-
-  <div class="container">
-
-    
-  </div>
-
+</table>
 <?php include('../templates/footer.html'); ?>
+</div>
