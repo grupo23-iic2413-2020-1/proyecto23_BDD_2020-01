@@ -36,8 +36,7 @@ $udir = $user[0][4];
   <a href="mensajes_enviados.php">Mensajes Enviados</a>
   <a href="mensajes_recibidos.php">Mensajes recibidos</a>
   <a href="#contact">Enviar mensaje</a>
-  <a href="mensajes_recibidos.php">Buscar mensaje</a>
-  <a href= "mensajes_enviados.php">PRueba viendo</a>
+  <a href="text_search.php">Buscar mensaje</a>
   <a href="eleccion_fechas_mapa.php">Mapa de mensajes</a>
 
 </div>

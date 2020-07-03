@@ -14,7 +14,7 @@
       <a class="nav-link btn btn-success text-white" href="#">Enviar <br> Mensaje</a>
     </li>
     <li class="nav-item mt-3">
-      <a class="nav-link btn btn-success text-white" href="#">Buscar <br> Mensaje</a>
+      <a class="nav-link btn btn-success text-white" href="text_search.php">Buscar <br> Mensaje</a>
     </li>
     <li class="nav-item mt-3">
       <a class="nav-link btn btn-success text-white" href="eleccion_fechas_mapa.php">Mapa de <br> Mensajes</a>
