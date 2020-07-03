@@ -40,6 +40,8 @@ $json_data = json_decode($json, true);?>
         }}
         ?>
       </tbody>
+<br>
+<?php include('../templates/footer.html'); ?>
 </div>
 
-<?php include('../templates/footer.html'); ?>
+
