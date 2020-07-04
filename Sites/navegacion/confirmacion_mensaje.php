@@ -31,6 +31,7 @@ $query_2 = "SELECT * FROM Usuarios WHERE Usuarios.username = $receptor";
 $result_2 = $db -> prepare($query_2);
 $result_2 -> execute();
 $user_receptor = $result_2 -> fetchAll();
+echo $user_receptor;
 
 
 
