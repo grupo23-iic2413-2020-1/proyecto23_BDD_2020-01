@@ -99,7 +99,6 @@ $user_receptor = $result_2 -> fetchAll();
         }
         ?>
         </table>
-      <?php } ?>
       </div>
     </div>
   </div>
