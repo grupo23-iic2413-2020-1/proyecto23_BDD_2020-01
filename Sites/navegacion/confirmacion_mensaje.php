@@ -24,7 +24,7 @@ $user = $result -> fetchAll();
 
 $uid = $user[0][0];
 
-$query_2 = "SELECT * FROM Usuarios WHERE Usuarios.unombre = $receptor";
+$query_2 = "SELECT * FROM Usuarios WHERE Usuarios.username = $receptor";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result_2 = $db -> prepare($query_2);
