@@ -18,7 +18,7 @@ $json_data = json_decode($json, true);?>
 
         <form align="center" action="confirmacion_mensaje.php" method="post">
         Usuario destinatario:
-        <input class="w-25" type="text" name="user">
+        <input class="w-25" type="text" name="receptor">
         <br/><br/>
         Contenido mensaje:
         <br/>

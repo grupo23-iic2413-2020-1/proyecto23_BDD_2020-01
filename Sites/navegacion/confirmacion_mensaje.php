@@ -5,7 +5,7 @@ require("../config/conexion.php"); ?>
 
 <?php 
 
-$receptor = $_POST["user"];
+$receptor = $_POST["receptor"];
 $contenido = $_POST["contenido"];
 
 $new_arr[]= unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']));
@@ -24,6 +24,7 @@ $user = $result -> fetchAll();
 
 $uid = $user[0][0];
 
+echo $receptor
 $query_2 = "SELECT * FROM Usuarios WHERE Usuarios.username = $receptor";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
