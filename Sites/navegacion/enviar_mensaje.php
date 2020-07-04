@@ -13,7 +13,7 @@ $json_data = json_decode($json, true);?>
     </div>
     <div class="container">
       <div class='col-no-gutters'>
-        <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Envir un nuevo mensaje</h1>
+        <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Enviar un nuevo mensaje</h1>
         <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Ingrese las características del mensaje</h2>
 
         <form align="center" action="#" method="post">

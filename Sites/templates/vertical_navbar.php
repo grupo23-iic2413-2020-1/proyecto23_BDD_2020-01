@@ -11,7 +11,7 @@
       <a class="nav-link btn btn-success text-white" href="mensajes_enviados.php">Mensajes <br> Enviados</a>
     </li>
     <li class="nav-item mt-3">
-      <a class="nav-link btn btn-success text-white" href="#">Enviar <br> Mensaje</a>
+      <a class="nav-link btn btn-success text-white" href="enviar_mensaje.php">Enviar <br> Mensaje</a>
     </li>
     <li class="nav-item mt-3">
       <a class="nav-link btn btn-success text-white" href="text_search.php">Buscar <br> Mensaje</a>
