@@ -32,12 +32,53 @@ $options = array(
 
 $context  = stream_context_create( $options );
 $result = file_get_contents( $url, True, $context );
-$response = json_decode($result);
-
-echo $response
+$json_data = json_decode($result, True);
 
 
 ?>
+
+<body class= "bg-secondary text-white">
+  <div class='row'>
+    <div class='col-xs'>
+      <?php include('../templates/vertical_navbar.php');  ?>
+    </div>
+    
+    <div class="container">
+      <div class='col-no-gutters'>
+        <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes Enviados</h1>
+        <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
+        <thead class="thead-dark">
+                <tr style="text-align:center">
+                <th>Id Mensaje</th>
+                <th>Destinatario</th>
+                <th>Fecha</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>Contenido</th>
+                </tr>
+              </thead>
+              <tbody>
+        <?php 
+        foreach ($json_data as $element) {
+            $url_receptant = "https://nameless-meadow-87804.herokuapp.com/users/".$element['receptant'];
+            $json_2 = file_get_contents($url_receptant);
+            $json_data_2 = json_decode($json_2, true);
+            $user_nombre = $json_data_2['user'][0]['name'];
+
+            echo '<tr><td>'.$element['mid'].'</a></td>';
+            echo '<td>'.$user_nombre.'</a></td>';
+            echo '<td>'.$element['date'].'</a></td>';
+            echo '<td>'.$element['lat'].'</a></td>';
+            echo '<td>'.$element['long'].'</a></td>';
+            echo '<td>'.$element['message'].'</a></td></tr>';
+        }
+        ?>
+        </table>
+        <?php include('../templates/footer.html'); ?>
+      </div>
+    </div>
+  </div>
+</body>
 
 
 <?php include('../templates/footer.html'); ?>
