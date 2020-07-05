@@ -9,6 +9,8 @@ $receptor = $_POST["receptor"];
 $contenido = $_POST["contenido"];
 
 $new_arr[]= unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']));
+$latitud = floatval($new_arr[0]['geoplugin_latitude']);
+$longitud = floatval($new_arr[0]['geoplugin_longitude']);
 
 $fecha = date('Y-m-d');
 
@@ -34,10 +36,6 @@ foreach ($json_data as $element) {
       $uid_receptor = $element['uid'];
   }} 
 
-  echo gettype($fecha);
-  echo gettype($new_arr[0]['geoplugin_latitude']);
-  echo gettype($new_arr[0]['geoplugin_longitude']);
-
 
 ?>
 
@@ -55,8 +53,8 @@ foreach ($json_data as $element) {
       <?php } else { 
         $data = array(
           'date'      => $fecha,
-          'lat'    => $new_arr[0]['geoplugin_latitude'],
-          'long'       => $new_arr[0]['geoplugin_longitude'],
+          'lat'    => $latitud,
+          'long'       => $longitud,
           'message' => $contenido,
           'receptant'      => $uid_receptor,
           'sender'      => $uid
@@ -94,8 +92,8 @@ foreach ($json_data as $element) {
         <?php 
           echo '<td>'.$uid_receptor.'</a></td>';
           echo '<td>'.$fecha.'</a></td>';
-          echo '<td>'.$new_arr[0]['geoplugin_latitude'].'</a></td>';
-          echo '<td>'.$new_arr[0]['geoplugin_longitude'].'</a></td>';
+          echo '<td>'.$latitud.'</a></td>';
+          echo '<td>'.$longitud.'</a></td>';
           echo '<td>'.$contenido.'</a></td></tr>';
         }
         ?>
