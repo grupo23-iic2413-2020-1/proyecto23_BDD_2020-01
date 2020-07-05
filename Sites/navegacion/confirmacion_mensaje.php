@@ -79,7 +79,6 @@ foreach ($json_data as $element) {
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
         <thead class="thead-dark">
                 <tr style="text-align:center">
-                <th>Id Mensaje</th>
                 <th>Destinatario</th>
                 <th>Fecha</th>
                 <th>Latitud</th>
@@ -89,7 +88,6 @@ foreach ($json_data as $element) {
               </thead>
               <tbody>
         <?php 
-          echo '<tr><td>'.$mid.'</a></td>';
           echo '<td>'.$uid_receptor.'</a></td>';
           echo '<td>'.$fecha.'</a></td>';
           echo '<td>'.$new_arr[0]['geoplugin_latitude'].'</a></td>';
