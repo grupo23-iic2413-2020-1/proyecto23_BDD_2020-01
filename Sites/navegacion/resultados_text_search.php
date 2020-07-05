@@ -18,7 +18,8 @@ $data = array(
   'forbidden'       => [$forbidden]
 );
 if(!empty($uid_emisor)) {
-  $data['userId'] = $uid_emisor}
+  $data['userId'] = $uid_emisor;
+}
 
 $options = array(
   'http' => array(
