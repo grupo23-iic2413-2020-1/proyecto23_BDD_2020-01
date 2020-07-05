@@ -77,7 +77,7 @@ foreach ($json_data as $element) {
         
         ?>
 
-        <h1 class= "text-white" style="text-align: center; margin-top: 1rem"><?php $response ?></h1>
+        <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensaje enviado con éxito</h1>
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
         <thead class="thead-dark">
                 <tr style="text-align:center">
