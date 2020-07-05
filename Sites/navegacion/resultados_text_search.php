@@ -33,7 +33,7 @@ $result = file_get_contents( $url, True, $context );
 $response = json_decode($result, True);
 
 foreach ($json_data as $message) {
-  echo $message;
+  echo $message; }
 
 
 ?>
