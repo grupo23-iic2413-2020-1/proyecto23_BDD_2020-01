@@ -47,10 +47,10 @@ $json_data = json_decode($result, True);
       <div class='col-no-gutters'>
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes Enviados</h1>
         <br>
-        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Requerido: '.$required ?></h2>
-        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Deseado: '.$desired ?></h2>
-        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Prohibido: '.$forbidden ?></h2>
-        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Id emisor: '.$uid_emisor ?></h2>
+        <?php echo 'Requerido: '.$required ?>
+        <?php echo 'Deseado: '.$desired ?>
+        <?php echo 'Prohibido: '.$forbidden ?>
+        <?php echo 'Id emisor: '.$uid_emisor ?>
         <br>
 
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
@@ -86,6 +86,3 @@ $json_data = json_decode($result, True);
     </div>
   </div>
 </body>
-
-
-<?php include('../templates/footer.html'); ?>
