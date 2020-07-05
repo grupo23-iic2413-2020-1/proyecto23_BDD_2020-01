@@ -48,8 +48,11 @@ $json_data = json_decode($result, True);
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes Enviados</h1>
         <br>
         <?php echo 'Requerido: '.$required ?>
+        <br>
         <?php echo 'Deseado: '.$desired ?>
+        <br>
         <?php echo 'Prohibido: '.$forbidden ?>
+        <br>
         <?php echo 'Id emisor: '.$uid_emisor ?>
         <br>
 
