@@ -68,7 +68,7 @@ foreach ($json_data as $element) {
         );
         
         $context  = stream_context_create( $options );
-        $result = file_get_contents( $url, false, $context );
+        $result = file_get_contents( $url, True, $context );
         $response = json_decode( $result );
 
 
