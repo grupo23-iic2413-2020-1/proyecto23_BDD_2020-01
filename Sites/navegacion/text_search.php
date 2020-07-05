@@ -16,7 +16,7 @@ $json_data = json_decode($json, true);?>
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Buscar Mensajes</h1>
         <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Ingrese las características del mensaje</h2>
 
-        <form align="center" action="#" method="post">
+        <form align="center" action="busqueda_mensajes.php" method="post">
         Requerido:
         <input class="w-25" type="text" name="required">
         <br/><br/>
@@ -25,6 +25,9 @@ $json_data = json_decode($json, true);?>
         <br/><br/>
         Prohibido:
         <input class="w-25" type="text" name="forbidden">
+        <br/><br/>
+        Id de emisor:
+        <input class="w-25" type="text" name="uid_emisor">
         <br/><br/>
         <input class="btn btn-primary" type="submit" value="Buscar">
         <?php include('../templates/footer.html'); ?>
