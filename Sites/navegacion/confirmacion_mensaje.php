@@ -24,16 +24,15 @@ $user = $result -> fetchAll();
 
 $uid = $user[0][0];
 
-echo $receptor;
-$query_2 = "SELECT * FROM Usuarios WHERE Usuarios.username = $receptor";
+$url_users = "https://nameless-meadow-87804.herokuapp.com/users";
+$json = file_get_contents($url_users);
+$json_data = json_decode($json, true);
 
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-$result_2 = $db -> prepare($query_2);
-$result_2 -> execute();
-$user_receptor = $result_2 -> fetchAll();
-echo $user_receptor;
-
-
+$uid_receptor = -1;
+foreach ($json_data as $element) {
+  if($element['name'] == $receptor) {
+      $uid_receptor = $element['uid'];
+  }} 
 
 
 ?>
@@ -46,12 +45,10 @@ echo $user_receptor;
     
     <div class="container">
       <div class='col-no-gutters'>
-      <?php if(empty($user_receptor)) { ?>
+      <?php if($uid_receptor == -1) { ?>
           <h1 class= "text-white" style="text-align: center; margin-top: 1rem">No existe usuario ingresado</h1>
 
       <?php } else { 
-        $uid_receptor = $user_receptor[0][0];
-        
         $data = array(
           'date'      => $fecha,
           'lat'    => $new_arr[0]['geoplugin_latitude'],
