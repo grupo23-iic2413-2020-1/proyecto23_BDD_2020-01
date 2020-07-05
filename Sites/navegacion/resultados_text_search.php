@@ -47,10 +47,10 @@ $json_data = json_decode($result, True);
       <div class='col-no-gutters'>
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes Enviados</h1>
         <br>
-        <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Required: <?php $required ?></h2>
-        <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Required: <?php $desired ?></h2>
-        <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Required: <?php $forbidden ?></h2>
-        <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Required: <?php $uid_emisor ?></h2>
+        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Requerido: '.$required ?></h2>
+        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Deseado: '.$desired ?></h2>
+        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Prohibido: '.$forbidden ?></h2>
+        <h2 class= "text-white" style="text-align: left; margin-top: 1rem"><?php 'Id emisor: '.$uid_emisor ?></h2>
         <br>
 
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
