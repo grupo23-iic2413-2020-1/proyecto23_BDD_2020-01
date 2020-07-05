@@ -10,7 +10,8 @@ $contenido = $_POST["contenido"];
 
 $new_arr[]= unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']));
 
-$fecha = date('Y-m-d');
+$date = date('Y-m-d');
+$fecha = $date->format('Y-m-d');
 
 $url = "https://nameless-meadow-87804.herokuapp.com/messages";
 
