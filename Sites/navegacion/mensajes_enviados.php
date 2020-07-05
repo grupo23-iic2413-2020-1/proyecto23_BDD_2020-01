@@ -16,7 +16,9 @@ $uid = $user[0][0];
 
 $url = "https://nameless-meadow-87804.herokuapp.com/users/".$uid;
 $json = file_get_contents($url);
-$json_data = json_decode($json, true); ?>
+$json_data = json_decode($json, true); 
+
+?>
 <body class= "bg-secondary text-white">
   <div class='row'>
     <div class='col-xs'>
@@ -44,13 +46,14 @@ $json_data = json_decode($json, true); ?>
             // $json2 = file_get_contents($url2);
             // $json_data2 = json_decode($json2, true);
             // echo $json_data2;
-            $query = "SELECT unombre FROM Usuarios WHERE Usuarios.uid = ?";
-            #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-            $result = $db -> prepare($query);
-            $result -> bindParam(1, $element['receptant']);
-            $result -> execute();
-            $user = $result -> fetchAll();
-            $user_nombre = $user[0][0];
+            $url_users = "https://nameless-meadow-87804.herokuapp.com/users";
+            $json_2 = file_get_contents($url_users);
+            $json_data_2 = json_decode($json, true);
+            foreach ($json_data_2 as $persona) {
+              if($persona['uid'] == $element['receptant']) {
+                  $user_nombre = $persona['name'];
+              }} 
+
             echo '<tr><td>'.$element['mid'].'</a></td>';
             echo '<td>'.$user_nombre.'</a></td>';
             echo '<td>'.$element['date'].'</a></td>';
