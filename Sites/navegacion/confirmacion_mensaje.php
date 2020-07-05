@@ -10,8 +10,7 @@ $contenido = $_POST["contenido"];
 
 $new_arr[]= unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']));
 
-$date = date('Y-m-d');
-$fecha = $date->format('Y-m-d');
+$fecha = date('Y-m-d');
 
 $url = "https://nameless-meadow-87804.herokuapp.com/messages";
 
@@ -34,6 +33,10 @@ foreach ($json_data as $element) {
   if($element['name'] == $receptor) {
       $uid_receptor = $element['uid'];
   }} 
+
+  echo gettype($fecha);
+  echo gettype($new_arr[0]['geoplugin_latitude']);
+  echo gettype($new_arr[0]['geoplugin_longitude']);
 
 
 ?>
