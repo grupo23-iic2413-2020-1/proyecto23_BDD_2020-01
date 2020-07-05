@@ -42,10 +42,6 @@ $json_data = json_decode($json, true);
               <tbody>
         <?php 
         foreach ($json_data['messages'] as $element) {
-            // $url2 = "https://cryptic-hollows-16856.herokuapp.com/users/". $element['receptant'];
-            // $json2 = file_get_contents($url2);
-            // $json_data2 = json_decode($json2, true);
-            // echo $json_data2;
             $url_receptant = "https://nameless-meadow-87804.herokuapp.com/users/".$element['receptant'];
             $json_2 = file_get_contents($url_receptant);
             $json_data_2 = json_decode($json_2, true);

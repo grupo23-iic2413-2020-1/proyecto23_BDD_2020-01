@@ -31,14 +31,13 @@ $json_data = json_decode($json, true);?>
             <?php
             foreach ($json_data as $message) {
                 if ($message['receptant'] == $_SESSION['current_uid']) {
-                $query = "SELECT unombre FROM Usuarios WHERE Usuarios.uid = ?";
-                #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-                $result = $db -> prepare($query);
-                $result -> bindParam(1, $message['sender']);
-                $result -> execute();
-                $user = $result -> fetchAll();
+                  $url_sender = "https://nameless-meadow-87804.herokuapp.com/users/".$message['sender'];
+                  $json_2 = file_get_contents($url_sender);
+                  $json_data_2 = json_decode($json_2, true);
+                  $user_nombre = $json_data_2['user'][0]['name'];
+
                 echo '<tr><td>'.$message['mid'].'</a></td>';
-                echo '<td>'.$user[0][0].'</a></td>';
+                echo '<td>'.$user_nombre.'</a></td>';
                 echo '<td>'.$message['date'].'</a></td>';
                 echo '<td>'.$message['lat'].'</a></td>';
                 echo '<td>'.$message['long'].'</a></td>';
