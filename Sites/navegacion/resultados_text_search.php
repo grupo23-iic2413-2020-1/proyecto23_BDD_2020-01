@@ -16,9 +16,9 @@ $data = array(
   'required'      => [$required],
   'desired'    => [$desired],
   'forbidden'       => [$forbidden]
-  if(!empty($uid_emisor)) {
-    ,'userId' => $uid_emisor}
 );
+if(!empty($uid_emisor)) {
+  $data['userId'] => $uid_emisor}
 
 $options = array(
   'http' => array(
