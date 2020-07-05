@@ -46,13 +46,10 @@ $json_data = json_decode($json, true);
             // $json2 = file_get_contents($url2);
             // $json_data2 = json_decode($json2, true);
             // echo $json_data2;
-            $url_users = "https://nameless-meadow-87804.herokuapp.com/users";
-            $json_2 = file_get_contents($url_users);
-            $json_data_2 = json_decode($json, true);
-            foreach ($json_data_2 as $persona) {
-              if($persona['uid'] == $element['receptant']) {
-                  $user_nombre = $persona['name'];
-              }} 
+            $url_receptant = "https://nameless-meadow-87804.herokuapp.com/users/".$element['receptant'];
+            $json_2 = file_get_contents($url_receptant);
+            $json_data_2 = json_decode($json_2, true);
+            $user_nombre = $json_data_2['user'][0]['name'];
 
             echo '<tr><td>'.$element['mid'].'</a></td>';
             echo '<td>'.$user_nombre.'</a></td>';
