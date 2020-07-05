@@ -13,10 +13,14 @@ $uid_emisor = $_POST["uid_emisor"];
 $url = "https://nameless-meadow-87804.herokuapp.com/text-search";
 
 $data = array(
-  'required'      => $required,
-  'desired'    => $desired,
-  'forbidden'       => $forbidden,
-  'userId' => $uid_emisor
+  if(!empty($required) {
+    'required'      => [$required],}
+  if(!empty($desired) {
+    'desired'    => [$desired],}
+  if(!empty($forbidden) {
+    'forbidden'       => [$forbidden],}
+  if(!empty($uid_emisor) {
+    'userId' => $uid_emisor}
 );
 
 $options = array(
