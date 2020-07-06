@@ -1,6 +1,6 @@
 <?php session_start();
 if ($_SESSION['loggedin'] == False) {
-  header("location: ../errores/perfil1.php");
+  header("location: ../errores/mensajes_login.php");
   exit;}  
 include('../templates/header.html');
 include('../templates/navbar.php');  
