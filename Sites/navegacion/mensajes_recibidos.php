@@ -3,7 +3,7 @@ include('../templates/header.html');
 include('../templates/navbar.php');  
 require("../config/conexion.php"); 
 if ($_SESSION['loggedin'] == False) {
-  header("location: ../errores/perfil1.php");
+  header("location: ../errores/mensajes_login.php");
   exit;} 
 
 $url = "https://nameless-meadow-87804.herokuapp.com/messages";
