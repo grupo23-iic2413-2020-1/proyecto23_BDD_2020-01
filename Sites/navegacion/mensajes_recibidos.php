@@ -1,10 +1,11 @@
 <?php session_start();
+if ($_SESSION['loggedin'] == False) {
+  header("location: ../errores/perfil1.php");
+  exit;}  
 include('../templates/header.html');
 include('../templates/navbar.php');  
 require("../config/conexion.php"); 
-if ($_SESSION['loggedin'] == False) {
-  header("location: ../errores/perfil1.php");
-  exit;} 
+
 
 $url = "https://nameless-meadow-87804.herokuapp.com/messages";
 $json = file_get_contents($url);

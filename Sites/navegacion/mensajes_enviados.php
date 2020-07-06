@@ -1,13 +1,14 @@
-<?php session_start(); ?>
+<?php session_start();
+if ($_SESSION['loggedin'] == False) {
+  header("location: ../errores/perfil1.php");
+  exit;}  ?>
 <?php include('../templates/header.html');   ?>
 <?php include('../templates/navbar.php');  
 require("../config/conexion.php"); ?>
 
 
 <?php 
-if ($_SESSION['loggedin'] == False) {
-  header("location: ../errores/perfil1.php");
-  exit;} 
+
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
