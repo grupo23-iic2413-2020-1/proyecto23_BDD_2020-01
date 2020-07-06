@@ -2,6 +2,9 @@
 include('../templates/header.html');
 include('../templates/navbar.php');  
 require("../config/conexion.php"); 
+if ($_SESSION['loggedin'] == False) {
+  header("location: ../errores/perfil1.php");
+  exit;} 
 
 $url = "https://nameless-meadow-87804.herokuapp.com/messages";
 $json = file_get_contents($url);
@@ -18,7 +21,6 @@ $json_data = json_decode($json, true);?>
 
           <thead class="thead-dark">
             <tr style="text-align:center">
-            <th>Id Mensaje</th>
             <th>Remitente</th>
             <th>Fecha</th>
             <th>Latitud</th>
@@ -36,7 +38,6 @@ $json_data = json_decode($json, true);?>
                   $json_data_2 = json_decode($json_2, true);
                   $user_nombre = $json_data_2['user'][0]['name'];
 
-                echo '<tr><td>'.$message['mid'].'</a></td>';
                 echo '<td>'.$user_nombre.'</a></td>';
                 echo '<td>'.$message['date'].'</a></td>';
                 echo '<td>'.$message['lat'].'</a></td>';

@@ -3,7 +3,11 @@
 <?php include('../templates/navbar.php');  
 require("../config/conexion.php"); ?>
 
+
 <?php 
+if ($_SESSION['loggedin'] == False) {
+  header("location: ../errores/perfil1.php");
+  exit;} 
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -31,7 +35,6 @@ $json_data = json_decode($json, true);
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
         <thead class="thead-dark">
                 <tr style="text-align:center">
-                <th>Id Mensaje</th>
                 <th>Destinatario</th>
                 <th>Fecha</th>
                 <th>Latitud</th>
@@ -47,7 +50,6 @@ $json_data = json_decode($json, true);
             $json_data_2 = json_decode($json_2, true);
             $user_nombre = $json_data_2['user'][0]['name'];
 
-            echo '<tr><td>'.$element['mid'].'</a></td>';
             echo '<td>'.$user_nombre.'</a></td>';
             echo '<td>'.$element['date'].'</a></td>';
             echo '<td>'.$element['lat'].'</a></td>';
