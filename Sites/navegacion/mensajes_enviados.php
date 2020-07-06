@@ -6,7 +6,7 @@ require("../config/conexion.php"); ?>
 
 <?php 
 if ($_SESSION['loggedin'] == False) {
-  header("location: ../errores/mensajes_login.php");
+  header("location: ../errores/perfil1.php");
   exit;} 
 $query = "SELECT * FROM Usuarios WHERE Usuarios.uid = ?";
 
