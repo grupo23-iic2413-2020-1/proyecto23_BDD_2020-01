@@ -18,16 +18,16 @@ $json_data = json_decode($json, true);?>
 
         <form align="center" action="resultados_text_search.php" method="post">
         Requerido:
-        <input class="w-25" type="text" name="required">
+        <input class="form-control" type="text" name="required", height=>
         <br/><br/>
         Deseado:
-        <input class="w-25" type="text" name="desired">
+        <input class="form-control" type="text" name="desired">
         <br/><br/>
         Prohibido:
-        <input class="w-25" type="text" name="forbidden">
+        <input class="form-control" type="text" name="forbidden">
         <br/><br/>
         Id de emisor:
-        <input class="w-25" type="text" name="uid_emisor">
+        <input class="form-control" type="text" name="uid_emisor">
         <br/><br/>
         <input class="btn btn-primary" type="submit" value="Buscar">
         <?php include('../templates/footer.html'); ?>
