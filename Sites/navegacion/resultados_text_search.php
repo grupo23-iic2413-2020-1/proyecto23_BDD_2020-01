@@ -41,7 +41,7 @@ if(!empty($uid_emisor)) {
   {
   $uid_emisor[$key] = intval($value);
   }
-  $data['userId'] = json_encode($uid_emisor);
+  $data['userId'] = $uid_emisor;
   }
 
 echo json_encode($data, JSON_UNESCAPED_UNICODE);
@@ -72,13 +72,13 @@ $json_data = json_decode($result, True);
       <div class='col-no-gutters'>
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Mensajes Enviados</h1>
         <br>
-        <?php echo 'Requerido: '.$required ?>
+        <?php echo 'Requerido: '.$data['required'] ?>
         <br>
-        <?php echo 'Deseado: '.$desired ?>
+        <?php echo 'Deseado: '.$data['desired'] ?>
         <br>
-        <?php echo 'Prohibido: '.$forbidden ?>
+        <?php echo 'Prohibido: '.$data['forbidden'] ?>
         <br>
-        <?php echo 'Id emisor: '.$uid_emisor ?>
+        <?php echo 'Id emisor: '.$data['userId'] ?>
         <br>
 
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
