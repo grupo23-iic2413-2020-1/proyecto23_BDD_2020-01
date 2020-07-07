@@ -18,7 +18,7 @@ $json_data = json_decode($json, true);?>
 
         <form align="center" action="resultados_text_search.php" method="post">
         Requerido:
-        <input class="form-control" type="text" name="required" style="width: 30em; height: 2em;">
+        <input class="form-control" type="text" name="required" style="align: center; width: 20em; height: 2em;">
         <br/><br/>
         Deseado:
         <input class="form-control" type="text" name="desired">
