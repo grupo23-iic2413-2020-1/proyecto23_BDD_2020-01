@@ -16,7 +16,7 @@ $json_data = json_decode($json, true);?>
       <div class='col-no-gutters'>
         <h1 class= "text-white" style="text-align: center; margin-top: 1rem">Buscar Mensajes</h1>
         <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Ingrese las características del mensaje</h2>
-
+        <h3 class= "text-white" style="text-align: center; margin-top: 1rem">(separar con '|' si desea agregar mas de un elemento)</h3>
         <form align="center" action="resultados_text_search.php" method="post">
         Requerido:
         <input class="w-25" type="text" name="required" style="width: 25em; height: 2em;">

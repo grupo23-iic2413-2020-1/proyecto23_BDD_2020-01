@@ -5,19 +5,38 @@ require("../config/conexion.php"); ?>
 
 <?php 
 
-$required = $_POST["required"];
-$desired = $_POST["desired"];
-$forbidden = $_POST["forbidden"];
-$uid_emisor = $_POST["uid_emisor"];
+$required_pre = $_POST["required"];
+$desired_pre = $_POST["desired"];
+$forbidden_pre = $_POST["forbidden"];
+$uid_emisor_pre = $_POST["uid_emisor"];
 
 $url = "https://nameless-meadow-87804.herokuapp.com/text-search";
 
+if(!empty($required_pre)) {
+  $required = json_encode(explode("|", $required_pre));
+} else {
+  $required = [];
+}
+
+if(!empty($desired_pre)) {
+  $desired = json_encode(explode("|", $desired_pre));
+} else {
+  $desired = [];
+}
+
+if(!empty($forbidden_pre)) {
+$forbidden = json_encode(explode("|", $forbidden_pre));
+} else {
+  $forbidden = [];
+}
+
 $data = array(
-  'required'      => [$required],
-  'desired'    => [$desired],
-  'forbidden'       => [$forbidden]
+  'required'      => $required,
+  'desired'    => $desired,
+  'forbidden'       => $forbidden
 );
 if(!empty($uid_emisor)) {
+  $uid_emisor = json_encode(explode("|", $uid_emisor_pre));
   $data['userId'] = intval($uid_emisor);
 }
 
