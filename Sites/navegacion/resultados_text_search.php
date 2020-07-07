@@ -36,9 +36,15 @@ $data = array(
   'forbidden'       => $forbidden
 );
 if(!empty($uid_emisor)) {
-  $uid_emisor = json_encode(explode("|", $uid_emisor_pre));
-  $data['userId'] = intval($uid_emisor);
+  $uid_emisor = explode("|", $uid_emisor_pre);
+  foreach($uid_emisor as $key => $value)
+{
+  $uid_emisor[$key] = intval($value);
 }
+  $data['userId'] = json_encode($uid_emisor);
+}
+
+
 
 $options = array(
   'http' => array(
