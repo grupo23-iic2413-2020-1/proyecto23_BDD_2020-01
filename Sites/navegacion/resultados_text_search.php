@@ -13,19 +13,19 @@ $uid_emisor_pre = $_POST["uid_emisor"];
 $url = "https://nameless-meadow-87804.herokuapp.com/text-search";
 
 if(!empty($required_pre)) {
-  $required = json_encode(explode("|", $required_pre));
+  $required = json_encode(explode("|", $required_pre), JSON_UNESCAPED_UNICODE);
 } else {
   $required = [];
 }
 
 if(!empty($desired_pre)) {
-  $desired = json_encode(explode("|", $desired_pre));
+  $desired = json_encode(explode("|", $desired_pre), JSON_UNESCAPED_UNICODE);
 } else {
   $desired = [];
 }
 
 if(!empty($forbidden_pre)) {
-$forbidden = json_encode(explode("|", $forbidden_pre));
+$forbidden = json_encode(explode("|", $forbidden_pre), JSON_UNESCAPED_UNICODE);
 } else {
   $forbidden = [];
 }
