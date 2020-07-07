@@ -17,6 +17,7 @@ $json_data = json_decode($json, true);?>
         <h2 class= "text-white" style="text-align: center; margin-top: 1rem">Ingrese las características del mensaje</h2>
 
         <form align="center" action="confirmacion_mensaje.php" method="post">
+        <br><br/>
         Usuario destinatario:
         <input class="w-25" type="text" name="receptor"  style="width: 20em; height: 2em;">
         <br/><br/>
