@@ -35,10 +35,13 @@ $data = array(
   'desired'    => $desired,
   'forbidden'       => $forbidden
 );
+
 if(!empty($uid_emisor)) {
   $uid_emisor = explode("|", $uid_emisor_pre);
+  echo $uid_emisor;
   foreach($uid_emisor as $key => $value)
   {
+  echo $uid_emisor[$key]
   $uid_emisor[$key] = intval($value);
   }
   $data['userId'] = $uid_emisor;
