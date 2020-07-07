@@ -39,8 +39,6 @@ $data = array(
 if(!empty($uid_emisor_pre)) {
   $uid_emisor = intval($uid_emisor_pre);
   $data['userId'] = $uid_emisor;
-  } else {
-    $uid_emisor = [];
   }
 
 $options = array(
@@ -75,7 +73,9 @@ $json_data = json_decode($result, True);
         <br>
         <?php echo 'Prohibido: '.json_encode($forbidden, JSON_UNESCAPED_UNICODE) ?>
         <br>
-        <?php echo 'Id emisor: '.$uid_emisor?>
+        <?php if(!empty($uid_emisor)) {
+          echo 'Id emisor: '.json_encode($uid_emisor, JSON_UNESCAPED_UNICODE); 
+        } else { echo 'Id emisor: ';}?>
         <br>
 
         <table class="table table-bordered table-hover bg-white" style="align-self:center;width:90%;margin: 0 auto;">
