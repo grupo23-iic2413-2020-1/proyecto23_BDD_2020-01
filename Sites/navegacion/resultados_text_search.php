@@ -44,7 +44,7 @@ if(!empty($uid_emisor)) {
   $data['userId'] = json_encode($uid_emisor);
   }
 
-echo $data;
+echo json_encode($data);
 
 $options = array(
   'http' => array(
