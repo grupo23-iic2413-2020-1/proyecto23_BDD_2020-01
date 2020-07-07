@@ -37,11 +37,7 @@ $data = array(
 );
 
 if(!empty($uid_emisor_pre)) {
-  $uid_emisor = explode("|", $uid_emisor_pre);
-  foreach($uid_emisor as $key => $value)
-  {
-  $uid_emisor[$key] = intval($value);
-  }
+  $uid_emisor = intval($uid_emisor_pre);
   $data['userId'] = $uid_emisor;
   }
 
