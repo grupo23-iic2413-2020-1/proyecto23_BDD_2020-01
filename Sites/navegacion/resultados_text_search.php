@@ -39,6 +39,8 @@ $data = array(
 if(!empty($uid_emisor_pre)) {
   $uid_emisor = intval($uid_emisor_pre);
   $data['userId'] = $uid_emisor;
+  } else {
+    $data['userId'] = [];
   }
 
 $options = array(
@@ -89,6 +91,7 @@ $json_data = json_decode($result, True);
               </thead>
               <tbody>
         <?php 
+        if(!empty($json_data)) {
         foreach ($json_data as $element) {
             $url_receptant = "https://nameless-meadow-87804.herokuapp.com/users/".$element['receptant'];
             $json_2 = file_get_contents($url_receptant);
@@ -101,7 +104,7 @@ $json_data = json_decode($result, True);
             echo '<td>'.$element['lat'].'</a></td>';
             echo '<td>'.$element['long'].'</a></td>';
             echo '<td>'.$element['message'].'</a></td></tr>';
-        }
+        }}
         ?>
         </table>
         <?php include('../templates/footer.html'); ?>
