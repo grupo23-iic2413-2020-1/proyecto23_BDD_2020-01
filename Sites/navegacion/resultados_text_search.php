@@ -14,21 +14,21 @@ $url = "https://nameless-meadow-87804.herokuapp.com/text-search";
 
 if(!empty($required_pre)) {
   $required = json_encode(explode("|", $required_pre), JSON_UNESCAPED_UNICODE);
-} else {
-  $required = [];
-}
+  } else {
+    $required = [];
+  }
 
 if(!empty($desired_pre)) {
   $desired = json_encode(explode("|", $desired_pre), JSON_UNESCAPED_UNICODE);
-} else {
-  $desired = [];
-}
+  } else {
+    $desired = [];
+  }
 
 if(!empty($forbidden_pre)) {
-$forbidden = json_encode(explode("|", $forbidden_pre), JSON_UNESCAPED_UNICODE);
-} else {
-  $forbidden = [];
-}
+  $forbidden = json_encode(explode("|", $forbidden_pre), JSON_UNESCAPED_UNICODE);
+  } else {
+    $forbidden = [];
+  }
 
 $data = array(
   'required'      => $required,
@@ -38,13 +38,13 @@ $data = array(
 if(!empty($uid_emisor)) {
   $uid_emisor = explode("|", $uid_emisor_pre);
   foreach($uid_emisor as $key => $value)
-{
+  {
   $uid_emisor[$key] = intval($value);
-}
+  }
   $data['userId'] = json_encode($uid_emisor);
-}
+  }
 
-
+echo $data
 
 $options = array(
   'http' => array(
