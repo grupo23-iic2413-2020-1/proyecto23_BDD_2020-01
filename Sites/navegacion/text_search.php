@@ -29,7 +29,7 @@ $json_data = json_decode($json, true);?>
         <input class="w-25" type="text" name="forbidden" style="width: 25em; height: 2em;">
         <br/><br/>
         Id de emisor:
-        <input class="w-25" type="text" name="uid_emisor" style="width: 25em; height: 2em;">
+        <input class="w-25" type="number" name="uid_emisor" style="width: 25em; height: 2em;">
         <br/><br/>
         <input class="btn btn-primary" type="submit" value="Buscar">
         <?php include('../templates/footer.html'); ?>
