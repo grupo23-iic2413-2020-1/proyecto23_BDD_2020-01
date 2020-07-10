@@ -51,8 +51,8 @@ $options = array(
 );
 
 $context  = stream_context_create( $options );
-$result = file_get_contents( $url, True, $context );
-$json_data = json_decode($result, True);
+$result = file_get_contents($url, False, $context);
+$json_data = json_decode($result);
 
 
 ?>
