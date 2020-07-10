@@ -44,7 +44,8 @@ $json_data = json_decode($json, true);
                 </tr>
               </thead>
               <tbody>
-        <?php 
+        <?php
+        if(!empty($uid_emisor)) { 
         foreach ($json_data['messages'] as $element) {
             $url_receptant = "https://nameless-meadow-87804.herokuapp.com/users/".$element['receptant'];
             $json_2 = file_get_contents($url_receptant);
@@ -56,7 +57,7 @@ $json_data = json_decode($json, true);
             echo '<td>'.$element['lat'].'</a></td>';
             echo '<td>'.$element['long'].'</a></td>';
             echo '<td>'.$element['message'].'</a></td></tr>';
-        }
+        }}
         ?>
         </table>
         <?php include('../templates/footer.html'); ?>
