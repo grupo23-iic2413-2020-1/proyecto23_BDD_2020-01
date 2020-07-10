@@ -60,7 +60,7 @@ include('templates/navbar.php');
 <a id="nosotros">
     <h1 style="padding-top: 50px; margin-top: -50px;"></h1>
 </a>
-    <h1 class= "text-white" align="center">Entrega 3 BDD Grupos 23 y 50 </h1>
+    <h1 class= "text-white" align="center">Entrega 5 BDD Grupos 23 y 50 </h1>
     <br>
 
     <h2 class= "text-white" align="center">Quiénes somos</h2>
