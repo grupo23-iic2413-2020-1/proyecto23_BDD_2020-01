@@ -11,8 +11,9 @@ require("../config/conexion.php");  ?>
       <div class="container">
             <div class='col-no-gutters'>
                 <h1 class= "text-white" style="text-align: center; margin-top: 1rem"> Elección fechas a filtrar para mapa </h1>
+                <br>
                 <form align="center" action="mapa.php" method="post">
-                    <div class="card card-body bg-secondary text-white">
+                   
                         <label for="birthdaytime"> Fecha inicio: </label>
                         <div align='center' >
                             <input style="width: 10em; height: 1em; font-size: 25px; color: black; align: center" type="date" name='fechai'>
@@ -26,7 +27,7 @@ require("../config/conexion.php");  ?>
                         <div align='center' >
                             <input class="btn btn-primary" align="center" type="submit" value="Crear Mapa" name='Buscar'>
                         </div>
-                    </div>
+       
                 </form>
             </div>
         </div>
