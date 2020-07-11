@@ -1,7 +1,8 @@
 # Entrega 5 Grupos 23-50
 
 ## Iniciar Sesión
-Para iniciar sesión se deben utilizar los usuarios de la Entrega 3 del curso que coincidan con el id de usuario deseado.
+Para iniciar sesión se deben utilizar los usuarios de la Entrega 3 del curso que coincidan con el id de usuario deseado.\
+Los id de usuario, usernames y contraseñas de todos los usuarios existentes se pueden encontrar en el archivo anexo llamado "usuarios.txt".
 
 ## Mensajería
 ### Acceso
