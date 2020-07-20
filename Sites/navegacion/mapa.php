@@ -53,7 +53,7 @@ foreach ($json_data['messages'] as $message) {
                   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               }).addTo(map);
 
-              <?php if(!empty($uid_emisor)) {
+              <?php if(!empty($marker_list)) {
                 foreach($marker_list as $marker) {
                   echo 
                   'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
