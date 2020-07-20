@@ -10,7 +10,7 @@ $url = "https://nameless-meadow-87804.herokuapp.com/users/".$_SESSION['current_u
 $json = file_get_contents($url);
 $json_data = json_decode($json, true);
 $marker_list = [];
-if(!empty($uid_emisor)) {
+if(!empty($json_data['messages'])) {
 foreach ($json_data['messages'] as $message) {
     if ($message['date'] >= $fechai and $message['date'] <= $fechat){
     array_push($marker_list, ["lat" => $message['lat'], "long" => $message['long']]);}}

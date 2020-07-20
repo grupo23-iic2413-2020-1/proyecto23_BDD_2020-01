@@ -45,7 +45,7 @@ $json_data = json_decode($json, true);
               </thead>
               <tbody>
         <?php
-        if(!empty($uid_emisor)) { 
+        if(!empty($json_data['messages'])) { 
         foreach ($json_data['messages'] as $element) {
             $url_receptant = "https://nameless-meadow-87804.herokuapp.com/users/".$element['receptant'];
             $json_2 = file_get_contents($url_receptant);
